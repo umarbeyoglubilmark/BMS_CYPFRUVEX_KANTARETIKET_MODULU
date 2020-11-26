@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BMS_DLL</name>
+    </assembly>
+    <members>
+        <member name="F:BMS_DLL.Ayarlar.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.Ayarlar.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BMS_DLL.Ayarlar.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.CFGGETSET.AYARLARIYUKLE">
+            <summary>
+            <para>Aciklama: CFGICERIK ayarlarını çeker (şifreli cfg dosyasından) - Önce AYARLARIKAYDET'ten kaydedilir</para>
+            Ornek Kod: AYARLARIYUKLE();
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.CFGGETSET.AYARLARIKAYDET(System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            <para>Aciklama: CFGICERIK ayarlarını cfg dosyasına kaydeder</para>
+            Ornek Kod: BMS_DLL.CFGGETSET.AYARLARIKAYDET(textEditLS_KULLANICIADI.Text, textEditLS_PAROLA.Text, textEditLS_SUNUCU.Text, textEditLS_VERITABANI.Text, textEditLS_RESTAPIURL.Text, comboBoxEditBS_VERITABANITIPI.SelectedIndex, textEditBS_KULLANICIADI.Text, textEditBS_PAROLA.Text, textEditBS_SUNUCU.Text, textEditBS_VERITABANI.Text, textEditFB_FIRMANO.Text, textEditFB_PERIOD.Text, textEditFB_ONCEKIFIRMANO.Text, textEditFB_ONCEKIPERIOD.Text, textEditKB_BMSKULLANICIKODU.Text, textEditKB_BMSPAROLA.Text, textEditKB_LOKULLANICIKODU.Text, textEditKB_LOPAROLA.Text, textEditWS_SERVISSURE.Text, comboBoxEditWS_SURECINSI.SelectedIndex, comboBoxEditWS_SERVISVERITABANIKONTROLTABLOSU.SelectedIndex);
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.GLOBAL.MATH_YUVARLA(System.Double)">
+            <summary>
+            <para>Aciklama: Sayının küsüratını ikiye düşürür ve yuvarlar</para>
+            Ornek Kod: MATH_YUVARLA(55.6)
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.GLOBAL.MAILAT(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            <para>Aciklama: Mail atar</para>
+            Ornek Kod: MAILAT(587, "testmail@bil.com, "parola123", "mail.bil.com", "destek@bil.com, "xmusteri@gmail.com", "direktor@bil.com","Talep Hk.", "X tarihinde talebiniz oluştu teşekkürler.")
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.GLOBAL.LOGYAZ(System.String,System.Exception)">
+            <summary>
+            <para>Aciklama: Programın bulunduğu klasorun altına log isminde klasor oluşturulan tarihlerin adında txt dosyası oluşturup içine log yazar</para>
+            Ornek Kod:  try{InitializeComponent();}catch (Exception e){BMS_DLL.GLOBAL.LOGYAZ("HATA", e.Message);}
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.GLOBAL.FORMAC(System.Boolean,System.Windows.Forms.Form,System.Windows.Forms.Form,System.Boolean,System.String)">
+            <summary>
+            <para>Aciklama: Mdi yada yeni ekranda form açar. Örnek Ayarlar adında bir form oluştur</para>
+            <para> Ornek Kod: Mdi Form:  BMS_DLL.GLOBAL.FORMAC(true, new Ayarlar(), this, false, null);</para>
+            <para> Ornek Kod: Normal Form:  BMS_DLL.GLOBAL.FORMAC(false, new Ayarlar(), this, false, null);</para>
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.GLOBAL.NUMARATOR">
+            <summary>
+            <para>Aciklama: String değerinde mevcut tarih saat dk saniyeyi verir fiş nolarında kullanılabilir</para>
+            string fisno = BMS_DLL.GLOBAL.NUMARATOR();
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.GLOBAL.REGISTIRYSET(System.String,System.String,System.String)">
+            <summary>
+            <para>Aciklama: Registrye isdenilen değerleri kaydeder(Computer\HKEY_CURRENT_USER\Software\SuperErp KULLANICIADI:XKULLANICI)</para>
+            BMS_DLL.GLOBAL.REGISTIRYSET("KULLANICIADI", "XKULLANICI", "SuperErp");
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.GLOBAL.REGISTIRYGET(System.String,System.String)">
+            <summary>
+            <para>Aciklama: Registryden isdenilen değerleri alır(/Computer\HKEY_CURRENT_USER\Software\SuperErp KULLANICIADININ KARŞISINDAKİ DEĞER)</para>
+            string KULLANICIADI = BMS_DLL.GLOBAL.REGISTIRYGET("KULLANICIADI", "SuperErp");
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.GLOBAL.GETIPADDRESS">
+            <summary>
+            <para>Aciklama: İşlem yapan bilgisayarın ipsini alır</para>
+            string USERIP = BMS_DLL.GLOBAL.GETIPADDRESS();
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.GLOBAL.BETWEEN(System.String,System.String,System.String)">
+            <summary>
+            <para>Aciklama: Kelimedeki aralıkları alır.Aşağıdaki kod 2 döndürür</para>
+            string ARALIK = BMS_DLL.GLOBAL.BETWEEN("123","1","3");
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.GLOBAL.STRING_SIFRELEME.EncryptString(System.String)">
+            <summary>
+            <para>Aciklama: Stringi şifreler aşağıda dönen değer: xkRk4n3KqZBFyI6RetjHuw==</para>
+            string PAROLA = BMS_DLL.GLOBAL.EncryptString("123456");
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.GLOBAL.STRING_SIFRELEME.DecryptString(System.String)">
+            <summary>
+            <para>Aciklama: EncryptString ile Şifreleneni Çözer. Aşağıda dönen değer 123456</para>
+            string PAROLA = BMS_DLL.GLOBAL.DecryptString("xkRk4n3KqZBFyI6RetjHuw==");
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.SQL.SELECT(System.String)">
+            <summary>
+            gridControl1.DataSource = BMS_DLL.SQL.SELECT("SELECT * FROM BM_PDKS_ADIM2");
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.SQL.EXECUTE2(System.Windows.Forms.Form,System.String,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            <para>Aciklama: Önce ana projeye add devitem Progress Indicator ekle adını PROGRESSFORM yap. Cfgye bağlı veritabanında gerekli tablo , view , fonks vb. oluşturur.</para>
+            <para>Ornek Kod :</para>
+            <para>  public static SqlConnection sqlConnectionSource = new SqlConnection(string.Format(@"Server={0}; Database={1}; User Id ={2};Password ={3}", CFGICERIK.LGDBSERVER, CFGICERIK.LGDBDATABASE, CFGICERIK.LGDBUSERNAME, CFGICERIK.LGDBPASSWORD));</para>
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.SQL.TABLOLARIOLUSTUR(System.Type,System.Windows.Forms.Form,System.String[],System.Boolean,System.String)">
+             <summary>
+             <para>Aciklama: Önce ana projeye add devitem Progress Indicator ekle adını PROGRESSFORM yap. Cfgye bağlı veritabanında gerekli tablo , view , fonks vb. oluşturur.</para>
+             <para>Ornek Kod :</para>
+             <para>string[] LG_TABLES =  {</para>
+             <para> "create table test",</para>
+            <para>  "create table test2"</para>
+             <para>   };</para>
+             <para>   BMS_DLL.SQL.TABLOLARIOLUSTUR(typeof(PROGRESSFORM),this,LG_TABLES);</para>
+             </summary>
+        </member>
+        <member name="M:BMS_DLL.SQL.EXECTRANSACTION(System.String,System.Int32@)">
+            <summary>
+            <para>Aciklama: Transactionlar Sql insert update delete işlemi yapar</para>
+            <para>Ornek Kod :</para>
+            <para>int REF;</para>
+            <para>   BMS_DLL.SQL.EXECTRANSACTION("INSERT INTO KAYITLAR (FISNO) VALUES ('123')",out REF);</para>
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.DXGRID_POPUPMENUEKLE(DevExpress.XtraGrid.Views.Grid.GridView,DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs,System.String,System.EventHandler)">
+            <summary>
+            <para>Aciklama: Dx Gridview popup menuye aşağıya menu ekler. Not: gridviewin PopupMenuShowing eventina eklenmeli</para>
+             <para>ORNEK KOD: DXGRID_POPUPMENUEKLE(Gridview1, e, "GEÇERLİ FİLTREYİ KAYDET", DXMenuItem_Click)</para>
+             <para>     private void DXMenuItem_Click(object sender, EventArgs e)</para>
+             <para>     {</para>
+             <para>       if (((DXMenuItem)sender).Caption == "GEÇERLİ FİLTREYİ KAYDET")</para>
+             <para>       {</para>
+            <para>           MessageBox.Show("test");</para>
+             <para>       }</para>
+              <para>    }</para>
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.DXSEARCHLOOKUPEDIT_DATASOURCE(DevExpress.XtraEditors.SearchLookUpEdit,System.String,System.String,System.String)">
+            <summary>
+            <para>Aciklama: Dx SearchLookupEdit Veri bağlar.</para>
+            Ornek Kod: BMS_DLL.DX.DXSEARCHLOOKUPEDIT_DATASOURCE(searchLookUpEdit1, "select LOGICALREF,FICHENO from BM_219_SIPARIS", "FICHENO", "LOGICALREF");
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.DXGRID_SAVELAYOUTTO_REGISTIRY(DevExpress.XtraGrid.GridControl,System.String,System.String)">
+            <summary>
+            <para>Aciklama: Dx Gridview layoutu kaydeder. Registryden : DevExpress\XtraGrid\Layouts\SuperErp\Satislar</para>
+            Ornek Kod: DXGRID_SAVELAYOUTTO_REGISTIRY(gridcontrol,"SuperErp", "Satislar")
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.DXGRID_LOADLAYOUTFROM_REGISTIRY(DevExpress.XtraGrid.GridControl,System.String,System.String)">
+            <summary>
+            <para>Aciklama: Dx Gridview layoutu alır. Registryden : DevExpress\XtraGrid\Layouts\SuperErp\Satislar</para>
+            Ornek Kod: DXGRID_LOADLAYOUTFROM_REGISTIRY(gridcontrol,"SuperErp", "Satislar")
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.DXGRID_SAVELAYOUTTO_XML(DevExpress.XtraGrid.Views.Grid.GridView,System.String)">
+            <summary>
+            <para>Aciklama: Dx Gridview layoutu kaydeder. Bulunduğu Klasöre : Satislar.xml</para>
+            Ornek Kod: DXGRID_SAVELAYOUTTO_XML(GridView1, "Satislar")
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.DXGRID_LOADLAYOUTFROM_XML(DevExpress.XtraGrid.Views.Grid.GridView,System.String)">
+            <summary>
+            <para>Aciklama: Dx Gridview en son layoutu Xmlden alır</para>
+            Ornek Kod: DXGRID_SAVELAYOUTTO_XML(GridView1, "Satislar")
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.DXGRID_SUMMARY(DevExpress.XtraGrid.Views.Grid.GridView,DevExpress.Data.SummaryItemType,System.String,System.String)">
+            <summary>
+            <para>Aciklama: Dx Gridview isdenilen columna summary kor.</para>
+            Ornek Kod: BMS_DLL.DX.DXGRID_SUMMARY(gridView1, SummaryItemType.Sum, "TOPLAM", "TOPLAMSATIS");
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.DXGRID_KUCUKSERENKDEGIS_SAYI(DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs,System.String,System.Single,System.Drawing.Color)">
+            <summary>
+            <para>Aciklama: Dx Gridview View_CustomDrawCell isdenilen sayı column 1000den kucukse  renk koy.</para>
+            Ornek Kod:  BMS_DLL.DX.DXGRID_KUCUKSERENKDEGIS_SAYI(e, "TOPLAMSATIS", 1000, Color.AliceBlue);
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.DXGRID_BUYUKSERENKDEGIS_SAYI(DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs,System.String,System.Single,System.Drawing.Color)">
+            <summary>
+            <para>Aciklama: Dx Gridview View_CustomDrawCell isdenilen sayı column 1000den buyukse  renk koy.</para>
+            Ornek Kod:  BMS_DLL.DX.DXGRID_BUYUKSERENKDEGIS_SAYI(e, "TOPLAMSATIS", 1000, Color.AliceBlue);
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.DXGRID_ESITSERENKKDEGIS_SAYI(DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs,System.String,System.Single,System.Drawing.Color)">
+            <summary>
+            <para>Aciklama: Dx Gridview View_CustomDrawCell isdenilen sayı column 1000e eşitse  renk koy.</para>
+            Ornek Kod:  BMS_DLL.DX.DXGRID_ESITSERENKKDEGIS_SAYI(e, "TOPLAMSATIS", 1000, Color.AliceBlue);
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.DXGRID_ESITSERENKKDEGIS_STRING(DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs,System.String,System.String,System.Drawing.Color)">
+            <summary>
+            <para>Aciklama: Dx Gridview View_CustomDrawCell isdenilen string column iptal yazarsa  renk koy.</para>
+            Ornek Kod:  BMS_DLL.DX.DXGRID_ESITSERENKKDEGIS_STRING(e, "TOPLAMSATIS", "iptal", Color.AliceBlue);
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.TEMAREGISTRYKAYDET(System.String)">
+            <summary>
+            <para>Aciklama: Dx RibbonControl Eklenmeli--Kullanılan pc registerinde kayıt oluşturur://Computer\HKEY_CURRENT_USER\Software\SuperErp</para> ve içine Key Tema - Value Tema Adı atar
+            Ornek Kod: TEMAREGISTRYKAYDET("SuperErp");
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.TEMAREGISTRYYUKLE(System.String)">
+            <summary>
+            <para>Aciklama: Dx RibbonControl Eklenmeli--Kullanılan pc registerden kaydedilen temayı alır register://Computer\HKEY_CURRENT_USER\Software\SuperErp</para>
+            Ornek Kod: TEMAREGISTRYYUKLE("SuperErp");
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.TEMAFOLDERUSERSKAYDET(System.String)">
+            <summary>
+            <para>Aciklama: Dx RibbonControl Eklenmeli--Programın bulunduğu klasorun içine USERS diye bir klasor yaratır. içine username adında txt oluşturur içine temanın adını kaydeder</para>
+            Ornek Kod: TEMAFOLDERUSERSKAYDET(Username.Text);
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.TEMAFOLDERUSERSYUKLE(System.String)">
+            <summary>
+            <para>Aciklama: Dx RibbonControl Eklenmeli--Programın bulunduğu klasorun içine USERS diye bir klasor vardır içine username adında txt  vardır en son kaydettiği temayı ordan yükler</para>
+            Ornek Kod: TEMAFOLDERUSERSYUKLE(Username.Text);
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.SPLASHSCREENBASLA(System.Type,System.Windows.Forms.Form,System.String)">
+            <summary>
+            <para>Aciklama: Önce ana projeye add devitem Progress Indicator ekle adını PROGRESSFORM yap</para>
+            Ornek Kod: BMS_DLL.DX.SPLASHSCREENBASLA(typeof(PROGRESSFORM), this, "Oluşturluuyor");
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.SPLASHSCREENBITIR(System.String)">
+            <summary>
+            Ornek Kod: BMS_DLL.DX.SPLASHSCREENBITIR(typeof(PROGRESSFORM), this, "İşlem Tamamlandı");
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.DXGRID_GETFOCUSEDROWVALUE(DevExpress.XtraGrid.Views.Grid.GridView,System.String)">
+            <summary>
+            Ornek Kod: DXGRID_GETFOCUSEDROWVALUE(Gridview1, "LOGICALREF");
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.DXMESSAGEBOX(System.Boolean,System.String,System.String)">
+            <summary>
+            <para>Ornek Kod YesNosuz: DXMESSAGEBOX(false, "Baslik", "Icerik")</para>
+            Ornek Kod YesNolu: DXMESSAGEBOX(true, "Baslik", "Icerik");
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.DXGRIDEXCELAC(System.Type,System.Windows.Forms.Form,DevExpress.XtraGrid.GridControl,DevExpress.XtraGrid.Views.Grid.GridView)">
+            <summary>
+            <para>Aciklama: Önce ana projeye add devitem Progress Indicator ekle adını PROGRESSFORM yap</para>
+            Ornek Kod: DXGRIDEXCELAC(typeof(PROGRESSFORM), this,GridControl1, GridView1);
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.DX.XTRAREPORT_AC(System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            <para>Aciklama: programın bulundugu klasorun altınta reports/-isim-.repx olmalı--burda PROJEDE rapor1.repx var</para>
+            <para>Ornek Kod:</para>
+            <para>BMS_DLL.CFGGETSET.AYARLARIYUKLE();</para>
+            <para>BMS_DLL.DX.XTRAREPORT_AC("SELECT * FROM TABLO","rapor1.repx");</para>
+            <para>CONNECTIONSTRINGIFNOTFROMCFG : "Server=server; Database=dbtest; User Id =sa;Password =sa"</para>
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.WINDOWSSERVICE._OnStart(System.Boolean,System.Threading.TimerCallback,System.Threading.Timer)">
+            <summary>
+            <para>Aciklama: Önce ilk başa private Timer timer; sonra Servisin OnStarına Koy.</para>
+            <para>Ornek Kod: BMS_DLL.WINDOWSSERVICE._OnStart(false,START_PROCESS,timer );</para>
+            <para>base.OnStart(args);</para> 
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.WINDOWSSERVICE._OnStop(System.Threading.Timer)">
+            <summary>
+            <para>Aciklama: Önce ilk başa yoksa private Timer timer; sonra Servisin OnStopa Koy.</para>
+            <para>Ornek Kod: BMS_DLL.WINDOWSSERVICE._OnStop(timer);</para>
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.ASPX.TABLOLARIOLUSTUR(System.String[],System.String)">
+             <summary>
+             <para>Aciklama:veritabanında gerekli tablo , view , fonks vb. oluşturur.</para>
+             <para>Ornek Kod :</para>
+             <para>string[] LG_TABLES =  {</para>
+             <para> "create table test",</para>
+            <para>  "create table test2"</para>
+             <para>   };</para>
+             <para>   BMS_DLL.SQL.TABLOLARIOLUSTUR(LG_TABLES,connstring);</para>
+             </summary>
+        </member>
+        <member name="M:BMS_DLL.GUNCELLEMEMODULU.GUNCELLEMEYAP(System.Windows.Forms.Form,System.Type,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            <para>Aciklama: UYGULAMA GÜNCELLEME MODULU</para>
+            Ornek Kod: GUNCELLEMEYAP(This,typeof(PROGRESSFORM), "ftp://bms@ftp.bilmarkltd.com/SATISMATIK/","BM_SATISMATIK.zip", "bms", string "_BM/2017/*-s_.,", "SATISMATIK");
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.GUNCELLEMEMODULU.VERSIYONBILGISIAL(System.String,System.String,System.String,System.String)">
+            <summary>
+            <para>Aciklama: VERSION KONTROLU</para>
+            <para>Programın Versionunu öğrenmek için :string mevcutverion=  Assembly.GetExecutingAssembly().GetName().Version.ToString()</para>
+            Ornek Kod:string version = VERSIYONBILGISIAL("ftp://bms@ftp.bilmarkltd.com/SATISMATIK/","version_satismatik.txt", "bms",  "_BM/2017/*-s_.,");
+            </summary>
+        </member>
+        <member name="F:BMS_DLL.PROGRESSFORM.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.PROGRESSFORM.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BMS_DLL.PROGRESSFORM.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:BMS_DLL.SQLCOMMANDS.SQLINSERTCOMMANDS.INSERTKAYITLAR(BMS_DLL.OBJECTS.KAYITLAR)">
+            <summary>
+            <para>Aciklama: SQLE OBJECTLI INSERT EDER</para>
+            <para>Örnek Kod:</para>
+            <para>BMS_DLL.CFGGETSET.AYARLARIYUKLE();</para>
+            <para>BMS_DLL.OBJECTS.KAYITLAR K = new BMS_DLL.OBJECTS.KAYITLAR</para>
+            <para>{</para>
+            <para>FISNO = "1"</para>
+            <para>};</para>
+            <para>BMS_DLL.SQLCOMMANDS.SQLINSERTCOMMANDS SIC = new BMS_DLL.SQLCOMMANDS.SQLINSERTCOMMANDS();</para>
+            <para>SIC.INSERTKAYITLAR(K);</para>
+            </summary>
+        </member>
+    </members>
+</doc>
