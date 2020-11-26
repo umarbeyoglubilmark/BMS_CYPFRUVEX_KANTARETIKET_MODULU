@@ -17,5 +17,9 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
             LOGICALREF = _LOGICALREF;
             barCodeControl1.Text = LOGICALREF;
         }
+
+        private void SB_YAZDIR_Click(object sender, EventArgs e) {
+
+        }
     }
 }
