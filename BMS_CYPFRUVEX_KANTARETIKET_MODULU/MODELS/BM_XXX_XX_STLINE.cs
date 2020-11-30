@@ -1,0 +1,310 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+
+namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.MODELS
+{
+ public class BM_XXX_XX_STLINE
+{
+public int LOGICALREF { get; set; }
+public int STOCKREF { get; set; }
+public int LINETYPE { get; set; }
+public int PREVLINEREF { get; set; }
+public int PREVLINENO { get; set; }
+public int DETLINE { get; set; }
+public int TRCODE { get; set; }
+public DateTime DATE_ { get; set; }
+public int FTIME { get; set; }
+public int GLOBTRANS { get; set; }
+public int CALCTYPE { get; set; }
+public int PRODORDERREF { get; set; }
+public int SOURCETYPE { get; set; }
+public int SOURCEINDEX { get; set; }
+public int SOURCECOSTGRP { get; set; }
+public int SOURCEWSREF { get; set; }
+public int SOURCEPOLNREF { get; set; }
+public int DESTTYPE { get; set; }
+public int DESTINDEX { get; set; }
+public int DESTCOSTGRP { get; set; }
+public int DESTWSREF { get; set; }
+public int DESTPOLNREF { get; set; }
+public int FACTORYNR { get; set; }
+public int IOCODE { get; set; }
+public int STFICHEREF { get; set; }
+public int STFICHELNNO { get; set; }
+public int INVOICEREF { get; set; }
+public int INVOICELNNO { get; set; }
+public int CLIENTREF { get; set; }
+public int ORDTRANSREF { get; set; }
+public int ORDFICHEREF { get; set; }
+public int CENTERREF { get; set; }
+public int ACCOUNTREF { get; set; }
+public int VATACCREF { get; set; }
+public int VATCENTERREF { get; set; }
+public int PRACCREF { get; set; }
+public int PRCENTERREF { get; set; }
+public int PRVATACCREF { get; set; }
+public int PRVATCENREF { get; set; }
+public int PROMREF { get; set; }
+public int PAYDEFREF { get; set; }
+public string SPECODE { get; set; } = string.Empty;
+public string DELVRYCODE { get; set; } = string.Empty;
+public double AMOUNT { get; set; }
+public double PRICE { get; set; }
+public double TOTAL { get; set; }
+public int PRCURR { get; set; }
+public double PRPRICE { get; set; }
+public int TRCURR { get; set; }
+public double TRRATE { get; set; }
+public double REPORTRATE { get; set; }
+public double DISTCOST { get; set; }
+public double DISTDISC { get; set; }
+public double DISTEXP { get; set; }
+public double DISTPROM { get; set; }
+public double DISCPER { get; set; }
+public string LINEEXP { get; set; } = string.Empty;
+public int UOMREF { get; set; }
+public int USREF { get; set; }
+public double UINFO1 { get; set; }
+public double UINFO2 { get; set; }
+public double UINFO3 { get; set; }
+public double UINFO4 { get; set; }
+public double UINFO5 { get; set; }
+public double UINFO6 { get; set; }
+public double UINFO7 { get; set; }
+public double UINFO8 { get; set; }
+public double PLNAMOUNT { get; set; }
+public int VATINC { get; set; }
+public double VAT { get; set; }
+public double VATAMNT { get; set; }
+public double VATMATRAH { get; set; }
+public int BILLEDITEM { get; set; }
+public int BILLED { get; set; }
+public int CPSTFLAG { get; set; }
+public int RETCOSTTYPE { get; set; }
+public int SOURCELINK { get; set; }
+public double RETCOST { get; set; }
+public double RETCOSTCURR { get; set; }
+public double OUTCOST { get; set; }
+public double OUTCOSTCURR { get; set; }
+public double RETAMOUNT { get; set; }
+public int FAREGREF { get; set; }
+public int FAATTRIB { get; set; }
+public int CANCELLED { get; set; }
+public double LINENET { get; set; }
+public double DISTADDEXP { get; set; }
+public int FADACCREF { get; set; }
+public int FADCENTERREF { get; set; }
+public int FARACCREF { get; set; }
+public int FARCENTERREF { get; set; }
+public double DIFFPRICE { get; set; }
+public double DIFFPRCOST { get; set; }
+public int DECPRDIFF { get; set; }
+public int LPRODSTAT { get; set; }
+public double PRDEXPTOTAL { get; set; }
+public double DIFFREPPRICE { get; set; }
+public double DIFFPRCRCOST { get; set; }
+public int SALESMANREF { get; set; }
+public int FAPLACCREF { get; set; }
+public int FAPLCENTERREF { get; set; }
+public string OUTPUTIDCODE { get; set; } = string.Empty;
+public int DREF { get; set; }
+public double COSTRATE { get; set; }
+public int XPRICEUPD { get; set; }
+public double XPRICE { get; set; }
+public double XREPRATE { get; set; }
+public double DISTCOEF { get; set; }
+public int TRANSQCOK { get; set; }
+public int SITEID { get; set; }
+public int RECSTATUS { get; set; }
+public int ORGLOGICREF { get; set; }
+public int WFSTATUS { get; set; }
+public int POLINEREF { get; set; }
+public int PLNSTTRANSREF { get; set; }
+public int NETDISCFLAG { get; set; }
+public double NETDISCPERC { get; set; }
+public double NETDISCAMNT { get; set; }
+public double VATCALCDIFF { get; set; }
+public int CONDITIONREF { get; set; }
+public int DISTORDERREF { get; set; }
+public int DISTORDLINEREF { get; set; }
+public int CAMPAIGNREFS1 { get; set; }
+public int CAMPAIGNREFS2 { get; set; }
+public int CAMPAIGNREFS3 { get; set; }
+public int CAMPAIGNREFS4 { get; set; }
+public int CAMPAIGNREFS5 { get; set; }
+public int POINTCAMPREF { get; set; }
+public double CAMPPOINT { get; set; }
+public int PROMCLASITEMREF { get; set; }
+public int CMPGLINEREF { get; set; }
+public int PLNSTTRANSPERNR { get; set; }
+public double PORDCLSPLNAMNT { get; set; }
+public double VENDCOMM { get; set; }
+public double PREVIOUSOUTCOST { get; set; }
+public int COSTOFSALEACCREF { get; set; }
+public int PURCHACCREF { get; set; }
+public int COSTOFSALECNTREF { get; set; }
+public int PURCHCENTREF { get; set; }
+public double PREVOUTCOSTCURR { get; set; }
+public double ABVATAMOUNT { get; set; }
+public int ABVATSTATUS { get; set; }
+public double PRRATE { get; set; }
+public double ADDTAXRATE { get; set; }
+public double ADDTAXCONVFACT { get; set; }
+public double ADDTAXAMOUNT { get; set; }
+public double ADDTAXPRCOST { get; set; }
+public double ADDTAXRETCOST { get; set; }
+public double ADDTAXRETCOSTCURR { get; set; }
+public double GROSSUINFO1 { get; set; }
+public double GROSSUINFO2 { get; set; }
+public double ADDTAXPRCOSTCURR { get; set; }
+public int ADDTAXACCREF { get; set; }
+public int ADDTAXCENTERREF { get; set; }
+public int ADDTAXAMNTISUPD { get; set; }
+public double INFIDX { get; set; }
+public int ADDTAXCOSACCREF { get; set; }
+public int ADDTAXCOSCNTREF { get; set; }
+public double PREVIOUSATAXPRCOST { get; set; }
+public double PREVATAXPRCOSTCURR { get; set; }
+public double PRDORDTOTCOEF { get; set; }
+public double DEMPEGGEDAMNT { get; set; }
+public double STDUNITCOST { get; set; }
+public double STDRPUNITCOST { get; set; }
+public int COSTDIFFACCREF { get; set; }
+public int COSTDIFFCENREF { get; set; }
+public int TEXTINC { get; set; }
+public double ADDTAXDISCAMOUNT { get; set; }
+public string ORGLOGOID { get; set; } = string.Empty;
+public string EXIMFICHENO { get; set; } = string.Empty;
+public int EXIMFCTYPE { get; set; }
+public int TRANSEXPLINE { get; set; }
+public int INSEXPLINE { get; set; }
+public int EXIMWHFCREF { get; set; }
+public int EXIMWHLNREF { get; set; }
+public int EXIMFILEREF { get; set; }
+public int EXIMPROCNR { get; set; }
+public int EISRVDSTTYP { get; set; }
+public int MAINSTLNREF { get; set; }
+public int MADEOFSHRED { get; set; }
+public int FROMORDWITHPAY { get; set; }
+public int PROJECTREF { get; set; }
+public int STATUS { get; set; }
+public int DORESERVE { get; set; }
+public int POINTCAMPREFS1 { get; set; }
+public int POINTCAMPREFS2 { get; set; }
+public int POINTCAMPREFS3 { get; set; }
+public int POINTCAMPREFS4 { get; set; }
+public double CAMPPOINTS1 { get; set; }
+public double CAMPPOINTS2 { get; set; }
+public double CAMPPOINTS3 { get; set; }
+public double CAMPPOINTS4 { get; set; }
+public int CMPGLINEREFS1 { get; set; }
+public int CMPGLINEREFS2 { get; set; }
+public int CMPGLINEREFS3 { get; set; }
+public int CMPGLINEREFS4 { get; set; }
+public int PRCLISTREF { get; set; }
+public int PORDSYMOUTLN { get; set; }
+public int MONTH_ { get; set; }
+public int YEAR_ { get; set; }
+public double EXADDTAXRATE { get; set; }
+public double EXADDTAXCONVF { get; set; }
+public int EXADDTAXAREF { get; set; }
+public int EXADDTAXCREF { get; set; }
+public int OTHRADDTAXAREF { get; set; }
+public int OTHRADDTAXCREF { get; set; }
+public double EXADDTAXAMNT { get; set; }
+public int AFFECTCOLLATRL { get; set; }
+public int ALTPROMFLAG { get; set; }
+public int EIDISTFLNNR { get; set; }
+public int EXIMTYPE { get; set; }
+public int VARIANTREF { get; set; }
+public int CANDEDUCT { get; set; }
+public double OUTREMAMNT { get; set; }
+public double OUTREMCOST { get; set; }
+public double OUTREMCOSTCURR { get; set; }
+public int REFLVATACCREF { get; set; }
+public int REFLVATOTHACCREF { get; set; }
+public int PARENTLNREF { get; set; }
+public int AFFECTRISK { get; set; }
+public int INEFFECTIVECOST { get; set; }
+public double ADDTAXVATMATRAH { get; set; }
+public int REFLACCREF { get; set; }
+public int REFLOTHACCREF { get; set; }
+public int CAMPPAYDEFREF { get; set; }
+public DateTime FAREGBINDDATE { get; set; }
+public int RELTRANSLNREF { get; set; }
+public int FROMTRANSFER { get; set; }
+public double COSTDISTPRICE { get; set; }
+public double COSTDISTREPPRICE { get; set; }
+public double DIFFPRICEUFRS { get; set; }
+public double DIFFREPPRICEUFRS { get; set; }
+public double OUTCOSTUFRS { get; set; }
+public double OUTCOSTCURRUFRS { get; set; }
+public double DIFFPRCOSTUFRS { get; set; }
+public double DIFFPRCRCOSTUFRS { get; set; }
+public double RETCOSTUFRS { get; set; }
+public double RETCOSTCURRUFRS { get; set; }
+public double OUTREMCOSTUFRS { get; set; }
+public double OUTREMCOSTCURRUFRS { get; set; }
+public double INFIDXUFRS { get; set; }
+public double ADJPRICEUFRS { get; set; }
+public double ADJREPPRICEUFRS { get; set; }
+public double ADJPRCOSTUFRS { get; set; }
+public double ADJPRCRCOSTUFRS { get; set; }
+public double COSTDISTPRICEUFRS { get; set; }
+public double COSTDISTREPPRICEUFRS { get; set; }
+public int PURCHACCREFUFRS { get; set; }
+public int PURCHCENTREFUFRS { get; set; }
+public int COSACCREFUFRS { get; set; }
+public int COSCNTREFUFRS { get; set; }
+public double PROUTCOSTUFRSDIFF { get; set; }
+public double PROUTCOSTCRUFRSDIFF { get; set; }
+public int UNDERDEDUCTLIMIT { get; set; }
+public string GLOBALID { get; set; } = string.Empty;
+public int DEDUCTIONPART1 { get; set; }
+public int DEDUCTIONPART2 { get; set; }
+public string GUID { get; set; } = string.Empty;
+public string SPECODE2 { get; set; } = string.Empty;
+public int OFFERREF { get; set; }
+public int OFFTRANSREF { get; set; }
+public string VATEXCEPTREASON { get; set; } = string.Empty;
+public string PLNDEFSERILOTNO { get; set; } = string.Empty;
+public double PLNUNRSRVAMOUNT { get; set; }
+public double PORDCLSPLNUNRSRVAMNT { get; set; }
+public int LPRODRSRVSTAT { get; set; }
+public int FALINKTYPE { get; set; }
+public string DEDUCTCODE { get; set; } = string.Empty;
+public int UPDTHISLINE { get; set; }
+public string VATEXCEPTCODE { get; set; } = string.Empty;
+public string PORDERFICHENO { get; set; } = string.Empty;
+public int QPRODFCREF { get; set; }
+public int RELTRANSFCREF { get; set; }
+public string ATAXEXCEPTREASON { get; set; } = string.Empty;
+public string ATAXEXCEPTCODE { get; set; } = string.Empty;
+public int PRODORDERTYP { get; set; }
+public int SUBCONTORDERREF { get; set; }
+public int QPRODFCTYP { get; set; }
+public int PRDORDSLPLNRESERVE { get; set; }
+public DateTime INFDATE { get; set; }
+public int DESTSTATUS { get; set; }
+public int REGTYPREF { get; set; }
+public int FAPROFITACCREF { get; set; }
+public int FAPROFITCENTREF { get; set; }
+public int FALOSSACCREF { get; set; }
+public int FALOSSCENTREF { get; set; }
+public string CPACODE { get; set; } = string.Empty;
+public string GTIPCODE { get; set; } = string.Empty;
+public int PUBLICCOUNTRYREF { get; set; }
+public int QPRODITEMTYPE { get; set; }
+public int FUTMONTHCNT { get; set; }
+public int FUTMONTHBEGDATE { get; set; }
+public int QCTRANSFERREF { get; set; }
+public double QCTRANSFERAMNT { get; set; }
+public DateTime FUTMONTHENDDATE { get; set; }
+public int KKEGACCREF { get; set; }
+public int KKEGCENTREF { get; set; }
+public int MNTORDERFREF { get; set; }
+}
+}

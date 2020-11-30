@@ -179,3 +179,62 @@ Error Number:4145,State:1,Class:15
    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
    at System.Data.DataRowCollection.get_Item(Int32 index)
    at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) in F:\PROJELER\VS\GITHUB\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 43
+
+
+
+
+2020.11.30 16:30:28 : HATA
+ ----- HATA : ----- System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) in F:\PROJELER\VS\GITHUB\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 43
+
+
+
+
+2020.11.30 16:30:30 : HATA
+ ----- HATA : ----- System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) in F:\PROJELER\VS\GITHUB\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 43
+
+
+
+
+2020.11.30 16:31:31 : HATA(SAVE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'BM_XXX_XX_INVOICE'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.SAVE() in F:\PROJELER\VS\GITHUB\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 117
+ClientConnectionId:5f048404-4856-4c97-88df-dca2989fa1db
+Error Number:208,State:1,Class:16
+
+
+
+
+2020.11.30 16:32:50 : HATA(SAVE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.SAVE() in F:\PROJELER\VS\GITHUB\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 117
+ClientConnectionId:8842838e-a57a-4d0e-a5dd-c484ec703f44
+Error Number:8152,State:2,Class:16

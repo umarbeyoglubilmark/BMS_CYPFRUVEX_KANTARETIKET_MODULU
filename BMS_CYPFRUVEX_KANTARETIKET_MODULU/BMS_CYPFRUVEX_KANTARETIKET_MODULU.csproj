@@ -169,6 +169,11 @@
     </Compile>
     <Compile Include="Methods.cs" />
     <Compile Include="MODELS\BMS_KE_KANTAR.cs" />
+    <Compile Include="MODELS\BM_XXX_XX_CLFLINE.cs" />
+    <Compile Include="MODELS\BM_XXX_XX_INVOICE.cs" />
+    <Compile Include="MODELS\BM_XXX_XX_PAYTRANS.cs" />
+    <Compile Include="MODELS\BM_XXX_XX_STFICHE.cs" />
+    <Compile Include="MODELS\BM_XXX_XX_STLINE.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="PROGRESSFORM.cs">
       <SubType>Form</SubType>

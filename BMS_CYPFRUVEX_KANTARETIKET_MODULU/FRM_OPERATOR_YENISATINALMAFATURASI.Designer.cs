@@ -42,8 +42,8 @@
             this.GRC_OPERATOR_YENISATINALMA = new DevExpress.XtraGrid.GridControl();
             this.GRV_OPERATOR_YENISATINALMA = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.SB_KAYDET = new DevExpress.XtraEditors.SimpleButton();
             this.SB_VAZGEC = new DevExpress.XtraEditors.SimpleButton();
+            this.SB_KAYDET = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TE_BELGENO.Properties)).BeginInit();
@@ -221,6 +221,7 @@
             this.GRV_OPERATOR_YENISATINALMA.OptionsView.ColumnAutoWidth = false;
             this.GRV_OPERATOR_YENISATINALMA.OptionsView.ShowFooter = true;
             this.GRV_OPERATOR_YENISATINALMA.OptionsView.ShowGroupPanel = false;
+            this.GRV_OPERATOR_YENISATINALMA.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.GRV_OPERATOR_YENISATINALMA_CellValueChanged);
             this.GRV_OPERATOR_YENISATINALMA.DoubleClick += new System.EventHandler(this.GRV_KANTAR_PLAKA_DoubleClick);
             // 
             // panelControl3
@@ -233,14 +234,6 @@
             this.panelControl3.Size = new System.Drawing.Size(962, 142);
             this.panelControl3.TabIndex = 2;
             // 
-            // SB_KAYDET
-            // 
-            this.SB_KAYDET.Location = new System.Drawing.Point(751, 68);
-            this.SB_KAYDET.Name = "SB_KAYDET";
-            this.SB_KAYDET.Size = new System.Drawing.Size(87, 37);
-            this.SB_KAYDET.TabIndex = 0;
-            this.SB_KAYDET.Text = "KAYDET";
-            // 
             // SB_VAZGEC
             // 
             this.SB_VAZGEC.Location = new System.Drawing.Point(853, 68);
@@ -249,6 +242,15 @@
             this.SB_VAZGEC.TabIndex = 1;
             this.SB_VAZGEC.Text = "VAZGEÇ";
             this.SB_VAZGEC.Click += new System.EventHandler(this.SB_VAZGEC_Click);
+            // 
+            // SB_KAYDET
+            // 
+            this.SB_KAYDET.Location = new System.Drawing.Point(751, 68);
+            this.SB_KAYDET.Name = "SB_KAYDET";
+            this.SB_KAYDET.Size = new System.Drawing.Size(87, 37);
+            this.SB_KAYDET.TabIndex = 0;
+            this.SB_KAYDET.Text = "KAYDET";
+            this.SB_KAYDET.Click += new System.EventHandler(this.SB_KAYDET_Click);
             // 
             // FRM_OPERATOR_YENISATINALMAFATURASI
             // 
