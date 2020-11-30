@@ -88,19 +88,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="METHODS\YANSITMASABLONU.cs" />
-    <Compile Include="OBJECTS\CONVERTER\CONVERTDATATOMODELS.cs" />
-    <Compile Include="OBJECTS\MODELS\BM_CAPIFIRM.cs" />
-    <Compile Include="OBJECTS\MODELS\BM_USERS.cs" />
-    <Compile Include="OBJECTS\MODELS\BM_XXX_CLCARD.cs" />
-    <Compile Include="OBJECTS\MODELS\BM_XXX_CLFICHE.cs" />
-    <Compile Include="OBJECTS\MODELS\BM_XXX_CLFLINE.cs" />
-    <Compile Include="OBJECTS\MODELS\BM_XXX_ITEMS.cs" />
-    <Compile Include="OBJECTS\MODELS\BM_XXX_ITEMUNIT.cs" />
-    <Compile Include="OBJECTS\MODELS\BM_XXX_STFICHE.cs" />
-    <Compile Include="OBJECTS\MODELS\BM_XXX_STLINE.cs" />
-    <Compile Include="OBJECTS\SQLCOMMANDS\SQLINSERTCOMMANDS.cs" />
-    <Compile Include="OBJECTS\SQLCOMMANDS\SQLUPDATECOMMANDS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="PROGRESSFORM.cs">
       <SubType>Form</SubType>
