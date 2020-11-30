@@ -62,5 +62,11 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
         private void BTN_MALZEMELISTESI_ItemClick(object sender, ItemClickEventArgs e) {
             BMS_DLL.GLOBAL.FORMAC(true, new FRM_KANTAR(_CFG), this, false, null);
         }
+
+        private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e) {
+            FRM_OPERATOR O = new FRM_OPERATOR(_CFG);
+            O.Show();
+
+        }
     }
 }

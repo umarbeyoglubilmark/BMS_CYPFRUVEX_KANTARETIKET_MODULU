@@ -112,6 +112,12 @@
     <Compile Include="FRM_KANTARBARKOD.Designer.cs">
       <DependentUpon>FRM_KANTARBARKOD.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRM_OPERATOR_YENISATINALMAFATURASI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_OPERATOR_YENISATINALMAFATURASI.Designer.cs">
+      <DependentUpon>FRM_OPERATOR_YENISATINALMAFATURASI.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRM_KANTARURUN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,12 @@
     </Compile>
     <Compile Include="FRM_KANTARY.Designer.cs">
       <DependentUpon>FRM_KANTARY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_OPERATOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_OPERATOR.Designer.cs">
+      <DependentUpon>FRM_OPERATOR.cs</DependentUpon>
     </Compile>
     <Compile Include="GLOB.cs" />
     <Compile Include="Login.cs">
@@ -177,6 +189,9 @@
     <EmbeddedResource Include="FRM_KANTARBARKOD.resx">
       <DependentUpon>FRM_KANTARBARKOD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRM_OPERATOR_YENISATINALMAFATURASI.resx">
+      <DependentUpon>FRM_OPERATOR_YENISATINALMAFATURASI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRM_KANTARURUN.resx">
       <DependentUpon>FRM_KANTARURUN.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRM_KANTARY.resx">
       <DependentUpon>FRM_KANTARY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_OPERATOR.resx">
+      <DependentUpon>FRM_OPERATOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
