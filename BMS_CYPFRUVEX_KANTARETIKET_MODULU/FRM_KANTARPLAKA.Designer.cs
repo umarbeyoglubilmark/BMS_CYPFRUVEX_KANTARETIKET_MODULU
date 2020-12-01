@@ -23,17 +23,18 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_KANTARPLAKA));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.GRC_KANTAR_PLAKA = new DevExpress.XtraGrid.GridControl();
             this.GRV_KANTAR_PLAKA = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GRC_KANTAR_PLAKA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GRV_KANTAR_PLAKA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -52,14 +53,6 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(530, 400);
             this.panelControl2.TabIndex = 1;
-            // 
-            // panelControl3
-            // 
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl3.Location = new System.Drawing.Point(0, 439);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(530, 41);
-            this.panelControl3.TabIndex = 2;
             // 
             // GRC_KANTAR_PLAKA
             // 
@@ -81,6 +74,14 @@
             this.GRV_KANTAR_PLAKA.OptionsView.ShowGroupPanel = false;
             this.GRV_KANTAR_PLAKA.DoubleClick += new System.EventHandler(this.GRV_KANTAR_PLAKA_DoubleClick);
             // 
+            // panelControl3
+            // 
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl3.Location = new System.Drawing.Point(0, 439);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(530, 41);
+            this.panelControl3.TabIndex = 2;
+            // 
             // FRM_KANTARPLAKA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -89,6 +90,7 @@
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panelControl3);
+            this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("FRM_KANTARPLAKA.IconOptions.SvgImage")));
             this.Name = "FRM_KANTARPLAKA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PLAKA";
@@ -96,9 +98,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GRC_KANTAR_PLAKA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GRV_KANTAR_PLAKA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.ResumeLayout(false);
 
         }

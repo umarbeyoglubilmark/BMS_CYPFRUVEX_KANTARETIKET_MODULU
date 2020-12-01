@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_OPERATOR_YENISATINALMAFATURASI));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.TE_AMBAR = new DevExpress.XtraEditors.LabelControl();
             this.TE_URETICI = new DevExpress.XtraEditors.LabelControl();
@@ -87,6 +88,7 @@
             this.TE_AMBAR.Size = new System.Drawing.Size(7, 13);
             this.TE_AMBAR.TabIndex = 16;
             this.TE_AMBAR.Text = "_";
+            this.TE_AMBAR.Visible = false;
             // 
             // TE_URETICI
             // 
@@ -145,6 +147,7 @@
             this.labelControl4.Size = new System.Drawing.Size(31, 13);
             this.labelControl4.TabIndex = 9;
             this.labelControl4.Text = "Ambar";
+            this.labelControl4.Visible = false;
             // 
             // labelControl9
             // 
@@ -260,6 +263,7 @@
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panelControl3);
+            this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("FRM_OPERATOR_YENISATINALMAFATURASI.IconOptions.SvgImage")));
             this.Name = "FRM_OPERATOR_YENISATINALMAFATURASI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SATINALMA FATURASI";

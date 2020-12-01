@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_KANTARURUN));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.GRC_KANTAR_URETICI = new DevExpress.XtraGrid.GridControl();
@@ -81,7 +82,7 @@
             this.panelControl3.Size = new System.Drawing.Size(530, 41);
             this.panelControl3.TabIndex = 2;
             // 
-            // FRM_KANTARURETICI
+            // FRM_KANTARURUN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -89,9 +90,10 @@
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panelControl3);
-            this.Name = "FRM_KANTARURETICI";
+            this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("FRM_KANTARURUN.IconOptions.SvgImage")));
+            this.Name = "FRM_KANTARURUN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "KONTRAKTOR";
+            this.Text = "ÜRÜN";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRM_KANTARPLAKA_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();

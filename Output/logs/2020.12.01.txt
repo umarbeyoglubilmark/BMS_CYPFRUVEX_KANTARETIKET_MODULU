@@ -1,0 +1,5 @@
+2020.12.01 08:49:54 : HATA
+ ----- HATA : ----- System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) in F:\PROJELER\VS\GITHUB\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 43
