@@ -26,14 +26,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_KANTARURUN));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.GRC_KANTAR_URETICI = new DevExpress.XtraGrid.GridControl();
-            this.GRV_KANTAR_URETICI = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.GRC_KANTAR_URUN = new DevExpress.XtraGrid.GridControl();
+            this.GRV_KANTAR_URUN = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GRC_KANTAR_URETICI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GRV_KANTAR_URETICI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GRC_KANTAR_URUN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GRV_KANTAR_URUN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,32 +47,32 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.GRC_KANTAR_URETICI);
+            this.panelControl2.Controls.Add(this.GRC_KANTAR_URUN);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 39);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(530, 400);
             this.panelControl2.TabIndex = 1;
             // 
-            // GRC_KANTAR_URETICI
+            // GRC_KANTAR_URUN
             // 
-            this.GRC_KANTAR_URETICI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GRC_KANTAR_URETICI.Location = new System.Drawing.Point(2, 2);
-            this.GRC_KANTAR_URETICI.MainView = this.GRV_KANTAR_URETICI;
-            this.GRC_KANTAR_URETICI.Name = "GRC_KANTAR_URETICI";
-            this.GRC_KANTAR_URETICI.Size = new System.Drawing.Size(526, 396);
-            this.GRC_KANTAR_URETICI.TabIndex = 0;
-            this.GRC_KANTAR_URETICI.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.GRV_KANTAR_URETICI});
+            this.GRC_KANTAR_URUN.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GRC_KANTAR_URUN.Location = new System.Drawing.Point(2, 2);
+            this.GRC_KANTAR_URUN.MainView = this.GRV_KANTAR_URUN;
+            this.GRC_KANTAR_URUN.Name = "GRC_KANTAR_URUN";
+            this.GRC_KANTAR_URUN.Size = new System.Drawing.Size(526, 396);
+            this.GRC_KANTAR_URUN.TabIndex = 0;
+            this.GRC_KANTAR_URUN.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GRV_KANTAR_URUN});
             // 
-            // GRV_KANTAR_URETICI
+            // GRV_KANTAR_URUN
             // 
-            this.GRV_KANTAR_URETICI.GridControl = this.GRC_KANTAR_URETICI;
-            this.GRV_KANTAR_URETICI.Name = "GRV_KANTAR_URETICI";
-            this.GRV_KANTAR_URETICI.OptionsBehavior.Editable = false;
-            this.GRV_KANTAR_URETICI.OptionsView.ColumnAutoWidth = false;
-            this.GRV_KANTAR_URETICI.OptionsView.ShowGroupPanel = false;
-            this.GRV_KANTAR_URETICI.DoubleClick += new System.EventHandler(this.GRV_KANTAR_PLAKA_DoubleClick);
+            this.GRV_KANTAR_URUN.GridControl = this.GRC_KANTAR_URUN;
+            this.GRV_KANTAR_URUN.Name = "GRV_KANTAR_URUN";
+            this.GRV_KANTAR_URUN.OptionsBehavior.Editable = false;
+            this.GRV_KANTAR_URUN.OptionsView.ColumnAutoWidth = false;
+            this.GRV_KANTAR_URUN.OptionsView.ShowGroupPanel = false;
+            this.GRV_KANTAR_URUN.DoubleClick += new System.EventHandler(this.GRV_KANTAR_PLAKA_DoubleClick);
             // 
             // panelControl3
             // 
@@ -98,8 +98,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GRC_KANTAR_URETICI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GRV_KANTAR_URETICI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GRC_KANTAR_URUN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GRV_KANTAR_URUN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.ResumeLayout(false);
 
@@ -109,8 +109,8 @@
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraGrid.GridControl GRC_KANTAR_URETICI;
-        private DevExpress.XtraGrid.Views.Grid.GridView GRV_KANTAR_URETICI;
+        private DevExpress.XtraGrid.GridControl GRC_KANTAR_URUN;
+        private DevExpress.XtraGrid.Views.Grid.GridView GRV_KANTAR_URUN;
         private DevExpress.XtraEditors.PanelControl panelControl3;
     }
 }

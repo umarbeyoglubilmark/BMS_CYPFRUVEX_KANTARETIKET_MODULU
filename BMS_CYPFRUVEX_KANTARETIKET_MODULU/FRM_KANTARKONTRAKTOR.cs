@@ -11,14 +11,14 @@ using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 
 namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
-    public partial class FRM_KANTARPKONTRAKTOR : DevExpress.XtraEditors.XtraForm {
+    public partial class FRM_KANTARKONTRAKTOR : DevExpress.XtraEditors.XtraForm {
         public string LOGICALREF = "";
         public string KOD = "";
         public string AD = "";
         CONFIG _CFG;
         string LGCONSTR = "";
         SqlConnection SQLCON = new SqlConnection();
-        public FRM_KANTARPKONTRAKTOR(CONFIG CFG) {
+        public FRM_KANTARKONTRAKTOR(CONFIG CFG) {
             InitializeComponent();
             _CFG = CFG;
             LGCONSTR = string.Format("Data Source={0};Initial Catalog={1};User Id={2};Password={3};MultipleActiveResultSets=True;",

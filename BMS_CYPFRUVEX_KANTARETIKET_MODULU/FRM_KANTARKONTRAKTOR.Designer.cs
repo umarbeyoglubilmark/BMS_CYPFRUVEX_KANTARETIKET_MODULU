@@ -1,5 +1,5 @@
 ﻿namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
-    partial class FRM_KANTARPKONTRAKTOR {
+    partial class FRM_KANTARKONTRAKTOR {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -23,7 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_KANTARPKONTRAKTOR));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_KANTARKONTRAKTOR));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.GRC_KANTAR_KONTRAKTOR = new DevExpress.XtraGrid.GridControl();

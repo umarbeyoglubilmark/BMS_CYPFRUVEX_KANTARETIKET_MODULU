@@ -159,7 +159,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
         }
 
         private void SB_KONTRAKTOR_Click(object sender, EventArgs e) {
-            using (FRM_KANTARPKONTRAKTOR F = new FRM_KANTARPKONTRAKTOR(_CFG)) {
+            using (FRM_KANTARKONTRAKTOR F = new FRM_KANTARKONTRAKTOR(_CFG)) {
                 if (F.ShowDialog() == DialogResult.OK) {
                     TE_KONTRAKTORKODU.Text = F.KOD;
                     TE_KONTRAKTOR.Text = F.AD;

@@ -102,7 +102,7 @@
             this.TE_ACIKLAMA.Properties.Appearance.Options.UseFont = true;
             this.TE_ACIKLAMA.Properties.NullText = "ZORUNLU DEĞİL";
             this.TE_ACIKLAMA.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TE_ACIKLAMA.Size = new System.Drawing.Size(627, 73);
+            this.TE_ACIKLAMA.Size = new System.Drawing.Size(627, 52);
             this.TE_ACIKLAMA.TabIndex = 16;
             // 
             // simpleButton1
@@ -113,7 +113,7 @@
             this.simpleButton1.Enabled = false;
             this.simpleButton1.Location = new System.Drawing.Point(2, 395);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(272, 72);
+            this.simpleButton1.Size = new System.Drawing.Size(272, 51);
             this.simpleButton1.TabIndex = 15;
             this.simpleButton1.Text = "AÇIKLAMA";
             // 
@@ -129,9 +129,9 @@
             this.SB_eXCELEKAYDET.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.SB_eXCELEKAYDET.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.SB_eXCELEKAYDET.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SB_eXCELEKAYDET.ImageOptions.SvgImage")));
-            this.SB_eXCELEKAYDET.Location = new System.Drawing.Point(0, 481);
+            this.SB_eXCELEKAYDET.Location = new System.Drawing.Point(0, 495);
             this.SB_eXCELEKAYDET.Name = "SB_eXCELEKAYDET";
-            this.SB_eXCELEKAYDET.Size = new System.Drawing.Size(920, 70);
+            this.SB_eXCELEKAYDET.Size = new System.Drawing.Size(920, 56);
             this.SB_eXCELEKAYDET.TabIndex = 17;
             this.SB_eXCELEKAYDET.Text = "KAYDET";
             this.SB_eXCELEKAYDET.Click += new System.EventHandler(this.SB_eXCELEKAYDET_Click);
@@ -172,7 +172,7 @@
             this.simpleButton5.Enabled = false;
             this.simpleButton5.Location = new System.Drawing.Point(3, 317);
             this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(272, 72);
+            this.simpleButton5.Size = new System.Drawing.Size(272, 51);
             this.simpleButton5.TabIndex = 13;
             this.simpleButton5.Text = "MİKTAR";
             // 
@@ -186,7 +186,7 @@
             this.TE_URUN.Properties.NullText = "ÜRÜN ADI";
             this.TE_URUN.Properties.ReadOnly = true;
             this.TE_URUN.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TE_URUN.Size = new System.Drawing.Size(438, 73);
+            this.TE_URUN.Size = new System.Drawing.Size(438, 52);
             this.TE_URUN.TabIndex = 11;
             // 
             // SB_URUN
@@ -196,7 +196,7 @@
             this.SB_URUN.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SB_URUN.Location = new System.Drawing.Point(3, 238);
             this.SB_URUN.Name = "SB_URUN";
-            this.SB_URUN.Size = new System.Drawing.Size(272, 72);
+            this.SB_URUN.Size = new System.Drawing.Size(272, 51);
             this.SB_URUN.TabIndex = 9;
             this.SB_URUN.Text = "ÜRÜN";
             this.SB_URUN.Click += new System.EventHandler(this.SB_URUN_Click);
@@ -211,7 +211,7 @@
             this.TE_URETICI.Properties.NullText = "ÜRETİCİ ADI";
             this.TE_URETICI.Properties.ReadOnly = true;
             this.TE_URETICI.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TE_URETICI.Size = new System.Drawing.Size(439, 73);
+            this.TE_URETICI.Size = new System.Drawing.Size(439, 52);
             this.TE_URETICI.TabIndex = 8;
             // 
             // TE_KONTRAKTOR
@@ -224,7 +224,7 @@
             this.TE_KONTRAKTOR.Properties.NullText = "KONTRAKTÖR ADI";
             this.TE_KONTRAKTOR.Properties.ReadOnly = true;
             this.TE_KONTRAKTOR.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TE_KONTRAKTOR.Size = new System.Drawing.Size(439, 72);
+            this.TE_KONTRAKTOR.Size = new System.Drawing.Size(439, 51);
             this.TE_KONTRAKTOR.TabIndex = 5;
             // 
             // TE_PLAKA
@@ -237,7 +237,7 @@
             this.TE_PLAKA.Properties.NullText = "PLAKA";
             this.TE_PLAKA.Properties.ReadOnly = true;
             this.TE_PLAKA.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TE_PLAKA.Size = new System.Drawing.Size(439, 69);
+            this.TE_PLAKA.Size = new System.Drawing.Size(439, 48);
             this.TE_PLAKA.TabIndex = 2;
             // 
             // SB_URETICI
@@ -247,7 +247,7 @@
             this.SB_URETICI.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SB_URETICI.Location = new System.Drawing.Point(3, 159);
             this.SB_URETICI.Name = "SB_URETICI";
-            this.SB_URETICI.Size = new System.Drawing.Size(272, 72);
+            this.SB_URETICI.Size = new System.Drawing.Size(272, 51);
             this.SB_URETICI.TabIndex = 6;
             this.SB_URETICI.Text = "ÜRETİCİ";
             this.SB_URETICI.Click += new System.EventHandler(this.SB_URETICI_Click);
@@ -259,7 +259,7 @@
             this.SB_KONTRAKTOR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SB_KONTRAKTOR.Location = new System.Drawing.Point(3, 81);
             this.SB_KONTRAKTOR.Name = "SB_KONTRAKTOR";
-            this.SB_KONTRAKTOR.Size = new System.Drawing.Size(272, 72);
+            this.SB_KONTRAKTOR.Size = new System.Drawing.Size(272, 51);
             this.SB_KONTRAKTOR.TabIndex = 3;
             this.SB_KONTRAKTOR.Text = "KONTRAKTÖR";
             this.SB_KONTRAKTOR.Click += new System.EventHandler(this.SB_KONTRAKTOR_Click);
@@ -271,7 +271,7 @@
             this.SB_PLAKA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SB_PLAKA.Location = new System.Drawing.Point(3, 3);
             this.SB_PLAKA.Name = "SB_PLAKA";
-            this.SB_PLAKA.Size = new System.Drawing.Size(272, 72);
+            this.SB_PLAKA.Size = new System.Drawing.Size(272, 51);
             this.SB_PLAKA.TabIndex = 0;
             this.SB_PLAKA.Text = "PLAKA";
             this.SB_PLAKA.Click += new System.EventHandler(this.SB_PLAKA_Click);
