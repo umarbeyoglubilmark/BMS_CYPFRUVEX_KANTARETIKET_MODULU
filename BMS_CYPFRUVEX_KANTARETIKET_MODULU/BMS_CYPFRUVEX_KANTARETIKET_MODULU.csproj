@@ -112,6 +112,12 @@
     <Compile Include="FRM_KANTARBARKOD.Designer.cs">
       <DependentUpon>FRM_KANTARBARKOD.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRM_ETIKET_ETIKETBAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_ETIKET_ETIKETBAS.Designer.cs">
+      <DependentUpon>FRM_ETIKET_ETIKETBAS.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     </Compile>
     <EmbeddedResource Include="FRM_KANTARBARKOD.resx">
       <DependentUpon>FRM_KANTARBARKOD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_ETIKET_ETIKETBAS.resx">
+      <DependentUpon>FRM_ETIKET_ETIKETBAS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.resx">
       <DependentUpon>FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.cs</DependentUpon>

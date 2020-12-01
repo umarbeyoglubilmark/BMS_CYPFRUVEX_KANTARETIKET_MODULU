@@ -42,6 +42,7 @@
             this.TE_ADSOYAD = new System.Windows.Forms.TextBox();
             this.TE_MIKTAR = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.GR_GIRISSAAT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GRC_TANIMLAMALAR_ISCIETIKETMIKTAR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GRV_TANIMLAMALAR_ISCIETIKETMIKTAR)).BeginInit();
@@ -82,7 +83,8 @@
             this.GR_LOGICALREF,
             this.GR_SICILNO,
             this.GR_ADSOYAD,
-            this.GR_ETIKETMIKTAR});
+            this.GR_ETIKETMIKTAR,
+            this.GR_GIRISSAAT});
             this.GRV_TANIMLAMALAR_ISCIETIKETMIKTAR.GridControl = this.GRC_TANIMLAMALAR_ISCIETIKETMIKTAR;
             this.GRV_TANIMLAMALAR_ISCIETIKETMIKTAR.Name = "GRV_TANIMLAMALAR_ISCIETIKETMIKTAR";
             this.GRV_TANIMLAMALAR_ISCIETIKETMIKTAR.OptionsBehavior.Editable = false;
@@ -223,6 +225,12 @@
             this.panel3.Size = new System.Drawing.Size(568, 100);
             this.panel3.TabIndex = 4;
             // 
+            // GR_GIRISSAAT
+            // 
+            this.GR_GIRISSAAT.Caption = "Giriş Saati";
+            this.GR_GIRISSAAT.FieldName = "GIRISSAAT";
+            this.GR_GIRISSAAT.Name = "GR_GIRISSAAT";
+            // 
             // FRM_TANIMLAMALAR_ISCIETIKETMIKTAR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,5 +273,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TE_ADSOYAD;
+        private DevExpress.XtraGrid.Columns.GridColumn GR_GIRISSAAT;
     }
 }

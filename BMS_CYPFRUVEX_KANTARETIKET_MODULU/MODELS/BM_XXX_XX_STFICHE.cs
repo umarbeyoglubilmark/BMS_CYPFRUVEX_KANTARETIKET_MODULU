@@ -169,7 +169,6 @@ public string VATEXCEPTREASON { get; set; } = string.Empty;
 public string ATAXEXCEPTCODE { get; set; } = string.Empty;
 public string ATAXEXCEPTREASON { get; set; } = string.Empty;
 public int TAXFREECHX { get; set; }
-public int MNTORDERFREF { get; set; }
-public string PRINTEDDESPFCNO { get; set; } = string.Empty;
+  
 }
 }

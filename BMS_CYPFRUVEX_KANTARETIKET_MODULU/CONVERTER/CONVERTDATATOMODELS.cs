@@ -849,8 +849,8 @@ try { B.VATEXCEPTREASON = (string)r["VATEXCEPTREASON"]; } catch { }
 try { B.ATAXEXCEPTCODE = (string)r["ATAXEXCEPTCODE"]; } catch { }
 try { B.ATAXEXCEPTREASON = (string)r["ATAXEXCEPTREASON"]; } catch { }
 try { B.TAXFREECHX = (short)r["TAXFREECHX"]; } catch { }
-try { B.MNTORDERFREF = (int)r["MNTORDERFREF"]; } catch { }
-try { B.PRINTEDDESPFCNO = (string)r["PRINTEDDESPFCNO"]; } catch { }
+ 
+ 
 L.Add(B);
 }
 return L;
@@ -1020,8 +1020,7 @@ try { B.VATEXCEPTREASON = (string)r["VATEXCEPTREASON"]; } catch { }
 try { B.ATAXEXCEPTCODE = (string)r["ATAXEXCEPTCODE"]; } catch { }
 try { B.ATAXEXCEPTREASON = (string)r["ATAXEXCEPTREASON"]; } catch { }
 try { B.TAXFREECHX = (short)r["TAXFREECHX"]; } catch { }
-try { B.MNTORDERFREF = (int)r["MNTORDERFREF"]; } catch { }
-try { B.PRINTEDDESPFCNO = (string)r["PRINTEDDESPFCNO"]; } catch { }
+ 
 return B;
 }
 
@@ -1325,9 +1324,7 @@ try { B.FUTMONTHBEGDATE = (int)r["FUTMONTHBEGDATE"]; } catch { }
 try { B.QCTRANSFERREF = (int)r["QCTRANSFERREF"]; } catch { }
 try { B.QCTRANSFERAMNT = (double)r["QCTRANSFERAMNT"]; } catch { }
 try { B.FUTMONTHENDDATE = (DateTime)r["FUTMONTHENDDATE"]; } catch { }
-try { B.KKEGACCREF = (int)r["KKEGACCREF"]; } catch { }
-try { B.KKEGCENTREF = (int)r["KKEGCENTREF"]; } catch { }
-try { B.MNTORDERFREF = (int)r["MNTORDERFREF"]; } catch { }
+ 
 L.Add(B);
 }
 return L;
@@ -1631,9 +1628,7 @@ try { B.FUTMONTHBEGDATE = (int)r["FUTMONTHBEGDATE"]; } catch { }
 try { B.QCTRANSFERREF = (int)r["QCTRANSFERREF"]; } catch { }
 try { B.QCTRANSFERAMNT = (double)r["QCTRANSFERAMNT"]; } catch { }
 try { B.FUTMONTHENDDATE = (DateTime)r["FUTMONTHENDDATE"]; } catch { }
-try { B.KKEGACCREF = (int)r["KKEGACCREF"]; } catch { }
-try { B.KKEGCENTREF = (int)r["KKEGCENTREF"]; } catch { }
-try { B.MNTORDERFREF = (int)r["MNTORDERFREF"]; } catch { }
+ 
 return B;
 }
 
@@ -1725,7 +1720,7 @@ try { B.DEVIRLINEREF = (int)r["DEVIRLINEREF"]; } catch { }
 try { B.CURRDIFFRATE = (double)r["CURRDIFFRATE"]; } catch { }
 try { B.CURRDIFFCLOSED = (short)r["CURRDIFFCLOSED"]; } catch { }
 try { B.CURRDIFFCLSREF = (int)r["CURRDIFFCLSREF"]; } catch { }
-try { B.VATFLAG = (short)r["VATFLAG"]; } catch { }
+ 
 L.Add(B);
 }
 return L;
@@ -1817,7 +1812,7 @@ try { B.DEVIRLINEREF = (int)r["DEVIRLINEREF"]; } catch { }
 try { B.CURRDIFFRATE = (double)r["CURRDIFFRATE"]; } catch { }
 try { B.CURRDIFFCLOSED = (short)r["CURRDIFFCLOSED"]; } catch { }
 try { B.CURRDIFFCLSREF = (int)r["CURRDIFFCLSREF"]; } catch { }
-try { B.VATFLAG = (short)r["VATFLAG"]; } catch { }
+ 
 return B;
 }
 }

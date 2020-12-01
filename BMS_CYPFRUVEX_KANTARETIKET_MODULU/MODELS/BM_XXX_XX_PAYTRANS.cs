@@ -90,7 +90,6 @@ public int DEVIRFICHEREF { get; set; }
 public int DEVIRLINEREF { get; set; }
 public double CURRDIFFRATE { get; set; }
 public int CURRDIFFCLOSED { get; set; }
-public int CURRDIFFCLSREF { get; set; }
-public int VATFLAG { get; set; }
+public int CURRDIFFCLSREF { get; set; } 
 }
 }

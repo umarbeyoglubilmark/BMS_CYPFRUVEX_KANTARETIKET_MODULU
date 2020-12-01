@@ -30,7 +30,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
         private void INITIALIZEGRID() {
             string tarih = DateTime.Now.Year.ToString() + "." + DateTime.Now.Month.ToString() + "." + DateTime.Now.Day.ToString();
             DataTable DT = BMS_DLL.SQL.SELECT2(@"exec ('SELECT  0 LOGICALREF,  personel_kartlari.kartno SICILNO,concat(personel_kartlari.adi,
-'' '', personel_kartlari.soyadi)as ADSOYAD, 0 ETIKETMIKTAR 
+'' '', personel_kartlari.soyadi)as ADSOYAD,giris_saat GIRISSAAT,0 ETIKETMIKTAR 
 
 FROM personel_kartlari INNER JOIN 
 personel_giriscikis ON personel_kartlari.id = 

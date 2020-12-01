@@ -303,8 +303,6 @@ public int FUTMONTHBEGDATE { get; set; }
 public int QCTRANSFERREF { get; set; }
 public double QCTRANSFERAMNT { get; set; }
 public DateTime FUTMONTHENDDATE { get; set; }
-public int KKEGACCREF { get; set; }
-public int KKEGCENTREF { get; set; }
-public int MNTORDERFREF { get; set; }
+ 
 }
 }
