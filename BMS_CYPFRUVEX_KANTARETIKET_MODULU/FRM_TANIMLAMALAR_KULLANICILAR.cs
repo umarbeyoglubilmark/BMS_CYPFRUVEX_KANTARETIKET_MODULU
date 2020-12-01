@@ -23,30 +23,68 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
             _CFG = CFG;
             LGCONSTR = string.Format("Data Source={0};Initial Catalog={1};User Id={2};Password={3};MultipleActiveResultSets=True;",
 _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
-
             SQLCON = new SqlConnection(LGCONSTR);
-            GRC_KANTAR_KONTRAKTOR.DataSource = BMS_DLL.SQL.SELECT2(@" SELECT  
-LGMAIN.LOGICALREF, LGMAIN.CODE  KOD , LGMAIN.DEFINITION_  AD  FROM LG_"+CFG.FIRMNR+ @"_CLCARD LGMAIN WITH(NOLOCK) 
- WHERE (LGMAIN.ACTIVE=0)  ORDER BY LGMAIN.DEFINITION_
-", SQLCON);
-       
-            BMS_DLL.DX.DXGRID_LOADLAYOUTFROM_REGISTIRY(GRC_KANTAR_KONTRAKTOR, "BMS_CYPFRUVEX_KANTARETIKET_MODULU", GRV_KANTAR_KONTRAKTOR.Name);
+            INITIALIZEGRID();
+            BMS_DLL.DX.DXGRID_LOADLAYOUTFROM_REGISTIRY(GRC_TANIMLAMALAR_KULLANICILAR, "BMS_CYPFRUVEX_KANTARETIKET_MODULU", GRC_TANIMLAMALAR_KULLANICILAR.Name);
+        }
+        private void INITIALIZEGRID() {
+            GRC_TANIMLAMALAR_KULLANICILAR.DataSource = BMS_DLL.SQL.SELECT2(@" SELECT * FROM BMS_KE_KULLANICILAR", SQLCON);
+
 
         }
-
         private void FRM_KANTARPLAKA_FormClosing(object sender, FormClosingEventArgs e) {
-            BMS_DLL.DX.DXGRID_SAVELAYOUTTO_REGISTIRY(GRC_KANTAR_KONTRAKTOR, "BMS_CYPFRUVEX_KANTARETIKET_MODULU", GRV_KANTAR_KONTRAKTOR.Name);
+            BMS_DLL.DX.DXGRID_SAVELAYOUTTO_REGISTIRY(GRC_TANIMLAMALAR_KULLANICILAR, "BMS_CYPFRUVEX_KANTARETIKET_MODULU", GRC_TANIMLAMALAR_KULLANICILAR.Name);
         }
 
-        private void GRV_KANTAR_PLAKA_DoubleClick(object sender, EventArgs e) {
-            //string ADI = int.Parse(GV_CFG_FIRMA_TANIMLARI.GetRowCellValue(GV_CFG_FIRMA_TANIMLARI.FocusedRowHandle, "ID").ToString()).ToString("D3");
-            base.DialogResult = DialogResult.OK;
-            LOGICALREF = GRV_KANTAR_KONTRAKTOR.GetRowCellValue(GRV_KANTAR_KONTRAKTOR.FocusedRowHandle, "LOGICALREF").ToString();
-            KOD = GRV_KANTAR_KONTRAKTOR.GetRowCellValue(GRV_KANTAR_KONTRAKTOR.FocusedRowHandle, "KOD").ToString();
-            AD = GRV_KANTAR_KONTRAKTOR.GetRowCellValue(GRV_KANTAR_KONTRAKTOR.FocusedRowHandle, "AD").ToString();
-            this.Close();
 
 
+        private void BTN_UA_Click(object sender, EventArgs e) {
+            if (TE_KULLANICIADI.Text == "") {
+                MessageBox.Show("EKSİK YERLERİ DOLDURUNUZ");
+                return;
+            }
+            if (LBL_LOGICALREF.Text == "") {
+                if (BMS_DLL.DX.DXMESSAGEBOX(true, "ONAY", "EKLEMEK ISTEDIGINIZE EMINMISINIZ ?") == true) {
+                    BMS_DLL.SQL.EXECUTE2(this, string.Format("INSERT INTO BMS_KE_KULLANICILAR (KULLANICIADI,PAROLA,TUR) VALUES ('{0}','{1}','{2}')", TE_KULLANICIADI.Text, TE_PAROLA.Text, TE_TUR.Text), SQLCON);
+                    INITIALIZEGRID();
+                }
+            } else {
+                if (BMS_DLL.DX.DXMESSAGEBOX(true, "ONAY", "GUNCELLEMEK ISTEDIGINIZE EMINMISINIZ ?") == true) {
+                    BMS_DLL.SQL.EXECUTE2(this, string.Format("UPDATE BMS_KE_KULLANICILAR SET KULLANICIADI='{0}' ,PAROLA='{1}' ,TUR='{2}' WHERE LOGICALREF={3}", TE_KULLANICIADI.Text, TE_PAROLA.Text, TE_TUR.Text, LBL_LOGICALREF.Text), SQLCON);
+                    INITIALIZEGRID();
+                }
+            }
+
+
+        }
+
+        private void BTN_DELETE_Click(object sender, EventArgs e) {
+            try {
+                if (BMS_DLL.DX.DXMESSAGEBOX(true, "ONAY", "SILMEK ISTEDIGINIZE EMINMISINIZ ?") == true) {
+                    BMS_DLL.SQL.EXECUTE2(this, "DELETE BMS_KE_KULLANICILAR WHERE LOGICALREF=" + LBL_LOGICALREF.Text, SQLCON);
+                    INITIALIZEGRID();
+                }
+                BTN_DELETE.Enabled = false;
+                LBL_LOGICALREF.Text = "";
+            } catch {
+                INITIALIZEGRID();
+            }
+        }
+
+        private void GRV_TANIMLAMALAR_KULLANICILAR_DoubleClick(object sender, EventArgs e) {
+            TE_KULLANICIADI.Text = GRV_TANIMLAMALAR_KULLANICILAR.GetRowCellValue(GRV_TANIMLAMALAR_KULLANICILAR.FocusedRowHandle, "KULLANICIADI").ToString();
+            TE_PAROLA.Text = GRV_TANIMLAMALAR_KULLANICILAR.GetRowCellValue(GRV_TANIMLAMALAR_KULLANICILAR.FocusedRowHandle, "PAROLA").ToString();
+            TE_TUR.Text = GRV_TANIMLAMALAR_KULLANICILAR.GetRowCellValue(GRV_TANIMLAMALAR_KULLANICILAR.FocusedRowHandle, "TUR").ToString();
+            LBL_LOGICALREF.Text = GRV_TANIMLAMALAR_KULLANICILAR.GetRowCellValue(GRV_TANIMLAMALAR_KULLANICILAR.FocusedRowHandle, "LOGICALREF").ToString();
+            BTN_DELETE.Enabled = true;
+        }
+
+        private void BTN_YENI_Click(object sender, EventArgs e) {
+            BTN_DELETE.Enabled = false;
+            LBL_LOGICALREF.Text = "";
+            TE_KULLANICIADI.Text = "";
+            TE_PAROLA.Text = "";
+            TE_TUR.Text = "";
         }
     }
 }
