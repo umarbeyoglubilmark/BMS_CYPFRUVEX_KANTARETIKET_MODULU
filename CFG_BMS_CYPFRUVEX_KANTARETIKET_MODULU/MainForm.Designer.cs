@@ -33,6 +33,8 @@
             DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
             DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
             DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+            this.SB_KULLANICILAR = new DevExpress.XtraBars.BarButtonItem();
+            this.SB_ESLESTIRME = new DevExpress.XtraBars.BarButtonItem();
             ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -54,9 +56,11 @@
             barButtonItem1,
             barButtonItem2,
             barButtonItem3,
-            barButtonItem4});
+            barButtonItem4,
+            this.SB_KULLANICILAR,
+            this.SB_ESLESTIRME});
             ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            ribbonControl1.MaxItemId = 5;
+            ribbonControl1.MaxItemId = 7;
             ribbonControl1.Name = "ribbonControl1";
             ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             ribbonPage1});
@@ -96,6 +100,20 @@
             barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
             barButtonItem4.Name = "barButtonItem4";
             barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            // 
+            // SB_KULLANICILAR
+            // 
+            this.SB_KULLANICILAR.Caption = "Kullanıcılar";
+            this.SB_KULLANICILAR.Id = 5;
+            this.SB_KULLANICILAR.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SB_KULLANICILAR.ImageOptions.SvgImage")));
+            this.SB_KULLANICILAR.Name = "SB_KULLANICILAR";
+            // 
+            // SB_ESLESTIRME
+            // 
+            this.SB_ESLESTIRME.Caption = "İşçi Etiket Miktar Eşleştirmesi";
+            this.SB_ESLESTIRME.Id = 6;
+            this.SB_ESLESTIRME.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SB_ESLESTIRME.ImageOptions.SvgImage")));
+            this.SB_ESLESTIRME.Name = "SB_ESLESTIRME";
             // 
             // ribbonPage1
             // 
@@ -138,5 +156,7 @@
         }
 
         #endregion
+        private DevExpress.XtraBars.BarButtonItem SB_KULLANICILAR;
+        private DevExpress.XtraBars.BarButtonItem SB_ESLESTIRME;
     }
 }

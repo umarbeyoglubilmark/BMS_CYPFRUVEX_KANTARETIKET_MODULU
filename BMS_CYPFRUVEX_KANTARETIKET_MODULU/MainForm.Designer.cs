@@ -40,9 +40,13 @@
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.BTN_KULLANICILAR = new DevExpress.XtraBars.BarButtonItem();
+            this.BTN_ISCIETIKETMIKTARESLESTIRME = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -67,12 +71,15 @@
             this.BTN_MALZEMELISTESI,
             this.barButtonItem9,
             this.barButtonItem10,
-            this.barButtonItem11});
+            this.barButtonItem11,
+            this.BTN_KULLANICILAR,
+            this.BTN_ISCIETIKETMIKTARESLESTIRME});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 18;
+            this.ribbonControl1.MaxItemId = 20;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage3});
+            this.ribbonPage3,
+            this.ribbonPage1});
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.Skins);
             this.ribbonControl1.Size = new System.Drawing.Size(841, 150);
             // 
@@ -187,6 +194,22 @@
             this.barButtonItem11.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem11.ImageOptions.SvgImage")));
             this.barButtonItem11.Name = "barButtonItem11";
             // 
+            // BTN_KULLANICILAR
+            // 
+            this.BTN_KULLANICILAR.Caption = "KULLANICILAR";
+            this.BTN_KULLANICILAR.Id = 18;
+            this.BTN_KULLANICILAR.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BTN_KULLANICILAR.ImageOptions.SvgImage")));
+            this.BTN_KULLANICILAR.Name = "BTN_KULLANICILAR";
+            this.BTN_KULLANICILAR.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTN_KULLANICILAR_ItemClick);
+            // 
+            // BTN_ISCIETIKETMIKTARESLESTIRME
+            // 
+            this.BTN_ISCIETIKETMIKTARESLESTIRME.Caption = "İŞÇİ-ETİKET MİKTAR EŞLEŞTİRME";
+            this.BTN_ISCIETIKETMIKTARESLESTIRME.Id = 19;
+            this.BTN_ISCIETIKETMIKTARESLESTIRME.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BTN_ISCIETIKETMIKTARESLESTIRME.ImageOptions.SvgImage")));
+            this.BTN_ISCIETIKETMIKTARESLESTIRME.Name = "BTN_ISCIETIKETMIKTARESLESTIRME";
+            this.BTN_ISCIETIKETMIKTARESLESTIRME.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTN_ISCIETIKETMIKTARESLESTIRME_ItemClick);
+            // 
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -208,6 +231,20 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem11);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ETIKET";
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup2});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "TANIMLAMALAR";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.BTN_KULLANICILAR);
+            this.ribbonPageGroup2.ItemLinks.Add(this.BTN_ISCIETIKETMIKTARESLESTIRME);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "TANIMLAMALAR";
             // 
             // xtraTabbedMdiManager1
             // 
@@ -255,5 +292,9 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarButtonItem BTN_KULLANICILAR;
+        private DevExpress.XtraBars.BarButtonItem BTN_ISCIETIKETMIKTARESLESTIRME;
     }
 }

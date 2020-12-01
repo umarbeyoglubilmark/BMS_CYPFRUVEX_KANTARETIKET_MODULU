@@ -68,5 +68,13 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
             O.Show();
 
         }
+
+        private void BTN_KULLANICILAR_ItemClick(object sender, ItemClickEventArgs e) { 
+            BMS_DLL.GLOBAL.FORMAC(true, new FRM_TANIMLAMALAR_KULLANICILAR(_CFG), this,false, null);
+        }
+
+        private void BTN_ISCIETIKETMIKTARESLESTIRME_ItemClick(object sender, ItemClickEventArgs e) { 
+            BMS_DLL.GLOBAL.FORMAC(true, new FRM_TANIMLAMALAR_ISCIETIKETMIKTAR(_CFG), this, false, null);
+        }
     }
 }
