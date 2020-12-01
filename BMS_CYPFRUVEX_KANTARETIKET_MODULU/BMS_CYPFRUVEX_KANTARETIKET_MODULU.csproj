@@ -142,12 +142,6 @@
     <Compile Include="FRM_KANTARPLAKA.Designer.cs">
       <DependentUpon>FRM_KANTARPLAKA.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRM_KANTARY.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRM_KANTARY.Designer.cs">
-      <DependentUpon>FRM_KANTARY.cs</DependentUpon>
-    </Compile>
     <Compile Include="FRM_OPERATOR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,9 +202,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRM_KANTARPLAKA.resx">
       <DependentUpon>FRM_KANTARPLAKA.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FRM_KANTARY.resx">
-      <DependentUpon>FRM_KANTARY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRM_OPERATOR.resx">
       <DependentUpon>FRM_OPERATOR.cs</DependentUpon>

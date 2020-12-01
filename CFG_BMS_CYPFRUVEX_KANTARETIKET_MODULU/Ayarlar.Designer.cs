@@ -24,9 +24,12 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ayarlar));
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.noDocumentsView1 = new DevExpress.XtraBars.Docking2010.Views.NoDocuments.NoDocumentsView(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
+            this.TE_MLD = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.CB_VERITABANITURU = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -97,11 +100,10 @@
             this.textEditWS_SERVISSURE = new DevExpress.XtraEditors.TextEdit();
             this.simpleButtonKAYDET = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonVAZGEC = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
-            this.TE_MLD = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noDocumentsView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_MLD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CB_VERITABANITURU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditLS_VERITABANI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditLS_SUNUCU.Properties)).BeginInit();
@@ -138,7 +140,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditWS_SERVISVERITABANIKONTROLTABLOSU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditWS_SURECINSI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditWS_SERVISSURE.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TE_MLD.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -162,6 +163,21 @@
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LOGO SUNUCU";
+            // 
+            // labelControl33
+            // 
+            this.labelControl33.Location = new System.Drawing.Point(4, 127);
+            this.labelControl33.Name = "labelControl33";
+            this.labelControl33.Size = new System.Drawing.Size(20, 13);
+            this.labelControl33.TabIndex = 54;
+            this.labelControl33.Text = "MLD";
+            // 
+            // TE_MLD
+            // 
+            this.TE_MLD.Location = new System.Drawing.Point(118, 124);
+            this.TE_MLD.Name = "TE_MLD";
+            this.TE_MLD.Size = new System.Drawing.Size(207, 20);
+            this.TE_MLD.TabIndex = 53;
             // 
             // labelControl5
             // 
@@ -782,21 +798,6 @@
             this.simpleButtonVAZGEC.TabIndex = 49;
             this.simpleButtonVAZGEC.Text = "VAZGEC";
             // 
-            // labelControl33
-            // 
-            this.labelControl33.Location = new System.Drawing.Point(4, 127);
-            this.labelControl33.Name = "labelControl33";
-            this.labelControl33.Size = new System.Drawing.Size(20, 13);
-            this.labelControl33.TabIndex = 54;
-            this.labelControl33.Text = "MLD";
-            // 
-            // TE_MLD
-            // 
-            this.TE_MLD.Location = new System.Drawing.Point(118, 124);
-            this.TE_MLD.Name = "TE_MLD";
-            this.TE_MLD.Size = new System.Drawing.Size(207, 20);
-            this.TE_MLD.TabIndex = 53;
-            // 
             // Ayarlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -809,6 +810,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Ayarlar.IconOptions.SvgImage")));
             this.Name = "Ayarlar";
             this.Text = "Ayarlar";
             this.Shown += new System.EventHandler(this.Ayarlar_Shown);
@@ -816,6 +818,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.noDocumentsView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_MLD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CB_VERITABANITURU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditLS_VERITABANI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditLS_SUNUCU.Properties)).EndInit();
@@ -856,7 +859,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditWS_SERVISVERITABANIKONTROLTABLOSU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditWS_SURECINSI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditWS_SERVISSURE.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TE_MLD.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
