@@ -112,17 +112,17 @@
     <Compile Include="FRM_KANTARBARKOD.Designer.cs">
       <DependentUpon>FRM_KANTARBARKOD.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRM_TANIMLAMALAR_KULLANICILAR.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRM_TANIMLAMALAR_KULLANICILAR.Designer.cs">
-      <DependentUpon>FRM_TANIMLAMALAR_KULLANICILAR.cs</DependentUpon>
-    </Compile>
     <Compile Include="FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.Designer.cs">
       <DependentUpon>FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_TANIMLAMALAR_KULLANICILAR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_TANIMLAMALAR_KULLANICILAR.Designer.cs">
+      <DependentUpon>FRM_TANIMLAMALAR_KULLANICILAR.cs</DependentUpon>
     </Compile>
     <Compile Include="FRM_OPERATOR_YENISATINALMAFATURASI.cs">
       <SubType>Form</SubType>
@@ -200,11 +200,11 @@
     <EmbeddedResource Include="FRM_KANTARBARKOD.resx">
       <DependentUpon>FRM_KANTARBARKOD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRM_TANIMLAMALAR_KULLANICILAR.resx">
-      <DependentUpon>FRM_TANIMLAMALAR_KULLANICILAR.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.resx">
       <DependentUpon>FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_TANIMLAMALAR_KULLANICILAR.resx">
+      <DependentUpon>FRM_TANIMLAMALAR_KULLANICILAR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRM_OPERATOR_YENISATINALMAFATURASI.resx">
       <DependentUpon>FRM_OPERATOR_YENISATINALMAFATURASI.cs</DependentUpon>

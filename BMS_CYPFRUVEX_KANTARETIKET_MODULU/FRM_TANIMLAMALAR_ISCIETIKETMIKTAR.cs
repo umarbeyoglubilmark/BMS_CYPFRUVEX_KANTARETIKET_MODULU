@@ -23,30 +23,42 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
             _CFG = CFG;
             LGCONSTR = string.Format("Data Source={0};Initial Catalog={1};User Id={2};Password={3};MultipleActiveResultSets=True;",
 _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
-
             SQLCON = new SqlConnection(LGCONSTR);
-            GRC_KANTAR_KONTRAKTOR.DataSource = BMS_DLL.SQL.SELECT2(@" SELECT  
-LGMAIN.LOGICALREF, LGMAIN.CODE  KOD , LGMAIN.DEFINITION_  AD  FROM LG_"+CFG.FIRMNR+ @"_CLCARD LGMAIN WITH(NOLOCK) 
- WHERE (LGMAIN.ACTIVE=0)  ORDER BY LGMAIN.DEFINITION_
-", SQLCON);
-       
-            BMS_DLL.DX.DXGRID_LOADLAYOUTFROM_REGISTIRY(GRC_KANTAR_KONTRAKTOR, "BMS_CYPFRUVEX_KANTARETIKET_MODULU", GRV_KANTAR_KONTRAKTOR.Name);
-
+            INITIALIZEGRID();
+            BMS_DLL.DX.DXGRID_LOADLAYOUTFROM_REGISTIRY(GRC_TANIMLAMALAR_ISCIETIKETMIKTAR, "BMS_CYPFRUVEX_KANTARETIKET_MODULU", GRC_TANIMLAMALAR_ISCIETIKETMIKTAR.Name);
         }
+        private void INITIALIZEGRID() {
+            string tarih = DateTime.Now.Year.ToString() + "." + DateTime.Now.Month.ToString() + "." + DateTime.Now.Day.ToString();
+            DataTable DT = BMS_DLL.SQL.SELECT2(@"exec ('SELECT  0 LOGICALREF,  personel_kartlari.kartno SICILNO,concat(personel_kartlari.adi,
+'' '', personel_kartlari.soyadi)as ADSOYAD, 0 ETIKETMIKTAR 
 
+FROM personel_kartlari INNER JOIN 
+personel_giriscikis ON personel_kartlari.id = 
+personel_giriscikis.personel_id WHERE personel_kartlari.cikistarihi is null
+and personel_giriscikis.tarih=''" + tarih + @"''   ORDER BY personel_giriscikis.id ASC ') at PDKSDB; ", SQLCON);
+
+            foreach (DataRow item in DT.Rows) {
+                try { item["LOGICALREF"] = BMS_DLL.SQL.SELECT2("SELECT TOP 1 LOGICALREF FROM BMS_KE_KANTARISCIETIKETMIKTARESLESTIRME WHERE SICILNO='" + item["SICILNO"] + "' ", SQLCON).Rows[0][0].ToString(); } catch { }
+                try { item["ETIKETMIKTAR"] = BMS_DLL.SQL.SELECT2("SELECT TOP 1 ETIKETMIKTAR FROM BMS_KE_KANTARISCIETIKETMIKTARESLESTIRME WHERE SICILNO='" + item["SICILNO"] + "' ", SQLCON).Rows[0][0].ToString(); } catch { }
+            }
+            GRC_TANIMLAMALAR_ISCIETIKETMIKTAR.DataSource = DT; 
+        }
         private void FRM_KANTARPLAKA_FormClosing(object sender, FormClosingEventArgs e) {
-            BMS_DLL.DX.DXGRID_SAVELAYOUTTO_REGISTIRY(GRC_KANTAR_KONTRAKTOR, "BMS_CYPFRUVEX_KANTARETIKET_MODULU", GRV_KANTAR_KONTRAKTOR.Name);
-        }
-
-        private void GRV_KANTAR_PLAKA_DoubleClick(object sender, EventArgs e) {
-            //string ADI = int.Parse(GV_CFG_FIRMA_TANIMLARI.GetRowCellValue(GV_CFG_FIRMA_TANIMLARI.FocusedRowHandle, "ID").ToString()).ToString("D3");
-            base.DialogResult = DialogResult.OK;
-            LOGICALREF = GRV_KANTAR_KONTRAKTOR.GetRowCellValue(GRV_KANTAR_KONTRAKTOR.FocusedRowHandle, "LOGICALREF").ToString();
-            KOD = GRV_KANTAR_KONTRAKTOR.GetRowCellValue(GRV_KANTAR_KONTRAKTOR.FocusedRowHandle, "KOD").ToString();
-            AD = GRV_KANTAR_KONTRAKTOR.GetRowCellValue(GRV_KANTAR_KONTRAKTOR.FocusedRowHandle, "AD").ToString();
-            this.Close();
-
-
-        }
+            BMS_DLL.DX.DXGRID_SAVELAYOUTTO_REGISTIRY(GRC_TANIMLAMALAR_ISCIETIKETMIKTAR, "BMS_CYPFRUVEX_KANTARETIKET_MODULU", GRC_TANIMLAMALAR_ISCIETIKETMIKTAR.Name);
+        } 
+        private void BTN_UA_Click(object sender, EventArgs e) {
+            if (LBL_LOGICALREF.Text == "0") {
+                BMS_DLL.SQL.EXECUTE2(this, string.Format("INSERT INTO BMS_KE_KANTARISCIETIKETMIKTARESLESTIRME (SICILNO,ADSOYAD,ETIKETMIKTAR) VALUES ('{0}','{1}','{2}')", TE_SICILNO.Text, TE_ADSOYAD.Text, TE_MIKTAR.Text), SQLCON);
+            } else {
+                BMS_DLL.SQL.EXECUTE2(this, string.Format("UPDATE BMS_KE_KANTARISCIETIKETMIKTARESLESTIRME SET ETIKETMIKTAR='{0}'  WHERE LOGICALREF={1}", TE_MIKTAR.Text, LBL_LOGICALREF.Text), SQLCON);
+            }
+            INITIALIZEGRID();
+        } 
+        private void GRV_TANIMLAMALAR_KULLANICILAR_DoubleClick(object sender, EventArgs e) {
+            TE_SICILNO.Text = GRV_TANIMLAMALAR_ISCIETIKETMIKTAR.GetRowCellValue(GRV_TANIMLAMALAR_ISCIETIKETMIKTAR.FocusedRowHandle, "SICILNO").ToString();
+            TE_ADSOYAD.Text = GRV_TANIMLAMALAR_ISCIETIKETMIKTAR.GetRowCellValue(GRV_TANIMLAMALAR_ISCIETIKETMIKTAR.FocusedRowHandle, "ADSOYAD").ToString();
+            TE_MIKTAR.Text = GRV_TANIMLAMALAR_ISCIETIKETMIKTAR.GetRowCellValue(GRV_TANIMLAMALAR_ISCIETIKETMIKTAR.FocusedRowHandle, "ETIKETMIKTAR").ToString(); 
+            LBL_LOGICALREF.Text = GRV_TANIMLAMALAR_ISCIETIKETMIKTAR.GetRowCellValue(GRV_TANIMLAMALAR_ISCIETIKETMIKTAR.FocusedRowHandle, "LOGICALREF").ToString(); 
+        } 
     }
 }
