@@ -209,6 +209,7 @@
             this.BTN_ISCIETIKETMIKTARESLESTIRME.Id = 19;
             this.BTN_ISCIETIKETMIKTARESLESTIRME.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BTN_ISCIETIKETMIKTARESLESTIRME.ImageOptions.SvgImage")));
             this.BTN_ISCIETIKETMIKTARESLESTIRME.Name = "BTN_ISCIETIKETMIKTARESLESTIRME";
+            this.BTN_ISCIETIKETMIKTARESLESTIRME.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.BTN_ISCIETIKETMIKTARESLESTIRME.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTN_ISCIETIKETMIKTARESLESTIRME_ItemClick);
             // 
             // ribbonPage3
@@ -232,6 +233,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem11);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ETIKET";
+            this.ribbonPageGroup1.Visible = false;
             // 
             // ribbonPage1
             // 
