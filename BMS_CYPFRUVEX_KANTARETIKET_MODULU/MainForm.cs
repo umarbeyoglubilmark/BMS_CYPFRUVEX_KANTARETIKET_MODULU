@@ -20,9 +20,9 @@ using System.IO;
 namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
     public partial class MainForm : DevExpress.XtraEditors.XtraForm {
         CONFIG _CFG;
-        public MainForm(CONFIG CFG) {
+        public MainForm(CONFIG CFG) { 
             InitializeComponent();
-            _CFG = CFG;
+            _CFG = CFG; ;
 
         }
 
