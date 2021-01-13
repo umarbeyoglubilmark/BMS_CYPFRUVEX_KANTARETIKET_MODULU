@@ -45,6 +45,8 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.SB_VAZGEC = new DevExpress.XtraEditors.SimpleButton();
             this.SB_KAYDET = new DevExpress.XtraEditors.SimpleButton();
+            this.TE_ACIKLAMA = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TE_BELGENO.Properties)).BeginInit();
@@ -57,10 +59,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.GRV_OPERATOR_YENISATINALMA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_ACIKLAMA.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.TE_ACIKLAMA);
+            this.panelControl1.Controls.Add(this.labelControl5);
             this.panelControl1.Controls.Add(this.TE_AMBAR);
             this.panelControl1.Controls.Add(this.TE_URETICI);
             this.panelControl1.Controls.Add(this.TE_KONTRAKTOR);
@@ -255,6 +260,21 @@
             this.SB_KAYDET.Text = "KAYDET";
             this.SB_KAYDET.Click += new System.EventHandler(this.SB_KAYDET_Click);
             // 
+            // TE_ACIKLAMA
+            // 
+            this.TE_ACIKLAMA.Location = new System.Drawing.Point(67, 65);
+            this.TE_ACIKLAMA.Name = "TE_ACIKLAMA";
+            this.TE_ACIKLAMA.Size = new System.Drawing.Size(122, 20);
+            this.TE_ACIKLAMA.TabIndex = 18;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(8, 65);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(41, 13);
+            this.labelControl5.TabIndex = 17;
+            this.labelControl5.Text = "Açıklama";
+            // 
             // FRM_OPERATOR_YENISATINALMAFATURASI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +301,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GRV_OPERATOR_YENISATINALMA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TE_ACIKLAMA.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,5 +329,7 @@
         private DevExpress.XtraEditors.LabelControl TE_PLAKA;
         private DevExpress.XtraEditors.SimpleButton SB_VAZGEC;
         private DevExpress.XtraEditors.SimpleButton SB_KAYDET;
+        private DevExpress.XtraEditors.TextEdit TE_ACIKLAMA;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
     }
 }

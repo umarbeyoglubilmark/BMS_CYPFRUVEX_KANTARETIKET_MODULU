@@ -21,7 +21,7 @@ using System.Windows.Forms;
 namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
     public partial class FRM_KANTAR : Form {
         string LGCONSTR;
-        CONFIG _CFG; 
+        CONFIG _CFG;
         SqlConnection SQLCON = new SqlConnection();
         string PLAKALOGICALREF = "0";
         string KONTRAKTORLOGICALREF = "0";
@@ -31,8 +31,8 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
 
         public FRM_KANTAR(CONFIG CFG) {
             InitializeComponent();
-            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture; 
-            _CFG = CFG; 
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+            _CFG = CFG;
             LGCONSTR = string.Format("Data Source={0};Initial Catalog={1};User Id={2};Password={3};MultipleActiveResultSets=True;",
 _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
             SQLCON = new SqlConnection(LGCONSTR);
@@ -121,7 +121,9 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
             O.URETICIID = int.Parse(URETICILOGICALREF);
             O.URUNID = int.Parse(URUNLOGICALREF);
             O.ERRORMESSAGE = "";
-            O.KULLANICI = ""; 
+            O.KULLANICI = "";
+            O.ACIKLAMA = O.ACIKLAMA == "ZORUNLU DEĞİL" ? "" : O.ACIKLAMA;
+            O.TARTI_BELGE_NO = TE_TARTIBELGENO.Text;
             SQLCON = new SqlConnection(LGCONSTR);
             using (SqlConnection con = SQLCON) {
                 if (con.State != ConnectionState.Open) {
@@ -133,7 +135,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
                     SqlCommand com = SIC.BMS_KE_KANTAR_INSERT(O, true, false);
                     com.Connection = con;
                     com.Transaction = transaction;
-                    logicalref = int.Parse( com.ExecuteScalar().ToString());
+                    logicalref = int.Parse(com.ExecuteScalar().ToString());
                     transaction.Commit();
                 } catch (Exception ex) {
                     transaction.Rollback();
@@ -144,8 +146,9 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
                     try { con.Dispose(); } catch { }
                 }
             }
-            FRM_KANTARBARKOD F = new FRM_KANTARBARKOD(logicalref.ToString());
-            F.Show();
+            BMS_DLL.DX.XTRAREPORT_AC("SELECT * FROM BMS_KE_KANTAR WHERE LOGICALREF=" + logicalref.ToString(), "BARKODDESIGN.repx", false, LGCONSTR);
+            //FRM_KANTARBARKOD F = new FRM_KANTARBARKOD(logicalref.ToString(),LGCONSTR);
+            //F.Show();
         }
 
         private void SB_PLAKA_Click(object sender, EventArgs e) {

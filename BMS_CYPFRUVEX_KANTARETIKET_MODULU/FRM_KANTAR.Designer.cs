@@ -45,6 +45,8 @@
             this.TE_URETICIKODU = new DevExpress.XtraEditors.TextEdit();
             this.TE_URUNKODU = new DevExpress.XtraEditors.TextEdit();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TE_TARTIBELGENO = new DevExpress.XtraEditors.MemoEdit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TE_ACIKLAMA.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_BIRIM.Properties)).BeginInit();
@@ -57,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TE_KONTRAKTORKODU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_URETICIKODU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_URUNKODU.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_TARTIBELGENO.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,6 +72,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.TE_TARTIBELGENO);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.TE_ACIKLAMA);
             this.panel2.Controls.Add(this.simpleButton1);
             this.panel2.Controls.Add(this.SB_eXCELEKAYDET);
@@ -103,7 +108,7 @@
             this.TE_ACIKLAMA.Properties.NullText = "ZORUNLU DEĞİL";
             this.TE_ACIKLAMA.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_ACIKLAMA.Size = new System.Drawing.Size(627, 52);
-            this.TE_ACIKLAMA.TabIndex = 16;
+            this.TE_ACIKLAMA.TabIndex = 18;
             // 
             // simpleButton1
             // 
@@ -114,7 +119,7 @@
             this.simpleButton1.Location = new System.Drawing.Point(2, 395);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(272, 51);
-            this.simpleButton1.TabIndex = 15;
+            this.simpleButton1.TabIndex = 17;
             this.simpleButton1.Text = "AÇIKLAMA";
             // 
             // SB_eXCELEKAYDET
@@ -132,7 +137,7 @@
             this.SB_eXCELEKAYDET.Location = new System.Drawing.Point(0, 495);
             this.SB_eXCELEKAYDET.Name = "SB_eXCELEKAYDET";
             this.SB_eXCELEKAYDET.Size = new System.Drawing.Size(920, 56);
-            this.SB_eXCELEKAYDET.TabIndex = 17;
+            this.SB_eXCELEKAYDET.TabIndex = 19;
             this.SB_eXCELEKAYDET.Text = "KAYDET";
             this.SB_eXCELEKAYDET.Click += new System.EventHandler(this.SB_eXCELEKAYDET_Click);
             // 
@@ -147,7 +152,7 @@
             this.TE_BIRIM.Properties.ReadOnly = true;
             this.TE_BIRIM.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_BIRIM.Size = new System.Drawing.Size(181, 32);
-            this.TE_BIRIM.TabIndex = 12;
+            this.TE_BIRIM.TabIndex = 13;
             // 
             // TE_MIKTAR
             // 
@@ -162,7 +167,7 @@
             this.TE_MIKTAR.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TE_MIKTAR.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.TE_MIKTAR.Size = new System.Drawing.Size(626, 72);
-            this.TE_MIKTAR.TabIndex = 14;
+            this.TE_MIKTAR.TabIndex = 16;
             // 
             // simpleButton5
             // 
@@ -173,7 +178,7 @@
             this.simpleButton5.Location = new System.Drawing.Point(3, 317);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(272, 51);
-            this.simpleButton5.TabIndex = 13;
+            this.simpleButton5.TabIndex = 15;
             this.simpleButton5.Text = "MİKTAR";
             // 
             // TE_URUN
@@ -187,7 +192,7 @@
             this.TE_URUN.Properties.ReadOnly = true;
             this.TE_URUN.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_URUN.Size = new System.Drawing.Size(438, 52);
-            this.TE_URUN.TabIndex = 11;
+            this.TE_URUN.TabIndex = 14;
             // 
             // SB_URUN
             // 
@@ -197,7 +202,7 @@
             this.SB_URUN.Location = new System.Drawing.Point(3, 238);
             this.SB_URUN.Name = "SB_URUN";
             this.SB_URUN.Size = new System.Drawing.Size(272, 51);
-            this.SB_URUN.TabIndex = 9;
+            this.SB_URUN.TabIndex = 11;
             this.SB_URUN.Text = "ÜRÜN";
             this.SB_URUN.Click += new System.EventHandler(this.SB_URUN_Click);
             // 
@@ -212,7 +217,7 @@
             this.TE_URETICI.Properties.ReadOnly = true;
             this.TE_URETICI.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_URETICI.Size = new System.Drawing.Size(439, 52);
-            this.TE_URETICI.TabIndex = 8;
+            this.TE_URETICI.TabIndex = 10;
             // 
             // TE_KONTRAKTOR
             // 
@@ -225,7 +230,7 @@
             this.TE_KONTRAKTOR.Properties.ReadOnly = true;
             this.TE_KONTRAKTOR.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_KONTRAKTOR.Size = new System.Drawing.Size(439, 51);
-            this.TE_KONTRAKTOR.TabIndex = 5;
+            this.TE_KONTRAKTOR.TabIndex = 7;
             // 
             // TE_PLAKA
             // 
@@ -237,7 +242,7 @@
             this.TE_PLAKA.Properties.NullText = "PLAKA";
             this.TE_PLAKA.Properties.ReadOnly = true;
             this.TE_PLAKA.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TE_PLAKA.Size = new System.Drawing.Size(439, 48);
+            this.TE_PLAKA.Size = new System.Drawing.Size(183, 48);
             this.TE_PLAKA.TabIndex = 2;
             // 
             // SB_URETICI
@@ -248,7 +253,7 @@
             this.SB_URETICI.Location = new System.Drawing.Point(3, 159);
             this.SB_URETICI.Name = "SB_URETICI";
             this.SB_URETICI.Size = new System.Drawing.Size(272, 51);
-            this.SB_URETICI.TabIndex = 6;
+            this.SB_URETICI.TabIndex = 8;
             this.SB_URETICI.Text = "ÜRETİCİ";
             this.SB_URETICI.Click += new System.EventHandler(this.SB_URETICI_Click);
             // 
@@ -260,7 +265,7 @@
             this.SB_KONTRAKTOR.Location = new System.Drawing.Point(3, 81);
             this.SB_KONTRAKTOR.Name = "SB_KONTRAKTOR";
             this.SB_KONTRAKTOR.Size = new System.Drawing.Size(272, 51);
-            this.SB_KONTRAKTOR.TabIndex = 3;
+            this.SB_KONTRAKTOR.TabIndex = 5;
             this.SB_KONTRAKTOR.Text = "KONTRAKTÖR";
             this.SB_KONTRAKTOR.Click += new System.EventHandler(this.SB_KONTRAKTOR_Click);
             // 
@@ -301,7 +306,7 @@
             this.TE_KONTRAKTORKODU.Properties.Appearance.Options.UseFont = true;
             this.TE_KONTRAKTORKODU.Properties.NullText = "KODU";
             this.TE_KONTRAKTORKODU.Size = new System.Drawing.Size(182, 32);
-            this.TE_KONTRAKTORKODU.TabIndex = 4;
+            this.TE_KONTRAKTORKODU.TabIndex = 6;
             this.TE_KONTRAKTORKODU.EditValueChanged += new System.EventHandler(this.TE_KONTRAKTORKODU_EditValueChanged);
             // 
             // TE_URETICIKODU
@@ -315,7 +320,7 @@
             this.TE_URETICIKODU.Properties.Appearance.Options.UseFont = true;
             this.TE_URETICIKODU.Properties.NullText = "KODU";
             this.TE_URETICIKODU.Size = new System.Drawing.Size(182, 32);
-            this.TE_URETICIKODU.TabIndex = 7;
+            this.TE_URETICIKODU.TabIndex = 9;
             this.TE_URETICIKODU.EditValueChanged += new System.EventHandler(this.TE_URETICIKODU_EditValueChanged);
             // 
             // TE_URUNKODU
@@ -329,7 +334,7 @@
             this.TE_URUNKODU.Properties.Appearance.Options.UseFont = true;
             this.TE_URUNKODU.Properties.NullText = "KODU";
             this.TE_URUNKODU.Size = new System.Drawing.Size(181, 32);
-            this.TE_URUNKODU.TabIndex = 10;
+            this.TE_URUNKODU.TabIndex = 12;
             this.TE_URUNKODU.EditValueChanged += new System.EventHandler(this.TE_URUNKODU_EditValueChanged);
             // 
             // panel3
@@ -339,6 +344,30 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(920, 10);
             this.panel3.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(659, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(246, 32);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "TARTI BELGE NO";
+            // 
+            // TE_TARTIBELGENO
+            // 
+            this.TE_TARTIBELGENO.EditValue = "";
+            this.TE_TARTIBELGENO.Location = new System.Drawing.Point(658, 44);
+            this.TE_TARTIBELGENO.Name = "TE_TARTIBELGENO";
+            this.TE_TARTIBELGENO.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.TE_TARTIBELGENO.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TE_TARTIBELGENO.Properties.Appearance.Options.UseBackColor = true;
+            this.TE_TARTIBELGENO.Properties.Appearance.Options.UseFont = true;
+            this.TE_TARTIBELGENO.Properties.NullText = "ZORUNLU DEĞİL";
+            this.TE_TARTIBELGENO.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TE_TARTIBELGENO.Size = new System.Drawing.Size(250, 31);
+            this.TE_TARTIBELGENO.TabIndex = 4;
             // 
             // FRM_KANTAR
             // 
@@ -354,6 +383,7 @@
             this.Text = "KANTAR";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TE_ACIKLAMA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_BIRIM.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_MIKTAR.Properties)).EndInit();
@@ -365,6 +395,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TE_KONTRAKTORKODU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_URETICIKODU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_URUNKODU.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_TARTIBELGENO.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -392,5 +423,7 @@
         private DevExpress.XtraEditors.TextEdit TE_URUNKODU;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.MemoEdit TE_ACIKLAMA;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.MemoEdit TE_TARTIBELGENO;
     }
 }
