@@ -25,6 +25,8 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_OPERATOR_YENISATINALMAFATURASI));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.TE_ACIKLAMA = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.TE_AMBAR = new DevExpress.XtraEditors.LabelControl();
             this.TE_URETICI = new DevExpress.XtraEditors.LabelControl();
             this.TE_KONTRAKTOR = new DevExpress.XtraEditors.LabelControl();
@@ -45,10 +47,11 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.SB_VAZGEC = new DevExpress.XtraEditors.SimpleButton();
             this.SB_KAYDET = new DevExpress.XtraEditors.SimpleButton();
-            this.TE_ACIKLAMA = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.TE_SOZLESME_NO = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_ACIKLAMA.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_BELGENO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DT_TARIH.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DT_TARIH.Properties)).BeginInit();
@@ -59,11 +62,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.GRV_OPERATOR_YENISATINALMA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TE_ACIKLAMA.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_SOZLESME_NO.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.TE_SOZLESME_NO);
+            this.panelControl1.Controls.Add(this.labelControl8);
             this.panelControl1.Controls.Add(this.TE_ACIKLAMA);
             this.panelControl1.Controls.Add(this.labelControl5);
             this.panelControl1.Controls.Add(this.TE_AMBAR);
@@ -83,8 +88,23 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(962, 96);
+            this.panelControl1.Size = new System.Drawing.Size(962, 111);
             this.panelControl1.TabIndex = 0;
+            // 
+            // TE_ACIKLAMA
+            // 
+            this.TE_ACIKLAMA.Location = new System.Drawing.Point(70, 65);
+            this.TE_ACIKLAMA.Name = "TE_ACIKLAMA";
+            this.TE_ACIKLAMA.Size = new System.Drawing.Size(122, 20);
+            this.TE_ACIKLAMA.TabIndex = 18;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(8, 65);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(41, 13);
+            this.labelControl5.TabIndex = 17;
+            this.labelControl5.Text = "Açıklama";
             // 
             // TE_AMBAR
             // 
@@ -121,7 +141,7 @@
             // 
             // TE_BELGENO
             // 
-            this.TE_BELGENO.Location = new System.Drawing.Point(67, 46);
+            this.TE_BELGENO.Location = new System.Drawing.Point(70, 46);
             this.TE_BELGENO.Name = "TE_BELGENO";
             this.TE_BELGENO.Size = new System.Drawing.Size(122, 20);
             this.TE_BELGENO.TabIndex = 12;
@@ -129,7 +149,7 @@
             // DT_TARIH
             // 
             this.DT_TARIH.EditValue = null;
-            this.DT_TARIH.Location = new System.Drawing.Point(67, 27);
+            this.DT_TARIH.Location = new System.Drawing.Point(70, 27);
             this.DT_TARIH.Name = "DT_TARIH";
             this.DT_TARIH.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -140,7 +160,7 @@
             // 
             // TE_FATURANO
             // 
-            this.TE_FATURANO.Location = new System.Drawing.Point(67, 8);
+            this.TE_FATURANO.Location = new System.Drawing.Point(70, 8);
             this.TE_FATURANO.Name = "TE_FATURANO";
             this.TE_FATURANO.Size = new System.Drawing.Size(122, 20);
             this.TE_FATURANO.TabIndex = 10;
@@ -206,9 +226,9 @@
             // 
             this.panelControl2.Controls.Add(this.GRC_OPERATOR_YENISATINALMA);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 96);
+            this.panelControl2.Location = new System.Drawing.Point(0, 111);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(962, 355);
+            this.panelControl2.Size = new System.Drawing.Size(962, 340);
             this.panelControl2.TabIndex = 1;
             // 
             // GRC_OPERATOR_YENISATINALMA
@@ -217,7 +237,7 @@
             this.GRC_OPERATOR_YENISATINALMA.Location = new System.Drawing.Point(2, 2);
             this.GRC_OPERATOR_YENISATINALMA.MainView = this.GRV_OPERATOR_YENISATINALMA;
             this.GRC_OPERATOR_YENISATINALMA.Name = "GRC_OPERATOR_YENISATINALMA";
-            this.GRC_OPERATOR_YENISATINALMA.Size = new System.Drawing.Size(958, 351);
+            this.GRC_OPERATOR_YENISATINALMA.Size = new System.Drawing.Size(958, 336);
             this.GRC_OPERATOR_YENISATINALMA.TabIndex = 0;
             this.GRC_OPERATOR_YENISATINALMA.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GRV_OPERATOR_YENISATINALMA});
@@ -260,20 +280,20 @@
             this.SB_KAYDET.Text = "KAYDET";
             this.SB_KAYDET.Click += new System.EventHandler(this.SB_KAYDET_Click);
             // 
-            // TE_ACIKLAMA
+            // TE_SOZLESME_NO
             // 
-            this.TE_ACIKLAMA.Location = new System.Drawing.Point(67, 65);
-            this.TE_ACIKLAMA.Name = "TE_ACIKLAMA";
-            this.TE_ACIKLAMA.Size = new System.Drawing.Size(122, 20);
-            this.TE_ACIKLAMA.TabIndex = 18;
+            this.TE_SOZLESME_NO.Location = new System.Drawing.Point(70, 84);
+            this.TE_SOZLESME_NO.Name = "TE_SOZLESME_NO";
+            this.TE_SOZLESME_NO.Size = new System.Drawing.Size(122, 20);
+            this.TE_SOZLESME_NO.TabIndex = 20;
             // 
-            // labelControl5
+            // labelControl8
             // 
-            this.labelControl5.Location = new System.Drawing.Point(8, 65);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(41, 13);
-            this.labelControl5.TabIndex = 17;
-            this.labelControl5.Text = "Açıklama";
+            this.labelControl8.Location = new System.Drawing.Point(8, 84);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(60, 13);
+            this.labelControl8.TabIndex = 19;
+            this.labelControl8.Text = "Sözleşme No";
             // 
             // FRM_OPERATOR_YENISATINALMAFATURASI
             // 
@@ -291,6 +311,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_ACIKLAMA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_BELGENO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DT_TARIH.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DT_TARIH.Properties)).EndInit();
@@ -301,7 +322,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GRV_OPERATOR_YENISATINALMA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TE_ACIKLAMA.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_SOZLESME_NO.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -331,5 +352,7 @@
         private DevExpress.XtraEditors.SimpleButton SB_KAYDET;
         private DevExpress.XtraEditors.TextEdit TE_ACIKLAMA;
         private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.TextEdit TE_SOZLESME_NO;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
     }
 }

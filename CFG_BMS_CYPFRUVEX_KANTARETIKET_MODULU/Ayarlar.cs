@@ -57,6 +57,8 @@ namespace CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU {
                 try { textEditFB_PERIOD.Text = CFG.PERIOD; } catch { }
                 try { textEditFB_ONCEKIFIRMANO.Text = CFG.PREVIOUSFIRMNR; } catch { }
                 try { textEditFB_ONCEKIPERIOD.Text = CFG.PREVIOUSPERIOD; } catch { }
+                try { TE_URETICIBASLANGICKODU.Text = CFG.URETICIBASLANGICKODU; } catch { }
+                try { TE_KONTRAKTORBASLANGICKODU.Text = CFG.KONTRAKTORBASLANGICKODU; } catch { }
                 try { textEditKB_BMSKULLANICIKODU.Text = CFG.BMSDEFAULTUSERNAME; } catch { }
                 try { textEditKB_BMSPAROLA.Text = CFG.BMSDEFAULTPASSWORD; } catch { }
                 try { textEditKB_LOKULLANICIKODU.Text = CFG.LOBJECTDEFAULTUSERNAME; } catch { }
@@ -130,6 +132,8 @@ namespace CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU {
                 try { CFG.PERIOD = xNodeCAPIFIRM.ChildNodes[1].InnerText; } catch { }
                 try { CFG.PREVIOUSFIRMNR = xNodeCAPIFIRM.ChildNodes[2].InnerText; } catch { }
                 try { CFG.PREVIOUSPERIOD = xNodeCAPIFIRM.ChildNodes[3].InnerText; } catch { }
+                try { CFG.URETICIBASLANGICKODU = xNodeCAPIFIRM.ChildNodes[4].InnerText; } catch { }
+                try { CFG.KONTRAKTORBASLANGICKODU = xNodeCAPIFIRM.ChildNodes[5].InnerText; } catch { }
                 try { CFG.BMSDEFAULTUSERNAME = xNodeUSERDEFAULTS.ChildNodes[0].InnerText; } catch { }
                 try { CFG.BMSDEFAULTPASSWORD = xNodeUSERDEFAULTS.ChildNodes[1].InnerText; } catch { }
                 try { CFG.LOBJECTDEFAULTUSERNAME = xNodeUSERDEFAULTS.ChildNodes[2].InnerText; } catch { }
@@ -182,6 +186,8 @@ namespace CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU {
                         "<PERIOD>" + textEditFB_PERIOD.Text + "</PERIOD>" +
                         "<PREVFIRMNR>" + textEditFB_ONCEKIFIRMANO.Text + "</PREVFIRMNR>" +
                         "<PREVPERIOD>" + textEditFB_ONCEKIPERIOD.Text + "</PREVPERIOD>" +
+                        "<URETICIBASLANGICKODU>" + TE_URETICIBASLANGICKODU.Text + "</URETICIBASLANGICKODU>" +
+                        "<KONTRAKTORBASLANGICKODU>" + TE_KONTRAKTORBASLANGICKODU.Text + "</KONTRAKTORBASLANGICKODU>" +
                     "</CAPIFIRM>" +
                     "<DEFAULTUSERS>" + //NODE 3 
                         "<BMSUSERNAME>" + textEditKB_BMSKULLANICIKODU.Text + "</BMSUSERNAME>" +

@@ -38,6 +38,8 @@ namespace CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU {
         public string PERIOD { get; set; } = string.Empty;
         public string PREVIOUSFIRMNR { get; set; } = string.Empty;
         public string PREVIOUSPERIOD { get; set; } = string.Empty;
+        public string URETICIBASLANGICKODU { get; set; } = string.Empty;
+        public string KONTRAKTORBASLANGICKODU { get; set; } = string.Empty;
         public string BMSDEFAULTUSERNAME { get; set; } = string.Empty;
         public string BMSDEFAULTPASSWORD { get; set; } = string.Empty;
         public string LOBJECTDEFAULTUSERNAME { get; set; } = string.Empty;

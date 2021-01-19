@@ -15,7 +15,7 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.SQLCOMMANDS {
                 if (!INSERTTOBM)
                     tableName = tableName.Replace("BM", "LG").Replace("BH", "LH").Replace("L_", "B_");
 
-                SqlCommand com = new SqlCommand("INSERT INTO " + tableName + "(" + (INSERTLOGICALREF ? "LOGICALREF, " : "") + "TARIH, PLAKAID, KONTRAKTORID, URETICIID, URUNID, MIKTAR, BIRIM, KULLANICI, BARKODYAZIMMIKTAR, ACIKLAMA, LOGOAKTARIMI, LOGOAKTARIMTARIHI, LOGOFISID, ERRORMESSAGE, TSTATUS,TARTI_BELGE_NO) VALUES (" + (INSERTLOGICALREF ? "@LOGICALREF, " : "") + "@TARIH, @PLAKAID, @KONTRAKTORID, @URETICIID, @URUNID, @MIKTAR, @BIRIM, @KULLANICI, @BARKODYAZIMMIKTAR, @ACIKLAMA, @LOGOAKTARIMI, @LOGOAKTARIMTARIHI, @LOGOFISID, @ERRORMESSAGE, @TSTATUS,@TARTI_BELGE_NO) SELECT " +
+                SqlCommand com = new SqlCommand("INSERT INTO " + tableName + "(" + (INSERTLOGICALREF ? "LOGICALREF, " : "") + "TARIH, PLAKAID, KONTRAKTORID, URETICIID, URUNID, MIKTAR, BIRIM, KULLANICI, BARKODYAZIMMIKTAR, ACIKLAMA, LOGOAKTARIMI, LOGOAKTARIMTARIHI, LOGOFISID, ERRORMESSAGE, TSTATUS,TARTI_BELGE_NO,SOZLESME_NO) VALUES (" + (INSERTLOGICALREF ? "@LOGICALREF, " : "") + "@TARIH, @PLAKAID, @KONTRAKTORID, @URETICIID, @URUNID, @MIKTAR, @BIRIM, @KULLANICI, @BARKODYAZIMMIKTAR, @ACIKLAMA, @LOGOAKTARIMI, @LOGOAKTARIMTARIHI, @LOGOFISID, @ERRORMESSAGE, @TSTATUS,@TARTI_BELGE_NO,@SOZLESME_NO) SELECT " +
                  (INSERTLOGICALREF ? "MAX(LOGICALREF) FROM " + tableName + "" : " SCOPE_IDENTITY() "));
                 try {
                     if (INSERTLOGICALREF)
@@ -43,7 +43,7 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.SQLCOMMANDS {
                 try { com.Parameters.AddWithValue("@ERRORMESSAGE", B.ERRORMESSAGE); } catch { com.Parameters.AddWithValue("@ERRORMESSAGE", DBNull.Value); }
                 try { com.Parameters.AddWithValue("@TSTATUS", B.TSTATUS); } catch { com.Parameters.AddWithValue("@TSTATUS", DBNull.Value); }
                 try { com.Parameters.AddWithValue("@TARTI_BELGE_NO", B.TARTI_BELGE_NO); } catch { com.Parameters.AddWithValue("@TARTI_BELGE_NO", DBNull.Value); }
-
+                try { com.Parameters.AddWithValue("@SOZLESME_NO", B.SOZLESME_NO); } catch { com.Parameters.AddWithValue("@SOZLESME_NO", DBNull.Value); }
                 return com;
             } catch {
                 return null;

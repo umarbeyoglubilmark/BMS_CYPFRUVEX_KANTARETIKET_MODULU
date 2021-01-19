@@ -23,5 +23,6 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.MODELS {
         public string ERRORMESSAGE { get; set; } = string.Empty;
         public int TSTATUS { get; set; }
         public string TARTI_BELGE_NO { get; set; } = string.Empty;
+        public string SOZLESME_NO { get; set; } = string.Empty;
     }
 }

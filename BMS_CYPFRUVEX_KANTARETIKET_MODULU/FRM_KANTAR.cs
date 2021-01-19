@@ -108,9 +108,12 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
         }
 
         private void SB_eXCELEKAYDET_Click(object sender, EventArgs e) {
+            if (URUNLOGICALREF == "0" || URUNLOGICALREF == "") {
+                MessageBox.Show("DOLDURULMASI GEREKEN ALANLAR MEVCUT");
+                return;
+            }
             int logicalref = 0;
-            BMS_KE_KANTAR O = new BMS_KE_KANTAR();
-            O.ACIKLAMA = TE_ACIKLAMA.Text;
+            BMS_KE_KANTAR O = new BMS_KE_KANTAR(); 
             O.BARKODYAZIMMIKTAR = 0;
             O.BIRIM = TE_BIRIM.Text;
             O.KONTRAKTORID = int.Parse(KONTRAKTORLOGICALREF);
@@ -124,6 +127,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
             O.KULLANICI = "";
             O.ACIKLAMA = O.ACIKLAMA == "ZORUNLU DEĞİL" ? "" : O.ACIKLAMA;
             O.TARTI_BELGE_NO = TE_TARTIBELGENO.Text;
+            O.SOZLESME_NO = TE_SOZLESMENO.Text;
             SQLCON = new SqlConnection(LGCONSTR);
             using (SqlConnection con = SQLCON) {
                 if (con.State != ConnectionState.Open) {
@@ -223,15 +227,17 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
 
         private void TE_KONTRAKTORKODU_EditValueChanged(object sender, EventArgs e) {
             try {
-                TE_KONTRAKTOR.Text = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 DEFINITION_ FROM LG_" + _CFG.FIRMNR + "_CLCARD WHERE CODE='" + TE_KONTRAKTORKODU.Text + "' ", SQLCON).Rows[0][0].ToString();
-                KONTRAKTORLOGICALREF = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 LOGICALREF FROM LG_" + _CFG.FIRMNR + "_CLCARD WHERE CODE='" + TE_KONTRAKTORKODU.Text + "' ", SQLCON).Rows[0][0].ToString();
+                string where = _CFG.KONTRAKTORBASLANGICKODU != "" ? " AND CODE LIKE('" + _CFG.KONTRAKTORBASLANGICKODU + "%')" : " ";
+                TE_KONTRAKTOR.Text = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 DEFINITION_ FROM LG_" + _CFG.FIRMNR + "_CLCARD WHERE CODE='" + TE_KONTRAKTORKODU.Text + "' " + where, SQLCON).Rows[0][0].ToString();
+                KONTRAKTORLOGICALREF = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 LOGICALREF FROM LG_" + _CFG.FIRMNR + "_CLCARD WHERE CODE='" + TE_KONTRAKTORKODU.Text + "' " + where, SQLCON).Rows[0][0].ToString();
             } catch { TE_KONTRAKTOR.Text = null; KONTRAKTORLOGICALREF = "0"; }
         }
 
         private void TE_URETICIKODU_EditValueChanged(object sender, EventArgs e) {
             try {
-                TE_URETICI.Text = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 DEFINITION_ FROM LG_" + _CFG.FIRMNR + "_CLCARD WHERE CODE='" + TE_URETICIKODU.Text + "' ", SQLCON).Rows[0][0].ToString();
-                URETICILOGICALREF = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 LOGICALREF FROM LG_" + _CFG.FIRMNR + "_CLCARD WHERE CODE='" + TE_URETICIKODU.Text + "' ", SQLCON).Rows[0][0].ToString();
+                string where = _CFG.URETICIBASLANGICKODU != "" ? " AND CODE LIKE('" + _CFG.URETICIBASLANGICKODU + "%')" : " ";
+                TE_URETICI.Text = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 DEFINITION_ FROM LG_" + _CFG.FIRMNR + "_CLCARD WHERE CODE='" + TE_URETICIKODU.Text + "' " + where, SQLCON).Rows[0][0].ToString();
+                URETICILOGICALREF = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 LOGICALREF FROM LG_" + _CFG.FIRMNR + "_CLCARD WHERE CODE='" + TE_URETICIKODU.Text + "' " + where, SQLCON).Rows[0][0].ToString();
             } catch { TE_URETICI.Text = null; URETICILOGICALREF = "0"; }
         }
     }

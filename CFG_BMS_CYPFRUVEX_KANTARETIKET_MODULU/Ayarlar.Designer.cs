@@ -100,6 +100,10 @@
             this.textEditWS_SERVISSURE = new DevExpress.XtraEditors.TextEdit();
             this.simpleButtonKAYDET = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonVAZGEC = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl35 = new DevExpress.XtraEditors.LabelControl();
+            this.TE_KONTRAKTORBASLANGICKODU = new DevExpress.XtraEditors.TextEdit();
+            this.TE_URETICIBASLANGICKODU = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noDocumentsView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -140,6 +144,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditWS_SERVISVERITABANIKONTROLTABLOSU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditWS_SURECINSI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditWS_SERVISSURE.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_KONTRAKTORBASLANGICKODU.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_URETICIBASLANGICKODU.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -301,6 +307,7 @@
             this.groupBox2.TabIndex = 44;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "BİTAYKA";
+            this.groupBox2.Visible = false;
             // 
             // labelControl30
             // 
@@ -544,6 +551,10 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.labelControl34);
+            this.groupBox3.Controls.Add(this.labelControl35);
+            this.groupBox3.Controls.Add(this.TE_KONTRAKTORBASLANGICKODU);
+            this.groupBox3.Controls.Add(this.TE_URETICIBASLANGICKODU);
             this.groupBox3.Controls.Add(this.labelControl14);
             this.groupBox3.Controls.Add(this.labelControl13);
             this.groupBox3.Controls.Add(this.labelControl12);
@@ -555,14 +566,14 @@
             this.groupBox3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox3.Location = new System.Drawing.Point(10, 166);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(323, 120);
+            this.groupBox3.Size = new System.Drawing.Size(323, 178);
             this.groupBox3.TabIndex = 45;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "LOGO FİRMA BİLGİLERİ";
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(0, 91);
+            this.labelControl14.Location = new System.Drawing.Point(0, 137);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(79, 13);
             this.labelControl14.TabIndex = 43;
@@ -571,7 +582,7 @@
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(0, 71);
+            this.labelControl13.Location = new System.Drawing.Point(0, 117);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(91, 13);
             this.labelControl13.TabIndex = 42;
@@ -596,7 +607,7 @@
             // 
             // textEditFB_ONCEKIPERIOD
             // 
-            this.textEditFB_ONCEKIPERIOD.Location = new System.Drawing.Point(114, 88);
+            this.textEditFB_ONCEKIPERIOD.Location = new System.Drawing.Point(114, 134);
             this.textEditFB_ONCEKIPERIOD.Name = "textEditFB_ONCEKIPERIOD";
             this.textEditFB_ONCEKIPERIOD.Size = new System.Drawing.Size(209, 20);
             this.textEditFB_ONCEKIPERIOD.TabIndex = 39;
@@ -604,7 +615,7 @@
             // 
             // textEditFB_ONCEKIFIRMANO
             // 
-            this.textEditFB_ONCEKIFIRMANO.Location = new System.Drawing.Point(114, 68);
+            this.textEditFB_ONCEKIFIRMANO.Location = new System.Drawing.Point(114, 114);
             this.textEditFB_ONCEKIFIRMANO.Name = "textEditFB_ONCEKIFIRMANO";
             this.textEditFB_ONCEKIFIRMANO.Size = new System.Drawing.Size(209, 20);
             this.textEditFB_ONCEKIFIRMANO.TabIndex = 38;
@@ -715,7 +726,7 @@
             this.groupBox5.Controls.Add(this.comboBoxEditWS_SURECINSI);
             this.groupBox5.Controls.Add(this.textEditWS_SERVISSURE);
             this.groupBox5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox5.Location = new System.Drawing.Point(10, 292);
+            this.groupBox5.Location = new System.Drawing.Point(10, 350);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(323, 100);
             this.groupBox5.TabIndex = 47;
@@ -798,6 +809,36 @@
             this.simpleButtonVAZGEC.TabIndex = 49;
             this.simpleButtonVAZGEC.Text = "VAZGEC";
             // 
+            // labelControl34
+            // 
+            this.labelControl34.Location = new System.Drawing.Point(0, 92);
+            this.labelControl34.Name = "labelControl34";
+            this.labelControl34.Size = new System.Drawing.Size(158, 13);
+            this.labelControl34.TabIndex = 47;
+            this.labelControl34.Text = "KONTRAKTÖR BAŞLANGIÇ KODU";
+            // 
+            // labelControl35
+            // 
+            this.labelControl35.Location = new System.Drawing.Point(0, 72);
+            this.labelControl35.Name = "labelControl35";
+            this.labelControl35.Size = new System.Drawing.Size(131, 13);
+            this.labelControl35.TabIndex = 46;
+            this.labelControl35.Text = "ÜRETİCİ BAŞLANGIÇ KODU";
+            // 
+            // TE_KONTRAKTORBASLANGICKODU
+            // 
+            this.TE_KONTRAKTORBASLANGICKODU.Location = new System.Drawing.Point(164, 89);
+            this.TE_KONTRAKTORBASLANGICKODU.Name = "TE_KONTRAKTORBASLANGICKODU";
+            this.TE_KONTRAKTORBASLANGICKODU.Size = new System.Drawing.Size(159, 20);
+            this.TE_KONTRAKTORBASLANGICKODU.TabIndex = 45;
+            // 
+            // TE_URETICIBASLANGICKODU
+            // 
+            this.TE_URETICIBASLANGICKODU.Location = new System.Drawing.Point(164, 69);
+            this.TE_URETICIBASLANGICKODU.Name = "TE_URETICIBASLANGICKODU";
+            this.TE_URETICIBASLANGICKODU.Size = new System.Drawing.Size(159, 20);
+            this.TE_URETICIBASLANGICKODU.TabIndex = 44;
+            // 
             // Ayarlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -859,6 +900,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditWS_SERVISVERITABANIKONTROLTABLOSU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditWS_SURECINSI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditWS_SERVISSURE.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_KONTRAKTORBASLANGICKODU.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_URETICIBASLANGICKODU.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -941,5 +984,9 @@
         private DevExpress.XtraEditors.TextEdit textEditBS_KULLANICIADI2;
         private DevExpress.XtraEditors.LabelControl labelControl33;
         private DevExpress.XtraEditors.TextEdit TE_MLD;
+        private DevExpress.XtraEditors.LabelControl labelControl34;
+        private DevExpress.XtraEditors.LabelControl labelControl35;
+        private DevExpress.XtraEditors.TextEdit TE_KONTRAKTORBASLANGICKODU;
+        private DevExpress.XtraEditors.TextEdit TE_URETICIBASLANGICKODU;
     }
 }
