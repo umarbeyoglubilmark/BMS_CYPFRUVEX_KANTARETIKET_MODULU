@@ -25,6 +25,16 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_OPERATOR_YENISATINALMAFATURASI));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.TE_BOLGEDETAYYETKIKOD = new DevExpress.XtraEditors.LabelControl();
+            this.TE_SOSATISELEMANI = new DevExpress.XtraEditors.LabelControl();
+            this.TE_SOZLESMETURU_ODEMETAHSILATPLANI = new DevExpress.XtraEditors.LabelControl();
+            this.TE_BOLGEOZELKOD = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.TE_SOZLESME_NO = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.TE_ACIKLAMA = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.TE_AMBAR = new DevExpress.XtraEditors.LabelControl();
@@ -47,10 +57,9 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.SB_VAZGEC = new DevExpress.XtraEditors.SimpleButton();
             this.SB_KAYDET = new DevExpress.XtraEditors.SimpleButton();
-            this.TE_SOZLESME_NO = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_SOZLESME_NO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_ACIKLAMA.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_BELGENO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DT_TARIH.Properties.CalendarTimeProperties)).BeginInit();
@@ -62,11 +71,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.GRV_OPERATOR_YENISATINALMA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TE_SOZLESME_NO.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.TE_BOLGEDETAYYETKIKOD);
+            this.panelControl1.Controls.Add(this.TE_SOSATISELEMANI);
+            this.panelControl1.Controls.Add(this.TE_SOZLESMETURU_ODEMETAHSILATPLANI);
+            this.panelControl1.Controls.Add(this.TE_BOLGEOZELKOD);
+            this.panelControl1.Controls.Add(this.labelControl13);
+            this.panelControl1.Controls.Add(this.labelControl12);
+            this.panelControl1.Controls.Add(this.labelControl11);
+            this.panelControl1.Controls.Add(this.labelControl10);
             this.panelControl1.Controls.Add(this.TE_SOZLESME_NO);
             this.panelControl1.Controls.Add(this.labelControl8);
             this.panelControl1.Controls.Add(this.TE_ACIKLAMA);
@@ -91,6 +107,85 @@
             this.panelControl1.Size = new System.Drawing.Size(962, 111);
             this.panelControl1.TabIndex = 0;
             // 
+            // TE_BOLGEDETAYYETKIKOD
+            // 
+            this.TE_BOLGEDETAYYETKIKOD.Location = new System.Drawing.Point(734, 27);
+            this.TE_BOLGEDETAYYETKIKOD.Name = "TE_BOLGEDETAYYETKIKOD";
+            this.TE_BOLGEDETAYYETKIKOD.Size = new System.Drawing.Size(7, 13);
+            this.TE_BOLGEDETAYYETKIKOD.TabIndex = 28;
+            this.TE_BOLGEDETAYYETKIKOD.Text = "_";
+            // 
+            // TE_SOSATISELEMANI
+            // 
+            this.TE_SOSATISELEMANI.Location = new System.Drawing.Point(734, 65);
+            this.TE_SOSATISELEMANI.Name = "TE_SOSATISELEMANI";
+            this.TE_SOSATISELEMANI.Size = new System.Drawing.Size(7, 13);
+            this.TE_SOSATISELEMANI.TabIndex = 27;
+            this.TE_SOSATISELEMANI.Text = "_";
+            // 
+            // TE_SOZLESMETURU_ODEMETAHSILATPLANI
+            // 
+            this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Location = new System.Drawing.Point(734, 46);
+            this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Name = "TE_SOZLESMETURU_ODEMETAHSILATPLANI";
+            this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Size = new System.Drawing.Size(7, 13);
+            this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.TabIndex = 26;
+            this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Text = "_";
+            // 
+            // TE_BOLGEOZELKOD
+            // 
+            this.TE_BOLGEOZELKOD.Location = new System.Drawing.Point(734, 8);
+            this.TE_BOLGEOZELKOD.Name = "TE_BOLGEOZELKOD";
+            this.TE_BOLGEOZELKOD.Size = new System.Drawing.Size(7, 13);
+            this.TE_BOLGEOZELKOD.TabIndex = 25;
+            this.TE_BOLGEOZELKOD.Text = "_";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Location = new System.Drawing.Point(660, 27);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(58, 13);
+            this.labelControl13.TabIndex = 24;
+            this.labelControl13.Text = "Bölge Detay";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Location = new System.Drawing.Point(696, 65);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(22, 13);
+            this.labelControl12.TabIndex = 23;
+            this.labelControl12.Text = "Ş.Ö.";
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Location = new System.Drawing.Point(649, 46);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(69, 13);
+            this.labelControl11.TabIndex = 22;
+            this.labelControl11.Text = "Sözleşme Türü";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(692, 8);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(26, 13);
+            this.labelControl10.TabIndex = 21;
+            this.labelControl10.Text = "Bölge";
+            // 
+            // TE_SOZLESME_NO
+            // 
+            this.TE_SOZLESME_NO.Location = new System.Drawing.Point(70, 84);
+            this.TE_SOZLESME_NO.Name = "TE_SOZLESME_NO";
+            this.TE_SOZLESME_NO.Size = new System.Drawing.Size(122, 20);
+            this.TE_SOZLESME_NO.TabIndex = 20;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(8, 84);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(60, 13);
+            this.labelControl8.TabIndex = 19;
+            this.labelControl8.Text = "Sözleşme No";
+            // 
             // TE_ACIKLAMA
             // 
             this.TE_ACIKLAMA.Location = new System.Drawing.Point(70, 65);
@@ -108,12 +203,11 @@
             // 
             // TE_AMBAR
             // 
-            this.TE_AMBAR.Location = new System.Drawing.Point(379, 74);
+            this.TE_AMBAR.Location = new System.Drawing.Point(379, 65);
             this.TE_AMBAR.Name = "TE_AMBAR";
             this.TE_AMBAR.Size = new System.Drawing.Size(7, 13);
             this.TE_AMBAR.TabIndex = 16;
             this.TE_AMBAR.Text = "_";
-            this.TE_AMBAR.Visible = false;
             // 
             // TE_URETICI
             // 
@@ -149,12 +243,14 @@
             // DT_TARIH
             // 
             this.DT_TARIH.EditValue = null;
+            this.DT_TARIH.Enabled = false;
             this.DT_TARIH.Location = new System.Drawing.Point(70, 27);
             this.DT_TARIH.Name = "DT_TARIH";
             this.DT_TARIH.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DT_TARIH.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DT_TARIH.Properties.ReadOnly = true;
             this.DT_TARIH.Size = new System.Drawing.Size(122, 20);
             this.DT_TARIH.TabIndex = 11;
             // 
@@ -164,15 +260,15 @@
             this.TE_FATURANO.Name = "TE_FATURANO";
             this.TE_FATURANO.Size = new System.Drawing.Size(122, 20);
             this.TE_FATURANO.TabIndex = 10;
+            this.TE_FATURANO.Visible = false;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(246, 74);
+            this.labelControl4.Location = new System.Drawing.Point(246, 65);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(31, 13);
             this.labelControl4.TabIndex = 9;
             this.labelControl4.Text = "Ambar";
-            this.labelControl4.Visible = false;
             // 
             // labelControl9
             // 
@@ -221,6 +317,7 @@
             this.labelControl1.Size = new System.Drawing.Size(52, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Fatura No.";
+            this.labelControl1.Visible = false;
             // 
             // panelControl2
             // 
@@ -280,21 +377,6 @@
             this.SB_KAYDET.Text = "KAYDET";
             this.SB_KAYDET.Click += new System.EventHandler(this.SB_KAYDET_Click);
             // 
-            // TE_SOZLESME_NO
-            // 
-            this.TE_SOZLESME_NO.Location = new System.Drawing.Point(70, 84);
-            this.TE_SOZLESME_NO.Name = "TE_SOZLESME_NO";
-            this.TE_SOZLESME_NO.Size = new System.Drawing.Size(122, 20);
-            this.TE_SOZLESME_NO.TabIndex = 20;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(8, 84);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(60, 13);
-            this.labelControl8.TabIndex = 19;
-            this.labelControl8.Text = "Sözleşme No";
-            // 
             // FRM_OPERATOR_YENISATINALMAFATURASI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,6 +393,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_SOZLESME_NO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_ACIKLAMA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_BELGENO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DT_TARIH.Properties.CalendarTimeProperties)).EndInit();
@@ -322,7 +405,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GRV_OPERATOR_YENISATINALMA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TE_SOZLESME_NO.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -354,5 +436,13 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit TE_SOZLESME_NO;
         private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.LabelControl TE_BOLGEDETAYYETKIKOD;
+        private DevExpress.XtraEditors.LabelControl TE_SOSATISELEMANI;
+        private DevExpress.XtraEditors.LabelControl TE_SOZLESMETURU_ODEMETAHSILATPLANI;
+        private DevExpress.XtraEditors.LabelControl TE_BOLGEOZELKOD;
     }
 }

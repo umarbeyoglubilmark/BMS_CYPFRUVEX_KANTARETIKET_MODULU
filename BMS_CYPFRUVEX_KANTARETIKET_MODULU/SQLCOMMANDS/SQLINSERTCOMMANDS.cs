@@ -15,7 +15,7 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.SQLCOMMANDS {
                 if (!INSERTTOBM)
                     tableName = tableName.Replace("BM", "LG").Replace("BH", "LH").Replace("L_", "B_");
 
-                SqlCommand com = new SqlCommand("INSERT INTO " + tableName + "(" + (INSERTLOGICALREF ? "LOGICALREF, " : "") + "TARIH, PLAKAID, KONTRAKTORID, URETICIID, URUNID, MIKTAR, BIRIM, KULLANICI, BARKODYAZIMMIKTAR, ACIKLAMA, LOGOAKTARIMI, LOGOAKTARIMTARIHI, LOGOFISID, ERRORMESSAGE, TSTATUS,TARTI_BELGE_NO,SOZLESME_NO) VALUES (" + (INSERTLOGICALREF ? "@LOGICALREF, " : "") + "@TARIH, @PLAKAID, @KONTRAKTORID, @URETICIID, @URUNID, @MIKTAR, @BIRIM, @KULLANICI, @BARKODYAZIMMIKTAR, @ACIKLAMA, @LOGOAKTARIMI, @LOGOAKTARIMTARIHI, @LOGOFISID, @ERRORMESSAGE, @TSTATUS,@TARTI_BELGE_NO,@SOZLESME_NO) SELECT " +
+                SqlCommand com = new SqlCommand("INSERT INTO " + tableName + "(" + (INSERTLOGICALREF ? "LOGICALREF, " : "") + "TARIH, PLAKAID, KONTRAKTORID, URETICIID, URUNID, MIKTAR, BIRIM, KULLANICI, BARKODYAZIMMIKTAR, ACIKLAMA, LOGOAKTARIMI, LOGOAKTARIMTARIHI, LOGOFISID, ERRORMESSAGE, TSTATUS,TARTI_BELGE_NO,SOZLESME_NO,AMBARID_GIDECEGIYER,OZELKOD_BOLGE,YETKIKOD_BOLGEDETAY,ODEMEPLANID_SOZLESMETURU,SALEMANID_SO) VALUES (" + (INSERTLOGICALREF ? "@LOGICALREF, " : "") + "@TARIH, @PLAKAID, @KONTRAKTORID, @URETICIID, @URUNID, @MIKTAR, @BIRIM, @KULLANICI, @BARKODYAZIMMIKTAR, @ACIKLAMA, @LOGOAKTARIMI, @LOGOAKTARIMTARIHI, @LOGOFISID, @ERRORMESSAGE, @TSTATUS,@TARTI_BELGE_NO,@SOZLESME_NO,@AMBARID_GIDECEGIYER,@OZELKOD_BOLGE,@YETKIKOD_BOLGEDETAY,@ODEMEPLANID_SOZLESMETURU,@SALEMANID_SO) SELECT " +
                  (INSERTLOGICALREF ? "MAX(LOGICALREF) FROM " + tableName + "" : " SCOPE_IDENTITY() "));
                 try {
                     if (INSERTLOGICALREF)
@@ -44,6 +44,12 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.SQLCOMMANDS {
                 try { com.Parameters.AddWithValue("@TSTATUS", B.TSTATUS); } catch { com.Parameters.AddWithValue("@TSTATUS", DBNull.Value); }
                 try { com.Parameters.AddWithValue("@TARTI_BELGE_NO", B.TARTI_BELGE_NO); } catch { com.Parameters.AddWithValue("@TARTI_BELGE_NO", DBNull.Value); }
                 try { com.Parameters.AddWithValue("@SOZLESME_NO", B.SOZLESME_NO); } catch { com.Parameters.AddWithValue("@SOZLESME_NO", DBNull.Value); }
+
+                try { com.Parameters.AddWithValue("@AMBARID_GIDECEGIYER", B.AMBARID_GIDECEGIYER); } catch { com.Parameters.AddWithValue("@AMBARID_GIDECEGIYER", DBNull.Value); }
+                try { com.Parameters.AddWithValue("@OZELKOD_BOLGE", B.OZELKOD_BOLGE); } catch { com.Parameters.AddWithValue("@OZELKOD_BOLGE", DBNull.Value); }
+                try { com.Parameters.AddWithValue("@YETKIKOD_BOLGEDETAY", B.YETKIKOD_BOLGEDETAY); } catch { com.Parameters.AddWithValue("@YETKIKOD_BOLGEDETAY", DBNull.Value); }
+                try { com.Parameters.AddWithValue("@ODEMEPLANID_SOZLESMETURU", B.ODEMEPLANID_SOZLESMETURU); } catch { com.Parameters.AddWithValue("@ODEMEPLANID_SOZLESMETURU", DBNull.Value); }
+                try { com.Parameters.AddWithValue("@SALEMANID_SO", B.SALEMANID_SO); } catch { com.Parameters.AddWithValue("@SALEMANID_SO", DBNull.Value); }
                 return com;
             } catch {
                 return null;

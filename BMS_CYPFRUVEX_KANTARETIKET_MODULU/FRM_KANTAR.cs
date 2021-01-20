@@ -27,10 +27,14 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
         string KONTRAKTORLOGICALREF = "0";
         string URETICILOGICALREF = "0";
         string URUNLOGICALREF = "0";
+        string AMBARID_GIDECEGIYER = "0";
+        string ODEMEPLANID_SOZLESMETURU = "0";
+        string SALEMANID_SO = "0";
         SQLINSERTCOMMANDS SIC = new SQLINSERTCOMMANDS();
 
         public FRM_KANTAR(CONFIG CFG) {
             InitializeComponent();
+            DE_TARIH.DateTime = DateTime.Now;
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             _CFG = CFG;
             LGCONSTR = string.Format("Data Source={0};Initial Catalog={1};User Id={2};Password={3};MultipleActiveResultSets=True;",
@@ -113,21 +117,26 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
                 return;
             }
             int logicalref = 0;
-            BMS_KE_KANTAR O = new BMS_KE_KANTAR(); 
+            BMS_KE_KANTAR O = new BMS_KE_KANTAR();
             O.BARKODYAZIMMIKTAR = 0;
             O.BIRIM = TE_BIRIM.Text;
             O.KONTRAKTORID = int.Parse(KONTRAKTORLOGICALREF);
             O.MIKTAR = double.Parse(TE_MIKTAR.Text);
             O.PLAKAID = int.Parse(PLAKALOGICALREF);
-            O.TARIH = DateTime.Now;
+            O.TARIH = DE_TARIH.DateTime;
             O.TSTATUS = 0;
             O.URETICIID = int.Parse(URETICILOGICALREF);
             O.URUNID = int.Parse(URUNLOGICALREF);
             O.ERRORMESSAGE = "";
             O.KULLANICI = "";
-            O.ACIKLAMA = O.ACIKLAMA == "ZORUNLU DEĞİL" ? "" : O.ACIKLAMA;
+            O.ACIKLAMA = TE_ACIKLAMA.Text == "ZORUNLU DEĞİL" ? "" : TE_ACIKLAMA.Text;
             O.TARTI_BELGE_NO = TE_TARTIBELGENO.Text;
             O.SOZLESME_NO = TE_SOZLESMENO.Text;
+            O.AMBARID_GIDECEGIYER = int.Parse(AMBARID_GIDECEGIYER);
+            O.OZELKOD_BOLGE = TE_OZELKOD_BOLGE.Text;
+            O.YETKIKOD_BOLGEDETAY = TE_YETKIKOD_BOLGEDETAY.Text;
+            O.ODEMEPLANID_SOZLESMETURU = int.Parse(ODEMEPLANID_SOZLESMETURU);
+            O.SALEMANID_SO = int.Parse(SALEMANID_SO);
             SQLCON = new SqlConnection(LGCONSTR);
             using (SqlConnection con = SQLCON) {
                 if (con.State != ConnectionState.Open) {
@@ -198,16 +207,16 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
 
         private void TE_URUNKODU_EditValueChanged(object sender, EventArgs e) {
             try {
-
+                string where = _CFG.URUNBASLANGICKODU != "" ? " AND ITEMS2.CODE LIKE('" + _CFG.URUNBASLANGICKODU + "%')" : " ";
                 TE_URUN.Text = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1  ITEMS2.NAME FROM  LG_" + _CFG.FIRMNR + @"_ITEMS ITEMS2 
     LEFT OUTER JOIN LG_" + _CFG.FIRMNR + @"_UNITSETL BIRIM WITH(NOLOCK)
-            ON BIRIM.UNITSETREF = ITEMS2.UNITSETREF   WHERE BIRIM.MAINUNIT = 1 AND ITEMS2.CODE='" + TE_URUNKODU.Text + "'", SQLCON).Rows[0][0].ToString();
+            ON BIRIM.UNITSETREF = ITEMS2.UNITSETREF   WHERE BIRIM.MAINUNIT = 1 AND ITEMS2.CODE='" + TE_URUNKODU.Text + "'" + where, SQLCON).Rows[0][0].ToString();
                 URUNLOGICALREF = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1  ITEMS2.LOGICALREF FROM  LG_" + _CFG.FIRMNR + @"_ITEMS ITEMS2 
     LEFT OUTER JOIN LG_" + _CFG.FIRMNR + @"_UNITSETL BIRIM WITH(NOLOCK)
-            ON BIRIM.UNITSETREF = ITEMS2.UNITSETREF   WHERE BIRIM.MAINUNIT = 1 AND ITEMS2.CODE='" + TE_URUNKODU.Text + "'", SQLCON).Rows[0][0].ToString();
+            ON BIRIM.UNITSETREF = ITEMS2.UNITSETREF   WHERE BIRIM.MAINUNIT = 1 AND ITEMS2.CODE='" + TE_URUNKODU.Text + "'" + where, SQLCON).Rows[0][0].ToString();
                 TE_BIRIM.Text = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1  BIRIM.NAME FROM  LG_" + _CFG.FIRMNR + @"_ITEMS ITEMS2 
     LEFT OUTER JOIN LG_" + _CFG.FIRMNR + @"_UNITSETL BIRIM WITH(NOLOCK)
-            ON BIRIM.UNITSETREF = ITEMS2.UNITSETREF   WHERE BIRIM.MAINUNIT = 1 AND ITEMS2.LOGICALREF=" + URUNLOGICALREF + "", SQLCON).Rows[0][0].ToString();
+            ON BIRIM.UNITSETREF = ITEMS2.UNITSETREF   WHERE BIRIM.MAINUNIT = 1 AND ITEMS2.LOGICALREF=" + URUNLOGICALREF + "" + where, SQLCON).Rows[0][0].ToString();
 
 
 
@@ -239,6 +248,53 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
                 TE_URETICI.Text = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 DEFINITION_ FROM LG_" + _CFG.FIRMNR + "_CLCARD WHERE CODE='" + TE_URETICIKODU.Text + "' " + where, SQLCON).Rows[0][0].ToString();
                 URETICILOGICALREF = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 LOGICALREF FROM LG_" + _CFG.FIRMNR + "_CLCARD WHERE CODE='" + TE_URETICIKODU.Text + "' " + where, SQLCON).Rows[0][0].ToString();
             } catch { TE_URETICI.Text = null; URETICILOGICALREF = "0"; }
+        }
+
+
+
+        private void SB_BOLGE_Click(object sender, EventArgs e) {
+            using (FRM_KANTARBOLGE F = new FRM_KANTARBOLGE(_CFG)) {
+                if (F.ShowDialog() == DialogResult.OK) {
+                    TE_OZELKOD_BOLGE.Text = F.AD;
+                }
+            }
+        }
+
+        private void SB_BOLGEDETAY_Click(object sender, EventArgs e) {
+            using (FRM_KANTARBOLGEDETAY F = new FRM_KANTARBOLGEDETAY(_CFG)) {
+                if (F.ShowDialog() == DialogResult.OK) {
+
+                    TE_YETKIKOD_BOLGEDETAY.Text = F.AD;
+
+                }
+            }
+        }
+
+        private void SB_SOZLESMETURU_Click(object sender, EventArgs e) {
+            using (FRM_KANTARSOZLESMETURU F = new FRM_KANTARSOZLESMETURU(_CFG)) {
+                if (F.ShowDialog() == DialogResult.OK) {
+                    TE_ODEMEPLANI_SOZLESMETURU.Text = F.AD;
+                    ODEMEPLANID_SOZLESMETURU = F.LOGICALREF;
+                }
+            }
+        }
+
+        private void SB_SO_Click(object sender, EventArgs e) {
+            using (FRM_KANTARSO F = new FRM_KANTARSO(_CFG)) {
+                if (F.ShowDialog() == DialogResult.OK) {
+                    TE_SALEMANID_SO.Text = F.AD;
+                    SALEMANID_SO = F.LOGICALREF;
+                }
+            }
+        }
+
+        private void SB_GIDECEGIYER_Click(object sender, EventArgs e) {
+            using (FRM_KANTARGIDECEGIYER F = new FRM_KANTARGIDECEGIYER(_CFG)) {
+                if (F.ShowDialog() == DialogResult.OK) {
+                    TE_AMBAR_GIDECEGIYER.Text = F.AD;
+                    AMBARID_GIDECEGIYER = F.LOGICALREF;
+                }
+            }
         }
     }
 }

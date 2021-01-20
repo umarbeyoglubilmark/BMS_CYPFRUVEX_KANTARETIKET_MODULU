@@ -118,6 +118,36 @@
     <Compile Include="FRM_ETIKET_ETIKETBAS.Designer.cs">
       <DependentUpon>FRM_ETIKET_ETIKETBAS.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRM_KANTARSO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTARSO.Designer.cs">
+      <DependentUpon>FRM_KANTARSO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_KANTARSOZLESMETURU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTARSOZLESMETURU.Designer.cs">
+      <DependentUpon>FRM_KANTARSOZLESMETURU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_KANTARBOLGEDETAY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTARBOLGEDETAY.Designer.cs">
+      <DependentUpon>FRM_KANTARBOLGEDETAY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_KANTARBOLGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTARBOLGE.Designer.cs">
+      <DependentUpon>FRM_KANTARBOLGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_KANTARGIDECEGIYER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTARGIDECEGIYER.Designer.cs">
+      <DependentUpon>FRM_KANTARGIDECEGIYER.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +238,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRM_ETIKET_ETIKETBAS.resx">
       <DependentUpon>FRM_ETIKET_ETIKETBAS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_KANTARSO.resx">
+      <DependentUpon>FRM_KANTARSO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_KANTARSOZLESMETURU.resx">
+      <DependentUpon>FRM_KANTARSOZLESMETURU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_KANTARBOLGEDETAY.resx">
+      <DependentUpon>FRM_KANTARBOLGEDETAY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_KANTARBOLGE.resx">
+      <DependentUpon>FRM_KANTARBOLGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_KANTARGIDECEGIYER.resx">
+      <DependentUpon>FRM_KANTARGIDECEGIYER.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.resx">
       <DependentUpon>FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.cs</DependentUpon>
