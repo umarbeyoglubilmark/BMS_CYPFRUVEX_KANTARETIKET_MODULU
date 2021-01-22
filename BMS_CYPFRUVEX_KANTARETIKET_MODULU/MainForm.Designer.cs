@@ -36,8 +36,8 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.BTN_MALZEMELISTESI = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.SB_KANTAR = new DevExpress.XtraBars.BarButtonItem();
+            this.SB_OPERATOR = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.BTN_KULLANICILAR = new DevExpress.XtraBars.BarButtonItem();
@@ -45,7 +45,7 @@
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.SB_TANIMLAMALAR = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -68,8 +68,8 @@
             this.barButtonItem6,
             this.barButtonItem7,
             this.barButtonItem8,
-            this.BTN_MALZEMELISTESI,
-            this.barButtonItem9,
+            this.SB_KANTAR,
+            this.SB_OPERATOR,
             this.barButtonItem10,
             this.barButtonItem11,
             this.BTN_KULLANICILAR,
@@ -79,7 +79,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage3,
-            this.ribbonPage1});
+            this.SB_TANIMLAMALAR});
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.Skins);
             this.ribbonControl1.Size = new System.Drawing.Size(841, 150);
             // 
@@ -164,21 +164,21 @@
             this.barButtonItem8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem8.ImageOptions.SvgImage")));
             this.barButtonItem8.Name = "barButtonItem8";
             // 
-            // BTN_MALZEMELISTESI
+            // SB_KANTAR
             // 
-            this.BTN_MALZEMELISTESI.Caption = "KANTAR";
-            this.BTN_MALZEMELISTESI.Id = 11;
-            this.BTN_MALZEMELISTESI.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BTN_MALZEMELISTESI.ImageOptions.SvgImage")));
-            this.BTN_MALZEMELISTESI.Name = "BTN_MALZEMELISTESI";
-            this.BTN_MALZEMELISTESI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTN_MALZEMELISTESI_ItemClick);
+            this.SB_KANTAR.Caption = "KANTAR";
+            this.SB_KANTAR.Id = 11;
+            this.SB_KANTAR.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BTN_MALZEMELISTESI.ImageOptions.SvgImage")));
+            this.SB_KANTAR.Name = "SB_KANTAR";
+            this.SB_KANTAR.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTN_MALZEMELISTESI_ItemClick);
             // 
-            // barButtonItem9
+            // SB_OPERATOR
             // 
-            this.barButtonItem9.Caption = "OPERATOR";
-            this.barButtonItem9.Id = 15;
-            this.barButtonItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem9.ImageOptions.SvgImage")));
-            this.barButtonItem9.Name = "barButtonItem9";
-            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
+            this.SB_OPERATOR.Caption = "OPERATOR";
+            this.SB_OPERATOR.Id = 15;
+            this.SB_OPERATOR.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem9.ImageOptions.SvgImage")));
+            this.SB_OPERATOR.Name = "SB_OPERATOR";
+            this.SB_OPERATOR.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
             // 
             // barButtonItem10
             // 
@@ -222,10 +222,10 @@
             // 
             // ribbonPageGroup6
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.BTN_MALZEMELISTESI);
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem9);
+            this.ribbonPageGroup6.ItemLinks.Add(this.SB_KANTAR);
+            this.ribbonPageGroup6.ItemLinks.Add(this.SB_OPERATOR);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "KANTAR";
+            this.ribbonPageGroup6.Text = "BMS";
             // 
             // ribbonPageGroup1
             // 
@@ -235,12 +235,13 @@
             this.ribbonPageGroup1.Text = "ETIKET";
             this.ribbonPageGroup1.Visible = false;
             // 
-            // ribbonPage1
+            // SB_TANIMLAMALAR
             // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.SB_TANIMLAMALAR.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "TANIMLAMALAR";
+            this.SB_TANIMLAMALAR.Name = "SB_TANIMLAMALAR";
+            this.SB_TANIMLAMALAR.Text = "TANIMLAMALAR";
+            this.SB_TANIMLAMALAR.Visible = false;
             // 
             // ribbonPageGroup2
             // 
@@ -288,14 +289,14 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private DevExpress.XtraBars.BarButtonItem BTN_MALZEMELISTESI;
+        private DevExpress.XtraBars.BarButtonItem SB_KANTAR;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem SB_OPERATOR;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage SB_TANIMLAMALAR;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem BTN_KULLANICILAR;
         private DevExpress.XtraBars.BarButtonItem BTN_ISCIETIKETMIKTARESLESTIRME;

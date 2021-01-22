@@ -36,8 +36,9 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
 
         private void GRV_KANTAR_PLAKA_DoubleClick(object sender, EventArgs e) {
             //string ADI = int.Parse(GV_CFG_FIRMA_TANIMLARI.GetRowCellValue(GV_CFG_FIRMA_TANIMLARI.FocusedRowHandle, "ID").ToString()).ToString("D3");
-            base.DialogResult = DialogResult.OK; 
-            AD = GRV_KANTAR_BOLGEDETAY.GetRowCellValue(GRV_KANTAR_BOLGEDETAY.FocusedRowHandle, "SPECODE").ToString();
+            base.DialogResult = DialogResult.OK;
+            KOD = GRV_KANTAR_BOLGEDETAY.GetRowCellValue(GRV_KANTAR_BOLGEDETAY.FocusedRowHandle, "SPECODE").ToString();
+            AD = GRV_KANTAR_BOLGEDETAY.GetRowCellValue(GRV_KANTAR_BOLGEDETAY.FocusedRowHandle, "DEFINITION_").ToString();
             this.Close();
 
 

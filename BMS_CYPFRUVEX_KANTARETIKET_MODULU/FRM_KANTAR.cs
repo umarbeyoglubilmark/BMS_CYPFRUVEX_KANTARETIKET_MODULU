@@ -132,11 +132,19 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
             O.ACIKLAMA = TE_ACIKLAMA.Text == "ZORUNLU DEĞİL" ? "" : TE_ACIKLAMA.Text;
             O.TARTI_BELGE_NO = TE_TARTIBELGENO.Text;
             O.SOZLESME_NO = TE_SOZLESMENO.Text;
-            O.AMBARID_GIDECEGIYER = int.Parse(AMBARID_GIDECEGIYER);
+
+            O.AMBARID_GIDECEGIYERKOD = int.Parse(AMBARID_GIDECEGIYER);
+            O.OZELKOD_BOLGEKOD = TE_OZELKOD_BOLGEKOD.Text;
+            O.YETKIKOD_BOLGEDETAYKOD = TE_YETKIKOD_BOLGEDETAYKOD.Text;
+            O.ODEMEPLANID_SOZLESMETURUKOD = int.Parse(ODEMEPLANID_SOZLESMETURU);
+            O.SALEMANID_SOKOD = int.Parse(SALEMANID_SO);
+
+
+            O.AMBARID_GIDECEGIYER = TE_AMBAR_GIDECEGIYER.Text;
             O.OZELKOD_BOLGE = TE_OZELKOD_BOLGE.Text;
             O.YETKIKOD_BOLGEDETAY = TE_YETKIKOD_BOLGEDETAY.Text;
-            O.ODEMEPLANID_SOZLESMETURU = int.Parse(ODEMEPLANID_SOZLESMETURU);
-            O.SALEMANID_SO = int.Parse(SALEMANID_SO);
+            O.ODEMEPLANID_SOZLESMETURU = TE_ODEMEPLANI_SOZLESMETURU.Text;
+            O.SALEMANID_SO = TE_SALEMANID_SO.Text;
             SQLCON = new SqlConnection(LGCONSTR);
             using (SqlConnection con = SQLCON) {
                 if (con.State != ConnectionState.Open) {
@@ -255,6 +263,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
         private void SB_BOLGE_Click(object sender, EventArgs e) {
             using (FRM_KANTARBOLGE F = new FRM_KANTARBOLGE(_CFG)) {
                 if (F.ShowDialog() == DialogResult.OK) {
+                    TE_OZELKOD_BOLGEKOD.Text = F.KOD;
                     TE_OZELKOD_BOLGE.Text = F.AD;
                 }
             }
@@ -263,7 +272,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
         private void SB_BOLGEDETAY_Click(object sender, EventArgs e) {
             using (FRM_KANTARBOLGEDETAY F = new FRM_KANTARBOLGEDETAY(_CFG)) {
                 if (F.ShowDialog() == DialogResult.OK) {
-
+                    TE_YETKIKOD_BOLGEDETAYKOD.Text = F.KOD;
                     TE_YETKIKOD_BOLGEDETAY.Text = F.AD;
 
                 }
@@ -273,6 +282,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
         private void SB_SOZLESMETURU_Click(object sender, EventArgs e) {
             using (FRM_KANTARSOZLESMETURU F = new FRM_KANTARSOZLESMETURU(_CFG)) {
                 if (F.ShowDialog() == DialogResult.OK) {
+                    TE_ODEMEPLANI_SOZLESMETURUKOD.Text = F.KOD;
                     TE_ODEMEPLANI_SOZLESMETURU.Text = F.AD;
                     ODEMEPLANID_SOZLESMETURU = F.LOGICALREF;
                 }
@@ -283,6 +293,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
             using (FRM_KANTARSO F = new FRM_KANTARSO(_CFG)) {
                 if (F.ShowDialog() == DialogResult.OK) {
                     TE_SALEMANID_SO.Text = F.AD;
+                    TE_SALEMANID_SOKOD.Text = F.KOD;
                     SALEMANID_SO = F.LOGICALREF;
                 }
             }
@@ -291,6 +302,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
         private void SB_GIDECEGIYER_Click(object sender, EventArgs e) {
             using (FRM_KANTARGIDECEGIYER F = new FRM_KANTARGIDECEGIYER(_CFG)) {
                 if (F.ShowDialog() == DialogResult.OK) {
+                    TE_AMBAR_GIDECEGIYERKOD.Text = F.LOGICALREF;
                     TE_AMBAR_GIDECEGIYER.Text = F.AD;
                     AMBARID_GIDECEGIYER = F.LOGICALREF;
                 }

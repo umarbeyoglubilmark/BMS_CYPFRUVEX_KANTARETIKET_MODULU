@@ -24,10 +24,17 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.MODELS {
         public int TSTATUS { get; set; }
         public string TARTI_BELGE_NO { get; set; } = string.Empty;
         public string SOZLESME_NO { get; set; } = string.Empty;
-        public int AMBARID_GIDECEGIYER { get; set; }
+
+        public int AMBARID_GIDECEGIYERKOD { get; set; }
+        public string OZELKOD_BOLGEKOD { get; set; }
+        public string YETKIKOD_BOLGEDETAYKOD { get; set; }
+        public int ODEMEPLANID_SOZLESMETURUKOD { get; set; }
+        public int SALEMANID_SOKOD { get; set; }
+
+        public string AMBARID_GIDECEGIYER { get; set; }
         public string OZELKOD_BOLGE { get; set; }
         public string YETKIKOD_BOLGEDETAY { get; set; }
-        public int ODEMEPLANID_SOZLESMETURU{ get; set; }
-        public int SALEMANID_SO { get; set; }
+        public string ODEMEPLANID_SOZLESMETURU { get; set; }
+        public string SALEMANID_SO { get; set; }
     }
 }

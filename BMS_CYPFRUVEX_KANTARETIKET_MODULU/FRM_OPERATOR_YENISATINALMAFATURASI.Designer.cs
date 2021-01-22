@@ -104,12 +104,12 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(962, 111);
+            this.panelControl1.Size = new System.Drawing.Size(962, 174);
             this.panelControl1.TabIndex = 0;
             // 
             // TE_BOLGEDETAYYETKIKOD
             // 
-            this.TE_BOLGEDETAYYETKIKOD.Location = new System.Drawing.Point(734, 27);
+            this.TE_BOLGEDETAYYETKIKOD.Location = new System.Drawing.Point(379, 103);
             this.TE_BOLGEDETAYYETKIKOD.Name = "TE_BOLGEDETAYYETKIKOD";
             this.TE_BOLGEDETAYYETKIKOD.Size = new System.Drawing.Size(7, 13);
             this.TE_BOLGEDETAYYETKIKOD.TabIndex = 28;
@@ -117,7 +117,7 @@
             // 
             // TE_SOSATISELEMANI
             // 
-            this.TE_SOSATISELEMANI.Location = new System.Drawing.Point(734, 65);
+            this.TE_SOSATISELEMANI.Location = new System.Drawing.Point(379, 141);
             this.TE_SOSATISELEMANI.Name = "TE_SOSATISELEMANI";
             this.TE_SOSATISELEMANI.Size = new System.Drawing.Size(7, 13);
             this.TE_SOSATISELEMANI.TabIndex = 27;
@@ -125,7 +125,7 @@
             // 
             // TE_SOZLESMETURU_ODEMETAHSILATPLANI
             // 
-            this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Location = new System.Drawing.Point(734, 46);
+            this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Location = new System.Drawing.Point(379, 122);
             this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Name = "TE_SOZLESMETURU_ODEMETAHSILATPLANI";
             this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Size = new System.Drawing.Size(7, 13);
             this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.TabIndex = 26;
@@ -133,7 +133,7 @@
             // 
             // TE_BOLGEOZELKOD
             // 
-            this.TE_BOLGEOZELKOD.Location = new System.Drawing.Point(734, 8);
+            this.TE_BOLGEOZELKOD.Location = new System.Drawing.Point(379, 84);
             this.TE_BOLGEOZELKOD.Name = "TE_BOLGEOZELKOD";
             this.TE_BOLGEOZELKOD.Size = new System.Drawing.Size(7, 13);
             this.TE_BOLGEOZELKOD.TabIndex = 25;
@@ -141,7 +141,7 @@
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(660, 27);
+            this.labelControl13.Location = new System.Drawing.Point(246, 103);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(58, 13);
             this.labelControl13.TabIndex = 24;
@@ -149,7 +149,7 @@
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(696, 65);
+            this.labelControl12.Location = new System.Drawing.Point(246, 141);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(22, 13);
             this.labelControl12.TabIndex = 23;
@@ -157,7 +157,7 @@
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(649, 46);
+            this.labelControl11.Location = new System.Drawing.Point(246, 122);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(69, 13);
             this.labelControl11.TabIndex = 22;
@@ -165,7 +165,7 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(692, 8);
+            this.labelControl10.Location = new System.Drawing.Point(246, 84);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(26, 13);
             this.labelControl10.TabIndex = 21;
@@ -173,14 +173,14 @@
             // 
             // TE_SOZLESME_NO
             // 
-            this.TE_SOZLESME_NO.Location = new System.Drawing.Point(70, 84);
+            this.TE_SOZLESME_NO.Location = new System.Drawing.Point(72, 115);
             this.TE_SOZLESME_NO.Name = "TE_SOZLESME_NO";
             this.TE_SOZLESME_NO.Size = new System.Drawing.Size(122, 20);
             this.TE_SOZLESME_NO.TabIndex = 20;
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(8, 84);
+            this.labelControl8.Location = new System.Drawing.Point(10, 115);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(60, 13);
             this.labelControl8.TabIndex = 19;
@@ -188,14 +188,14 @@
             // 
             // TE_ACIKLAMA
             // 
-            this.TE_ACIKLAMA.Location = new System.Drawing.Point(70, 65);
+            this.TE_ACIKLAMA.Location = new System.Drawing.Point(72, 96);
             this.TE_ACIKLAMA.Name = "TE_ACIKLAMA";
             this.TE_ACIKLAMA.Size = new System.Drawing.Size(122, 20);
             this.TE_ACIKLAMA.TabIndex = 18;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(8, 65);
+            this.labelControl5.Location = new System.Drawing.Point(10, 96);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(41, 13);
             this.labelControl5.TabIndex = 17;
@@ -235,7 +235,7 @@
             // 
             // TE_BELGENO
             // 
-            this.TE_BELGENO.Location = new System.Drawing.Point(70, 46);
+            this.TE_BELGENO.Location = new System.Drawing.Point(72, 77);
             this.TE_BELGENO.Name = "TE_BELGENO";
             this.TE_BELGENO.Size = new System.Drawing.Size(122, 20);
             this.TE_BELGENO.TabIndex = 12;
@@ -244,7 +244,7 @@
             // 
             this.DT_TARIH.EditValue = null;
             this.DT_TARIH.Enabled = false;
-            this.DT_TARIH.Location = new System.Drawing.Point(70, 27);
+            this.DT_TARIH.Location = new System.Drawing.Point(72, 58);
             this.DT_TARIH.Name = "DT_TARIH";
             this.DT_TARIH.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -256,7 +256,7 @@
             // 
             // TE_FATURANO
             // 
-            this.TE_FATURANO.Location = new System.Drawing.Point(70, 8);
+            this.TE_FATURANO.Location = new System.Drawing.Point(72, 39);
             this.TE_FATURANO.Name = "TE_FATURANO";
             this.TE_FATURANO.Size = new System.Drawing.Size(122, 20);
             this.TE_FATURANO.TabIndex = 10;
@@ -296,7 +296,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(8, 46);
+            this.labelControl3.Location = new System.Drawing.Point(10, 77);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(46, 13);
             this.labelControl3.TabIndex = 2;
@@ -304,7 +304,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(8, 27);
+            this.labelControl2.Location = new System.Drawing.Point(10, 58);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(24, 13);
             this.labelControl2.TabIndex = 1;
@@ -312,7 +312,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(8, 8);
+            this.labelControl1.Location = new System.Drawing.Point(10, 39);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(52, 13);
             this.labelControl1.TabIndex = 0;
@@ -323,9 +323,9 @@
             // 
             this.panelControl2.Controls.Add(this.GRC_OPERATOR_YENISATINALMA);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 111);
+            this.panelControl2.Location = new System.Drawing.Point(0, 174);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(962, 340);
+            this.panelControl2.Size = new System.Drawing.Size(962, 365);
             this.panelControl2.TabIndex = 1;
             // 
             // GRC_OPERATOR_YENISATINALMA
@@ -334,7 +334,7 @@
             this.GRC_OPERATOR_YENISATINALMA.Location = new System.Drawing.Point(2, 2);
             this.GRC_OPERATOR_YENISATINALMA.MainView = this.GRV_OPERATOR_YENISATINALMA;
             this.GRC_OPERATOR_YENISATINALMA.Name = "GRC_OPERATOR_YENISATINALMA";
-            this.GRC_OPERATOR_YENISATINALMA.Size = new System.Drawing.Size(958, 336);
+            this.GRC_OPERATOR_YENISATINALMA.Size = new System.Drawing.Size(958, 361);
             this.GRC_OPERATOR_YENISATINALMA.TabIndex = 0;
             this.GRC_OPERATOR_YENISATINALMA.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GRV_OPERATOR_YENISATINALMA});
@@ -354,14 +354,14 @@
             this.panelControl3.Controls.Add(this.SB_VAZGEC);
             this.panelControl3.Controls.Add(this.SB_KAYDET);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl3.Location = new System.Drawing.Point(0, 451);
+            this.panelControl3.Location = new System.Drawing.Point(0, 539);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(962, 142);
+            this.panelControl3.Size = new System.Drawing.Size(962, 54);
             this.panelControl3.TabIndex = 2;
             // 
             // SB_VAZGEC
             // 
-            this.SB_VAZGEC.Location = new System.Drawing.Point(853, 68);
+            this.SB_VAZGEC.Location = new System.Drawing.Point(863, 6);
             this.SB_VAZGEC.Name = "SB_VAZGEC";
             this.SB_VAZGEC.Size = new System.Drawing.Size(87, 37);
             this.SB_VAZGEC.TabIndex = 1;
@@ -370,7 +370,7 @@
             // 
             // SB_KAYDET
             // 
-            this.SB_KAYDET.Location = new System.Drawing.Point(751, 68);
+            this.SB_KAYDET.Location = new System.Drawing.Point(761, 6);
             this.SB_KAYDET.Name = "SB_KAYDET";
             this.SB_KAYDET.Size = new System.Drawing.Size(87, 37);
             this.SB_KAYDET.TabIndex = 0;

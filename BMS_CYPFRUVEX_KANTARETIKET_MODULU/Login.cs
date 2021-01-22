@@ -24,13 +24,15 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
         CONFIG CFG;
         string USERNAME = "";
         string PASSWORD = "";
+        SqlConnection SQLCON = new SqlConnection();
         public Login() {
             InitializeComponent();
+
             CFG = GET_CONFIG();
             INITIALIZE_VALUES();
-            if (!File.Exists(GLOB.SORGU_ENTDB_PATH)) {
-                CREATE_ENTDB();
-            }
+            //if (!File.Exists(GLOB.SORGU_ENTDB_PATH)) {
+            //    CREATE_ENTDB();
+            //}
 
         }
         private void CREATE_ENTDB() {
@@ -133,9 +135,19 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
 
         private void sb_LOGIN_Click(object sender, EventArgs e) {
             try {
-                if (te_USERNAME.Text == USERNAME && te_PASSWORD.Text == PASSWORD) {
+                string LGCONSTR = string.Format("Data Source={0};Initial Catalog={1};User Id={2};Password={3};MultipleActiveResultSets=True;",
+    CFG.LGDBSERVER, CFG.LGDBDATABASE, CFG.LGDBUSERNAME, CFG.LGDBPASSWORD);
+                string YETKI = "";
+                try {
+                    SQLCON = new SqlConnection(LGCONSTR);
+                    /*YETKI TUR KANTAR YONETICI OPERATOR */
+                    YETKI = BMS_DLL.SQL.SELECT2(string.Format(@" SELECT TUR FROM BMS_KE_KULLANICILAR WHERE KULLANICIADI='{0}' AND PAROLA='{1}'", te_USERNAME.Text, te_PASSWORD.Text), SQLCON).Rows[0][0].ToString();
+                } catch {
+                    return;
+                }
+                if (YETKI!="") {
                     this.Hide();
-                    BMS_DLL.GLOBAL.FORMAC(false, new MainForm(CFG), this, false, "");
+                    BMS_DLL.GLOBAL.FORMAC(false, new MainForm(CFG,YETKI), this, false, "");
                 } else {
                     MessageBox.Show("KULLANICI ADI PAROLA HATASI");
                 }

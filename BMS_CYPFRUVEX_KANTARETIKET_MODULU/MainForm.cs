@@ -20,10 +20,17 @@ using System.IO;
 namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
     public partial class MainForm : DevExpress.XtraEditors.XtraForm {
         CONFIG _CFG;
-        public MainForm(CONFIG CFG) { 
+        public MainForm(CONFIG CFG, string YETKI) {
             InitializeComponent();
             _CFG = CFG; ;
-
+            /*YETKI TUR KANTAR YONETICI OPERATOR */
+            if (YETKI == "KANTAR") {
+                SB_OPERATOR.Visibility = BarItemVisibility.Never;
+            } else if (YETKI == "OPERATOR") {
+                SB_KANTAR.Visibility = BarItemVisibility.Never;
+            } else if (YETKI == "YONETICI") {
+                SB_TANIMLAMALAR.Visible = true;
+            }
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
@@ -69,17 +76,17 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
 
         }
 
-        private void BTN_KULLANICILAR_ItemClick(object sender, ItemClickEventArgs e) { 
-            BMS_DLL.GLOBAL.FORMAC(true, new FRM_TANIMLAMALAR_KULLANICILAR(_CFG), this,false, null);
+        private void BTN_KULLANICILAR_ItemClick(object sender, ItemClickEventArgs e) {
+            BMS_DLL.GLOBAL.FORMAC(true, new FRM_TANIMLAMALAR_KULLANICILAR(_CFG), this, false, null);
         }
 
-        private void BTN_ISCIETIKETMIKTARESLESTIRME_ItemClick(object sender, ItemClickEventArgs e) { 
+        private void BTN_ISCIETIKETMIKTARESLESTIRME_ItemClick(object sender, ItemClickEventArgs e) {
             BMS_DLL.GLOBAL.FORMAC(true, new FRM_TANIMLAMALAR_ISCIETIKETMIKTAR(_CFG), this, false, null);
         }
 
         private void barButtonItem10_ItemClick(object sender, ItemClickEventArgs e) {
             BMS_DLL.GLOBAL.FORMAC(true, new FRM_ETIKET_ETIKETBAS(_CFG), this, false, null);
-            
+
         }
     }
 }

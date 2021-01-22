@@ -33,11 +33,19 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.CONVERTER {
                 try { B.TSTATUS = (int)r["TSTATUS"]; } catch { }
                 try { B.TARTI_BELGE_NO = (string)r["TARTI_BELGE_NO"]; } catch { }
                 try { B.SOZLESME_NO = (string)r["SOZLESME_NO"]; } catch { }
-                try { B.AMBARID_GIDECEGIYER = (int)r["AMBARID_GIDECEGIYER"]; } catch { }
+
+                try { B.AMBARID_GIDECEGIYERKOD = (int)r["AMBARID_GIDECEGIYERKOD"]; } catch { }
+                try { B.OZELKOD_BOLGEKOD = (string)r["OZELKOD_BOLGEKOD"]; } catch { }
+                try { B.YETKIKOD_BOLGEDETAYKOD = (string)r["YETKIKOD_BOLGEDETAYKOD"]; } catch { }
+                try { B.ODEMEPLANID_SOZLESMETURUKOD = (int)r["ODEMEPLANID_SOZLESMETURUKOD"]; } catch { }
+                try { B.SALEMANID_SOKOD = (int)r["SALEMANID_SOKOD"]; } catch { }
+
+                try { B.AMBARID_GIDECEGIYER = (string)r["AMBARID_GIDECEGIYER"]; } catch { }
                 try { B.OZELKOD_BOLGE = (string)r["OZELKOD_BOLGE"]; } catch { }
                 try { B.YETKIKOD_BOLGEDETAY = (string)r["YETKIKOD_BOLGEDETAY"]; } catch { }
-                try { B.ODEMEPLANID_SOZLESMETURU = (int)r["ODEMEPLANID_SOZLESMETURU"]; } catch { }
-                try { B.SALEMANID_SO = (int)r["SALEMANID_SO"]; } catch { }
+                try { B.ODEMEPLANID_SOZLESMETURU = (string)r["ODEMEPLANID_SOZLESMETURU"]; } catch { }
+                try { B.SALEMANID_SO = (string)r["SALEMANID_SO"]; } catch { }
+
                 L.Add(B);
             }
             return L;
@@ -62,12 +70,19 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.CONVERTER {
             try { B.ERRORMESSAGE = (string)r["ERRORMESSAGE"]; } catch { }
             try { B.TSTATUS = (int)r["TSTATUS"]; } catch { }
             try { B.TARTI_BELGE_NO = (string)r["TARTI_BELGE_NO"]; } catch { }
-            try { B.SOZLESME_NO = (string)r["SOZLESME_NO"]; } catch { } 
-            try { B.AMBARID_GIDECEGIYER = (int)r["AMBARID_GIDECEGIYER"]; } catch { }
+            try { B.SOZLESME_NO = (string)r["SOZLESME_NO"]; } catch { }
+
+            try { B.AMBARID_GIDECEGIYERKOD = (int)r["AMBARID_GIDECEGIYERKOD"]; } catch { }
+            try { B.OZELKOD_BOLGEKOD = (string)r["OZELKOD_BOLGEKOD"]; } catch { }
+            try { B.YETKIKOD_BOLGEDETAYKOD = (string)r["YETKIKOD_BOLGEDETAYKOD"]; } catch { }
+            try { B.ODEMEPLANID_SOZLESMETURUKOD = (int)r["ODEMEPLANID_SOZLESMETURUKOD"]; } catch { }
+            try { B.SALEMANID_SOKOD = (int)r["SALEMANID_SOKOD"]; } catch { }
+
+            try { B.AMBARID_GIDECEGIYER = (string)r["AMBARID_GIDECEGIYER"]; } catch { }
             try { B.OZELKOD_BOLGE = (string)r["OZELKOD_BOLGE"]; } catch { }
             try { B.YETKIKOD_BOLGEDETAY = (string)r["YETKIKOD_BOLGEDETAY"]; } catch { }
-            try { B.ODEMEPLANID_SOZLESMETURU = (int)r["ODEMEPLANID_SOZLESMETURU"]; } catch { }
-            try { B.SALEMANID_SO = (int)r["SALEMANID_SO"]; } catch { }
+            try { B.ODEMEPLANID_SOZLESMETURU = (string)r["ODEMEPLANID_SOZLESMETURU"]; } catch { }
+            try { B.SALEMANID_SO = (string)r["SALEMANID_SO"]; } catch { }
             return B;
         }
 

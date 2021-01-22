@@ -28,19 +28,19 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.TE_SALEMANID_SO = new DevExpress.XtraEditors.MemoEdit();
             this.SB_SO = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.TE_SALEMANID_SOKOD = new DevExpress.XtraEditors.TextEdit();
             this.TE_ODEMEPLANI_SOZLESMETURU = new DevExpress.XtraEditors.MemoEdit();
             this.SB_SOZLESMETURU = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.TE_ODEMEPLANI_SOZLESMETURUKOD = new DevExpress.XtraEditors.TextEdit();
             this.TE_YETKIKOD_BOLGEDETAY = new DevExpress.XtraEditors.MemoEdit();
             this.SB_BOLGEDETAY = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.TE_YETKIKOD_BOLGEDETAYKOD = new DevExpress.XtraEditors.TextEdit();
             this.TE_OZELKOD_BOLGE = new DevExpress.XtraEditors.MemoEdit();
             this.SB_BOLGE = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.TE_OZELKOD_BOLGEKOD = new DevExpress.XtraEditors.TextEdit();
             this.TE_AMBAR_GIDECEGIYER = new DevExpress.XtraEditors.MemoEdit();
             this.SB_GIDECEGIYER = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.TE_AMBAR_GIDECEGIYERKOD = new DevExpress.XtraEditors.TextEdit();
             this.DE_TARIH = new DevExpress.XtraEditors.DateEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.TE_SOZLESMENO = new DevExpress.XtraEditors.MemoEdit();
@@ -68,15 +68,15 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TE_SALEMANID_SO.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_SALEMANID_SOKOD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_ODEMEPLANI_SOZLESMETURU.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_YETKIKOD_BOLGEDETAY.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_YETKIKOD_BOLGEDETAYKOD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_OZELKOD_BOLGE.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_OZELKOD_BOLGEKOD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_AMBAR_GIDECEGIYER.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_AMBAR_GIDECEGIYERKOD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DE_TARIH.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DE_TARIH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_SOZLESMENO.Properties)).BeginInit();
@@ -106,19 +106,19 @@
             // 
             this.panel2.Controls.Add(this.TE_SALEMANID_SO);
             this.panel2.Controls.Add(this.SB_SO);
-            this.panel2.Controls.Add(this.textEdit5);
+            this.panel2.Controls.Add(this.TE_SALEMANID_SOKOD);
             this.panel2.Controls.Add(this.TE_ODEMEPLANI_SOZLESMETURU);
             this.panel2.Controls.Add(this.SB_SOZLESMETURU);
-            this.panel2.Controls.Add(this.textEdit3);
+            this.panel2.Controls.Add(this.TE_ODEMEPLANI_SOZLESMETURUKOD);
             this.panel2.Controls.Add(this.TE_YETKIKOD_BOLGEDETAY);
             this.panel2.Controls.Add(this.SB_BOLGEDETAY);
-            this.panel2.Controls.Add(this.textEdit4);
+            this.panel2.Controls.Add(this.TE_YETKIKOD_BOLGEDETAYKOD);
             this.panel2.Controls.Add(this.TE_OZELKOD_BOLGE);
             this.panel2.Controls.Add(this.SB_BOLGE);
-            this.panel2.Controls.Add(this.textEdit2);
+            this.panel2.Controls.Add(this.TE_OZELKOD_BOLGEKOD);
             this.panel2.Controls.Add(this.TE_AMBAR_GIDECEGIYER);
             this.panel2.Controls.Add(this.SB_GIDECEGIYER);
-            this.panel2.Controls.Add(this.textEdit1);
+            this.panel2.Controls.Add(this.TE_AMBAR_GIDECEGIYERKOD);
             this.panel2.Controls.Add(this.DE_TARIH);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.TE_SOZLESMENO);
@@ -146,13 +146,13 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(920, 543);
+            this.panel2.Size = new System.Drawing.Size(920, 528);
             this.panel2.TabIndex = 1;
             // 
             // TE_SALEMANID_SO
             // 
             this.TE_SALEMANID_SO.EditValue = "";
-            this.TE_SALEMANID_SO.Location = new System.Drawing.Point(281, 380);
+            this.TE_SALEMANID_SO.Location = new System.Drawing.Point(468, 380);
             this.TE_SALEMANID_SO.Name = "TE_SALEMANID_SO";
             this.TE_SALEMANID_SO.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_SALEMANID_SO.Properties.Appearance.Options.UseFont = true;
@@ -161,8 +161,8 @@
             this.TE_SALEMANID_SO.Properties.NullText = "KONTRAKTÖR ADI";
             this.TE_SALEMANID_SO.Properties.ReadOnly = true;
             this.TE_SALEMANID_SO.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TE_SALEMANID_SO.Size = new System.Drawing.Size(632, 32);
-            this.TE_SALEMANID_SO.TabIndex = 27;
+            this.TE_SALEMANID_SO.Size = new System.Drawing.Size(439, 32);
+            this.TE_SALEMANID_SO.TabIndex = 32;
             // 
             // SB_SO
             // 
@@ -172,29 +172,29 @@
             this.SB_SO.Location = new System.Drawing.Point(8, 380);
             this.SB_SO.Name = "SB_SO";
             this.SB_SO.Size = new System.Drawing.Size(272, 32);
-            this.SB_SO.TabIndex = 26;
+            this.SB_SO.TabIndex = 30;
             this.SB_SO.Text = "Ş.Ö.";
             this.SB_SO.Click += new System.EventHandler(this.SB_SO_Click);
             // 
-            // textEdit5
+            // TE_SALEMANID_SOKOD
             // 
-            this.textEdit5.EditValue = "";
-            this.textEdit5.Location = new System.Drawing.Point(267, 380);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.textEdit5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textEdit5.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit5.Properties.Appearance.Options.UseFont = true;
-            this.textEdit5.Properties.NullText = "KODU";
-            this.textEdit5.Properties.ReadOnly = true;
-            this.textEdit5.Size = new System.Drawing.Size(16, 32);
-            this.textEdit5.TabIndex = 35;
-            this.textEdit5.Visible = false;
+            this.TE_SALEMANID_SOKOD.EditValue = "";
+            this.TE_SALEMANID_SOKOD.Enabled = false;
+            this.TE_SALEMANID_SOKOD.Location = new System.Drawing.Point(286, 380);
+            this.TE_SALEMANID_SOKOD.Name = "TE_SALEMANID_SOKOD";
+            this.TE_SALEMANID_SOKOD.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.TE_SALEMANID_SOKOD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TE_SALEMANID_SOKOD.Properties.Appearance.Options.UseBackColor = true;
+            this.TE_SALEMANID_SOKOD.Properties.Appearance.Options.UseFont = true;
+            this.TE_SALEMANID_SOKOD.Properties.NullText = "KODU";
+            this.TE_SALEMANID_SOKOD.Properties.ReadOnly = true;
+            this.TE_SALEMANID_SOKOD.Size = new System.Drawing.Size(176, 32);
+            this.TE_SALEMANID_SOKOD.TabIndex = 31;
             // 
             // TE_ODEMEPLANI_SOZLESMETURU
             // 
             this.TE_ODEMEPLANI_SOZLESMETURU.EditValue = "";
-            this.TE_ODEMEPLANI_SOZLESMETURU.Location = new System.Drawing.Point(281, 342);
+            this.TE_ODEMEPLANI_SOZLESMETURU.Location = new System.Drawing.Point(468, 342);
             this.TE_ODEMEPLANI_SOZLESMETURU.Name = "TE_ODEMEPLANI_SOZLESMETURU";
             this.TE_ODEMEPLANI_SOZLESMETURU.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_ODEMEPLANI_SOZLESMETURU.Properties.Appearance.Options.UseFont = true;
@@ -203,8 +203,8 @@
             this.TE_ODEMEPLANI_SOZLESMETURU.Properties.NullText = "KONTRAKTÖR ADI";
             this.TE_ODEMEPLANI_SOZLESMETURU.Properties.ReadOnly = true;
             this.TE_ODEMEPLANI_SOZLESMETURU.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TE_ODEMEPLANI_SOZLESMETURU.Size = new System.Drawing.Size(632, 32);
-            this.TE_ODEMEPLANI_SOZLESMETURU.TabIndex = 25;
+            this.TE_ODEMEPLANI_SOZLESMETURU.Size = new System.Drawing.Size(439, 32);
+            this.TE_ODEMEPLANI_SOZLESMETURU.TabIndex = 29;
             // 
             // SB_SOZLESMETURU
             // 
@@ -214,29 +214,29 @@
             this.SB_SOZLESMETURU.Location = new System.Drawing.Point(8, 342);
             this.SB_SOZLESMETURU.Name = "SB_SOZLESMETURU";
             this.SB_SOZLESMETURU.Size = new System.Drawing.Size(272, 32);
-            this.SB_SOZLESMETURU.TabIndex = 24;
+            this.SB_SOZLESMETURU.TabIndex = 27;
             this.SB_SOZLESMETURU.Text = "SÖZLEŞME TÜRÜ";
             this.SB_SOZLESMETURU.Click += new System.EventHandler(this.SB_SOZLESMETURU_Click);
             // 
-            // textEdit3
+            // TE_ODEMEPLANI_SOZLESMETURUKOD
             // 
-            this.textEdit3.EditValue = "";
-            this.textEdit3.Location = new System.Drawing.Point(267, 342);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textEdit3.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit3.Properties.Appearance.Options.UseFont = true;
-            this.textEdit3.Properties.NullText = "KODU";
-            this.textEdit3.Properties.ReadOnly = true;
-            this.textEdit3.Size = new System.Drawing.Size(16, 32);
-            this.textEdit3.TabIndex = 32;
-            this.textEdit3.Visible = false;
+            this.TE_ODEMEPLANI_SOZLESMETURUKOD.EditValue = "";
+            this.TE_ODEMEPLANI_SOZLESMETURUKOD.Enabled = false;
+            this.TE_ODEMEPLANI_SOZLESMETURUKOD.Location = new System.Drawing.Point(286, 342);
+            this.TE_ODEMEPLANI_SOZLESMETURUKOD.Name = "TE_ODEMEPLANI_SOZLESMETURUKOD";
+            this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties.Appearance.Options.UseBackColor = true;
+            this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties.Appearance.Options.UseFont = true;
+            this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties.NullText = "KODU";
+            this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties.ReadOnly = true;
+            this.TE_ODEMEPLANI_SOZLESMETURUKOD.Size = new System.Drawing.Size(176, 32);
+            this.TE_ODEMEPLANI_SOZLESMETURUKOD.TabIndex = 28;
             // 
             // TE_YETKIKOD_BOLGEDETAY
             // 
             this.TE_YETKIKOD_BOLGEDETAY.EditValue = "";
-            this.TE_YETKIKOD_BOLGEDETAY.Location = new System.Drawing.Point(281, 304);
+            this.TE_YETKIKOD_BOLGEDETAY.Location = new System.Drawing.Point(468, 304);
             this.TE_YETKIKOD_BOLGEDETAY.Name = "TE_YETKIKOD_BOLGEDETAY";
             this.TE_YETKIKOD_BOLGEDETAY.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_YETKIKOD_BOLGEDETAY.Properties.Appearance.Options.UseFont = true;
@@ -245,8 +245,8 @@
             this.TE_YETKIKOD_BOLGEDETAY.Properties.NullText = "KONTRAKTÖR ADI";
             this.TE_YETKIKOD_BOLGEDETAY.Properties.ReadOnly = true;
             this.TE_YETKIKOD_BOLGEDETAY.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TE_YETKIKOD_BOLGEDETAY.Size = new System.Drawing.Size(632, 32);
-            this.TE_YETKIKOD_BOLGEDETAY.TabIndex = 23;
+            this.TE_YETKIKOD_BOLGEDETAY.Size = new System.Drawing.Size(439, 32);
+            this.TE_YETKIKOD_BOLGEDETAY.TabIndex = 26;
             // 
             // SB_BOLGEDETAY
             // 
@@ -256,29 +256,29 @@
             this.SB_BOLGEDETAY.Location = new System.Drawing.Point(8, 304);
             this.SB_BOLGEDETAY.Name = "SB_BOLGEDETAY";
             this.SB_BOLGEDETAY.Size = new System.Drawing.Size(272, 32);
-            this.SB_BOLGEDETAY.TabIndex = 22;
+            this.SB_BOLGEDETAY.TabIndex = 24;
             this.SB_BOLGEDETAY.Text = "BÖLGE DETAY";
             this.SB_BOLGEDETAY.Click += new System.EventHandler(this.SB_BOLGEDETAY_Click);
             // 
-            // textEdit4
+            // TE_YETKIKOD_BOLGEDETAYKOD
             // 
-            this.textEdit4.EditValue = "";
-            this.textEdit4.Location = new System.Drawing.Point(267, 304);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textEdit4.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit4.Properties.Appearance.Options.UseFont = true;
-            this.textEdit4.Properties.NullText = "KODU";
-            this.textEdit4.Properties.ReadOnly = true;
-            this.textEdit4.Size = new System.Drawing.Size(16, 32);
-            this.textEdit4.TabIndex = 29;
-            this.textEdit4.Visible = false;
+            this.TE_YETKIKOD_BOLGEDETAYKOD.EditValue = "";
+            this.TE_YETKIKOD_BOLGEDETAYKOD.Enabled = false;
+            this.TE_YETKIKOD_BOLGEDETAYKOD.Location = new System.Drawing.Point(286, 304);
+            this.TE_YETKIKOD_BOLGEDETAYKOD.Name = "TE_YETKIKOD_BOLGEDETAYKOD";
+            this.TE_YETKIKOD_BOLGEDETAYKOD.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.TE_YETKIKOD_BOLGEDETAYKOD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TE_YETKIKOD_BOLGEDETAYKOD.Properties.Appearance.Options.UseBackColor = true;
+            this.TE_YETKIKOD_BOLGEDETAYKOD.Properties.Appearance.Options.UseFont = true;
+            this.TE_YETKIKOD_BOLGEDETAYKOD.Properties.NullText = "KODU";
+            this.TE_YETKIKOD_BOLGEDETAYKOD.Properties.ReadOnly = true;
+            this.TE_YETKIKOD_BOLGEDETAYKOD.Size = new System.Drawing.Size(176, 32);
+            this.TE_YETKIKOD_BOLGEDETAYKOD.TabIndex = 25;
             // 
             // TE_OZELKOD_BOLGE
             // 
             this.TE_OZELKOD_BOLGE.EditValue = "";
-            this.TE_OZELKOD_BOLGE.Location = new System.Drawing.Point(281, 266);
+            this.TE_OZELKOD_BOLGE.Location = new System.Drawing.Point(468, 266);
             this.TE_OZELKOD_BOLGE.Name = "TE_OZELKOD_BOLGE";
             this.TE_OZELKOD_BOLGE.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_OZELKOD_BOLGE.Properties.Appearance.Options.UseFont = true;
@@ -287,8 +287,8 @@
             this.TE_OZELKOD_BOLGE.Properties.NullText = "KONTRAKTÖR ADI";
             this.TE_OZELKOD_BOLGE.Properties.ReadOnly = true;
             this.TE_OZELKOD_BOLGE.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TE_OZELKOD_BOLGE.Size = new System.Drawing.Size(632, 32);
-            this.TE_OZELKOD_BOLGE.TabIndex = 21;
+            this.TE_OZELKOD_BOLGE.Size = new System.Drawing.Size(439, 32);
+            this.TE_OZELKOD_BOLGE.TabIndex = 23;
             // 
             // SB_BOLGE
             // 
@@ -298,29 +298,29 @@
             this.SB_BOLGE.Location = new System.Drawing.Point(8, 266);
             this.SB_BOLGE.Name = "SB_BOLGE";
             this.SB_BOLGE.Size = new System.Drawing.Size(272, 32);
-            this.SB_BOLGE.TabIndex = 20;
+            this.SB_BOLGE.TabIndex = 21;
             this.SB_BOLGE.Text = "BÖLGE";
             this.SB_BOLGE.Click += new System.EventHandler(this.SB_BOLGE_Click);
             // 
-            // textEdit2
+            // TE_OZELKOD_BOLGEKOD
             // 
-            this.textEdit2.EditValue = "";
-            this.textEdit2.Location = new System.Drawing.Point(267, 266);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Properties.NullText = "KODU";
-            this.textEdit2.Properties.ReadOnly = true;
-            this.textEdit2.Size = new System.Drawing.Size(16, 32);
-            this.textEdit2.TabIndex = 26;
-            this.textEdit2.Visible = false;
+            this.TE_OZELKOD_BOLGEKOD.EditValue = "";
+            this.TE_OZELKOD_BOLGEKOD.Enabled = false;
+            this.TE_OZELKOD_BOLGEKOD.Location = new System.Drawing.Point(286, 266);
+            this.TE_OZELKOD_BOLGEKOD.Name = "TE_OZELKOD_BOLGEKOD";
+            this.TE_OZELKOD_BOLGEKOD.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.TE_OZELKOD_BOLGEKOD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TE_OZELKOD_BOLGEKOD.Properties.Appearance.Options.UseBackColor = true;
+            this.TE_OZELKOD_BOLGEKOD.Properties.Appearance.Options.UseFont = true;
+            this.TE_OZELKOD_BOLGEKOD.Properties.NullText = "KODU";
+            this.TE_OZELKOD_BOLGEKOD.Properties.ReadOnly = true;
+            this.TE_OZELKOD_BOLGEKOD.Size = new System.Drawing.Size(176, 32);
+            this.TE_OZELKOD_BOLGEKOD.TabIndex = 22;
             // 
             // TE_AMBAR_GIDECEGIYER
             // 
             this.TE_AMBAR_GIDECEGIYER.EditValue = "";
-            this.TE_AMBAR_GIDECEGIYER.Location = new System.Drawing.Point(281, 228);
+            this.TE_AMBAR_GIDECEGIYER.Location = new System.Drawing.Point(468, 228);
             this.TE_AMBAR_GIDECEGIYER.Name = "TE_AMBAR_GIDECEGIYER";
             this.TE_AMBAR_GIDECEGIYER.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_AMBAR_GIDECEGIYER.Properties.Appearance.Options.UseFont = true;
@@ -329,8 +329,8 @@
             this.TE_AMBAR_GIDECEGIYER.Properties.NullText = "KONTRAKTÖR ADI";
             this.TE_AMBAR_GIDECEGIYER.Properties.ReadOnly = true;
             this.TE_AMBAR_GIDECEGIYER.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TE_AMBAR_GIDECEGIYER.Size = new System.Drawing.Size(632, 32);
-            this.TE_AMBAR_GIDECEGIYER.TabIndex = 19;
+            this.TE_AMBAR_GIDECEGIYER.Size = new System.Drawing.Size(439, 32);
+            this.TE_AMBAR_GIDECEGIYER.TabIndex = 20;
             // 
             // SB_GIDECEGIYER
             // 
@@ -344,19 +344,20 @@
             this.SB_GIDECEGIYER.Text = "GİDECEĞİ YER";
             this.SB_GIDECEGIYER.Click += new System.EventHandler(this.SB_GIDECEGIYER_Click);
             // 
-            // textEdit1
+            // TE_AMBAR_GIDECEGIYERKOD
             // 
-            this.textEdit1.EditValue = "";
-            this.textEdit1.Location = new System.Drawing.Point(267, 228);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.NullText = "KODU";
-            this.textEdit1.Size = new System.Drawing.Size(16, 32);
-            this.textEdit1.TabIndex = 23;
-            this.textEdit1.Visible = false;
+            this.TE_AMBAR_GIDECEGIYERKOD.EditValue = "";
+            this.TE_AMBAR_GIDECEGIYERKOD.Enabled = false;
+            this.TE_AMBAR_GIDECEGIYERKOD.Location = new System.Drawing.Point(286, 228);
+            this.TE_AMBAR_GIDECEGIYERKOD.Name = "TE_AMBAR_GIDECEGIYERKOD";
+            this.TE_AMBAR_GIDECEGIYERKOD.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.TE_AMBAR_GIDECEGIYERKOD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TE_AMBAR_GIDECEGIYERKOD.Properties.Appearance.Options.UseBackColor = true;
+            this.TE_AMBAR_GIDECEGIYERKOD.Properties.Appearance.Options.UseFont = true;
+            this.TE_AMBAR_GIDECEGIYERKOD.Properties.NullText = "KODU";
+            this.TE_AMBAR_GIDECEGIYERKOD.Properties.ReadOnly = true;
+            this.TE_AMBAR_GIDECEGIYERKOD.Size = new System.Drawing.Size(176, 32);
+            this.TE_AMBAR_GIDECEGIYERKOD.TabIndex = 19;
             // 
             // DE_TARIH
             // 
@@ -434,7 +435,7 @@
             // TE_ACIKLAMA
             // 
             this.TE_ACIKLAMA.EditValue = "";
-            this.TE_ACIKLAMA.Location = new System.Drawing.Point(280, 418);
+            this.TE_ACIKLAMA.Location = new System.Drawing.Point(286, 418);
             this.TE_ACIKLAMA.Name = "TE_ACIKLAMA";
             this.TE_ACIKLAMA.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_ACIKLAMA.Properties.Appearance.Options.UseFont = true;
@@ -442,8 +443,8 @@
             this.TE_ACIKLAMA.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.TE_ACIKLAMA.Properties.NullText = "ZORUNLU DEĞİL";
             this.TE_ACIKLAMA.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TE_ACIKLAMA.Size = new System.Drawing.Size(627, 31);
-            this.TE_ACIKLAMA.TabIndex = 29;
+            this.TE_ACIKLAMA.Size = new System.Drawing.Size(621, 31);
+            this.TE_ACIKLAMA.TabIndex = 34;
             // 
             // simpleButton1
             // 
@@ -454,7 +455,7 @@
             this.simpleButton1.Location = new System.Drawing.Point(2, 418);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(278, 31);
-            this.simpleButton1.TabIndex = 28;
+            this.simpleButton1.TabIndex = 33;
             this.simpleButton1.Text = "AÇIKLAMA";
             // 
             // SB_eXCELEKAYDET
@@ -469,17 +470,17 @@
             this.SB_eXCELEKAYDET.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.SB_eXCELEKAYDET.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.SB_eXCELEKAYDET.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SB_eXCELEKAYDET.ImageOptions.SvgImage")));
-            this.SB_eXCELEKAYDET.Location = new System.Drawing.Point(0, 487);
+            this.SB_eXCELEKAYDET.Location = new System.Drawing.Point(0, 472);
             this.SB_eXCELEKAYDET.Name = "SB_eXCELEKAYDET";
             this.SB_eXCELEKAYDET.Size = new System.Drawing.Size(920, 56);
-            this.SB_eXCELEKAYDET.TabIndex = 14;
+            this.SB_eXCELEKAYDET.TabIndex = 35;
             this.SB_eXCELEKAYDET.Text = "KAYDET";
             this.SB_eXCELEKAYDET.Click += new System.EventHandler(this.SB_eXCELEKAYDET_Click);
             // 
             // TE_BIRIM
             // 
             this.TE_BIRIM.EditValue = "";
-            this.TE_BIRIM.Location = new System.Drawing.Point(468, 148);
+            this.TE_BIRIM.Location = new System.Drawing.Point(468, 150);
             this.TE_BIRIM.Name = "TE_BIRIM";
             this.TE_BIRIM.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_BIRIM.Properties.Appearance.Options.UseFont = true;
@@ -492,7 +493,7 @@
             // TE_MIKTAR
             // 
             this.TE_MIKTAR.EditValue = "";
-            this.TE_MIKTAR.Location = new System.Drawing.Point(281, 187);
+            this.TE_MIKTAR.Location = new System.Drawing.Point(286, 187);
             this.TE_MIKTAR.Name = "TE_MIKTAR";
             this.TE_MIKTAR.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TE_MIKTAR.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -501,7 +502,7 @@
             this.TE_MIKTAR.Properties.Mask.EditMask = "n2";
             this.TE_MIKTAR.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TE_MIKTAR.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.TE_MIKTAR.Size = new System.Drawing.Size(626, 38);
+            this.TE_MIKTAR.Size = new System.Drawing.Size(622, 38);
             this.TE_MIKTAR.TabIndex = 17;
             // 
             // simpleButton5
@@ -512,14 +513,14 @@
             this.simpleButton5.Enabled = false;
             this.simpleButton5.Location = new System.Drawing.Point(3, 187);
             this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(272, 38);
+            this.simpleButton5.Size = new System.Drawing.Size(277, 38);
             this.simpleButton5.TabIndex = 16;
             this.simpleButton5.Text = "MİKTAR";
             // 
             // TE_URUN
             // 
             this.TE_URUN.EditValue = "";
-            this.TE_URUN.Location = new System.Drawing.Point(557, 148);
+            this.TE_URUN.Location = new System.Drawing.Point(557, 150);
             this.TE_URUN.Name = "TE_URUN";
             this.TE_URUN.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_URUN.Properties.Appearance.Options.UseFont = true;
@@ -538,7 +539,7 @@
             this.SB_URUN.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SB_URUN.Location = new System.Drawing.Point(3, 151);
             this.SB_URUN.Name = "SB_URUN";
-            this.SB_URUN.Size = new System.Drawing.Size(272, 31);
+            this.SB_URUN.Size = new System.Drawing.Size(277, 31);
             this.SB_URUN.TabIndex = 12;
             this.SB_URUN.Text = "ÜRÜN";
             this.SB_URUN.Click += new System.EventHandler(this.SB_URUN_Click);
@@ -595,7 +596,7 @@
             this.SB_URETICI.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SB_URETICI.Location = new System.Drawing.Point(3, 115);
             this.SB_URETICI.Name = "SB_URETICI";
-            this.SB_URETICI.Size = new System.Drawing.Size(272, 31);
+            this.SB_URETICI.Size = new System.Drawing.Size(277, 31);
             this.SB_URETICI.TabIndex = 9;
             this.SB_URETICI.Text = "ÜRETİCİ";
             this.SB_URETICI.Click += new System.EventHandler(this.SB_URETICI_Click);
@@ -607,7 +608,7 @@
             this.SB_KONTRAKTOR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SB_KONTRAKTOR.Location = new System.Drawing.Point(3, 77);
             this.SB_KONTRAKTOR.Name = "SB_KONTRAKTOR";
-            this.SB_KONTRAKTOR.Size = new System.Drawing.Size(272, 32);
+            this.SB_KONTRAKTOR.Size = new System.Drawing.Size(277, 32);
             this.SB_KONTRAKTOR.TabIndex = 6;
             this.SB_KONTRAKTOR.Text = "KONTRAKTÖR";
             this.SB_KONTRAKTOR.Click += new System.EventHandler(this.SB_KONTRAKTOR_Click);
@@ -619,7 +620,7 @@
             this.SB_PLAKA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SB_PLAKA.Location = new System.Drawing.Point(3, 38);
             this.SB_PLAKA.Name = "SB_PLAKA";
-            this.SB_PLAKA.Size = new System.Drawing.Size(272, 35);
+            this.SB_PLAKA.Size = new System.Drawing.Size(277, 35);
             this.SB_PLAKA.TabIndex = 3;
             this.SB_PLAKA.Text = "PLAKA";
             this.SB_PLAKA.Click += new System.EventHandler(this.SB_PLAKA_Click);
@@ -627,63 +628,63 @@
             // TE_PLAKAKODU
             // 
             this.TE_PLAKAKODU.EditValue = "";
-            this.TE_PLAKAKODU.Location = new System.Drawing.Point(281, 41);
+            this.TE_PLAKAKODU.Location = new System.Drawing.Point(286, 41);
             this.TE_PLAKAKODU.Name = "TE_PLAKAKODU";
             this.TE_PLAKAKODU.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.TE_PLAKAKODU.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_PLAKAKODU.Properties.Appearance.Options.UseBackColor = true;
             this.TE_PLAKAKODU.Properties.Appearance.Options.UseFont = true;
             this.TE_PLAKAKODU.Properties.NullText = "KODU";
-            this.TE_PLAKAKODU.Size = new System.Drawing.Size(182, 32);
+            this.TE_PLAKAKODU.Size = new System.Drawing.Size(177, 32);
             this.TE_PLAKAKODU.TabIndex = 4;
             this.TE_PLAKAKODU.EditValueChanged += new System.EventHandler(this.TE_PLAKAKODU_EditValueChanged);
             // 
             // TE_KONTRAKTORKODU
             // 
             this.TE_KONTRAKTORKODU.EditValue = "";
-            this.TE_KONTRAKTORKODU.Location = new System.Drawing.Point(281, 77);
+            this.TE_KONTRAKTORKODU.Location = new System.Drawing.Point(286, 77);
             this.TE_KONTRAKTORKODU.Name = "TE_KONTRAKTORKODU";
             this.TE_KONTRAKTORKODU.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.TE_KONTRAKTORKODU.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_KONTRAKTORKODU.Properties.Appearance.Options.UseBackColor = true;
             this.TE_KONTRAKTORKODU.Properties.Appearance.Options.UseFont = true;
             this.TE_KONTRAKTORKODU.Properties.NullText = "KODU";
-            this.TE_KONTRAKTORKODU.Size = new System.Drawing.Size(182, 32);
+            this.TE_KONTRAKTORKODU.Size = new System.Drawing.Size(177, 32);
             this.TE_KONTRAKTORKODU.TabIndex = 7;
             this.TE_KONTRAKTORKODU.EditValueChanged += new System.EventHandler(this.TE_KONTRAKTORKODU_EditValueChanged);
             // 
             // TE_URETICIKODU
             // 
             this.TE_URETICIKODU.EditValue = "";
-            this.TE_URETICIKODU.Location = new System.Drawing.Point(281, 114);
+            this.TE_URETICIKODU.Location = new System.Drawing.Point(286, 114);
             this.TE_URETICIKODU.Name = "TE_URETICIKODU";
             this.TE_URETICIKODU.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.TE_URETICIKODU.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_URETICIKODU.Properties.Appearance.Options.UseBackColor = true;
             this.TE_URETICIKODU.Properties.Appearance.Options.UseFont = true;
             this.TE_URETICIKODU.Properties.NullText = "KODU";
-            this.TE_URETICIKODU.Size = new System.Drawing.Size(182, 32);
+            this.TE_URETICIKODU.Size = new System.Drawing.Size(177, 32);
             this.TE_URETICIKODU.TabIndex = 10;
             this.TE_URETICIKODU.EditValueChanged += new System.EventHandler(this.TE_URETICIKODU_EditValueChanged);
             // 
             // TE_URUNKODU
             // 
             this.TE_URUNKODU.EditValue = "";
-            this.TE_URUNKODU.Location = new System.Drawing.Point(281, 150);
+            this.TE_URUNKODU.Location = new System.Drawing.Point(286, 150);
             this.TE_URUNKODU.Name = "TE_URUNKODU";
             this.TE_URUNKODU.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.TE_URUNKODU.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_URUNKODU.Properties.Appearance.Options.UseBackColor = true;
             this.TE_URUNKODU.Properties.Appearance.Options.UseFont = true;
             this.TE_URUNKODU.Properties.NullText = "KODU";
-            this.TE_URUNKODU.Size = new System.Drawing.Size(181, 32);
+            this.TE_URUNKODU.Size = new System.Drawing.Size(176, 32);
             this.TE_URUNKODU.TabIndex = 13;
             this.TE_URUNKODU.EditValueChanged += new System.EventHandler(this.TE_URUNKODU_EditValueChanged);
             // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 555);
+            this.panel3.Location = new System.Drawing.Point(0, 540);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(920, 10);
             this.panel3.TabIndex = 2;
@@ -692,7 +693,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 565);
+            this.ClientSize = new System.Drawing.Size(920, 550);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
@@ -704,15 +705,15 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TE_SALEMANID_SO.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_SALEMANID_SOKOD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_ODEMEPLANI_SOZLESMETURU.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_YETKIKOD_BOLGEDETAY.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_YETKIKOD_BOLGEDETAYKOD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_OZELKOD_BOLGE.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_OZELKOD_BOLGEKOD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_AMBAR_GIDECEGIYER.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_AMBAR_GIDECEGIYERKOD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DE_TARIH.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DE_TARIH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_SOZLESMENO.Properties)).EndInit();
@@ -763,18 +764,18 @@
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraEditors.MemoEdit TE_SALEMANID_SO;
         private DevExpress.XtraEditors.SimpleButton SB_SO;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.TextEdit TE_SALEMANID_SOKOD;
         private DevExpress.XtraEditors.MemoEdit TE_ODEMEPLANI_SOZLESMETURU;
         private DevExpress.XtraEditors.SimpleButton SB_SOZLESMETURU;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit TE_ODEMEPLANI_SOZLESMETURUKOD;
         private DevExpress.XtraEditors.MemoEdit TE_YETKIKOD_BOLGEDETAY;
         private DevExpress.XtraEditors.SimpleButton SB_BOLGEDETAY;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit TE_YETKIKOD_BOLGEDETAYKOD;
         private DevExpress.XtraEditors.MemoEdit TE_OZELKOD_BOLGE;
         private DevExpress.XtraEditors.SimpleButton SB_BOLGE;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit TE_OZELKOD_BOLGEKOD;
         private DevExpress.XtraEditors.MemoEdit TE_AMBAR_GIDECEGIYER;
         private DevExpress.XtraEditors.SimpleButton SB_GIDECEGIYER;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit TE_AMBAR_GIDECEGIYERKOD;
     }
 }
