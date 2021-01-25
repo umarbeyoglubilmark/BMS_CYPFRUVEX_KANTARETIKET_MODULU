@@ -147,7 +147,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(920, 528);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 0;
             // 
             // TE_SALEMANID_SO
             // 
@@ -158,7 +158,6 @@
             this.TE_SALEMANID_SO.Properties.Appearance.Options.UseFont = true;
             this.TE_SALEMANID_SO.Properties.Appearance.Options.UseTextOptions = true;
             this.TE_SALEMANID_SO.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.TE_SALEMANID_SO.Properties.NullText = "KONTRAKTÖR ADI";
             this.TE_SALEMANID_SO.Properties.ReadOnly = true;
             this.TE_SALEMANID_SO.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_SALEMANID_SO.Size = new System.Drawing.Size(439, 32);
@@ -199,7 +198,6 @@
             this.TE_ODEMEPLANI_SOZLESMETURU.Properties.Appearance.Options.UseFont = true;
             this.TE_ODEMEPLANI_SOZLESMETURU.Properties.Appearance.Options.UseTextOptions = true;
             this.TE_ODEMEPLANI_SOZLESMETURU.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.TE_ODEMEPLANI_SOZLESMETURU.Properties.NullText = "KONTRAKTÖR ADI";
             this.TE_ODEMEPLANI_SOZLESMETURU.Properties.ReadOnly = true;
             this.TE_ODEMEPLANI_SOZLESMETURU.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_ODEMEPLANI_SOZLESMETURU.Size = new System.Drawing.Size(439, 32);
@@ -240,7 +238,6 @@
             this.TE_YETKIKOD_BOLGEDETAY.Properties.Appearance.Options.UseFont = true;
             this.TE_YETKIKOD_BOLGEDETAY.Properties.Appearance.Options.UseTextOptions = true;
             this.TE_YETKIKOD_BOLGEDETAY.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.TE_YETKIKOD_BOLGEDETAY.Properties.NullText = "KONTRAKTÖR ADI";
             this.TE_YETKIKOD_BOLGEDETAY.Properties.ReadOnly = true;
             this.TE_YETKIKOD_BOLGEDETAY.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_YETKIKOD_BOLGEDETAY.Size = new System.Drawing.Size(439, 32);
@@ -281,7 +278,6 @@
             this.TE_OZELKOD_BOLGE.Properties.Appearance.Options.UseFont = true;
             this.TE_OZELKOD_BOLGE.Properties.Appearance.Options.UseTextOptions = true;
             this.TE_OZELKOD_BOLGE.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.TE_OZELKOD_BOLGE.Properties.NullText = "KONTRAKTÖR ADI";
             this.TE_OZELKOD_BOLGE.Properties.ReadOnly = true;
             this.TE_OZELKOD_BOLGE.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_OZELKOD_BOLGE.Size = new System.Drawing.Size(439, 32);
@@ -322,7 +318,6 @@
             this.TE_AMBAR_GIDECEGIYER.Properties.Appearance.Options.UseFont = true;
             this.TE_AMBAR_GIDECEGIYER.Properties.Appearance.Options.UseTextOptions = true;
             this.TE_AMBAR_GIDECEGIYER.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.TE_AMBAR_GIDECEGIYER.Properties.NullText = "KONTRAKTÖR ADI";
             this.TE_AMBAR_GIDECEGIYER.Properties.ReadOnly = true;
             this.TE_AMBAR_GIDECEGIYER.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_AMBAR_GIDECEGIYER.Size = new System.Drawing.Size(439, 32);
@@ -478,7 +473,6 @@
             this.TE_BIRIM.Name = "TE_BIRIM";
             this.TE_BIRIM.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_BIRIM.Properties.Appearance.Options.UseFont = true;
-            this.TE_BIRIM.Properties.NullText = "BİRİM ADI";
             this.TE_BIRIM.Properties.ReadOnly = true;
             this.TE_BIRIM.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_BIRIM.Size = new System.Drawing.Size(82, 32);
@@ -520,7 +514,6 @@
             this.TE_URUN.Properties.Appearance.Options.UseFont = true;
             this.TE_URUN.Properties.Appearance.Options.UseTextOptions = true;
             this.TE_URUN.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.TE_URUN.Properties.NullText = "ÜRÜN ADI";
             this.TE_URUN.Properties.ReadOnly = true;
             this.TE_URUN.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_URUN.Size = new System.Drawing.Size(351, 32);
@@ -541,32 +534,30 @@
             // TE_URETICI
             // 
             this.TE_URETICI.EditValue = "";
-            this.TE_URETICI.Location = new System.Drawing.Point(469, 114);
+            this.TE_URETICI.Location = new System.Drawing.Point(468, 77);
             this.TE_URETICI.Name = "TE_URETICI";
             this.TE_URETICI.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_URETICI.Properties.Appearance.Options.UseFont = true;
             this.TE_URETICI.Properties.Appearance.Options.UseTextOptions = true;
             this.TE_URETICI.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.TE_URETICI.Properties.NullText = "ÜRETİCİ ADI";
             this.TE_URETICI.Properties.ReadOnly = true;
             this.TE_URETICI.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_URETICI.Size = new System.Drawing.Size(439, 32);
-            this.TE_URETICI.TabIndex = 11;
+            this.TE_URETICI.TabIndex = 8;
             // 
             // TE_KONTRAKTOR
             // 
             this.TE_KONTRAKTOR.EditValue = "";
-            this.TE_KONTRAKTOR.Location = new System.Drawing.Point(469, 77);
+            this.TE_KONTRAKTOR.Location = new System.Drawing.Point(469, 112);
             this.TE_KONTRAKTOR.Name = "TE_KONTRAKTOR";
             this.TE_KONTRAKTOR.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_KONTRAKTOR.Properties.Appearance.Options.UseFont = true;
             this.TE_KONTRAKTOR.Properties.Appearance.Options.UseTextOptions = true;
             this.TE_KONTRAKTOR.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.TE_KONTRAKTOR.Properties.NullText = "KONTRAKTÖR ADI";
             this.TE_KONTRAKTOR.Properties.ReadOnly = true;
             this.TE_KONTRAKTOR.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_KONTRAKTOR.Size = new System.Drawing.Size(439, 32);
-            this.TE_KONTRAKTOR.TabIndex = 8;
+            this.TE_KONTRAKTOR.TabIndex = 11;
             // 
             // TE_PLAKA
             // 
@@ -577,7 +568,6 @@
             this.TE_PLAKA.Properties.Appearance.Options.UseFont = true;
             this.TE_PLAKA.Properties.Appearance.Options.UseTextOptions = true;
             this.TE_PLAKA.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.TE_PLAKA.Properties.NullText = "PLAKA";
             this.TE_PLAKA.Properties.ReadOnly = true;
             this.TE_PLAKA.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_PLAKA.Size = new System.Drawing.Size(438, 32);
@@ -588,10 +578,10 @@
             this.SB_URETICI.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_URETICI.Appearance.Options.UseFont = true;
             this.SB_URETICI.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_URETICI.Location = new System.Drawing.Point(3, 115);
+            this.SB_URETICI.Location = new System.Drawing.Point(2, 78);
             this.SB_URETICI.Name = "SB_URETICI";
             this.SB_URETICI.Size = new System.Drawing.Size(277, 31);
-            this.SB_URETICI.TabIndex = 9;
+            this.SB_URETICI.TabIndex = 6;
             this.SB_URETICI.Text = "ÜRETİCİ";
             this.SB_URETICI.Click += new System.EventHandler(this.SB_URETICI_Click);
             // 
@@ -600,10 +590,10 @@
             this.SB_KONTRAKTOR.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_KONTRAKTOR.Appearance.Options.UseFont = true;
             this.SB_KONTRAKTOR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_KONTRAKTOR.Location = new System.Drawing.Point(3, 77);
+            this.SB_KONTRAKTOR.Location = new System.Drawing.Point(3, 112);
             this.SB_KONTRAKTOR.Name = "SB_KONTRAKTOR";
             this.SB_KONTRAKTOR.Size = new System.Drawing.Size(277, 32);
-            this.SB_KONTRAKTOR.TabIndex = 6;
+            this.SB_KONTRAKTOR.TabIndex = 9;
             this.SB_KONTRAKTOR.Text = "KONTRAKTÖR";
             this.SB_KONTRAKTOR.Click += new System.EventHandler(this.SB_KONTRAKTOR_Click);
             // 
@@ -635,27 +625,27 @@
             // TE_KONTRAKTORKODU
             // 
             this.TE_KONTRAKTORKODU.EditValue = "";
-            this.TE_KONTRAKTORKODU.Location = new System.Drawing.Point(286, 77);
+            this.TE_KONTRAKTORKODU.Location = new System.Drawing.Point(286, 112);
             this.TE_KONTRAKTORKODU.Name = "TE_KONTRAKTORKODU";
             this.TE_KONTRAKTORKODU.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.TE_KONTRAKTORKODU.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_KONTRAKTORKODU.Properties.Appearance.Options.UseBackColor = true;
             this.TE_KONTRAKTORKODU.Properties.Appearance.Options.UseFont = true;
             this.TE_KONTRAKTORKODU.Size = new System.Drawing.Size(177, 32);
-            this.TE_KONTRAKTORKODU.TabIndex = 7;
+            this.TE_KONTRAKTORKODU.TabIndex = 10;
             this.TE_KONTRAKTORKODU.EditValueChanged += new System.EventHandler(this.TE_KONTRAKTORKODU_EditValueChanged);
             // 
             // TE_URETICIKODU
             // 
             this.TE_URETICIKODU.EditValue = "";
-            this.TE_URETICIKODU.Location = new System.Drawing.Point(286, 114);
+            this.TE_URETICIKODU.Location = new System.Drawing.Point(285, 77);
             this.TE_URETICIKODU.Name = "TE_URETICIKODU";
             this.TE_URETICIKODU.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.TE_URETICIKODU.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_URETICIKODU.Properties.Appearance.Options.UseBackColor = true;
             this.TE_URETICIKODU.Properties.Appearance.Options.UseFont = true;
             this.TE_URETICIKODU.Size = new System.Drawing.Size(177, 32);
-            this.TE_URETICIKODU.TabIndex = 10;
+            this.TE_URETICIKODU.TabIndex = 7;
             this.TE_URETICIKODU.EditValueChanged += new System.EventHandler(this.TE_URETICIKODU_EditValueChanged);
             // 
             // TE_URUNKODU
