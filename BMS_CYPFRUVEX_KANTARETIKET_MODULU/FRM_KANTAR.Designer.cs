@@ -186,7 +186,6 @@
             this.TE_SALEMANID_SOKOD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_SALEMANID_SOKOD.Properties.Appearance.Options.UseBackColor = true;
             this.TE_SALEMANID_SOKOD.Properties.Appearance.Options.UseFont = true;
-            this.TE_SALEMANID_SOKOD.Properties.NullText = "KODU";
             this.TE_SALEMANID_SOKOD.Properties.ReadOnly = true;
             this.TE_SALEMANID_SOKOD.Size = new System.Drawing.Size(176, 32);
             this.TE_SALEMANID_SOKOD.TabIndex = 31;
@@ -228,7 +227,6 @@
             this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties.Appearance.Options.UseBackColor = true;
             this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties.Appearance.Options.UseFont = true;
-            this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties.NullText = "KODU";
             this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties.ReadOnly = true;
             this.TE_ODEMEPLANI_SOZLESMETURUKOD.Size = new System.Drawing.Size(176, 32);
             this.TE_ODEMEPLANI_SOZLESMETURUKOD.TabIndex = 28;
@@ -270,7 +268,6 @@
             this.TE_YETKIKOD_BOLGEDETAYKOD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_YETKIKOD_BOLGEDETAYKOD.Properties.Appearance.Options.UseBackColor = true;
             this.TE_YETKIKOD_BOLGEDETAYKOD.Properties.Appearance.Options.UseFont = true;
-            this.TE_YETKIKOD_BOLGEDETAYKOD.Properties.NullText = "KODU";
             this.TE_YETKIKOD_BOLGEDETAYKOD.Properties.ReadOnly = true;
             this.TE_YETKIKOD_BOLGEDETAYKOD.Size = new System.Drawing.Size(176, 32);
             this.TE_YETKIKOD_BOLGEDETAYKOD.TabIndex = 25;
@@ -312,7 +309,6 @@
             this.TE_OZELKOD_BOLGEKOD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_OZELKOD_BOLGEKOD.Properties.Appearance.Options.UseBackColor = true;
             this.TE_OZELKOD_BOLGEKOD.Properties.Appearance.Options.UseFont = true;
-            this.TE_OZELKOD_BOLGEKOD.Properties.NullText = "KODU";
             this.TE_OZELKOD_BOLGEKOD.Properties.ReadOnly = true;
             this.TE_OZELKOD_BOLGEKOD.Size = new System.Drawing.Size(176, 32);
             this.TE_OZELKOD_BOLGEKOD.TabIndex = 22;
@@ -354,7 +350,6 @@
             this.TE_AMBAR_GIDECEGIYERKOD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_AMBAR_GIDECEGIYERKOD.Properties.Appearance.Options.UseBackColor = true;
             this.TE_AMBAR_GIDECEGIYERKOD.Properties.Appearance.Options.UseFont = true;
-            this.TE_AMBAR_GIDECEGIYERKOD.Properties.NullText = "KODU";
             this.TE_AMBAR_GIDECEGIYERKOD.Properties.ReadOnly = true;
             this.TE_AMBAR_GIDECEGIYERKOD.Size = new System.Drawing.Size(176, 32);
             this.TE_AMBAR_GIDECEGIYERKOD.TabIndex = 19;
@@ -441,7 +436,6 @@
             this.TE_ACIKLAMA.Properties.Appearance.Options.UseFont = true;
             this.TE_ACIKLAMA.Properties.Appearance.Options.UseTextOptions = true;
             this.TE_ACIKLAMA.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.TE_ACIKLAMA.Properties.NullText = "ZORUNLU DEĞİL";
             this.TE_ACIKLAMA.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_ACIKLAMA.Size = new System.Drawing.Size(621, 31);
             this.TE_ACIKLAMA.TabIndex = 34;
@@ -634,7 +628,6 @@
             this.TE_PLAKAKODU.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_PLAKAKODU.Properties.Appearance.Options.UseBackColor = true;
             this.TE_PLAKAKODU.Properties.Appearance.Options.UseFont = true;
-            this.TE_PLAKAKODU.Properties.NullText = "KODU";
             this.TE_PLAKAKODU.Size = new System.Drawing.Size(177, 32);
             this.TE_PLAKAKODU.TabIndex = 4;
             this.TE_PLAKAKODU.EditValueChanged += new System.EventHandler(this.TE_PLAKAKODU_EditValueChanged);
@@ -648,7 +641,6 @@
             this.TE_KONTRAKTORKODU.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_KONTRAKTORKODU.Properties.Appearance.Options.UseBackColor = true;
             this.TE_KONTRAKTORKODU.Properties.Appearance.Options.UseFont = true;
-            this.TE_KONTRAKTORKODU.Properties.NullText = "KODU";
             this.TE_KONTRAKTORKODU.Size = new System.Drawing.Size(177, 32);
             this.TE_KONTRAKTORKODU.TabIndex = 7;
             this.TE_KONTRAKTORKODU.EditValueChanged += new System.EventHandler(this.TE_KONTRAKTORKODU_EditValueChanged);
@@ -662,7 +654,6 @@
             this.TE_URETICIKODU.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_URETICIKODU.Properties.Appearance.Options.UseBackColor = true;
             this.TE_URETICIKODU.Properties.Appearance.Options.UseFont = true;
-            this.TE_URETICIKODU.Properties.NullText = "KODU";
             this.TE_URETICIKODU.Size = new System.Drawing.Size(177, 32);
             this.TE_URETICIKODU.TabIndex = 10;
             this.TE_URETICIKODU.EditValueChanged += new System.EventHandler(this.TE_URETICIKODU_EditValueChanged);
@@ -676,7 +667,6 @@
             this.TE_URUNKODU.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_URUNKODU.Properties.Appearance.Options.UseBackColor = true;
             this.TE_URUNKODU.Properties.Appearance.Options.UseFont = true;
-            this.TE_URUNKODU.Properties.NullText = "KODU";
             this.TE_URUNKODU.Size = new System.Drawing.Size(176, 32);
             this.TE_URUNKODU.TabIndex = 13;
             this.TE_URUNKODU.EditValueChanged += new System.EventHandler(this.TE_URUNKODU_EditValueChanged);
