@@ -492,14 +492,14 @@
             // 
             // TE_MIKTAR
             // 
-            this.TE_MIKTAR.EditValue = "";
+            this.TE_MIKTAR.EditValue = "0";
             this.TE_MIKTAR.Location = new System.Drawing.Point(286, 187);
             this.TE_MIKTAR.Name = "TE_MIKTAR";
             this.TE_MIKTAR.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TE_MIKTAR.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_MIKTAR.Properties.Appearance.Options.UseBackColor = true;
             this.TE_MIKTAR.Properties.Appearance.Options.UseFont = true;
-            this.TE_MIKTAR.Properties.Mask.EditMask = "n2";
+            this.TE_MIKTAR.Properties.Mask.EditMask = "n0";
             this.TE_MIKTAR.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TE_MIKTAR.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.TE_MIKTAR.Size = new System.Drawing.Size(622, 38);
