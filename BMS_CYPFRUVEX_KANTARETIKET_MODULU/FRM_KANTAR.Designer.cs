@@ -476,7 +476,7 @@
             this.TE_BIRIM.EditValue = "";
             this.TE_BIRIM.Location = new System.Drawing.Point(468, 150);
             this.TE_BIRIM.Name = "TE_BIRIM";
-            this.TE_BIRIM.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TE_BIRIM.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_BIRIM.Properties.Appearance.Options.UseFont = true;
             this.TE_BIRIM.Properties.NullText = "BİRİM ADI";
             this.TE_BIRIM.Properties.ReadOnly = true;
