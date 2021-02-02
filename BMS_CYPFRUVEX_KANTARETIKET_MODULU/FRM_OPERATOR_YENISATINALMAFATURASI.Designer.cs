@@ -277,7 +277,6 @@
             // DT_TARIH
             // 
             this.DT_TARIH.EditValue = null;
-            this.DT_TARIH.Enabled = false;
             this.DT_TARIH.Location = new System.Drawing.Point(109, 43);
             this.DT_TARIH.Name = "DT_TARIH";
             this.DT_TARIH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -286,7 +285,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DT_TARIH.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DT_TARIH.Properties.ReadOnly = true;
+            this.DT_TARIH.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.DT_TARIH.Size = new System.Drawing.Size(154, 26);
             this.DT_TARIH.TabIndex = 11;
             // 
@@ -394,6 +393,12 @@
             // 
             // GRV_OPERATOR_YENISATINALMA
             // 
+            this.GRV_OPERATOR_YENISATINALMA.Appearance.FixedLine.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.GRV_OPERATOR_YENISATINALMA.Appearance.FixedLine.Options.UseFont = true;
+            this.GRV_OPERATOR_YENISATINALMA.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.GRV_OPERATOR_YENISATINALMA.Appearance.HeaderPanel.Options.UseFont = true;
+            this.GRV_OPERATOR_YENISATINALMA.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.GRV_OPERATOR_YENISATINALMA.Appearance.Row.Options.UseFont = true;
             this.GRV_OPERATOR_YENISATINALMA.GridControl = this.GRC_OPERATOR_YENISATINALMA;
             this.GRV_OPERATOR_YENISATINALMA.Name = "GRV_OPERATOR_YENISATINALMA";
             this.GRV_OPERATOR_YENISATINALMA.OptionsView.ColumnAutoWidth = false;

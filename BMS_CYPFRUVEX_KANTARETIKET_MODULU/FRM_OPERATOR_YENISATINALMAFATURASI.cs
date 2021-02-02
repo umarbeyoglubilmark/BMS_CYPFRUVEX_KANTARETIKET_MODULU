@@ -125,6 +125,7 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
             this.Close();
         }
         private void SAVE_INVOICE() {
+            _KANTAR.TARIH = DT_TARIH.DateTime.Date;
             int INVOICELOGICALREF = 0;
             BM_XXX_XX_INVOICE O = new BM_XXX_XX_INVOICE() {
                 AFFECTRISK = 1,
@@ -133,7 +134,7 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
                 CAPIBLOCK_CREATEDHOUR = DateTime.Now.Hour,
                 CAPIBLOCK_CREATEDMIN = DateTime.Now.Minute,
                 CLIENTREF = _KANTAR.URETICIID,
-                DATE_ = _KANTAR.TARIH,
+                DATE_ = _KANTAR.TARIH.Date,
                 DEDUCTIONPART1 = 2,
                 DEDUCTIONPART2 = 3,
                 DOCDATE = _KANTAR.TARIH,
@@ -203,7 +204,7 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
                 CAPIBLOCK_CREATEDSEC = DateTime.Now.Second,
                 CLIENTREF = _KANTAR.URETICIID,
                 GENEXP2 = _KANTAR.SOZLESME_NO,
-                DATE_ = _KANTAR.TARIH,
+                DATE_ = _KANTAR.TARIH.Date,
                 DEDUCTIONPART1 = 2,
                 DEDUCTIONPART2 = 3,
                 DISPSTATUS = 1,
@@ -266,7 +267,7 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
             BM_XXX_XX_STLINE O = new BM_XXX_XX_STLINE() {
                 STOCKREF = _KANTAR.URUNID,
                 TRCODE = 1,
-                DATE_ = _KANTAR.TARIH,
+                DATE_ = _KANTAR.TARIH.Date,
                 FTIME = 254939409,
                 IOCODE = 1,
                 STFICHEREF = _STFICHEREF,
@@ -437,9 +438,10 @@ SELECT MAX(FICHENO) FICHENO FROM LG_" + _CFG.FIRMNR + @"_01_INVOICE where TRCODE
 
         private void GRV_OPERATOR_YENISATINALMA_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e) {
             if (e.Column.FieldName == "BIRIMFIYAT" || e.Column.FieldName == "MIKTAR") {
+                double MIKTAR = _KANTAR.MIKTAR;
                 try { BIRIMFIYAT = double.Parse(GRV_OPERATOR_YENISATINALMA.GetFocusedRowCellValue("BIRIMFIYAT").ToString()); } catch { }
-
-                try { TOPLAM = Math.Round(BIRIMFIYAT * _KANTAR.MIKTAR, 2); } catch { }
+                try { MIKTAR = double.Parse(GRV_OPERATOR_YENISATINALMA.GetFocusedRowCellValue("MIKTAR").ToString()); } catch { }
+                try { TOPLAM = Math.Round(BIRIMFIYAT *  MIKTAR, 2); } catch { }
                 GRV_OPERATOR_YENISATINALMA.SetFocusedRowCellValue("TOPLAM", TOPLAM);
             }
         }

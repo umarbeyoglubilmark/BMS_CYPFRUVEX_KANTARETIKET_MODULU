@@ -35,7 +35,7 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
         public FRM_KANTAR(CONFIG CFG) {
             InitializeComponent();
             DE_TARIH.DateTime = DateTime.Now;
-            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+      
             _CFG = CFG;
             LGCONSTR = string.Format("Data Source={0};Initial Catalog={1};User Id={2};Password={3};MultipleActiveResultSets=True;",
 _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
