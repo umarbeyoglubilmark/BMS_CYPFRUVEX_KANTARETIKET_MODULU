@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XtraReportsLayoutSerializer SerializerVersion="19.2.3.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="XtraReport" Margins="0, 0, 0, 0" PrinterName="Argox OS-214 plus series PPLA" PaperKind="Custom" PaperName="BMS" PageWidth="207" PageHeight="98" Version="19.2" DataSource="#Ref-0">
   <Bands>
-    <Item1 Ref="2" ControlType="DetailBand" Name="Detail" HeightF="89.96526">
+    <Item1 Ref="2" ControlType="DetailBand" Name="Detail" HeightF="98.09027">
       <Controls>
-        <Item1 Ref="3" ControlType="XRBarCode" Name="barCode1" Module="3" TextAlignment="MiddleCenter" SizeF="99.75691,79.96526" LocationFloat="60.5659943, 10.0000029" Padding="10,10,0,0,100">
+        <Item1 Ref="3" ControlType="XRBarCode" Name="barCode1" Module="3" TextAlignment="MiddleCenter" SizeF="91.4236,88.0902557" LocationFloat="57.7882, 5.00000763" Padding="10,10,0,0,100">
           <Symbology Ref="4" Name="QRCode" />
           <ExpressionBindings>
             <Item1 Ref="5" EventName="BeforePrint" PropertyName="Text" Expression="[LOGICALREF]" />
@@ -28,6 +28,16 @@
     <Item8 Ref="18" Name="Style6" BorderStyle="Inset" BackColor="LightPink" StringFormat="Near;Near;0;None;Character;Default" />
     <Item9 Ref="19" Name="Style7" BorderStyle="Inset" BackColor="LightBlue" StringFormat="Near;Near;0;None;Character;Default" />
     <Item10 Ref="20" Name="Style8" BorderStyle="Inset" BackColor="LightPink" StringFormat="Near;Near;0;None;Character;Default" />
+    <Item11 Ref="21" Name="Style9" BorderStyle="Inset" BackColor="LightBlue" StringFormat="Near;Near;0;None;Character;Default" />
+    <Item12 Ref="22" Name="Style10" BorderStyle="Inset" BackColor="LightPink" StringFormat="Near;Near;0;None;Character;Default" />
+    <Item13 Ref="23" Name="Style11" BorderStyle="Inset" BackColor="LightBlue" StringFormat="Near;Near;0;None;Character;Default" />
+    <Item14 Ref="24" Name="Style12" BorderStyle="Inset" BackColor="LightPink" StringFormat="Near;Near;0;None;Character;Default" />
+    <Item15 Ref="25" Name="Style13" BorderStyle="Inset" BackColor="LightBlue" StringFormat="Near;Near;0;None;Character;Default" />
+    <Item16 Ref="26" Name="Style14" BorderStyle="Inset" BackColor="LightPink" StringFormat="Near;Near;0;None;Character;Default" />
+    <Item17 Ref="27" Name="Style15" BorderStyle="Inset" BackColor="LightBlue" StringFormat="Near;Near;0;None;Character;Default" />
+    <Item18 Ref="28" Name="Style16" BorderStyle="Inset" BackColor="LightPink" StringFormat="Near;Near;0;None;Character;Default" />
+    <Item19 Ref="29" Name="Style17" BorderStyle="Inset" BackColor="LightBlue" StringFormat="Near;Near;0;None;Character;Default" />
+    <Item20 Ref="30" Name="Style18" BorderStyle="Inset" BackColor="LightPink" StringFormat="Near;Near;0;None;Character;Default" />
   </StyleSheet>
   <ObjectStorage>
     <Item1 ObjectType="DevExpress.XtraReports.Serialization.ObjectStorageInfo, DevExpress.XtraReports.v19.2" Ref="0" Content="~Xtra#NULL" Type="System.Data.DataTable" />
