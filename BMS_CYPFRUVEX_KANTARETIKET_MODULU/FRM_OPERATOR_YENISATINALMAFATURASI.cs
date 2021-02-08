@@ -25,6 +25,7 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU
         SqlConnection SQLCON = new SqlConnection();
         BMS_KE_KANTAR _KANTAR = new BMS_KE_KANTAR();
         SQLINSERTCOMMANDS SIC = new SQLINSERTCOMMANDS();
+        SQLUPDATECOMMANDS SUC = new SQLUPDATECOMMANDS();
         string PLAKAKODU = "";
         public string _UOMREF = "0";
         public string _UOSREF = "0";
@@ -76,7 +77,9 @@ TOP 1 LGMAIN.GDEF  AD  FROM L_TRADGRP LGMAIN WITH(NOLOCK)
             DT_TARIH.DateTime = _KANTAR.TARIH;
             if (_KANTAR.TSTATUS == 1)
             {
-                MessageBox.Show("BU FİŞ DAHA ÖNCE LOGOYA AKTARILMIŞTIR"); 
+                MessageBox.Show("BU FİŞ DAHA ÖNCE LOGOYA AKTARILMIŞTIR");
+                TE_FATURANO.Text = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 FICHENO FROM LG_" + _CFG.FIRMNR + "_01_INVOICE WHERE LOGICALREF=" + _KANTAR.LOGOFISID, new SqlConnection(LGCONSTR)).Rows[0][0].ToString();
+
             }
         }
         private void INITIALIZEGRID()
@@ -136,6 +139,81 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
         private void SB_VAZGEC_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void UPDATE_INVOICE()
+        {
+            _KANTAR.TARIH = DT_TARIH.DateTime.Date;
+            int INVOICELOGICALREF = 0;
+            BM_XXX_XX_INVOICE O = new BM_XXX_XX_INVOICE()
+            {
+                LOGICALREF = _KANTAR.LOGOFISID,
+                AFFECTRISK = 1,
+                CAPIBLOCK_CREADEDDATE = DateTime.Now,
+                CAPIBLOCK_CREATEDBY = 1,
+                CAPIBLOCK_CREATEDHOUR = DateTime.Now.Hour,
+                CAPIBLOCK_CREATEDMIN = DateTime.Now.Minute,
+                CLIENTREF = _KANTAR.URETICIID,
+                DATE_ = _KANTAR.TARIH.Date,
+                DEDUCTIONPART1 = 2,
+                DEDUCTIONPART2 = 3,
+                DOCDATE = _KANTAR.TARIH,
+                ENTEGSET = 247,
+                ESTATUS = 12,
+                FICHENO = TE_FATURANO.Text,
+                GENEXCTYP = 1,
+                GENEXP2 = _KANTAR.SOZLESME_NO,
+                DOCODE = TE_BELGENO.Text,
+                GENEXP1 = TE_ACIKLAMA.Text,
+                GROSSTOTAL = TOPLAM,
+                GRPCODE = 1,
+                GUID = Guid.NewGuid().ToString(),
+                NETTOTAL = TOPLAM,
+                RECSTATUS = 1,
+                RECVREF = _KANTAR.KONTRAKTORID,
+                TIME_ = 254939409,
+                TOTALDISCOUNTED = TOPLAM,
+                TRADINGGRP = PLAKAKODU,
+                TRCODE = 1,
+                TRNET = TOPLAM,
+                VAT = 18,
+                SOURCEINDEX = _KANTAR.AMBARID_GIDECEGIYERKOD,
+                SOURCECOSTGRP = _KANTAR.AMBARID_GIDECEGIYERKOD,
+                SPECODE = _KANTAR.OZELKOD_BOLGEKOD,
+                CYPHCODE = _KANTAR.YETKIKOD_BOLGEDETAYKOD,
+                PAYDEFREF = _KANTAR.ODEMEPLANID_SOZLESMETURUKOD,
+                SALESMANREF = _KANTAR.SALEMANID_SOKOD
+            };
+
+            SQLCON = new SqlConnection(LGCONSTR);
+            using (SqlConnection con = SQLCON)
+            {
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                }
+
+                SqlTransaction transaction = con.BeginTransaction();
+                try
+                {
+                    SqlCommand com = SUC.BM_XXX_XX_INVOICE_UPDATE(O, false, false, _CFG.FIRMNR, "01", "LOGICALREF", _KANTAR.LOGOFISID);
+                    com.Connection = con;
+                    com.Transaction = transaction;
+                    com.ExecuteScalar();
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    BMS_DLL.GLOBAL.LOGYAZ("HATA(UPDATE_INVOICE):", ex);
+                }
+                finally
+                {
+                    try { transaction.Dispose(); } catch { }
+                    try { if (con.State != ConnectionState.Closed) con.Close(); } catch { }
+                    try { con.Dispose(); } catch { }
+                }
+            }
+            UPDATE_STFICHE(_KANTAR.LOGOFISID);
         }
         private void SAVE_INVOICE()
         {
@@ -214,7 +292,88 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
                 SAVE_STFICHE(INVOICELOGICALREF);
             }
         }
+        private void UPDATE_STFICHE(int _INVOICEREF)
+        {
+            int STFICHELOGICALREF = 0;
+            BM_XXX_XX_STFICHE O = new BM_XXX_XX_STFICHE()
+            {
+                AFFECTRISK = 1,
+                BILLED = 1,
+                CAPIBLOCK_CREADEDDATE = DateTime.Now,
+                CAPIBLOCK_CREATEDBY = 1,
+                CAPIBLOCK_CREATEDHOUR = DateTime.Now.Hour,
+                CAPIBLOCK_CREATEDMIN = DateTime.Now.Minute,
+                CAPIBLOCK_CREATEDSEC = DateTime.Now.Second,
+                CLIENTREF = _KANTAR.URETICIID,
+                GENEXP2 = _KANTAR.SOZLESME_NO,
+                DATE_ = _KANTAR.TARIH.Date,
+                DEDUCTIONPART1 = 2,
+                DEDUCTIONPART2 = 3,
+                DISPSTATUS = 1,
+                DOCTIME = 254939409,
+                FICHECNT = 1,
+                FICHENO = TE_FATURANO.Text,
+                FTIME = 254939409,
+                GENEXCTYP = 1,
+                GROSSTOTAL = TOPLAM,
+                GRPCODE = 1,
+                DOCODE = TE_BELGENO.Text,
+                GENEXP1 = TE_ACIKLAMA.Text,
+                GUID = Guid.NewGuid().ToString(),
+                INVNO = TE_FATURANO.Text,
+                INVOICEREF = _INVOICEREF,
+                IOCODE = 1,
+                NETTOTAL = TOPLAM,
+                RECVREF = _KANTAR.KONTRAKTORID,
+                SHIPDATE = _KANTAR.TARIH,
+                SHIPTIME = 254939409,
+                TOTALDISCOUNTED = TOPLAM,
+                TRADINGGRP = PLAKAKODU,
+                TRCODE = 1,
+                SOURCEINDEX = _KANTAR.AMBARID_GIDECEGIYERKOD,
+                SOURCECOSTGRP = _KANTAR.AMBARID_GIDECEGIYERKOD,
+                SPECODE = _KANTAR.OZELKOD_BOLGEKOD,
+                CYPHCODE = _KANTAR.YETKIKOD_BOLGEDETAYKOD,
+                PAYDEFREF = _KANTAR.ODEMEPLANID_SOZLESMETURUKOD,
+                SALESMANREF = _KANTAR.SALEMANID_SOKOD
+            };
 
+            SQLCON = new SqlConnection(LGCONSTR);
+            using (SqlConnection con = SQLCON)
+            {
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                }
+
+                SqlTransaction transaction = con.BeginTransaction();
+                try
+                {
+                    SqlCommand com = SUC.BM_XXX_XX_STFICHE_UPDATE(O, false, false, _CFG.FIRMNR, "01", "INVOICEREF", _INVOICEREF);
+                    com.Connection = con;
+                    com.Transaction = transaction;
+                    // STFICHELOGICALREF = int.Parse(com.ExecuteScalar().ToString());
+                    com.ExecuteScalar();
+                    STFICHELOGICALREF = int.Parse(BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 LOGICALREF FROM LG_" + _CFG.FIRMNR + "_01_STFICHE WHERE INVOICEREF=" + _INVOICEREF, new SqlConnection(LGCONSTR)).Rows[0][0].ToString());
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    BMS_DLL.GLOBAL.LOGYAZ("HATA(UPDATE_STFICHE):", ex);
+                }
+                finally
+                {
+                    try { transaction.Dispose(); } catch { }
+                    try { if (con.State != ConnectionState.Closed) con.Close(); } catch { }
+                    try { con.Dispose(); } catch { }
+                }
+            }
+            if (STFICHELOGICALREF > 0)
+            {
+                UPDATE_STLINE(_INVOICEREF, STFICHELOGICALREF);
+            }
+        }
         private void SAVE_STFICHE(int _INVOICEREF)
         {
             int STFICHELOGICALREF = 0;
@@ -295,6 +454,74 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
                 SAVE_STLINE(_INVOICEREF, STFICHELOGICALREF);
             }
         }
+        private void UPDATE_STLINE(int _INVOICEREF, int _STFICHEREF)
+        {
+            int STLINELOGICALREF = 0;
+            BM_XXX_XX_STLINE O = new BM_XXX_XX_STLINE()
+            {
+                STOCKREF = _KANTAR.URUNID,
+                TRCODE = 1,
+                DATE_ = _KANTAR.TARIH.Date,
+                FTIME = 254939409,
+                IOCODE = 1,
+                STFICHEREF = _STFICHEREF,
+                STFICHELNNO = 1,
+                INVOICEREF = _INVOICEREF,
+                INVOICELNNO = 1,
+                CLIENTREF = _KANTAR.URETICIID,
+                AMOUNT = _KANTAR.MIKTAR,
+                PRICE = BIRIMFIYAT,
+                TOTAL = TOPLAM,
+                UOMREF = int.Parse(_UOMREF),
+                USREF = int.Parse(_UOSREF),
+                UINFO1 = 1,
+                UINFO2 = 1,
+                VATMATRAH = TOPLAM,
+                BILLED = 1,
+                LINENET = TOPLAM,
+                RECSTATUS = 2,
+                YEAR_ = _KANTAR.TARIH.Year,
+                AFFECTRISK = 1,
+                GUID = Guid.NewGuid().ToString(),
+                FUTMONTHBEGDATE = 132385566,
+                SOURCEINDEX = _KANTAR.AMBARID_GIDECEGIYERKOD,
+                SOURCECOSTGRP = _KANTAR.AMBARID_GIDECEGIYERKOD,
+                SPECODE = _KANTAR.OZELKOD_BOLGEKOD,
+                PAYDEFREF = _KANTAR.ODEMEPLANID_SOZLESMETURUKOD,
+                SALESMANREF = _KANTAR.SALEMANID_SOKOD
+            };
+
+            SQLCON = new SqlConnection(LGCONSTR);
+            using (SqlConnection con = SQLCON)
+            {
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                }
+
+                SqlTransaction transaction = con.BeginTransaction();
+                try
+                {
+                    SqlCommand com = SUC.BM_XXX_XX_STLINE_UPDATE(O, false, false, _CFG.FIRMNR, "01", "INVOICEREF", _INVOICEREF);
+                    com.Connection = con;
+                    com.Transaction = transaction;
+                    com.ExecuteScalar().ToString();
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    BMS_DLL.GLOBAL.LOGYAZ("HATA(UPDATE_STLINE):", ex);
+                }
+                finally
+                {
+                    try { transaction.Dispose(); } catch { }
+                    try { if (con.State != ConnectionState.Closed) con.Close(); } catch { }
+                    try { con.Dispose(); } catch { }
+                }
+            }
+            UPDATE_PAYTRANS(_INVOICEREF, _STFICHEREF);
+        }
         private void SAVE_STLINE(int _INVOICEREF, int _STFICHEREF)
         {
             int STLINELOGICALREF = 0;
@@ -366,7 +593,58 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
                 SAVE_PAYTRANS(_INVOICEREF, _STFICHEREF);
             }
         }
+        private void UPDATE_PAYTRANS(int _INVOICEREF, int _STFICHEREF)
+        {
+            int PAYTRANSLOGICALREF = 0;
+            BM_XXX_XX_PAYTRANS O = new BM_XXX_XX_PAYTRANS()
+            {
+                CARDREF = _KANTAR.URETICIID,
+                DATE_ = _KANTAR.TARIH,
+                MODULENR = 4,
+                SIGN = 1,
+                FICHEREF = _INVOICEREF,
+                TRCODE = 1,
+                TOTAL = TOPLAM,
+                PROCDATE = _KANTAR.TARIH,
+                DISCDUEDATE = _KANTAR.TARIH,
+                PAYNO = 1,
+                SPECODE = _KANTAR.OZELKOD_BOLGEKOD,
 
+            };
+
+            SQLCON = new SqlConnection(LGCONSTR);
+            using (SqlConnection con = SQLCON)
+            {
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                }
+
+                SqlTransaction transaction = con.BeginTransaction();
+                try
+                {
+                    PAYTRANSLOGICALREF = int.Parse(BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 LOGICALREF FROM LG_" + _CFG.FIRMNR + "_01_PAYTRANS WHERE MODULENR=4 AND TRCODE=1 AND FICHEREF=" + _INVOICEREF, new SqlConnection(LGCONSTR)).Rows[0][0].ToString());
+
+                    SqlCommand com = SUC.BM_XXX_XX_PAYTRANS_UPDATE(O, false, false, _CFG.FIRMNR, "01", "LOGICALREF", PAYTRANSLOGICALREF);
+                    com.Connection = con;
+                    com.Transaction = transaction;
+                    com.ExecuteScalar();
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    BMS_DLL.GLOBAL.LOGYAZ("HATA(UPDATE_PAYTRANS):", ex);
+                }
+                finally
+                {
+                    try { transaction.Dispose(); } catch { }
+                    try { if (con.State != ConnectionState.Closed) con.Close(); } catch { }
+                    try { con.Dispose(); } catch { }
+                }
+            }
+            UPDATE_CLFLINE(_INVOICEREF, _STFICHEREF);
+        }
         private void SAVE_PAYTRANS(int _INVOICEREF, int _STFICHEREF)
         {
             int PAYTRANSLOGICALREF = 0;
@@ -420,6 +698,70 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
                 SAVE_CLFLINE(_INVOICEREF, _STFICHEREF);
             }
         }
+        private void UPDATE_CLFLINE(int _INVOICEREF, int _STFICHEREF)
+        {
+            int CLFLINELOGICALREF = 0;
+            BM_XXX_XX_CLFLINE O = new BM_XXX_XX_CLFLINE()
+            {
+                CLIENTREF = _KANTAR.URETICIID,
+                SOURCEFREF = _INVOICEREF,
+                DATE_ = _KANTAR.TARIH,
+                MODULENR = 4,
+                TRCODE = 31,
+                TRANNO = TE_FATURANO.Text,
+                SIGN = 1,
+                AMOUNT = TOPLAM,
+                TRNET = TOPLAM,
+                CAPIBLOCK_CREADEDDATE = DateTime.Now,
+                CAPIBLOCK_CREATEDBY = 1,
+                CAPIBLOCK_CREATEDHOUR = DateTime.Now.Hour,
+                CAPIBLOCK_CREATEDMIN = DateTime.Now.Minute,
+                CAPIBLOCK_CREATEDSEC = DateTime.Now.Second,
+                TRADINGGRP = PLAKAKODU,
+                MONTH_ = _KANTAR.TARIH.Month,
+                YEAR_ = _KANTAR.TARIH.Year,
+                AFFECTRISK = 1,
+                DOCDATE = _KANTAR.TARIH,
+                FTIME = 254939409,
+                GUID = Guid.NewGuid().ToString(),
+                SPECODE = _KANTAR.OZELKOD_BOLGE,
+                PAYDEFREF = _KANTAR.ODEMEPLANID_SOZLESMETURUKOD,
+                SALESMANREF = _KANTAR.SALEMANID_SOKOD
+            };
+
+            SQLCON = new SqlConnection(LGCONSTR);
+            using (SqlConnection con = SQLCON)
+            {
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                }
+
+                SqlTransaction transaction = con.BeginTransaction();
+                try
+                {
+                    CLFLINELOGICALREF = int.Parse(BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 LOGICALREF FROM LG_" + _CFG.FIRMNR + "_01_CLFLINE WHERE MODULENR=4 AND TRCODE=31 AND SOURCEFREF=" + _INVOICEREF, new SqlConnection(LGCONSTR)).Rows[0][0].ToString());
+
+                    SqlCommand com = SUC.BM_XXX_XX_CLFLINE_UPDATE(O, false, false, _CFG.FIRMNR, "01", "LOGICALREF", CLFLINELOGICALREF);
+                    com.Connection = con;
+                    com.Transaction = transaction;
+                    CLFLINELOGICALREF = int.Parse(com.ExecuteScalar().ToString());
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    BMS_DLL.GLOBAL.LOGYAZ("HATA(UPDATE_CLFLINE):", ex);
+                }
+                finally
+                {
+                    try { transaction.Dispose(); } catch { }
+                    try { if (con.State != ConnectionState.Closed) con.Close(); } catch { }
+                    try { con.Dispose(); } catch { }
+                }
+            }
+        }
+
         private void SAVE_CLFLINE(int _INVOICEREF, int _STFICHEREF)
         {
             int CLFLINELOGICALREF = 0;
@@ -481,12 +823,15 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
                     try { con.Dispose(); } catch { }
                 }
             }
-            if (CLFLINELOGICALREF > 0)
+            if (_KANTAR.LOGOFISID < 1)
             {
-                MessageBox.Show("SATIN ALMA FATURASI KAYDEDİLDİ!");
-                SQLCON = new SqlConnection(LGCONSTR);
-                BMS_DLL.SQL.EXECUTE2(this, "UPDATE BMS_KE_KANTAR SET LOGOAKTARIMI=1,LOGOAKTARIMTARIHI=GETDATE(),LOGOFISID="+_INVOICEREF+", TSTATUS=1 WHERE LOGICALREF=" + _KANTAR.LOGICALREF.ToString(), SQLCON);
-                this.Close();
+                if (CLFLINELOGICALREF > 0)
+                {
+                    MessageBox.Show("SATIN ALMA FATURASI KAYDEDİLDİ!");
+                    SQLCON = new SqlConnection(LGCONSTR);
+                    BMS_DLL.SQL.EXECUTE2(this, "UPDATE BMS_KE_KANTAR SET LOGOAKTARIMI=1,LOGOAKTARIMTARIHI=GETDATE(),LOGOFISID=" + _INVOICEREF + ", TSTATUS=1 WHERE LOGICALREF=" + _KANTAR.LOGICALREF.ToString(), SQLCON);
+                    this.Close();
+                }
             }
         }
         private void UPDATE()
@@ -496,11 +841,12 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
             O.LOGICALREF = _KANTAR.LOGICALREF;
             O.BARKODYAZIMMIKTAR = 0;
             O.BIRIM = _KANTAR.BIRIM;
+            O.LOGOFISID = _KANTAR.LOGOFISID > 0 ? _KANTAR.LOGOFISID : 0;
             O.KONTRAKTORID = _KANTAR.KONTRAKTORID;
-            O.MIKTAR = MIKTAR;
+            O.MIKTAR = _KANTAR.MIKTAR;
             O.PLAKAID = _KANTAR.PLAKAID;
             O.TARIH = DT_TARIH.DateTime.Date;
-            O.TSTATUS = 0;
+            O.TSTATUS = _KANTAR.LOGOFISID > 0 ? 1 : 0;
             O.URETICIID = _KANTAR.URETICIID;
             O.URUNID = _KANTAR.URUNID;
             O.ERRORMESSAGE = "";
@@ -554,10 +900,26 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
         }
         private void SB_KAYDET_Click(object sender, EventArgs e)
         {
-            if (_KANTAR.TSTATUS == 1)
+            if (_KANTAR.LOGOFISID > 0)
             {
-                MessageBox.Show("BU FİŞ DAHA ÖNCE LOGOYA AKTARILMIŞTIR");
-                return;
+
+
+                if (BMS_DLL.DX.DXMESSAGEBOX(true, "GÜNCELLEME ONAYI", "FİŞİ GÜNCELLEMEK İSTEDİĞİNİZE EMİNMİSİNİZ") == true)
+                {
+                    try
+                    {
+                        UPDATE();
+                        UPDATE_INVOICE();
+                        MessageBox.Show("FİŞ GÜNCELLENDİ");
+                        this.Close();
+
+                    }
+                    catch (Exception EX)
+                    {
+                        MessageBox.Show("HATA OLUŞTU", EX.Message);
+                    }
+                    return;
+                }
             }
             int CARD_CODE_NO = 0;
             try { CARD_CODE_NO = int.Parse(BMS_DLL.SQL.SELECT2(string.Format(@"SELECT RIGHT(FICHENO,5) F FROM (
@@ -574,10 +936,10 @@ SELECT MAX(FICHENO) FICHENO FROM LG_" + _CFG.FIRMNR + @"_01_INVOICE where TRCODE
         {
             if (e.Column.FieldName == "BIRIMFIYAT" || e.Column.FieldName == "MIKTAR")
             {
-                MIKTAR = _KANTAR.MIKTAR;
+                // MIKTAR = _KANTAR.MIKTAR;
+                try { _KANTAR.MIKTAR = double.Parse(GRV_OPERATOR_YENISATINALMA.GetFocusedRowCellValue("MIKTAR").ToString()); } catch { }
                 try { BIRIMFIYAT = double.Parse(GRV_OPERATOR_YENISATINALMA.GetFocusedRowCellValue("BIRIMFIYAT").ToString()); } catch { }
-                try { MIKTAR = double.Parse(GRV_OPERATOR_YENISATINALMA.GetFocusedRowCellValue("MIKTAR").ToString()); } catch { }
-                try { TOPLAM = Math.Round(BIRIMFIYAT * MIKTAR, 2); } catch { }
+                try { TOPLAM = Math.Round(BIRIMFIYAT * _KANTAR.MIKTAR, 2); } catch { }
                 GRV_OPERATOR_YENISATINALMA.SetFocusedRowCellValue("TOPLAM", TOPLAM);
             }
         }

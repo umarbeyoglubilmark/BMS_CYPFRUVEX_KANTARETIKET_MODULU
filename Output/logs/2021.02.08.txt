@@ -1,0 +1,716 @@
+2021.02.08 13:36:44 : HATA
+ ----- HATA : ----- System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 43
+
+
+
+
+2021.02.08 13:38:50 : HATA
+ ----- HATA : ----- System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 43
+
+
+
+
+2021.02.08 13:39:28 : HATA(UPDATE_STFICHE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.LG_121_01_STFICHE' with unique index 'I121_01_STFICHE_I2'. The duplicate key value is (1, 1, ).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STFICHE(Int32 _INVOICEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 353
+ClientConnectionId:4643f9cc-6ddf-4adf-89cd-791ccb92b575
+Error Number:2601,State:1,Class:14
+
+
+
+
+2021.02.08 13:46:39 : HATA(UPDATE_STFICHE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.LG_121_01_STFICHE' with unique index 'I121_01_STFICHE_I2'. The duplicate key value is (1, 1, ).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STFICHE(Int32 _INVOICEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 353
+ClientConnectionId:b3f1bd33-e433-4669-836a-d07ed48ac24e
+Error Number:2601,State:1,Class:14
+
+
+
+
+2021.02.08 13:48:35 : HATA
+ ----- HATA : ----- System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 43
+
+
+
+
+2021.02.08 13:48:44 : HATA
+ ----- HATA : ----- System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 43
+
+
+
+
+2021.02.08 13:48:47 : HATA
+ ----- HATA : ----- System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 43
+
+
+
+
+2021.02.08 13:50:29 : HATA(UPDATE_STFICHE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.LG_121_01_STFICHE' with unique index 'I121_01_STFICHE_I2'. The duplicate key value is (1, 1, ).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STFICHE(Int32 _INVOICEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 353
+ClientConnectionId:dfe2a163-de99-45c9-a6a7-8682acb41dab
+Error Number:2601,State:1,Class:14
+
+
+
+
+2021.02.08 13:53:06 : HATA
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'INVOICEREF'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BMS_DLL.SQL.SELECT2(String sqlQuery, SqlConnection sqlconnection2) in F:\PROJELER\VS\GITHUB\BMS DLLdx192\BMS_DLLdx192\BMS_DLL\Global.cs:line 624
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI..ctor(CONFIG CFG, BMS_KE_KANTAR KANTAR) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 81
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.YENI_SATINALMAFATURASI() in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 31
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 45
+ClientConnectionId:97f19c87-c793-4998-b668-6a490a7a84f1
+Error Number:207,State:1,Class:16
+
+
+
+
+2021.02.08 13:53:10 : HATA
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'INVOICEREF'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at BMS_DLL.SQL.SELECT2(String sqlQuery, SqlConnection sqlconnection2) in F:\PROJELER\VS\GITHUB\BMS DLLdx192\BMS_DLLdx192\BMS_DLL\Global.cs:line 624
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI..ctor(CONFIG CFG, BMS_KE_KANTAR KANTAR) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 81
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.YENI_SATINALMAFATURASI() in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 31
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 45
+ClientConnectionId:97f19c87-c793-4998-b668-6a490a7a84f1
+Error Number:207,State:1,Class:16
+
+
+
+
+2021.02.08 14:00:02 : HATA(UPDATE_INVOICE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Must declare the scalar variable "@794".
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_INVOICE() in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 201
+ClientConnectionId:3c5b8ad2-3f88-4e83-b331-d7fb282bac04
+Error Number:137,State:2,Class:15
+
+
+
+
+2021.02.08 14:03:04 : HATA(UPDATE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 508
+ClientConnectionId:9a311d38-1f6c-4011-b6b1-70650c3d7107
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:03:21 : HATA(UPDATE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 508
+ClientConnectionId:9a311d38-1f6c-4011-b6b1-70650c3d7107
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:03:32 : HATA(UPDATE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 508
+ClientConnectionId:9a311d38-1f6c-4011-b6b1-70650c3d7107
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:06:51 : HATA(UPDATE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 508
+ClientConnectionId:880ba00e-1979-44c0-9e05-d76bb4e7be5e
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:06:57 : HATA(UPDATE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 508
+ClientConnectionId:880ba00e-1979-44c0-9e05-d76bb4e7be5e
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:07:08 : HATA(UPDATE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 508
+ClientConnectionId:880ba00e-1979-44c0-9e05-d76bb4e7be5e
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:10:44 : HATA(UPDATE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 508
+ClientConnectionId:01b18ef2-d566-4a1e-8aec-69c49a60c2ee
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:16:12 : HATA(UPDATE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 508
+ClientConnectionId:da76ba44-b8da-4105-8064-14e562e0cea9
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:16:42 : HATA(UPDATE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 508
+ClientConnectionId:da76ba44-b8da-4105-8064-14e562e0cea9
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:18:03 : HATA(SAVE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.SAVE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 576
+ClientConnectionId:9f19b888-5198-4780-b5b3-1156b5b387c4
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:18:05 : HATA(UPDATE_INVOICE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.LG_121_01_INVOICE' with unique index 'I121_01_INVOICE_I2'. The duplicate key value is (1, 1, BMS.00101).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_INVOICE() in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 201
+ClientConnectionId:9f19b888-5198-4780-b5b3-1156b5b387c4
+Error Number:2601,State:1,Class:14
+
+
+
+
+2021.02.08 14:18:06 : HATA(UPDATE_STFICHE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.LG_121_01_STFICHE' with unique index 'I121_01_STFICHE_I2'. The duplicate key value is (1, 1, BMS.00101).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STFICHE(Int32 _INVOICEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 356
+ClientConnectionId:9f19b888-5198-4780-b5b3-1156b5b387c4
+Error Number:2601,State:1,Class:14
+
+
+
+
+2021.02.08 14:18:49 : HATA(UPDATE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 508
+ClientConnectionId:5a69bab5-51e1-4d1e-ae0b-5ebec66530a1
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:18:58 : HATA(UPDATE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 508
+ClientConnectionId:5a69bab5-51e1-4d1e-ae0b-5ebec66530a1
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:19:11 : HATA(UPDATE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 508
+ClientConnectionId:5a69bab5-51e1-4d1e-ae0b-5ebec66530a1
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:20:03 : HATA(UPDATE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 508
+ClientConnectionId:7964f430-f398-4b7c-a962-9ea2a04837db
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:20:34 : HATA(UPDATE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 508
+ClientConnectionId:8f95d11d-8633-4858-af58-01c24cb89eaf
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:21:10 : HATA(UPDATE_STFICHE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.LG_121_01_STFICHE' with unique index 'I121_01_STFICHE_I2'. The duplicate key value is (1, 1, ).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STFICHE(Int32 _INVOICEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 356
+ClientConnectionId:8f95d11d-8633-4858-af58-01c24cb89eaf
+Error Number:2601,State:1,Class:14
+
+
+
+
+2021.02.08 14:22:16 : HATA(UPDATE_STFICHE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.LG_121_01_STFICHE' with unique index 'I121_01_STFICHE_I2'. The duplicate key value is (1, 1, ).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.UPDATE_STFICHE(Int32 _INVOICEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 356
+ClientConnectionId:d34b5921-fd8a-45e7-83e9-9e8767fa0575
+Error Number:2601,State:1,Class:14
+
+
+
+
+2021.02.08 14:23:42 : HATA(SAVE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.SAVE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 576
+ClientConnectionId:ea075959-cdc3-4149-9a2b-0f2448b0d929
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:24:10 : HATA(SAVE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.SAVE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 576
+ClientConnectionId:54c5ca65-d327-4387-9cbe-9a57898621c6
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:24:13 : HATA(SAVE_INVOICE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.LG_121_01_INVOICE' with unique index 'I121_01_INVOICE_I2'. The duplicate key value is (1, 1, BMS.00000).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.SAVE_INVOICE() in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 275
+ClientConnectionId:54c5ca65-d327-4387-9cbe-9a57898621c6
+Error Number:2601,State:1,Class:14
+
+
+
+
+2021.02.08 14:24:44 : HATA(SAVE_INVOICE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.LG_121_01_INVOICE' with unique index 'I121_01_INVOICE_I2'. The duplicate key value is (1, 1, BMS.00000).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.SAVE_INVOICE() in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 275
+ClientConnectionId:54c5ca65-d327-4387-9cbe-9a57898621c6
+Error Number:2601,State:1,Class:14
+
+
+
+
+2021.02.08 14:25:39 : HATA(SAVE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.SAVE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 576
+ClientConnectionId:5f1e0919-aba6-41c6-8cbf-b6c2fc45acdb
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:27:08 : HATA
+ ----- HATA : ----- System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 43
+
+
+
+
+2021.02.08 14:27:36 : HATA(SAVE_STLINE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'LOGO..L_FIRMPARAMS'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.SAVE_STLINE(Int32 _INVOICEREF, Int32 _STFICHEREF) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 576
+ClientConnectionId:7889225e-690f-4964-a7f1-8458227b078e
+Error Number:208,State:1,Class:16
+
+
+
+
+2021.02.08 14:29:51 : HATA(SAVE_INVOICE):
+ ----- HATA : ----- System.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.LG_121_01_INVOICE' with unique index 'I121_01_INVOICE_I2'. The duplicate key value is (1, 1, BMS.00000).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR_YENISATINALMAFATURASI.SAVE_INVOICE() in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR_YENISATINALMAFATURASI.cs:line 275
+ClientConnectionId:7889225e-690f-4964-a7f1-8458227b078e
+Error Number:2601,State:1,Class:14
