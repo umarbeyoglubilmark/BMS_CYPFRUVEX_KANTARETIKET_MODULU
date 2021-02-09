@@ -117,6 +117,7 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
                 try { CFG.PREVIOUSPERIOD = xNodeCAPIFIRM.ChildNodes[3].InnerText; } catch { }
                 try { CFG.URETICIBASLANGICKODU = xNodeCAPIFIRM.ChildNodes[4].InnerText; } catch { }
                 try { CFG.KONTRAKTORBASLANGICKODU = xNodeCAPIFIRM.ChildNodes[5].InnerText; } catch { }
+                try { CFG.URUNBASLANGICKODU = xNodeCAPIFIRM.ChildNodes[6].InnerText; } catch { }
                 try { CFG.BMSDEFAULTUSERNAME = xNodeUSERDEFAULTS.ChildNodes[0].InnerText; } catch { }
                 try { CFG.BMSDEFAULTPASSWORD = xNodeUSERDEFAULTS.ChildNodes[1].InnerText; } catch { }
                 try { CFG.LOBJECTDEFAULTUSERNAME = xNodeUSERDEFAULTS.ChildNodes[2].InnerText; } catch { }

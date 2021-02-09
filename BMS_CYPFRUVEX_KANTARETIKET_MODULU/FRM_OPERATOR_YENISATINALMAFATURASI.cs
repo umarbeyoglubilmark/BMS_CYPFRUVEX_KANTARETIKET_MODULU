@@ -724,7 +724,7 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
                 DOCDATE = _KANTAR.TARIH,
                 FTIME = 254939409,
                 GUID = Guid.NewGuid().ToString(),
-                SPECODE = _KANTAR.OZELKOD_BOLGE,
+                SPECODE = _KANTAR.OZELKOD_BOLGEKOD,
                 PAYDEFREF = _KANTAR.ODEMEPLANID_SOZLESMETURUKOD,
                 SALESMANREF = _KANTAR.SALEMANID_SOKOD
             };
@@ -789,7 +789,7 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
                 DOCDATE = _KANTAR.TARIH,
                 FTIME = 254939409,
                 GUID = Guid.NewGuid().ToString(),
-                SPECODE = _KANTAR.OZELKOD_BOLGE,
+                SPECODE = _KANTAR.OZELKOD_BOLGEKOD,
                 PAYDEFREF = _KANTAR.ODEMEPLANID_SOZLESMETURUKOD,
                 SALESMANREF = _KANTAR.SALEMANID_SOKOD
             };
