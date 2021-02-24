@@ -1,0 +1,23 @@
+2021.02.24 16:30:15 : HATA
+ ----- HATA : ----- System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 51
+
+
+
+
+2021.02.24 16:30:17 : HATA
+ ----- HATA : ----- System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 51
+
+
+
+
+2021.02.24 16:30:18 : HATA
+ ----- HATA : ----- System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) in D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs:line 51
