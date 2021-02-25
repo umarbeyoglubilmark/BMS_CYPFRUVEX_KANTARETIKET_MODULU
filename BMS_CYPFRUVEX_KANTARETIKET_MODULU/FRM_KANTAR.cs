@@ -205,11 +205,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
             TE_MIKTAR.Text = "0";
 
             TE_YETKIKOD_BOLGEDETAYKOD.Text = "";
-            TE_YETKIKOD_BOLGEDETAY.Text = "";
-
-            TE_SALEMANID_SO.Text = "";
-            TE_SALEMANID_SOKOD.Text = "";
-            SALEMANID_SO = "0";
+            TE_YETKIKOD_BOLGEDETAY.Text = ""; 
 
             TE_ACIKLAMA.Text = "";
 
