@@ -190,7 +190,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
             // this.Close();
             BMS_DLL.DX.XTRAREPORT_AC("SELECT * FROM BMS_KE_KANTAR WHERE LOGICALREF=" + logicalref.ToString(), "BARKODDESIGN.repx", false, LGCONSTR);
 
-            TE_PLAKA.Text = "";
+            TE_PLAKAKODU.Text = "";
             TE_PLAKA.Text = "";
             PLAKALOGICALREF = "0";
 
