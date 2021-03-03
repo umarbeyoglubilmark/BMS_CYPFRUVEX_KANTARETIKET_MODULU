@@ -34,6 +34,7 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
             //    CREATE_ENTDB();
             //}
 
+
         }
         private void CREATE_ENTDB() {
             SQLiteConnection.CreateFile(GLOB.SORGU_ENTDB_PATH);

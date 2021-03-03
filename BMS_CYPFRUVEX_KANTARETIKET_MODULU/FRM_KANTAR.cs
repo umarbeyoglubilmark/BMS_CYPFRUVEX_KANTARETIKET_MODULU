@@ -124,7 +124,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
 
         private void SB_eXCELEKAYDET_Click(object sender, EventArgs e)
         {
-            if (URUNLOGICALREF == "0" || URUNLOGICALREF == "")
+            if (URUNLOGICALREF == "0" || URUNLOGICALREF == "" || KONTRAKTORLOGICALREF=="0" || PLAKALOGICALREF=="0" ||URETICILOGICALREF=="0"||string.IsNullOrEmpty(TE_OZELKOD_BOLGE.Text))
             {
                 MessageBox.Show("DOLDURULMASI GEREKEN ALANLAR MEVCUT");
                 return;
