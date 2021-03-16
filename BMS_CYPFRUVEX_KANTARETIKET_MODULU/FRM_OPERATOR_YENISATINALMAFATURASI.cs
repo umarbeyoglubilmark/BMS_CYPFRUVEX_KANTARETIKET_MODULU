@@ -737,6 +737,7 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
                 CLIENTREF = _KANTAR.URETICIID,
                 SOURCEFREF = _INVOICEREF,
                 DATE_ = _KANTAR.TARIH,
+                DOCODE = TE_BELGENO.Text,
                 MODULENR = 4,
                 TRCODE = 31,
                 TRANNO = TE_FATURANO.Text,
@@ -807,7 +808,7 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
                 SIGN = 1,
                 AMOUNT = TOPLAM,
                 TRNET = TOPLAM,
-
+                DOCODE = TE_BELGENO.Text,
                 CAPIBLOCK_CREADEDDATE = DateTime.Now,
                 CAPIBLOCK_CREATEDBY = 1,
                 CAPIBLOCK_CREATEDHOUR = DateTime.Now.Hour,
