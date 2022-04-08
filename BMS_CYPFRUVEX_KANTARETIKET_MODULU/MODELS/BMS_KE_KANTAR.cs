@@ -36,5 +36,6 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.MODELS {
         public string YETKIKOD_BOLGEDETAY { get; set; }
         public string ODEMEPLANID_SOZLESMETURU { get; set; }
         public string SALEMANID_SO { get; set; }
+        public double BINLIKSAYISI { get; set; }
     }
 }

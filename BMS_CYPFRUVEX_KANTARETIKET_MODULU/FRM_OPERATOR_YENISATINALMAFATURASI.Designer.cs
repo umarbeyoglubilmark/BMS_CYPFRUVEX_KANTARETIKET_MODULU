@@ -59,6 +59,8 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.SB_VAZGEC = new DevExpress.XtraEditors.SimpleButton();
             this.SB_KAYDET = new DevExpress.XtraEditors.SimpleButton();
+            this.TE_BINLIKSAYISI = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TE_SOZLESME_NO.Properties)).BeginInit();
@@ -73,10 +75,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.GRV_OPERATOR_YENISATINALMA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_BINLIKSAYISI.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.TE_BINLIKSAYISI);
+            this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.SB_URUN);
             this.panelControl1.Controls.Add(this.TE_URUN);
             this.panelControl1.Controls.Add(this.SB_SO);
@@ -119,7 +124,7 @@
             this.SB_URUN.Location = new System.Drawing.Point(271, 196);
             this.SB_URUN.Name = "SB_URUN";
             this.SB_URUN.Size = new System.Drawing.Size(185, 19);
-            this.SB_URUN.TabIndex = 29;
+            this.SB_URUN.TabIndex = 14;
             this.SB_URUN.Text = "ÜRÜN";
             this.SB_URUN.Click += new System.EventHandler(this.SB_URUN_Click);
             // 
@@ -129,7 +134,7 @@
             this.TE_URUN.Appearance.Options.UseFont = true;
             this.TE_URUN.Location = new System.Drawing.Point(469, 194);
             this.TE_URUN.Name = "TE_URUN";
-            this.TE_URUN.Size = new System.Drawing.Size(10, 19);
+            this.TE_URUN.Size = new System.Drawing.Size(9, 19);
             this.TE_URUN.TabIndex = 30;
             this.TE_URUN.Text = "_";
             // 
@@ -141,7 +146,7 @@
             this.SB_SO.Location = new System.Drawing.Point(271, 167);
             this.SB_SO.Name = "SB_SO";
             this.SB_SO.Size = new System.Drawing.Size(185, 19);
-            this.SB_SO.TabIndex = 12;
+            this.SB_SO.TabIndex = 13;
             this.SB_SO.Text = "Ş.Ö.";
             this.SB_SO.Click += new System.EventHandler(this.SB_SO_Click);
             // 
@@ -153,7 +158,7 @@
             this.SB_URETICI.Location = new System.Drawing.Point(271, 30);
             this.SB_URETICI.Name = "SB_URETICI";
             this.SB_URETICI.Size = new System.Drawing.Size(185, 19);
-            this.SB_URETICI.TabIndex = 6;
+            this.SB_URETICI.TabIndex = 7;
             this.SB_URETICI.Text = "ÜRETİCİ";
             this.SB_URETICI.Click += new System.EventHandler(this.SB_URETICI_Click);
             // 
@@ -165,7 +170,7 @@
             this.SB_SOZLESMETURU.Location = new System.Drawing.Point(271, 143);
             this.SB_SOZLESMETURU.Name = "SB_SOZLESMETURU";
             this.SB_SOZLESMETURU.Size = new System.Drawing.Size(185, 22);
-            this.SB_SOZLESMETURU.TabIndex = 11;
+            this.SB_SOZLESMETURU.TabIndex = 12;
             this.SB_SOZLESMETURU.Text = "SÖZLEŞME TÜRÜ";
             this.SB_SOZLESMETURU.Click += new System.EventHandler(this.SB_SOZLESMETURU_Click);
             // 
@@ -177,7 +182,7 @@
             this.SB_KONTRAKTOR.Location = new System.Drawing.Point(271, 51);
             this.SB_KONTRAKTOR.Name = "SB_KONTRAKTOR";
             this.SB_KONTRAKTOR.Size = new System.Drawing.Size(185, 20);
-            this.SB_KONTRAKTOR.TabIndex = 7;
+            this.SB_KONTRAKTOR.TabIndex = 8;
             this.SB_KONTRAKTOR.Text = "KONTRAKTÖR";
             this.SB_KONTRAKTOR.Click += new System.EventHandler(this.SB_KONTRAKTOR_Click);
             // 
@@ -189,7 +194,7 @@
             this.SB_BOLGEDETAY.Location = new System.Drawing.Point(271, 118);
             this.SB_BOLGEDETAY.Name = "SB_BOLGEDETAY";
             this.SB_BOLGEDETAY.Size = new System.Drawing.Size(185, 23);
-            this.SB_BOLGEDETAY.TabIndex = 10;
+            this.SB_BOLGEDETAY.TabIndex = 11;
             this.SB_BOLGEDETAY.Text = "BÖLGE DETAY";
             this.SB_BOLGEDETAY.Click += new System.EventHandler(this.SB_BOLGEDETAY_Click);
             // 
@@ -201,7 +206,7 @@
             this.SB_PLAKA.Location = new System.Drawing.Point(271, 5);
             this.SB_PLAKA.Name = "SB_PLAKA";
             this.SB_PLAKA.Size = new System.Drawing.Size(185, 22);
-            this.SB_PLAKA.TabIndex = 5;
+            this.SB_PLAKA.TabIndex = 6;
             this.SB_PLAKA.Text = "PLAKA";
             this.SB_PLAKA.Click += new System.EventHandler(this.SB_PLAKA_Click);
             // 
@@ -213,7 +218,7 @@
             this.SB_BOLGE.Location = new System.Drawing.Point(271, 97);
             this.SB_BOLGE.Name = "SB_BOLGE";
             this.SB_BOLGE.Size = new System.Drawing.Size(185, 19);
-            this.SB_BOLGE.TabIndex = 9;
+            this.SB_BOLGE.TabIndex = 10;
             this.SB_BOLGE.Text = "BÖLGE";
             this.SB_BOLGE.Click += new System.EventHandler(this.SB_BOLGE_Click);
             // 
@@ -223,7 +228,7 @@
             this.TE_BOLGEDETAYYETKIKOD.Appearance.Options.UseFont = true;
             this.TE_BOLGEDETAYYETKIKOD.Location = new System.Drawing.Point(469, 119);
             this.TE_BOLGEDETAYYETKIKOD.Name = "TE_BOLGEDETAYYETKIKOD";
-            this.TE_BOLGEDETAYYETKIKOD.Size = new System.Drawing.Size(10, 19);
+            this.TE_BOLGEDETAYYETKIKOD.Size = new System.Drawing.Size(9, 19);
             this.TE_BOLGEDETAYYETKIKOD.TabIndex = 28;
             this.TE_BOLGEDETAYYETKIKOD.Text = "_";
             // 
@@ -235,7 +240,7 @@
             this.SB_GIDECEGIYER.Location = new System.Drawing.Point(271, 73);
             this.SB_GIDECEGIYER.Name = "SB_GIDECEGIYER";
             this.SB_GIDECEGIYER.Size = new System.Drawing.Size(185, 22);
-            this.SB_GIDECEGIYER.TabIndex = 8;
+            this.SB_GIDECEGIYER.TabIndex = 9;
             this.SB_GIDECEGIYER.Text = "GİDECEĞİ YER";
             this.SB_GIDECEGIYER.Click += new System.EventHandler(this.SB_GIDECEGIYER_Click);
             // 
@@ -245,7 +250,7 @@
             this.TE_SOSATISELEMANI.Appearance.Options.UseFont = true;
             this.TE_SOSATISELEMANI.Location = new System.Drawing.Point(469, 165);
             this.TE_SOSATISELEMANI.Name = "TE_SOSATISELEMANI";
-            this.TE_SOSATISELEMANI.Size = new System.Drawing.Size(10, 19);
+            this.TE_SOSATISELEMANI.Size = new System.Drawing.Size(9, 19);
             this.TE_SOSATISELEMANI.TabIndex = 27;
             this.TE_SOSATISELEMANI.Text = "_";
             // 
@@ -255,7 +260,7 @@
             this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Appearance.Options.UseFont = true;
             this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Location = new System.Drawing.Point(469, 142);
             this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Name = "TE_SOZLESMETURU_ODEMETAHSILATPLANI";
-            this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Size = new System.Drawing.Size(10, 19);
+            this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Size = new System.Drawing.Size(9, 19);
             this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.TabIndex = 26;
             this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Text = "_";
             // 
@@ -265,24 +270,24 @@
             this.TE_BOLGEOZELKOD.Appearance.Options.UseFont = true;
             this.TE_BOLGEOZELKOD.Location = new System.Drawing.Point(469, 96);
             this.TE_BOLGEOZELKOD.Name = "TE_BOLGEOZELKOD";
-            this.TE_BOLGEOZELKOD.Size = new System.Drawing.Size(10, 19);
+            this.TE_BOLGEOZELKOD.Size = new System.Drawing.Size(9, 19);
             this.TE_BOLGEOZELKOD.TabIndex = 25;
             this.TE_BOLGEOZELKOD.Text = "_";
             // 
             // TE_SOZLESME_NO
             // 
-            this.TE_SOZLESME_NO.Location = new System.Drawing.Point(109, 157);
+            this.TE_SOZLESME_NO.Location = new System.Drawing.Point(109, 182);
             this.TE_SOZLESME_NO.Name = "TE_SOZLESME_NO";
             this.TE_SOZLESME_NO.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_SOZLESME_NO.Properties.Appearance.Options.UseFont = true;
             this.TE_SOZLESME_NO.Size = new System.Drawing.Size(154, 26);
-            this.TE_SOZLESME_NO.TabIndex = 4;
+            this.TE_SOZLESME_NO.TabIndex = 5;
             // 
             // labelControl8
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(10, 157);
+            this.labelControl8.Location = new System.Drawing.Point(10, 182);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(91, 19);
             this.labelControl8.TabIndex = 19;
@@ -290,18 +295,18 @@
             // 
             // TE_ACIKLAMA
             // 
-            this.TE_ACIKLAMA.Location = new System.Drawing.Point(109, 121);
+            this.TE_ACIKLAMA.Location = new System.Drawing.Point(109, 150);
             this.TE_ACIKLAMA.Name = "TE_ACIKLAMA";
             this.TE_ACIKLAMA.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_ACIKLAMA.Properties.Appearance.Options.UseFont = true;
             this.TE_ACIKLAMA.Size = new System.Drawing.Size(154, 26);
-            this.TE_ACIKLAMA.TabIndex = 3;
+            this.TE_ACIKLAMA.TabIndex = 4;
             // 
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(10, 121);
+            this.labelControl5.Location = new System.Drawing.Point(10, 150);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(64, 19);
             this.labelControl5.TabIndex = 17;
@@ -313,7 +318,7 @@
             this.TE_AMBAR.Appearance.Options.UseFont = true;
             this.TE_AMBAR.Location = new System.Drawing.Point(469, 75);
             this.TE_AMBAR.Name = "TE_AMBAR";
-            this.TE_AMBAR.Size = new System.Drawing.Size(10, 19);
+            this.TE_AMBAR.Size = new System.Drawing.Size(9, 19);
             this.TE_AMBAR.TabIndex = 16;
             this.TE_AMBAR.Text = "_";
             // 
@@ -323,7 +328,7 @@
             this.TE_URETICI.Appearance.Options.UseFont = true;
             this.TE_URETICI.Location = new System.Drawing.Point(469, 29);
             this.TE_URETICI.Name = "TE_URETICI";
-            this.TE_URETICI.Size = new System.Drawing.Size(10, 19);
+            this.TE_URETICI.Size = new System.Drawing.Size(9, 19);
             this.TE_URETICI.TabIndex = 15;
             this.TE_URETICI.Text = "_";
             // 
@@ -333,7 +338,7 @@
             this.TE_KONTRAKTOR.Appearance.Options.UseFont = true;
             this.TE_KONTRAKTOR.Location = new System.Drawing.Point(469, 53);
             this.TE_KONTRAKTOR.Name = "TE_KONTRAKTOR";
-            this.TE_KONTRAKTOR.Size = new System.Drawing.Size(10, 19);
+            this.TE_KONTRAKTOR.Size = new System.Drawing.Size(9, 19);
             this.TE_KONTRAKTOR.TabIndex = 14;
             this.TE_KONTRAKTOR.Text = "_";
             // 
@@ -343,7 +348,7 @@
             this.TE_PLAKA.Appearance.Options.UseFont = true;
             this.TE_PLAKA.Location = new System.Drawing.Point(469, 0);
             this.TE_PLAKA.Name = "TE_PLAKA";
-            this.TE_PLAKA.Size = new System.Drawing.Size(10, 19);
+            this.TE_PLAKA.Size = new System.Drawing.Size(9, 19);
             this.TE_PLAKA.TabIndex = 13;
             this.TE_PLAKA.Text = "_";
             // 
@@ -483,6 +488,25 @@
             this.SB_KAYDET.Text = "KAYDET";
             this.SB_KAYDET.Click += new System.EventHandler(this.SB_KAYDET_Click);
             // 
+            // TE_BINLIKSAYISI
+            // 
+            this.TE_BINLIKSAYISI.Location = new System.Drawing.Point(109, 117);
+            this.TE_BINLIKSAYISI.Name = "TE_BINLIKSAYISI";
+            this.TE_BINLIKSAYISI.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TE_BINLIKSAYISI.Properties.Appearance.Options.UseFont = true;
+            this.TE_BINLIKSAYISI.Size = new System.Drawing.Size(154, 26);
+            this.TE_BINLIKSAYISI.TabIndex = 3;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(10, 117);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(83, 19);
+            this.labelControl4.TabIndex = 32;
+            this.labelControl4.Text = "Binlik Sayısı";
+            // 
             // FRM_OPERATOR_YENISATINALMAFATURASI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,6 +535,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GRV_OPERATOR_YENISATINALMA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TE_BINLIKSAYISI.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -552,5 +577,7 @@
         private DevExpress.XtraEditors.SimpleButton SB_GIDECEGIYER;
         private DevExpress.XtraEditors.SimpleButton SB_URUN;
         private DevExpress.XtraEditors.LabelControl TE_URUN;
+        private DevExpress.XtraEditors.TextEdit TE_BINLIKSAYISI;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }

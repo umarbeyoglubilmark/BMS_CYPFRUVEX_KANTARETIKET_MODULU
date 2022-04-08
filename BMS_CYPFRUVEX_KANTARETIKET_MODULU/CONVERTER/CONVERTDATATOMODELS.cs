@@ -45,6 +45,7 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.CONVERTER {
                 try { B.YETKIKOD_BOLGEDETAY = (string)r["YETKIKOD_BOLGEDETAY"]; } catch { }
                 try { B.ODEMEPLANID_SOZLESMETURU = (string)r["ODEMEPLANID_SOZLESMETURU"]; } catch { }
                 try { B.SALEMANID_SO = (string)r["SALEMANID_SO"]; } catch { }
+                try { B.BINLIKSAYISI = (double)r["BINLIKSAYISI"]; } catch { }
 
                 L.Add(B);
             }
@@ -83,6 +84,7 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.CONVERTER {
             try { B.YETKIKOD_BOLGEDETAY = (string)r["YETKIKOD_BOLGEDETAY"]; } catch { }
             try { B.ODEMEPLANID_SOZLESMETURU = (string)r["ODEMEPLANID_SOZLESMETURU"]; } catch { }
             try { B.SALEMANID_SO = (string)r["SALEMANID_SO"]; } catch { }
+            try { B.BINLIKSAYISI = (double)r["BINLIKSAYISI"]; } catch { }
             return B;
         }
 

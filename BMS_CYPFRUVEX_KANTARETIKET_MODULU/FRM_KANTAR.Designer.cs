@@ -66,6 +66,8 @@
             this.TE_URETICIKODU = new DevExpress.XtraEditors.TextEdit();
             this.TE_URUNKODU = new DevExpress.XtraEditors.TextEdit();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.TE_BINLIKSAYISI = new DevExpress.XtraEditors.TextEdit();
+            this.SB_BINLIKSAYISI = new DevExpress.XtraEditors.SimpleButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TE_SALEMANID_SO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_SALEMANID_SOKOD.Properties)).BeginInit();
@@ -92,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TE_KONTRAKTORKODU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_URETICIKODU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_URUNKODU.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_BINLIKSAYISI.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -104,6 +107,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.TE_BINLIKSAYISI);
+            this.panel2.Controls.Add(this.SB_BINLIKSAYISI);
             this.panel2.Controls.Add(this.TE_SALEMANID_SO);
             this.panel2.Controls.Add(this.SB_SO);
             this.panel2.Controls.Add(this.TE_SALEMANID_SOKOD);
@@ -146,7 +151,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(920, 528);
+            this.panel2.Size = new System.Drawing.Size(920, 579);
             this.panel2.TabIndex = 0;
             // 
             // TE_SALEMANID_SO
@@ -425,7 +430,7 @@
             // TE_ACIKLAMA
             // 
             this.TE_ACIKLAMA.EditValue = "";
-            this.TE_ACIKLAMA.Location = new System.Drawing.Point(286, 418);
+            this.TE_ACIKLAMA.Location = new System.Drawing.Point(286, 461);
             this.TE_ACIKLAMA.Name = "TE_ACIKLAMA";
             this.TE_ACIKLAMA.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_ACIKLAMA.Properties.Appearance.Options.UseFont = true;
@@ -433,7 +438,7 @@
             this.TE_ACIKLAMA.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.TE_ACIKLAMA.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_ACIKLAMA.Size = new System.Drawing.Size(621, 31);
-            this.TE_ACIKLAMA.TabIndex = 34;
+            this.TE_ACIKLAMA.TabIndex = 36;
             // 
             // simpleButton1
             // 
@@ -441,10 +446,10 @@
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.simpleButton1.Enabled = false;
-            this.simpleButton1.Location = new System.Drawing.Point(2, 418);
+            this.simpleButton1.Location = new System.Drawing.Point(2, 461);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(278, 31);
-            this.simpleButton1.TabIndex = 33;
+            this.simpleButton1.TabIndex = 35;
             this.simpleButton1.Text = "AÇIKLAMA";
             // 
             // SB_eXCELEKAYDET
@@ -459,10 +464,10 @@
             this.SB_eXCELEKAYDET.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.SB_eXCELEKAYDET.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.SB_eXCELEKAYDET.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SB_eXCELEKAYDET.ImageOptions.SvgImage")));
-            this.SB_eXCELEKAYDET.Location = new System.Drawing.Point(0, 472);
+            this.SB_eXCELEKAYDET.Location = new System.Drawing.Point(0, 523);
             this.SB_eXCELEKAYDET.Name = "SB_eXCELEKAYDET";
             this.SB_eXCELEKAYDET.Size = new System.Drawing.Size(920, 56);
-            this.SB_eXCELEKAYDET.TabIndex = 35;
+            this.SB_eXCELEKAYDET.TabIndex = 37;
             this.SB_eXCELEKAYDET.Text = "KAYDET";
             this.SB_eXCELEKAYDET.Click += new System.EventHandler(this.SB_eXCELEKAYDET_Click);
             // 
@@ -664,17 +669,43 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 540);
+            this.panel3.Location = new System.Drawing.Point(0, 591);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(920, 10);
             this.panel3.TabIndex = 2;
- 
+            // 
+            // TE_BINLIKSAYISI
+            // 
+            this.TE_BINLIKSAYISI.EditValue = "0";
+            this.TE_BINLIKSAYISI.Location = new System.Drawing.Point(285, 418);
+            this.TE_BINLIKSAYISI.Name = "TE_BINLIKSAYISI";
+            this.TE_BINLIKSAYISI.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TE_BINLIKSAYISI.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TE_BINLIKSAYISI.Properties.Appearance.Options.UseBackColor = true;
+            this.TE_BINLIKSAYISI.Properties.Appearance.Options.UseFont = true;
+            this.TE_BINLIKSAYISI.Properties.Mask.EditMask = "n0";
+            this.TE_BINLIKSAYISI.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.TE_BINLIKSAYISI.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.TE_BINLIKSAYISI.Size = new System.Drawing.Size(622, 38);
+            this.TE_BINLIKSAYISI.TabIndex = 34;
+            // 
+            // SB_BINLIKSAYISI
+            // 
+            this.SB_BINLIKSAYISI.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.SB_BINLIKSAYISI.Appearance.Options.UseFont = true;
+            this.SB_BINLIKSAYISI.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SB_BINLIKSAYISI.Enabled = false;
+            this.SB_BINLIKSAYISI.Location = new System.Drawing.Point(2, 418);
+            this.SB_BINLIKSAYISI.Name = "SB_BINLIKSAYISI";
+            this.SB_BINLIKSAYISI.Size = new System.Drawing.Size(277, 38);
+            this.SB_BINLIKSAYISI.TabIndex = 33;
+            this.SB_BINLIKSAYISI.Text = "BİNLİK SAYISI";
             // 
             // FRM_KANTAR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 550);
+            this.ClientSize = new System.Drawing.Size(920, 601);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
@@ -710,6 +741,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TE_KONTRAKTORKODU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_URETICIKODU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_URUNKODU.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_BINLIKSAYISI.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -758,5 +790,7 @@
         private DevExpress.XtraEditors.MemoEdit TE_AMBAR_GIDECEGIYER;
         private DevExpress.XtraEditors.SimpleButton SB_GIDECEGIYER;
         private DevExpress.XtraEditors.TextEdit TE_AMBAR_GIDECEGIYERKOD;
+        private DevExpress.XtraEditors.TextEdit TE_BINLIKSAYISI;
+        private DevExpress.XtraEditors.SimpleButton SB_BINLIKSAYISI;
     }
 }

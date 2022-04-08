@@ -250,10 +250,10 @@
             Ornek Kod YesNolu: DXMESSAGEBOX(true, "Baslik", "Icerik");
             </summary>
         </member>
-        <member name="M:BMS_DLL.DX.DXGRIDEXCELAC(System.Type,System.Windows.Forms.Form,DevExpress.XtraGrid.GridControl,DevExpress.XtraGrid.Views.Grid.GridView)">
+        <member name="M:BMS_DLL.DX.DXGRIDEXCELAC(System.Type,System.Windows.Forms.Form,DevExpress.XtraGrid.GridControl,DevExpress.XtraGrid.Views.Grid.GridView,System.String,System.String)">
             <summary>
             <para>Aciklama: Önce ana projeye add devitem Progress Indicator ekle adını PROGRESSFORM yap</para>
-            Ornek Kod: DXGRIDEXCELAC(typeof(PROGRESSFORM), this,GridControl1, GridView1);
+            Ornek Kod: DXGRIDEXCELAC(typeof(PROGRESSFORM), this,GridControl1, GridView1,"A1","R2000");
             </summary>
         </member>
         <member name="M:BMS_DLL.DX.XTRAREPORT_AC(System.String,System.String,System.Boolean,System.String)">

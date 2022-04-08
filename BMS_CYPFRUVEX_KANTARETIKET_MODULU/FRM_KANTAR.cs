@@ -158,6 +158,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
             O.YETKIKOD_BOLGEDETAY = TE_YETKIKOD_BOLGEDETAY.Text;
             O.ODEMEPLANID_SOZLESMETURU = TE_ODEMEPLANI_SOZLESMETURU.Text;
             O.SALEMANID_SO = TE_SALEMANID_SO.Text;
+            O.BINLIKSAYISI = double.Parse(TE_BINLIKSAYISI.Text);
             SQLCON = new SqlConnection(LGCONSTR);
             using (SqlConnection con = SQLCON)
             {
@@ -208,7 +209,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
             TE_YETKIKOD_BOLGEDETAY.Text = ""; 
 
             TE_ACIKLAMA.Text = "";
-
+            TE_BINLIKSAYISI.Text = "0";
             //FRM_KANTARBARKOD F = new FRM_KANTARBARKOD(logicalref.ToString(),LGCONSTR);
             //F.Show();
         }
