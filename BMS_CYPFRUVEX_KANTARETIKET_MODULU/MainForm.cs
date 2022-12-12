@@ -13,7 +13,7 @@ using System.Data.SqlClient;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraPrinting.Preview;
-using BMS_CYPFRUVEX_KANTARETIKET_MODULU.Properties;
+using BMS_KANTARETIKET_MODULU.Properties;
 using DevExpress.LookAndFeel;
 using System.IO;
 

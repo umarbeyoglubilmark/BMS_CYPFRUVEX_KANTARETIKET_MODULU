@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{98BE75BC-2965-4ED5-932A-BBC6FF2555EA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU</RootNamespace>
-    <AssemblyName>CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU</AssemblyName>
+    <RootNamespace>CFG_BMS_KANTARETIKET_MODULU</RootNamespace>
+    <AssemblyName>CFG_BMS_KANTARETIKET_MODULU</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
