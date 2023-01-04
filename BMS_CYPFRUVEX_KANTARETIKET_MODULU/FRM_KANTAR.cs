@@ -1,5 +1,6 @@
 ﻿using BMS_CYPFRUVEX_KANTARETIKET_MODULU.MODELS;
 using BMS_CYPFRUVEX_KANTARETIKET_MODULU.SQLCOMMANDS;
+using BMS_DLL.OBJECTS;
 using DevExpress.XtraSplashScreen;
 using Newtonsoft.Json;
 using System;

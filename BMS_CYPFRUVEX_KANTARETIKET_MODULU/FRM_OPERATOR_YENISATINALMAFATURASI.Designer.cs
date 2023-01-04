@@ -25,6 +25,8 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_OPERATOR_YENISATINALMAFATURASI));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.TE_BINLIKSAYISI = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.SB_URUN = new DevExpress.XtraEditors.SimpleButton();
             this.TE_URUN = new DevExpress.XtraEditors.LabelControl();
             this.SB_SO = new DevExpress.XtraEditors.SimpleButton();
@@ -57,12 +59,12 @@
             this.GRC_OPERATOR_YENISATINALMA = new DevExpress.XtraGrid.GridControl();
             this.GRV_OPERATOR_YENISATINALMA = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.sb_Print = new DevExpress.XtraEditors.SimpleButton();
             this.SB_VAZGEC = new DevExpress.XtraEditors.SimpleButton();
             this.SB_KAYDET = new DevExpress.XtraEditors.SimpleButton();
-            this.TE_BINLIKSAYISI = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_BINLIKSAYISI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_SOZLESME_NO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_ACIKLAMA.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_BELGENO.Properties)).BeginInit();
@@ -75,7 +77,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GRV_OPERATOR_YENISATINALMA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TE_BINLIKSAYISI.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -115,6 +116,25 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(962, 219);
             this.panelControl1.TabIndex = 0;
+            // 
+            // TE_BINLIKSAYISI
+            // 
+            this.TE_BINLIKSAYISI.Location = new System.Drawing.Point(109, 117);
+            this.TE_BINLIKSAYISI.Name = "TE_BINLIKSAYISI";
+            this.TE_BINLIKSAYISI.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TE_BINLIKSAYISI.Properties.Appearance.Options.UseFont = true;
+            this.TE_BINLIKSAYISI.Size = new System.Drawing.Size(154, 26);
+            this.TE_BINLIKSAYISI.TabIndex = 3;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(10, 117);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(83, 19);
+            this.labelControl4.TabIndex = 32;
+            this.labelControl4.Text = "Binlik Sayısı";
             // 
             // SB_URUN
             // 
@@ -456,6 +476,7 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.sb_Print);
             this.panelControl3.Controls.Add(this.SB_VAZGEC);
             this.panelControl3.Controls.Add(this.SB_KAYDET);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -463,6 +484,19 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(962, 54);
             this.panelControl3.TabIndex = 2;
+            // 
+            // sb_Print
+            // 
+            this.sb_Print.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sb_Print.Appearance.Options.UseFont = true;
+            this.sb_Print.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sb_Print.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.sb_Print.Location = new System.Drawing.Point(2, 2);
+            this.sb_Print.Name = "sb_Print";
+            this.sb_Print.Size = new System.Drawing.Size(125, 50);
+            this.sb_Print.TabIndex = 2;
+            this.sb_Print.Text = "YAZDIR";
+            this.sb_Print.Click += new System.EventHandler(this.sb_Print_Click);
             // 
             // SB_VAZGEC
             // 
@@ -488,25 +522,6 @@
             this.SB_KAYDET.Text = "KAYDET";
             this.SB_KAYDET.Click += new System.EventHandler(this.SB_KAYDET_Click);
             // 
-            // TE_BINLIKSAYISI
-            // 
-            this.TE_BINLIKSAYISI.Location = new System.Drawing.Point(109, 117);
-            this.TE_BINLIKSAYISI.Name = "TE_BINLIKSAYISI";
-            this.TE_BINLIKSAYISI.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TE_BINLIKSAYISI.Properties.Appearance.Options.UseFont = true;
-            this.TE_BINLIKSAYISI.Size = new System.Drawing.Size(154, 26);
-            this.TE_BINLIKSAYISI.TabIndex = 3;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(10, 117);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(83, 19);
-            this.labelControl4.TabIndex = 32;
-            this.labelControl4.Text = "Binlik Sayısı";
-            // 
             // FRM_OPERATOR_YENISATINALMAFATURASI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,6 +538,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_BINLIKSAYISI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_SOZLESME_NO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_ACIKLAMA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_BELGENO.Properties)).EndInit();
@@ -535,7 +551,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GRV_OPERATOR_YENISATINALMA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TE_BINLIKSAYISI.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -579,5 +594,6 @@
         private DevExpress.XtraEditors.LabelControl TE_URUN;
         private DevExpress.XtraEditors.TextEdit TE_BINLIKSAYISI;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.SimpleButton sb_Print;
     }
 }

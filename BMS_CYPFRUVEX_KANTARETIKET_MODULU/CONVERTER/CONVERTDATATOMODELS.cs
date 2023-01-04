@@ -6,6 +6,7 @@ using System.Text;
 using System.Data;
 using System.Threading.Tasks;
 using System.IO;
+using BMS_DLL.OBJECTS;
 
 namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.CONVERTER {
     public class CONVERTDATATOMODELS {

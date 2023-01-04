@@ -1,11 +1,13 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.IO;
+using System.Threading.Tasks;
 
-namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.MODELS {
-    public class BMS_KE_KANTAR {
+namespace BMS_DLL.OBJECTS
+{
+    public class BMS_KE_KANTAR
+    {
         public int LOGICALREF { get; set; }
         public DateTime TARIH { get; set; }
         public int PLAKAID { get; set; }

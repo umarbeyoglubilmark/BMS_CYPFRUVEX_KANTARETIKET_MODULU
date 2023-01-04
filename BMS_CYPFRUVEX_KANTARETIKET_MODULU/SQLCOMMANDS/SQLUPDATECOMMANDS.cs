@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Text;
 using System.IO;
 using BMS_CYPFRUVEX_KANTARETIKET_MODULU.MODELS;
+using BMS_DLL.OBJECTS;
 
 namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.SQLCOMMANDS
 {

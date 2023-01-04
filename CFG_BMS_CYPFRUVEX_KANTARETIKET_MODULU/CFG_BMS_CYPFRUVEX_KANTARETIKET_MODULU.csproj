@@ -38,10 +38,6 @@
     <ApplicationIcon>settings_256.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BMS_DLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\BMS DLLdx192\BMS_DLLdx192\BMS_DLL\bin\Debug\BMS_DLL.dll</HintPath>
-    </Reference>
     <Reference Include="DevExpress.BonusSkins.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -136,6 +132,12 @@
   <ItemGroup>
     <Content Include="bm_icon_256px.ico" />
     <Content Include="settings_256.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BMS_DLL\BMS_DLL.csproj">
+      <Project>{ada5ee6f-5b5c-412f-af31-9e88f6d60c54}</Project>
+      <Name>BMS_DLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

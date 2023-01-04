@@ -1,0 +1,23 @@
+2023.01.04 09:09:50 : HATA
+ ----- HATA : ----- System.IndexOutOfRangeException: 0 konumunda satır yok.
+   konum: System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   konum: System.Data.DataRowCollection.get_Item(Int32 index)
+   konum: BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs içinde: satır 52
+
+
+
+
+2023.01.04 09:09:52 : HATA
+ ----- HATA : ----- System.IndexOutOfRangeException: 0 konumunda satır yok.
+   konum: System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   konum: System.Data.DataRowCollection.get_Item(Int32 index)
+   konum: BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs içinde: satır 52
+
+
+
+
+2023.01.04 09:09:53 : HATA
+ ----- HATA : ----- System.IndexOutOfRangeException: 0 konumunda satır yok.
+   konum: System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   konum: System.Data.DataRowCollection.get_Item(Int32 index)
+   konum: BMS_CYPFRUVEX_KANTARETIKET_MODULU.FRM_OPERATOR.TE_QRKOD_KeyPress(Object sender, KeyPressEventArgs e) D:\PROJELER\VS\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\BMS_CYPFRUVEX_KANTARETIKET_MODULU\FRM_OPERATOR.cs içinde: satır 52
