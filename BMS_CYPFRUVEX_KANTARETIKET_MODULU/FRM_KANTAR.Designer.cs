@@ -683,7 +683,7 @@
             this.TE_BINLIKSAYISI.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_BINLIKSAYISI.Properties.Appearance.Options.UseBackColor = true;
             this.TE_BINLIKSAYISI.Properties.Appearance.Options.UseFont = true;
-            this.TE_BINLIKSAYISI.Properties.Mask.EditMask = "n0";
+            this.TE_BINLIKSAYISI.Properties.Mask.EditMask = "n2";
             this.TE_BINLIKSAYISI.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TE_BINLIKSAYISI.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.TE_BINLIKSAYISI.Size = new System.Drawing.Size(622, 38);
