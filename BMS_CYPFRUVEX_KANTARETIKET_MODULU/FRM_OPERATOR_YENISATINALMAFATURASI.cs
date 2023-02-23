@@ -13,6 +13,7 @@ using BMS_CYPFRUVEX_KANTARETIKET_MODULU.MODELS;
 using BMS_CYPFRUVEX_KANTARETIKET_MODULU.CONVERTER;
 using BMS_CYPFRUVEX_KANTARETIKET_MODULU.SQLCOMMANDS;
 using BMS_DLL.OBJECTS;
+using System.Globalization;
 
 namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU
 {
@@ -967,7 +968,28 @@ SELECT MAX(FICHENO) FICHENO FROM LG_" + _CFG.FIRMNR + @"_01_INVOICE where TRCODE
 ) AS T
 "), SQLCON).Rows[0][0].ToString()) + 1; } catch { }
 
-            TE_FATURANO.Text = "BMS." + CARD_CODE_NO.ToString().PadLeft(5, '0'); ;
+            TE_FATURANO.Text = "BMS." + CARD_CODE_NO.ToString().PadLeft(5, '0');
+            //CHECK IF ALLREADY EXISTS BMS_121_KANTARETIKET_DUPLIKE_FATURALAR
+            bool EXISTS = false;
+            try
+            {
+                //DATETIME = '2023-02-23 13:45:00'
+                string DATETIMEWITHFORMATTEFFORSQL = string.Format("{0:yyyy-MM-dd HH:mm:ss}", DT_TARIH.DateTime.Date);
+                CultureInfo culture = CultureInfo.InvariantCulture;
+                string formattedDouble = _KANTAR.MIKTAR.ToString("G", culture);
+
+                string AMOUNTFORSQL = _KANTAR.MIKTAR.ToString("G", culture);
+                if (BMS_DLL.SQL.SELECT2(string.Format(@"SELECT * FROM BMS_" + _CFG.FIRMNR + @"_KANTARETIKET_DUPLIKE_FATURALAR WHERE CONVERT(VARCHAR(19), DATE_, 120)='{0}' AND DOCODE='{1}' AND CLIENTREF={2} AND STOCKREF={3} AND AMOUNT = {4}", DATETIMEWITHFORMATTEFFORSQL, TE_BELGENO.Text, _KANTAR.URETICIID, _KANTAR.URUNID, AMOUNTFORSQL), SQLCON).Rows.Count > 0)
+                {
+                    EXISTS = true;
+                }
+            }
+            catch { }
+            if (EXISTS == true)
+            {
+                BMS_DLL.DX.DXMESSAGEBOX(true, "HATA", "FATURA NUMARASI ZATEN KULLANILMIŞ");
+                return;
+            }
             UPDATE();
             SAVE_INVOICE();
         }
