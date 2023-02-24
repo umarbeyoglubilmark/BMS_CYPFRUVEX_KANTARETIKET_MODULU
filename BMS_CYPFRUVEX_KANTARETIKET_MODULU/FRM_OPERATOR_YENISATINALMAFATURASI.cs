@@ -953,6 +953,7 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
                         UPDATE_INVOICE();
                         MessageBox.Show("FİŞ GÜNCELLENDİ");
                         this.Close();
+                        return;
 
                     }
                     catch (Exception EX)
