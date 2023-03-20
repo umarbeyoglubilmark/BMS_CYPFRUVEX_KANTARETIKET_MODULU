@@ -5,24 +5,30 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU {
-    public partial class Ayarlar : DevExpress.XtraEditors.XtraForm {
+namespace CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU
+{
+    public partial class Ayarlar : DevExpress.XtraEditors.XtraForm
+    {
         string _xmlPath = AppDomain.CurrentDomain.BaseDirectory + "BMDB.xml";
         string _datPath = AppDomain.CurrentDomain.BaseDirectory + "BMDB.cfg";
         string _key = "0WXOM7IKTM012016";
         CONFIG CFG;
-        public Ayarlar() {
+        public Ayarlar()
+        {
             InitializeComponent();
             CFG = GET_CONFIG();
             INITIALIZE_VALUES();
         }
 
-        private void simpleButtonKAYDET_Click(object sender, EventArgs e) {
+        private void simpleButtonKAYDET_Click(object sender, EventArgs e)
+        {
             // BMS_DLL.CFGGETSET.AYARLARIKAYDET(textEditLS_KULLANICIADI.Text, textEditLS_PAROLA.Text, textEditLS_SUNUCU.Text, textEditLS_VERITABANI.Text, textEditLS_RESTAPIURL.Text, comboBoxEditBS_VERITABANITIPI.SelectedIndex, textEditBS_KULLANICIADI.Text, textEditBS_PAROLA.Text, textEditBS_SUNUCU.Text, textEditBS_VERITABANI.Text, textEditFB_FIRMANO.Text, textEditFB_PERIOD.Text, textEditFB_ONCEKIFIRMANO.Text, textEditFB_ONCEKIPERIOD.Text, textEditKB_BMSKULLANICIKODU.Text, textEditKB_BMSPAROLA.Text, textEditKB_LOKULLANICIKODU.Text, textEditKB_LOPAROLA.Text, textEditWS_SERVISSURE.Text, comboBoxEditWS_SURECINSI.SelectedIndex, comboBoxEditWS_SERVISVERITABANIKONTROLTABLOSU.SelectedIndex);
             sb_SAVE_Click_();
         }
-        private void INITIALIZE_VALUES() {
-            if (CFG != null) {
+        private void INITIALIZE_VALUES()
+        {
+            if (CFG != null)
+            {
                 try { CB_VERITABANITURU.Text = CFG.VERITABANITURU; } catch { }
                 try { textEditLS_KULLANICIADI.Text = CFG.LGDBUSERNAME; } catch { }
                 try { textEditLS_PAROLA.Text = CFG.LGDBPASSWORD; } catch { }
@@ -67,22 +73,33 @@ namespace CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU {
                 try { textEditWS_SERVISSURE.Text = CFG.SERVICEPERIOD.ToString(); } catch { }
                 try { comboBoxEditWS_SURECINSI.SelectedIndex = CFG.SERVICEPERIODTYPE; } catch { }
                 try { comboBoxEditWS_SERVISVERITABANIKONTROLTABLOSU.SelectedIndex = CFG.SERVICETABLESDBCHOICE; } catch { }
+                try { rb_KantarSonrasiFaturaAcEvet.Checked = CFG.KantarSonrasiFaturaAc == 0 ? false : true; } catch { }
+                try { rb_KantarSonrasiFaturaAcHayir.Checked = CFG.KantarSonrasiFaturaAc == 0 ? true : false; } catch { }
+
 
             }
         }
-        private CONFIG GET_CONFIG() {
-            try {
-                using (RijndaelManaged aes = new RijndaelManaged()) {
+        private CONFIG GET_CONFIG()
+        {
+            try
+            {
+                using (RijndaelManaged aes = new RijndaelManaged())
+                {
                     byte[] key = ASCIIEncoding.UTF8.GetBytes(_key);
 
                     byte[] IV = ASCIIEncoding.UTF8.GetBytes(_key);
 
-                    using (FileStream fsCrypt = new FileStream(_datPath, FileMode.Open)) {
-                        using (FileStream fsOut = new FileStream(_xmlPath, FileMode.Create)) {
-                            using (ICryptoTransform decryptor = aes.CreateDecryptor(key, IV)) {
-                                using (CryptoStream cs = new CryptoStream(fsCrypt, decryptor, CryptoStreamMode.Read)) {
+                    using (FileStream fsCrypt = new FileStream(_datPath, FileMode.Open))
+                    {
+                        using (FileStream fsOut = new FileStream(_xmlPath, FileMode.Create))
+                        {
+                            using (ICryptoTransform decryptor = aes.CreateDecryptor(key, IV))
+                            {
+                                using (CryptoStream cs = new CryptoStream(fsCrypt, decryptor, CryptoStreamMode.Read))
+                                {
                                     int data;
-                                    while ((data = cs.ReadByte()) != -1) {
+                                    while ((data = cs.ReadByte()) != -1)
+                                    {
                                         fsOut.WriteByte((byte)data);
                                     }
                                 }
@@ -136,6 +153,7 @@ namespace CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU {
                 try { CFG.URETICIBASLANGICKODU = xNodeCAPIFIRM.ChildNodes[4].InnerText; } catch { }
                 try { CFG.KONTRAKTORBASLANGICKODU = xNodeCAPIFIRM.ChildNodes[5].InnerText; } catch { }
                 try { CFG.URUNBASLANGICKODU = xNodeCAPIFIRM.ChildNodes[6].InnerText; } catch { }
+                try { CFG.KantarSonrasiFaturaAc = int.Parse(xNodeCAPIFIRM.ChildNodes[7].InnerText); } catch { }
                 try { CFG.BMSDEFAULTUSERNAME = xNodeUSERDEFAULTS.ChildNodes[0].InnerText; } catch { }
                 try { CFG.BMSDEFAULTPASSWORD = xNodeUSERDEFAULTS.ChildNodes[1].InnerText; } catch { }
                 try { CFG.LOBJECTDEFAULTUSERNAME = xNodeUSERDEFAULTS.ChildNodes[2].InnerText; } catch { }
@@ -144,12 +162,15 @@ namespace CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU {
                 try { CFG.SERVICEPERIODTYPE = int.Parse(xNodeWINDOWSSERVICE.ChildNodes[1].InnerText); } catch { }
                 try { CFG.SERVICETABLESDBCHOICE = int.Parse(xNodeWINDOWSSERVICE.ChildNodes[2].InnerText); } catch { }
                 return CFG;
-            } catch {
+            }
+            catch
+            {
                 return null;
             }
         }
 
-        private void sb_SAVE_Click_() {
+        private void sb_SAVE_Click_()
+        {
             File.WriteAllText(_xmlPath, string.Format("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" +
                 "<BILMARKSOFTWARE>" +
                     "<LGDB>" + //NODE 0
@@ -191,6 +212,7 @@ namespace CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU {
                         "<URETICIBASLANGICKODU>" + TE_URETICIBASLANGICKODU.Text + "</URETICIBASLANGICKODU>" +
                         "<KONTRAKTORBASLANGICKODU>" + TE_KONTRAKTORBASLANGICKODU.Text + "</KONTRAKTORBASLANGICKODU>" +
                         "<URUNBASLANGICKODU>" + TE_URUNBASLANGICKODU.Text + "</URUNBASLANGICKODU>" +
+                        "<KantarSonrasiFaturaAc>" + (rb_KantarSonrasiFaturaAcEvet.Checked ? 1 : 0) + "</KantarSonrasiFaturaAc>" +
                     "</CAPIFIRM>" +
                     "<DEFAULTUSERS>" + //NODE 3 
                         "<BMSUSERNAME>" + textEditKB_BMSKULLANICIKODU.Text + "</BMSUSERNAME>" +
@@ -205,20 +227,26 @@ namespace CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU {
                     "</WINDOWSSERVICE>" +
                 "</BILMARKSOFTWARE>")));
 
-            if (EncryptFile(_xmlPath, _datPath, _key)) {
-                try {
+            if (EncryptFile(_xmlPath, _datPath, _key))
+            {
+                try
+                {
                     DecryptFile(_datPath, _xmlPath, _key);
                     if (File.Exists(_xmlPath))
                         File.Delete(_xmlPath);
-                } catch { }
+                }
+                catch { }
             }
             MessageBox.Show("VERİTABANI KONFİGÜRASYON DOSYASI KAYDEDİLDİ.\n\nDEĞİŞİKLİKLERİN ETKİLİ OLABİLMESİ İÇİN PROGRAMA YENİDEN GİRİŞ YAPILMASI GEREKMEKTEDİR.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             Close();
         }
 
-        private bool EncryptFile(string inputFile, string outputFile, string skey) {
-            try {
-                using (RijndaelManaged aes = new RijndaelManaged()) {
+        private bool EncryptFile(string inputFile, string outputFile, string skey)
+        {
+            try
+            {
+                using (RijndaelManaged aes = new RijndaelManaged())
+                {
                     byte[] key = ASCIIEncoding.UTF8.GetBytes(skey);
 
                     /* This is for demostrating purposes only. 
@@ -226,12 +254,17 @@ namespace CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU {
                      encryption in other to achieve maximum security*/
                     byte[] IV = ASCIIEncoding.UTF8.GetBytes(skey);
 
-                    using (FileStream fsCrypt = new FileStream(outputFile, FileMode.Create)) {
-                        using (ICryptoTransform encryptor = aes.CreateEncryptor(key, IV)) {
-                            using (CryptoStream cs = new CryptoStream(fsCrypt, encryptor, CryptoStreamMode.Write)) {
-                                using (FileStream fsIn = new FileStream(inputFile, FileMode.Open)) {
+                    using (FileStream fsCrypt = new FileStream(outputFile, FileMode.Create))
+                    {
+                        using (ICryptoTransform encryptor = aes.CreateEncryptor(key, IV))
+                        {
+                            using (CryptoStream cs = new CryptoStream(fsCrypt, encryptor, CryptoStreamMode.Write))
+                            {
+                                using (FileStream fsIn = new FileStream(inputFile, FileMode.Open))
+                                {
                                     int data;
-                                    while ((data = fsIn.ReadByte()) != -1) {
+                                    while ((data = fsIn.ReadByte()) != -1)
+                                    {
                                         cs.WriteByte((byte)data);
                                     }
                                 }
@@ -239,7 +272,9 @@ namespace CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU {
                         }
                     }
                 }
-            } catch {
+            }
+            catch
+            {
                 return false;
             }
             //if (File.Exists(_xmlPath))
@@ -247,21 +282,29 @@ namespace CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU {
             return true;
         }
 
-        private void DecryptFile(string inputFile, string outputFile, string skey) {
-            try {
-                using (RijndaelManaged aes = new RijndaelManaged()) {
+        private void DecryptFile(string inputFile, string outputFile, string skey)
+        {
+            try
+            {
+                using (RijndaelManaged aes = new RijndaelManaged())
+                {
                     byte[] key = ASCIIEncoding.UTF8.GetBytes(skey);
 
                     /* This is for demostrating purposes only. 
                      * Ideally you will want the IV key to be different from your key and you should always generate a new one for each encryption in other to achieve maximum security*/
                     byte[] IV = ASCIIEncoding.UTF8.GetBytes(skey);
 
-                    using (FileStream fsCrypt = new FileStream(inputFile, FileMode.Open)) {
-                        using (FileStream fsOut = new FileStream(outputFile, FileMode.Create)) {
-                            using (ICryptoTransform decryptor = aes.CreateDecryptor(key, IV)) {
-                                using (CryptoStream cs = new CryptoStream(fsCrypt, decryptor, CryptoStreamMode.Read)) {
+                    using (FileStream fsCrypt = new FileStream(inputFile, FileMode.Open))
+                    {
+                        using (FileStream fsOut = new FileStream(outputFile, FileMode.Create))
+                        {
+                            using (ICryptoTransform decryptor = aes.CreateDecryptor(key, IV))
+                            {
+                                using (CryptoStream cs = new CryptoStream(fsCrypt, decryptor, CryptoStreamMode.Read))
+                                {
                                     int data;
-                                    while ((data = cs.ReadByte()) != -1) {
+                                    while ((data = cs.ReadByte()) != -1)
+                                    {
                                         fsOut.WriteByte((byte)data);
                                     }
                                 }
@@ -269,12 +312,15 @@ namespace CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU {
                         }
                     }
                 }
-            } catch {
+            }
+            catch
+            {
 
             }
         }
 
-        private void Ayarlar_Shown(object sender, EventArgs e) {
+        private void Ayarlar_Shown(object sender, EventArgs e)
+        {
             //BMS_DLL.CFGGETSET.AYARLARIYUKLE();
             ////BMS_DLL.CFGGETSET CFG_BMS_CYPFRUVEX_KANTARETIKET_MODULU = new BMS_DLL.CFGGETSET();
             //try { textEditLS_KULLANICIADI.Text = BMS_DLL.CFGICERIK.LGDBUSERNAME; } catch { }

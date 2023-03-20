@@ -25,6 +25,8 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_OPERATOR_YENISATINALMAFATURASI));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.l_Barcode = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.TE_BINLIKSAYISI = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.SB_URUN = new DevExpress.XtraEditors.SimpleButton();
@@ -81,6 +83,8 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.l_Barcode);
+            this.panelControl1.Controls.Add(this.labelControl6);
             this.panelControl1.Controls.Add(this.TE_BINLIKSAYISI);
             this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.SB_URUN);
@@ -114,12 +118,33 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(962, 219);
+            this.panelControl1.Size = new System.Drawing.Size(962, 250);
             this.panelControl1.TabIndex = 0;
+            // 
+            // l_Barcode
+            // 
+            this.l_Barcode.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.l_Barcode.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.l_Barcode.Appearance.Options.UseBackColor = true;
+            this.l_Barcode.Appearance.Options.UseFont = true;
+            this.l_Barcode.Location = new System.Drawing.Point(109, 5);
+            this.l_Barcode.Name = "l_Barcode";
+            this.l_Barcode.Size = new System.Drawing.Size(0, 25);
+            this.l_Barcode.TabIndex = 34;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(10, 5);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(55, 19);
+            this.labelControl6.TabIndex = 33;
+            this.labelControl6.Text = "Barkod:";
             // 
             // TE_BINLIKSAYISI
             // 
-            this.TE_BINLIKSAYISI.Location = new System.Drawing.Point(109, 117);
+            this.TE_BINLIKSAYISI.Location = new System.Drawing.Point(109, 141);
             this.TE_BINLIKSAYISI.Name = "TE_BINLIKSAYISI";
             this.TE_BINLIKSAYISI.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_BINLIKSAYISI.Properties.Appearance.Options.UseFont = true;
@@ -130,7 +155,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(10, 117);
+            this.labelControl4.Location = new System.Drawing.Point(10, 141);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(83, 19);
             this.labelControl4.TabIndex = 32;
@@ -141,7 +166,7 @@
             this.SB_URUN.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_URUN.Appearance.Options.UseFont = true;
             this.SB_URUN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_URUN.Location = new System.Drawing.Point(271, 196);
+            this.SB_URUN.Location = new System.Drawing.Point(271, 220);
             this.SB_URUN.Name = "SB_URUN";
             this.SB_URUN.Size = new System.Drawing.Size(185, 19);
             this.SB_URUN.TabIndex = 14;
@@ -152,7 +177,7 @@
             // 
             this.TE_URUN.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_URUN.Appearance.Options.UseFont = true;
-            this.TE_URUN.Location = new System.Drawing.Point(469, 194);
+            this.TE_URUN.Location = new System.Drawing.Point(469, 218);
             this.TE_URUN.Name = "TE_URUN";
             this.TE_URUN.Size = new System.Drawing.Size(9, 19);
             this.TE_URUN.TabIndex = 30;
@@ -163,7 +188,7 @@
             this.SB_SO.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_SO.Appearance.Options.UseFont = true;
             this.SB_SO.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_SO.Location = new System.Drawing.Point(271, 167);
+            this.SB_SO.Location = new System.Drawing.Point(271, 191);
             this.SB_SO.Name = "SB_SO";
             this.SB_SO.Size = new System.Drawing.Size(185, 19);
             this.SB_SO.TabIndex = 13;
@@ -175,7 +200,7 @@
             this.SB_URETICI.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_URETICI.Appearance.Options.UseFont = true;
             this.SB_URETICI.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_URETICI.Location = new System.Drawing.Point(271, 30);
+            this.SB_URETICI.Location = new System.Drawing.Point(271, 54);
             this.SB_URETICI.Name = "SB_URETICI";
             this.SB_URETICI.Size = new System.Drawing.Size(185, 19);
             this.SB_URETICI.TabIndex = 7;
@@ -187,7 +212,7 @@
             this.SB_SOZLESMETURU.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_SOZLESMETURU.Appearance.Options.UseFont = true;
             this.SB_SOZLESMETURU.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_SOZLESMETURU.Location = new System.Drawing.Point(271, 143);
+            this.SB_SOZLESMETURU.Location = new System.Drawing.Point(271, 167);
             this.SB_SOZLESMETURU.Name = "SB_SOZLESMETURU";
             this.SB_SOZLESMETURU.Size = new System.Drawing.Size(185, 22);
             this.SB_SOZLESMETURU.TabIndex = 12;
@@ -199,7 +224,7 @@
             this.SB_KONTRAKTOR.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_KONTRAKTOR.Appearance.Options.UseFont = true;
             this.SB_KONTRAKTOR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_KONTRAKTOR.Location = new System.Drawing.Point(271, 51);
+            this.SB_KONTRAKTOR.Location = new System.Drawing.Point(271, 75);
             this.SB_KONTRAKTOR.Name = "SB_KONTRAKTOR";
             this.SB_KONTRAKTOR.Size = new System.Drawing.Size(185, 20);
             this.SB_KONTRAKTOR.TabIndex = 8;
@@ -211,7 +236,7 @@
             this.SB_BOLGEDETAY.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_BOLGEDETAY.Appearance.Options.UseFont = true;
             this.SB_BOLGEDETAY.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_BOLGEDETAY.Location = new System.Drawing.Point(271, 118);
+            this.SB_BOLGEDETAY.Location = new System.Drawing.Point(271, 142);
             this.SB_BOLGEDETAY.Name = "SB_BOLGEDETAY";
             this.SB_BOLGEDETAY.Size = new System.Drawing.Size(185, 23);
             this.SB_BOLGEDETAY.TabIndex = 11;
@@ -223,7 +248,7 @@
             this.SB_PLAKA.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_PLAKA.Appearance.Options.UseFont = true;
             this.SB_PLAKA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_PLAKA.Location = new System.Drawing.Point(271, 5);
+            this.SB_PLAKA.Location = new System.Drawing.Point(271, 29);
             this.SB_PLAKA.Name = "SB_PLAKA";
             this.SB_PLAKA.Size = new System.Drawing.Size(185, 22);
             this.SB_PLAKA.TabIndex = 6;
@@ -235,7 +260,7 @@
             this.SB_BOLGE.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_BOLGE.Appearance.Options.UseFont = true;
             this.SB_BOLGE.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_BOLGE.Location = new System.Drawing.Point(271, 97);
+            this.SB_BOLGE.Location = new System.Drawing.Point(271, 121);
             this.SB_BOLGE.Name = "SB_BOLGE";
             this.SB_BOLGE.Size = new System.Drawing.Size(185, 19);
             this.SB_BOLGE.TabIndex = 10;
@@ -246,7 +271,7 @@
             // 
             this.TE_BOLGEDETAYYETKIKOD.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_BOLGEDETAYYETKIKOD.Appearance.Options.UseFont = true;
-            this.TE_BOLGEDETAYYETKIKOD.Location = new System.Drawing.Point(469, 119);
+            this.TE_BOLGEDETAYYETKIKOD.Location = new System.Drawing.Point(469, 143);
             this.TE_BOLGEDETAYYETKIKOD.Name = "TE_BOLGEDETAYYETKIKOD";
             this.TE_BOLGEDETAYYETKIKOD.Size = new System.Drawing.Size(9, 19);
             this.TE_BOLGEDETAYYETKIKOD.TabIndex = 28;
@@ -257,7 +282,7 @@
             this.SB_GIDECEGIYER.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_GIDECEGIYER.Appearance.Options.UseFont = true;
             this.SB_GIDECEGIYER.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_GIDECEGIYER.Location = new System.Drawing.Point(271, 73);
+            this.SB_GIDECEGIYER.Location = new System.Drawing.Point(271, 97);
             this.SB_GIDECEGIYER.Name = "SB_GIDECEGIYER";
             this.SB_GIDECEGIYER.Size = new System.Drawing.Size(185, 22);
             this.SB_GIDECEGIYER.TabIndex = 9;
@@ -268,7 +293,7 @@
             // 
             this.TE_SOSATISELEMANI.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_SOSATISELEMANI.Appearance.Options.UseFont = true;
-            this.TE_SOSATISELEMANI.Location = new System.Drawing.Point(469, 165);
+            this.TE_SOSATISELEMANI.Location = new System.Drawing.Point(469, 189);
             this.TE_SOSATISELEMANI.Name = "TE_SOSATISELEMANI";
             this.TE_SOSATISELEMANI.Size = new System.Drawing.Size(9, 19);
             this.TE_SOSATISELEMANI.TabIndex = 27;
@@ -278,7 +303,7 @@
             // 
             this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Appearance.Options.UseFont = true;
-            this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Location = new System.Drawing.Point(469, 142);
+            this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Location = new System.Drawing.Point(469, 166);
             this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Name = "TE_SOZLESMETURU_ODEMETAHSILATPLANI";
             this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.Size = new System.Drawing.Size(9, 19);
             this.TE_SOZLESMETURU_ODEMETAHSILATPLANI.TabIndex = 26;
@@ -288,7 +313,7 @@
             // 
             this.TE_BOLGEOZELKOD.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_BOLGEOZELKOD.Appearance.Options.UseFont = true;
-            this.TE_BOLGEOZELKOD.Location = new System.Drawing.Point(469, 96);
+            this.TE_BOLGEOZELKOD.Location = new System.Drawing.Point(469, 120);
             this.TE_BOLGEOZELKOD.Name = "TE_BOLGEOZELKOD";
             this.TE_BOLGEOZELKOD.Size = new System.Drawing.Size(9, 19);
             this.TE_BOLGEOZELKOD.TabIndex = 25;
@@ -296,7 +321,7 @@
             // 
             // TE_SOZLESME_NO
             // 
-            this.TE_SOZLESME_NO.Location = new System.Drawing.Point(109, 182);
+            this.TE_SOZLESME_NO.Location = new System.Drawing.Point(109, 206);
             this.TE_SOZLESME_NO.Name = "TE_SOZLESME_NO";
             this.TE_SOZLESME_NO.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_SOZLESME_NO.Properties.Appearance.Options.UseFont = true;
@@ -307,7 +332,7 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(10, 182);
+            this.labelControl8.Location = new System.Drawing.Point(10, 206);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(91, 19);
             this.labelControl8.TabIndex = 19;
@@ -315,7 +340,7 @@
             // 
             // TE_ACIKLAMA
             // 
-            this.TE_ACIKLAMA.Location = new System.Drawing.Point(109, 150);
+            this.TE_ACIKLAMA.Location = new System.Drawing.Point(109, 174);
             this.TE_ACIKLAMA.Name = "TE_ACIKLAMA";
             this.TE_ACIKLAMA.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_ACIKLAMA.Properties.Appearance.Options.UseFont = true;
@@ -326,7 +351,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(10, 150);
+            this.labelControl5.Location = new System.Drawing.Point(10, 174);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(64, 19);
             this.labelControl5.TabIndex = 17;
@@ -336,7 +361,7 @@
             // 
             this.TE_AMBAR.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_AMBAR.Appearance.Options.UseFont = true;
-            this.TE_AMBAR.Location = new System.Drawing.Point(469, 75);
+            this.TE_AMBAR.Location = new System.Drawing.Point(469, 99);
             this.TE_AMBAR.Name = "TE_AMBAR";
             this.TE_AMBAR.Size = new System.Drawing.Size(9, 19);
             this.TE_AMBAR.TabIndex = 16;
@@ -346,7 +371,7 @@
             // 
             this.TE_URETICI.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_URETICI.Appearance.Options.UseFont = true;
-            this.TE_URETICI.Location = new System.Drawing.Point(469, 29);
+            this.TE_URETICI.Location = new System.Drawing.Point(469, 53);
             this.TE_URETICI.Name = "TE_URETICI";
             this.TE_URETICI.Size = new System.Drawing.Size(9, 19);
             this.TE_URETICI.TabIndex = 15;
@@ -356,7 +381,7 @@
             // 
             this.TE_KONTRAKTOR.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_KONTRAKTOR.Appearance.Options.UseFont = true;
-            this.TE_KONTRAKTOR.Location = new System.Drawing.Point(469, 53);
+            this.TE_KONTRAKTOR.Location = new System.Drawing.Point(469, 77);
             this.TE_KONTRAKTOR.Name = "TE_KONTRAKTOR";
             this.TE_KONTRAKTOR.Size = new System.Drawing.Size(9, 19);
             this.TE_KONTRAKTOR.TabIndex = 14;
@@ -366,7 +391,7 @@
             // 
             this.TE_PLAKA.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_PLAKA.Appearance.Options.UseFont = true;
-            this.TE_PLAKA.Location = new System.Drawing.Point(469, 0);
+            this.TE_PLAKA.Location = new System.Drawing.Point(469, 24);
             this.TE_PLAKA.Name = "TE_PLAKA";
             this.TE_PLAKA.Size = new System.Drawing.Size(9, 19);
             this.TE_PLAKA.TabIndex = 13;
@@ -374,7 +399,7 @@
             // 
             // TE_BELGENO
             // 
-            this.TE_BELGENO.Location = new System.Drawing.Point(109, 85);
+            this.TE_BELGENO.Location = new System.Drawing.Point(109, 109);
             this.TE_BELGENO.Name = "TE_BELGENO";
             this.TE_BELGENO.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_BELGENO.Properties.Appearance.Options.UseFont = true;
@@ -384,7 +409,7 @@
             // DT_TARIH
             // 
             this.DT_TARIH.EditValue = null;
-            this.DT_TARIH.Location = new System.Drawing.Point(109, 49);
+            this.DT_TARIH.Location = new System.Drawing.Point(109, 73);
             this.DT_TARIH.Name = "DT_TARIH";
             this.DT_TARIH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DT_TARIH.Properties.Appearance.Options.UseFont = true;
@@ -398,7 +423,7 @@
             // 
             // TE_FATURANO
             // 
-            this.TE_FATURANO.Location = new System.Drawing.Point(109, 13);
+            this.TE_FATURANO.Location = new System.Drawing.Point(109, 37);
             this.TE_FATURANO.Name = "TE_FATURANO";
             this.TE_FATURANO.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_FATURANO.Properties.Appearance.Options.UseFont = true;
@@ -410,7 +435,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(10, 85);
+            this.labelControl3.Location = new System.Drawing.Point(10, 109);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(68, 19);
             this.labelControl3.TabIndex = 2;
@@ -420,7 +445,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(10, 49);
+            this.labelControl2.Location = new System.Drawing.Point(10, 73);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(37, 19);
             this.labelControl2.TabIndex = 1;
@@ -430,7 +455,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(10, 13);
+            this.labelControl1.Location = new System.Drawing.Point(10, 37);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(74, 19);
             this.labelControl1.TabIndex = 0;
@@ -441,9 +466,9 @@
             // 
             this.panelControl2.Controls.Add(this.GRC_OPERATOR_YENISATINALMA);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 219);
+            this.panelControl2.Location = new System.Drawing.Point(0, 250);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(962, 320);
+            this.panelControl2.Size = new System.Drawing.Size(962, 289);
             this.panelControl2.TabIndex = 1;
             // 
             // GRC_OPERATOR_YENISATINALMA
@@ -453,7 +478,7 @@
             this.GRC_OPERATOR_YENISATINALMA.Location = new System.Drawing.Point(2, 2);
             this.GRC_OPERATOR_YENISATINALMA.MainView = this.GRV_OPERATOR_YENISATINALMA;
             this.GRC_OPERATOR_YENISATINALMA.Name = "GRC_OPERATOR_YENISATINALMA";
-            this.GRC_OPERATOR_YENISATINALMA.Size = new System.Drawing.Size(958, 316);
+            this.GRC_OPERATOR_YENISATINALMA.Size = new System.Drawing.Size(958, 285);
             this.GRC_OPERATOR_YENISATINALMA.TabIndex = 0;
             this.GRC_OPERATOR_YENISATINALMA.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GRV_OPERATOR_YENISATINALMA});
@@ -490,7 +515,7 @@
             this.sb_Print.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.sb_Print.Appearance.Options.UseFont = true;
             this.sb_Print.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sb_Print.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.sb_Print.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("sb_Print.ImageOptions.SvgImage")));
             this.sb_Print.Location = new System.Drawing.Point(2, 2);
             this.sb_Print.Name = "sb_Print";
             this.sb_Print.Size = new System.Drawing.Size(125, 50);
@@ -595,5 +620,7 @@
         private DevExpress.XtraEditors.TextEdit TE_BINLIKSAYISI;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SimpleButton sb_Print;
+        private DevExpress.XtraEditors.LabelControl l_Barcode;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }

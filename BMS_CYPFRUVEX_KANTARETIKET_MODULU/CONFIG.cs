@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
-    public class CONFIG {
+namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU
+{
+    public class CONFIG
+    {
         public string VERITABANITURU { get; set; } = string.Empty;
         public string LGDBSERVER { get; set; } = string.Empty;
         public string LGDBDATABASE { get; set; } = string.Empty;
@@ -51,6 +53,7 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
         public string SERVICESTARTTIME { get; set; } = string.Empty;
         public string SERVICEFINISHTIME { get; set; } = string.Empty;
         public string LOGOTYPE { get; set; } = string.Empty;
+        public int KantarSonrasiFaturaAc { get; set; } = 0;
 
     }
 }

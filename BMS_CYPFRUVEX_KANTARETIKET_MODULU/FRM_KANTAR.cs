@@ -1,4 +1,5 @@
-﻿using BMS_CYPFRUVEX_KANTARETIKET_MODULU.MODELS;
+﻿using BMS_CYPFRUVEX_KANTARETIKET_MODULU.CONVERTER;
+using BMS_CYPFRUVEX_KANTARETIKET_MODULU.MODELS;
 using BMS_CYPFRUVEX_KANTARETIKET_MODULU.SQLCOMMANDS;
 using BMS_DLL.OBJECTS;
 using DevExpress.XtraSplashScreen;
@@ -34,6 +35,7 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU
         string ODEMEPLANID_SOZLESMETURU = "0";
         string SALEMANID_SO = "0";
         SQLINSERTCOMMANDS SIC = new SQLINSERTCOMMANDS();
+        CONVERTDATATOMODELS CDM = new CONVERTDATATOMODELS();
 
         public FRM_KANTAR(CONFIG CFG)
         {
@@ -125,7 +127,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
 
         private void SB_eXCELEKAYDET_Click(object sender, EventArgs e)
         {
-            if (URUNLOGICALREF == "0" || URUNLOGICALREF == "" || KONTRAKTORLOGICALREF=="0" || PLAKALOGICALREF=="0" ||URETICILOGICALREF=="0"||string.IsNullOrEmpty(TE_OZELKOD_BOLGE.Text))
+            if (URUNLOGICALREF == "0" || URUNLOGICALREF == "" || KONTRAKTORLOGICALREF == "0" || PLAKALOGICALREF == "0" || URETICILOGICALREF == "0" || string.IsNullOrEmpty(TE_OZELKOD_BOLGE.Text))
             {
                 MessageBox.Show("DOLDURULMASI GEREKEN ALANLAR MEVCUT");
                 return;
@@ -190,27 +192,39 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
                 }
             }
             // this.Close();
-            BMS_DLL.DX.XTRAREPORT_AC("SELECT * FROM BMS_KE_KANTAR WHERE LOGICALREF=" + logicalref.ToString(), "BARKODDESIGN.repx", false, LGCONSTR);
+            if (_CFG.KantarSonrasiFaturaAc == 0)
+            {
+                BMS_DLL.DX.XTRAREPORT_AC("SELECT * FROM BMS_KE_KANTAR WHERE LOGICALREF=" + logicalref.ToString(), "BARKODDESIGN.repx", false, LGCONSTR);
 
-            TE_PLAKAKODU.Text = "";
-            TE_PLAKA.Text = "";
-            PLAKALOGICALREF = "0";
+                TE_PLAKAKODU.Text = "";
+                TE_PLAKA.Text = "";
+                PLAKALOGICALREF = "0";
 
-            TE_URETICIKODU.Text = "";
-            TE_URETICI.Text = "";
-            URETICILOGICALREF = "0";
+                TE_URETICIKODU.Text = "";
+                TE_URETICI.Text = "";
+                URETICILOGICALREF = "0";
 
-            TE_KONTRAKTORKODU.Text = "";
-            TE_KONTRAKTOR.Text = "";
-            KONTRAKTORLOGICALREF = "0";
+                TE_KONTRAKTORKODU.Text = "";
+                TE_KONTRAKTOR.Text = "";
+                KONTRAKTORLOGICALREF = "0";
 
-            TE_MIKTAR.Text = "0";
+                TE_MIKTAR.Text = "0";
 
-            TE_YETKIKOD_BOLGEDETAYKOD.Text = "";
-            TE_YETKIKOD_BOLGEDETAY.Text = ""; 
+                TE_YETKIKOD_BOLGEDETAYKOD.Text = "";
+                TE_YETKIKOD_BOLGEDETAY.Text = "";
 
-            TE_ACIKLAMA.Text = "";
-            TE_BINLIKSAYISI.Text = "0";
+                TE_ACIKLAMA.Text = "";
+                TE_BINLIKSAYISI.Text = "0";
+            }
+            else
+            {
+                SQLCON = new SqlConnection(LGCONSTR);
+                DataRow dr = BMS_DLL.SQL.SELECT2("SELECT * FROM BMS_KE_KANTAR WHERE LOGICALREF=" + logicalref.ToString(), SQLCON).Rows[0];
+                BMS_KE_KANTAR KANTAR = CDM.BMS_KE_KANTAR_CONVERT_FROM_DATAROW(dr);
+                FRM_OPERATOR_YENISATINALMAFATURASI SAF = new FRM_OPERATOR_YENISATINALMAFATURASI(_CFG, KANTAR);
+                SAF.Show();
+                this.Close();
+            }
             //FRM_KANTARBARKOD F = new FRM_KANTARBARKOD(logicalref.ToString(),LGCONSTR);
             //F.Show();
         }

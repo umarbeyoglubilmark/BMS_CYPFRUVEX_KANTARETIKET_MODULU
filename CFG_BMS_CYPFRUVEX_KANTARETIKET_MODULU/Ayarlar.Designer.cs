@@ -74,6 +74,8 @@
             this.textEditBS_PAROLA1 = new DevExpress.XtraEditors.TextEdit();
             this.textEditBS_KULLANICIADI1 = new DevExpress.XtraEditors.TextEdit();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.labelControl36 = new DevExpress.XtraEditors.LabelControl();
+            this.TE_URUNBASLANGICKODU = new DevExpress.XtraEditors.TextEdit();
             this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl35 = new DevExpress.XtraEditors.LabelControl();
             this.TE_KONTRAKTORBASLANGICKODU = new DevExpress.XtraEditors.TextEdit();
@@ -104,8 +106,9 @@
             this.textEditWS_SERVISSURE = new DevExpress.XtraEditors.TextEdit();
             this.simpleButtonKAYDET = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonVAZGEC = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl36 = new DevExpress.XtraEditors.LabelControl();
-            this.TE_URUNBASLANGICKODU = new DevExpress.XtraEditors.TextEdit();
+            this.rb_KantarSonrasiFaturaAcEvet = new System.Windows.Forms.RadioButton();
+            this.rb_KantarSonrasiFaturaAcHayir = new System.Windows.Forms.RadioButton();
+            this.labelControl37 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noDocumentsView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -133,6 +136,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditBS_PAROLA1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBS_KULLANICIADI1.Properties)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_URUNBASLANGICKODU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_KONTRAKTORBASLANGICKODU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_URETICIBASLANGICKODU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditFB_ONCEKIPERIOD.Properties)).BeginInit();
@@ -148,7 +152,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditWS_SERVISVERITABANIKONTROLTABLOSU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditWS_SURECINSI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditWS_SERVISSURE.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TE_URUNBASLANGICKODU.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -554,6 +557,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.labelControl37);
+            this.groupBox3.Controls.Add(this.rb_KantarSonrasiFaturaAcHayir);
+            this.groupBox3.Controls.Add(this.rb_KantarSonrasiFaturaAcEvet);
             this.groupBox3.Controls.Add(this.labelControl36);
             this.groupBox3.Controls.Add(this.TE_URUNBASLANGICKODU);
             this.groupBox3.Controls.Add(this.labelControl34);
@@ -575,6 +581,21 @@
             this.groupBox3.TabIndex = 45;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "LOGO FİRMA BİLGİLERİ";
+            // 
+            // labelControl36
+            // 
+            this.labelControl36.Location = new System.Drawing.Point(0, 113);
+            this.labelControl36.Name = "labelControl36";
+            this.labelControl36.Size = new System.Drawing.Size(118, 13);
+            this.labelControl36.TabIndex = 49;
+            this.labelControl36.Text = "ÜRÜN BAŞLANGIÇ KODU";
+            // 
+            // TE_URUNBASLANGICKODU
+            // 
+            this.TE_URUNBASLANGICKODU.Location = new System.Drawing.Point(164, 110);
+            this.TE_URUNBASLANGICKODU.Name = "TE_URUNBASLANGICKODU";
+            this.TE_URUNBASLANGICKODU.Size = new System.Drawing.Size(159, 20);
+            this.TE_URUNBASLANGICKODU.TabIndex = 48;
             // 
             // labelControl34
             // 
@@ -608,7 +629,7 @@
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(-2, 168);
+            this.labelControl14.Location = new System.Drawing.Point(-2, 190);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(79, 13);
             this.labelControl14.TabIndex = 43;
@@ -617,7 +638,7 @@
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(-2, 148);
+            this.labelControl13.Location = new System.Drawing.Point(-2, 170);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(91, 13);
             this.labelControl13.TabIndex = 42;
@@ -642,7 +663,7 @@
             // 
             // textEditFB_ONCEKIPERIOD
             // 
-            this.textEditFB_ONCEKIPERIOD.Location = new System.Drawing.Point(112, 165);
+            this.textEditFB_ONCEKIPERIOD.Location = new System.Drawing.Point(112, 187);
             this.textEditFB_ONCEKIPERIOD.Name = "textEditFB_ONCEKIPERIOD";
             this.textEditFB_ONCEKIPERIOD.Size = new System.Drawing.Size(209, 20);
             this.textEditFB_ONCEKIPERIOD.TabIndex = 39;
@@ -650,7 +671,7 @@
             // 
             // textEditFB_ONCEKIFIRMANO
             // 
-            this.textEditFB_ONCEKIFIRMANO.Location = new System.Drawing.Point(112, 145);
+            this.textEditFB_ONCEKIFIRMANO.Location = new System.Drawing.Point(112, 167);
             this.textEditFB_ONCEKIFIRMANO.Name = "textEditFB_ONCEKIFIRMANO";
             this.textEditFB_ONCEKIFIRMANO.Size = new System.Drawing.Size(209, 20);
             this.textEditFB_ONCEKIFIRMANO.TabIndex = 38;
@@ -844,20 +865,35 @@
             this.simpleButtonVAZGEC.TabIndex = 49;
             this.simpleButtonVAZGEC.Text = "VAZGEC";
             // 
-            // labelControl36
+            // rb_KantarSonrasiFaturaAcEvet
             // 
-            this.labelControl36.Location = new System.Drawing.Point(0, 113);
-            this.labelControl36.Name = "labelControl36";
-            this.labelControl36.Size = new System.Drawing.Size(118, 13);
-            this.labelControl36.TabIndex = 49;
-            this.labelControl36.Text = "ÜRÜN BAŞLANGIÇ KODU";
+            this.rb_KantarSonrasiFaturaAcEvet.AutoSize = true;
+            this.rb_KantarSonrasiFaturaAcEvet.Location = new System.Drawing.Point(164, 137);
+            this.rb_KantarSonrasiFaturaAcEvet.Name = "rb_KantarSonrasiFaturaAcEvet";
+            this.rb_KantarSonrasiFaturaAcEvet.Size = new System.Drawing.Size(50, 17);
+            this.rb_KantarSonrasiFaturaAcEvet.TabIndex = 50;
+            this.rb_KantarSonrasiFaturaAcEvet.TabStop = true;
+            this.rb_KantarSonrasiFaturaAcEvet.Text = "Evet";
+            this.rb_KantarSonrasiFaturaAcEvet.UseVisualStyleBackColor = true;
             // 
-            // TE_URUNBASLANGICKODU
+            // rb_KantarSonrasiFaturaAcHayir
             // 
-            this.TE_URUNBASLANGICKODU.Location = new System.Drawing.Point(164, 110);
-            this.TE_URUNBASLANGICKODU.Name = "TE_URUNBASLANGICKODU";
-            this.TE_URUNBASLANGICKODU.Size = new System.Drawing.Size(159, 20);
-            this.TE_URUNBASLANGICKODU.TabIndex = 48;
+            this.rb_KantarSonrasiFaturaAcHayir.AutoSize = true;
+            this.rb_KantarSonrasiFaturaAcHayir.Location = new System.Drawing.Point(220, 136);
+            this.rb_KantarSonrasiFaturaAcHayir.Name = "rb_KantarSonrasiFaturaAcHayir";
+            this.rb_KantarSonrasiFaturaAcHayir.Size = new System.Drawing.Size(55, 17);
+            this.rb_KantarSonrasiFaturaAcHayir.TabIndex = 51;
+            this.rb_KantarSonrasiFaturaAcHayir.TabStop = true;
+            this.rb_KantarSonrasiFaturaAcHayir.Text = "Hayır";
+            this.rb_KantarSonrasiFaturaAcHayir.UseVisualStyleBackColor = true;
+            // 
+            // labelControl37
+            // 
+            this.labelControl37.Location = new System.Drawing.Point(0, 140);
+            this.labelControl37.Name = "labelControl37";
+            this.labelControl37.Size = new System.Drawing.Size(148, 13);
+            this.labelControl37.TabIndex = 52;
+            this.labelControl37.Text = "KANTAR SONRASI FATURA AÇ";
             // 
             // Ayarlar
             // 
@@ -905,6 +941,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditBS_KULLANICIADI1.Properties)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_URUNBASLANGICKODU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_KONTRAKTORBASLANGICKODU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_URETICIBASLANGICKODU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditFB_ONCEKIPERIOD.Properties)).EndInit();
@@ -922,7 +959,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditWS_SERVISVERITABANIKONTROLTABLOSU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditWS_SURECINSI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditWS_SERVISSURE.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TE_URUNBASLANGICKODU.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1011,5 +1047,8 @@
         private DevExpress.XtraEditors.TextEdit TE_URETICIBASLANGICKODU;
         private DevExpress.XtraEditors.LabelControl labelControl36;
         private DevExpress.XtraEditors.TextEdit TE_URUNBASLANGICKODU;
+        private DevExpress.XtraEditors.LabelControl labelControl37;
+        private System.Windows.Forms.RadioButton rb_KantarSonrasiFaturaAcHayir;
+        private System.Windows.Forms.RadioButton rb_KantarSonrasiFaturaAcEvet;
     }
 }
