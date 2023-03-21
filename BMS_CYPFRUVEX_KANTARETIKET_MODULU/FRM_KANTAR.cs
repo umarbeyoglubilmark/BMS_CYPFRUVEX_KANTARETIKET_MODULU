@@ -191,32 +191,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
                     try { con.Dispose(); } catch { }
                 }
             }
-            // this.Close();
-            if (_CFG.KantarSonrasiFaturaAc == 0)
-            {
-                BMS_DLL.DX.XTRAREPORT_AC("SELECT * FROM BMS_KE_KANTAR WHERE LOGICALREF=" + logicalref.ToString(), "BARKODDESIGN.repx", false, LGCONSTR);
-
-                TE_PLAKAKODU.Text = "";
-                TE_PLAKA.Text = "";
-                PLAKALOGICALREF = "0";
-
-                TE_URETICIKODU.Text = "";
-                TE_URETICI.Text = "";
-                URETICILOGICALREF = "0";
-
-                TE_KONTRAKTORKODU.Text = "";
-                TE_KONTRAKTOR.Text = "";
-                KONTRAKTORLOGICALREF = "0";
-
-                TE_MIKTAR.Text = "0";
-
-                TE_YETKIKOD_BOLGEDETAYKOD.Text = "";
-                TE_YETKIKOD_BOLGEDETAY.Text = "";
-
-                TE_ACIKLAMA.Text = "";
-                TE_BINLIKSAYISI.Text = "0";
-            }
-            else
+            if (GLOB.YETKI == "YONETICI" && _CFG.KantarSonrasiFaturaAc == 1)
             {
                 SQLCON = new SqlConnection(LGCONSTR);
                 DataRow dr = BMS_DLL.SQL.SELECT2("SELECT * FROM BMS_KE_KANTAR WHERE LOGICALREF=" + logicalref.ToString(), SQLCON).Rows[0];
@@ -225,6 +200,27 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
                 SAF.Show();
                 this.Close();
             }
+            else if (GLOB.YETKI != "YONETICI")
+            {
+                BMS_DLL.DX.XTRAREPORT_AC("SELECT * FROM BMS_KE_KANTAR WHERE LOGICALREF=" + logicalref.ToString(), "BARKODDESIGN.repx", false, LGCONSTR);
+
+                TE_PLAKAKODU.Text = TE_PLAKA.Text = "";
+                PLAKALOGICALREF = "0";
+
+                TE_URETICIKODU.Text = TE_URETICI.Text = "";
+                URETICILOGICALREF = "0";
+
+                TE_KONTRAKTORKODU.Text = TE_KONTRAKTOR.Text = "";
+                KONTRAKTORLOGICALREF = "0";
+
+                TE_MIKTAR.Text = "0";
+
+                TE_YETKIKOD_BOLGEDETAYKOD.Text = TE_YETKIKOD_BOLGEDETAY.Text = "";
+
+                TE_ACIKLAMA.Text = "";
+                TE_BINLIKSAYISI.Text = "0";
+            }
+
             //FRM_KANTARBARKOD F = new FRM_KANTARBARKOD(logicalref.ToString(),LGCONSTR);
             //F.Show();
         }

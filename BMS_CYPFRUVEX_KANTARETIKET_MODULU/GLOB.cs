@@ -10,6 +10,7 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
         public static string USERNR = "";
         public static string SORGU_MALZEMELISTESI_PATH = "SORGU_MALZEMELISTESI.txt";
         public static string SORGU_ENTDB_PATH = "ENTDB.sqlite";
+        public static string YETKI = "";
 
     }
 }

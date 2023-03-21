@@ -16,8 +16,10 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Data.SQLite;
 
-namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
-    public partial class Login : DevExpress.XtraEditors.XtraForm {
+namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU
+{
+    public partial class Login : DevExpress.XtraEditors.XtraForm
+    {
         string _xmlPath = AppDomain.CurrentDomain.BaseDirectory + "BMDB.xml";
         string _datPath = AppDomain.CurrentDomain.BaseDirectory + "BMDB.cfg";
         string _key = "0WXOM7IKTM012016";
@@ -25,7 +27,8 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
         string USERNAME = "";
         string PASSWORD = "";
         SqlConnection SQLCON = new SqlConnection();
-        public Login() {
+        public Login()
+        {
             InitializeComponent();
 
             CFG = GET_CONFIG();
@@ -36,7 +39,8 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
 
 
         }
-        private void CREATE_ENTDB() {
+        private void CREATE_ENTDB()
+        {
             SQLiteConnection.CreateFile(GLOB.SORGU_ENTDB_PATH);
             SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=" + GLOB.SORGU_ENTDB_PATH + ";Version=3;");
             m_dbConnection.Open();
@@ -45,27 +49,37 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
             command.ExecuteNonQuery();
             m_dbConnection.Close();
         }
-        private void INITIALIZE_VALUES() {
-            if (CFG != null) {
+        private void INITIALIZE_VALUES()
+        {
+            if (CFG != null)
+            {
 
                 try { USERNAME = CFG.BMSDEFAULTUSERNAME; } catch { }
                 try { PASSWORD = CFG.BMSDEFAULTPASSWORD; } catch { }
 
             }
         }
-        private CONFIG GET_CONFIG() {
-            try {
-                using (RijndaelManaged aes = new RijndaelManaged()) {
+        private CONFIG GET_CONFIG()
+        {
+            try
+            {
+                using (RijndaelManaged aes = new RijndaelManaged())
+                {
                     byte[] key = ASCIIEncoding.UTF8.GetBytes(_key);
 
                     byte[] IV = ASCIIEncoding.UTF8.GetBytes(_key);
 
-                    using (FileStream fsCrypt = new FileStream(_datPath, FileMode.Open)) {
-                        using (FileStream fsOut = new FileStream(_xmlPath, FileMode.Create)) {
-                            using (ICryptoTransform decryptor = aes.CreateDecryptor(key, IV)) {
-                                using (CryptoStream cs = new CryptoStream(fsCrypt, decryptor, CryptoStreamMode.Read)) {
+                    using (FileStream fsCrypt = new FileStream(_datPath, FileMode.Open))
+                    {
+                        using (FileStream fsOut = new FileStream(_xmlPath, FileMode.Create))
+                        {
+                            using (ICryptoTransform decryptor = aes.CreateDecryptor(key, IV))
+                            {
+                                using (CryptoStream cs = new CryptoStream(fsCrypt, decryptor, CryptoStreamMode.Read))
+                                {
                                     int data;
-                                    while ((data = cs.ReadByte()) != -1) {
+                                    while ((data = cs.ReadByte()) != -1)
+                                    {
                                         fsOut.WriteByte((byte)data);
                                     }
                                 }
@@ -128,34 +142,47 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
                 try { CFG.SERVICEPERIODTYPE = int.Parse(xNodeWINDOWSSERVICE.ChildNodes[1].InnerText); } catch { }
                 try { CFG.SERVICETABLESDBCHOICE = int.Parse(xNodeWINDOWSSERVICE.ChildNodes[2].InnerText); } catch { }
                 return CFG;
-            } catch {
+            }
+            catch
+            {
                 return null;
             }
         }
-        private void LOGIN() {
+        private void LOGIN()
+        {
 
         }
 
-        private void sb_LOGIN_Click(object sender, EventArgs e) {
-            try {
+        private void sb_LOGIN_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 string LGCONSTR = string.Format("Data Source={0};Initial Catalog={1};User Id={2};Password={3};MultipleActiveResultSets=True;",
     CFG.LGDBSERVER, CFG.LGDBDATABASE, CFG.LGDBUSERNAME, CFG.LGDBPASSWORD);
                 string YETKI = "";
-                try {
+                try
+                {
                     SQLCON = new SqlConnection(LGCONSTR);
                     /*YETKI TUR KANTAR YONETICI OPERATOR */
                     YETKI = BMS_DLL.SQL.SELECT2(string.Format(@" SELECT TUR FROM BMS_KE_KULLANICILAR WHERE KULLANICIADI='{0}' AND PAROLA='{1}'", te_USERNAME.Text, te_PASSWORD.Text), SQLCON).Rows[0][0].ToString();
-                } catch {
+                    GLOB.YETKI = YETKI;
+                }
+                catch
+                {
                     return;
                 }
-                if (YETKI!="") {
+                if (YETKI != "")
+                {
                     this.Hide();
-                    BMS_DLL.GLOBAL.FORMAC(false, new MainForm(CFG,YETKI), this, false, "");
-                } else {
+                    BMS_DLL.GLOBAL.FORMAC(false, new MainForm(CFG, YETKI), this, false, "");
+                }
+                else
+                {
                     MessageBox.Show("KULLANICI ADI PAROLA HATASI");
                 }
 
-            } catch { MessageBox.Show("HATA"); }
+            }
+            catch { MessageBox.Show("HATA"); }
 
         }
     }
