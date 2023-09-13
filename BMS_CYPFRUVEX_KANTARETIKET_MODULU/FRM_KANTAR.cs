@@ -198,33 +198,37 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
                 BMS_KE_KANTAR KANTAR = CDM.BMS_KE_KANTAR_CONVERT_FROM_DATAROW(dr);
                 FRM_OPERATOR_YENISATINALMAFATURASI SAF = new FRM_OPERATOR_YENISATINALMAFATURASI(_CFG, KANTAR);
                 SAF.Show();
-                this.Close();
+                clearComponents();
+                //this.Close();
             }
             else if (GLOB.YETKI != "YONETICI")
             {
                 BMS_DLL.DX.XTRAREPORT_AC("SELECT * FROM BMS_KE_KANTAR WHERE LOGICALREF=" + logicalref.ToString(), "BARKODDESIGN.repx", false, LGCONSTR);
 
-                TE_PLAKAKODU.Text = TE_PLAKA.Text = "";
-                PLAKALOGICALREF = "0";
-
-                TE_URETICIKODU.Text = TE_URETICI.Text = "";
-                URETICILOGICALREF = "0";
-
-                TE_KONTRAKTORKODU.Text = TE_KONTRAKTOR.Text = "";
-                KONTRAKTORLOGICALREF = "0";
-
-                TE_MIKTAR.Text = "0";
-
-                TE_YETKIKOD_BOLGEDETAYKOD.Text = TE_YETKIKOD_BOLGEDETAY.Text = "";
-
-                TE_ACIKLAMA.Text = "";
-                TE_BINLIKSAYISI.Text = "0";
+                clearComponents();
             }
 
             //FRM_KANTARBARKOD F = new FRM_KANTARBARKOD(logicalref.ToString(),LGCONSTR);
             //F.Show();
         }
+        void clearComponents()
+        {
+            TE_PLAKAKODU.Text = TE_PLAKA.Text = "";
+            PLAKALOGICALREF = "0";
 
+            TE_URETICIKODU.Text = TE_URETICI.Text = "";
+            URETICILOGICALREF = "0";
+
+            TE_KONTRAKTORKODU.Text = TE_KONTRAKTOR.Text = "";
+            KONTRAKTORLOGICALREF = "0";
+
+            TE_MIKTAR.Text = "0";
+
+            TE_YETKIKOD_BOLGEDETAYKOD.Text = TE_YETKIKOD_BOLGEDETAY.Text = "";
+
+            TE_ACIKLAMA.Text = "";
+            TE_BINLIKSAYISI.Text = "0";
+        }
         private void SB_PLAKA_Click(object sender, EventArgs e)
         {
             using (FRM_KANTARPLAKA F = new FRM_KANTARPLAKA(_CFG))
