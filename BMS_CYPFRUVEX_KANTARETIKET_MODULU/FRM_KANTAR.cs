@@ -56,6 +56,8 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
             TE_URUNKODU.Text = null;
             TE_BIRIM.Text = null;
             TE_ACIKLAMA.Text = null;
+            TE_FIRE_YUZDE.Text = "0";
+            TE_FIRE_MIKTAR.Text = "0";
 
 
         }
@@ -162,6 +164,22 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
             O.ODEMEPLANID_SOZLESMETURU = TE_ODEMEPLANI_SOZLESMETURU.Text;
             O.SALEMANID_SO = TE_SALEMANID_SO.Text;
             O.BINLIKSAYISI = double.Parse(TE_BINLIKSAYISI.Text);
+
+            // 10 ton (10000 kg) altı yüklemeler için teslimat kodunu kaydet
+            if (O.MIKTAR < 10000)
+            {
+                O.TESLIMAT_KODU = TE_TESLIMAT_KODU.Text;
+            }
+            else
+            {
+                O.TESLIMAT_KODU = "";
+            }
+
+            // Fire miktarını ekle
+            double fireMiktar = 0;
+            double.TryParse(TE_FIRE_MIKTAR.Text.Replace(".", "").Replace(",", "."), NumberStyles.Any, CultureInfo.InvariantCulture, out fireMiktar);
+            O.FIRE_MIKTAR = fireMiktar;
+
             SQLCON = new SqlConnection(LGCONSTR);
             using (SqlConnection con = SQLCON)
             {
@@ -208,8 +226,17 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
                 clearComponents();
             }
 
-            //FRM_KANTARBARKOD F = new FRM_KANTARBARKOD(logicalref.ToString(),LGCONSTR);
-            //F.Show();
+            FRM_KANTARBARKOD F = new FRM_KANTARBARKOD(logicalref.ToString(),LGCONSTR);
+            F.Show();
+
+            // Fire miktarı 0'ın üzerindeyse satınalma iade faturası oluştur (TRCODE = 6)
+            if (fireMiktar > 0)
+            {
+                SQLCON = new SqlConnection(LGCONSTR);
+                DataRow drFire = BMS_DLL.SQL.SELECT2("SELECT * FROM BMS_KE_KANTAR WHERE LOGICALREF=" + logicalref.ToString(), SQLCON).Rows[0];
+                BMS_KE_KANTAR KANTAR_FIRE = CDM.BMS_KE_KANTAR_CONVERT_FROM_DATAROW(drFire);
+                CreateFireIadeFaturasi(KANTAR_FIRE, fireMiktar);
+            }
         }
         void clearComponents()
         {
@@ -223,11 +250,16 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
             KONTRAKTORLOGICALREF = "0";
 
             TE_MIKTAR.Text = "0";
+            TE_FIRE_YUZDE.Text = "0";
+            TE_FIRE_MIKTAR.Text = "0";
+            _previousFireYuzde = "0";
+            _previousFireMiktar = "0";
 
             TE_YETKIKOD_BOLGEDETAYKOD.Text = TE_YETKIKOD_BOLGEDETAY.Text = "";
 
             TE_ACIKLAMA.Text = "";
             TE_BINLIKSAYISI.Text = "0";
+            TE_TESLIMAT_KODU.Text = "";
         }
         private void SB_PLAKA_Click(object sender, EventArgs e)
         {
@@ -393,6 +425,104 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
             }
         }
 
+        private bool _isFireCalculating = false;
+        private string _previousFireYuzde = "0";
+        private string _previousFireMiktar = "0";
+
+        private void TE_MIKTAR_EditValueChanged(object sender, EventArgs e)
+        {
+            // Miktar değiştiğinde fire hesaplamalarını güncelle (yüzde sabit kalır)
+            if (_isFireCalculating) return;
+            _isFireCalculating = true;
+            try
+            {
+                double miktar = 0;
+                double fireYuzde = 0;
+
+                if (double.TryParse(TE_MIKTAR.Text.Replace(".", "").Replace(",", "."), NumberStyles.Any, CultureInfo.InvariantCulture, out miktar) &&
+                    double.TryParse(TE_FIRE_YUZDE.Text.Replace(".", "").Replace(",", "."), NumberStyles.Any, CultureInfo.InvariantCulture, out fireYuzde))
+                {
+                    double fireMiktar = miktar * (fireYuzde / 100);
+                    TE_FIRE_MIKTAR.Text = fireMiktar.ToString("N2");
+                    _previousFireMiktar = TE_FIRE_MIKTAR.Text;
+                }
+            }
+            finally
+            {
+                _isFireCalculating = false;
+            }
+        }
+
+        private void TE_FIRE_YUZDE_EditValueChanged(object sender, EventArgs e)
+        {
+            if (_isFireCalculating) return;
+            _isFireCalculating = true;
+            try
+            {
+                double miktar = 0;
+                double fireYuzde = 0;
+
+                if (double.TryParse(TE_MIKTAR.Text.Replace(".", "").Replace(",", "."), NumberStyles.Any, CultureInfo.InvariantCulture, out miktar) &&
+                    double.TryParse(TE_FIRE_YUZDE.Text.Replace(".", "").Replace(",", "."), NumberStyles.Any, CultureInfo.InvariantCulture, out fireYuzde))
+                {
+                    // Validasyon: %0-100 arasında olmalı
+                    if (fireYuzde < 0 || fireYuzde > 100)
+                    {
+                        MessageBox.Show("Fire yüzdesi %0 ile %100 arasında olmalıdır!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        TE_FIRE_YUZDE.Text = _previousFireYuzde;
+                        return;
+                    }
+
+                    // Miktar hesapla
+                    double fireMiktar = miktar * (fireYuzde / 100);
+                    TE_FIRE_MIKTAR.Text = fireMiktar.ToString("N2");
+
+                    // Önceki değerleri güncelle
+                    _previousFireYuzde = TE_FIRE_YUZDE.Text;
+                    _previousFireMiktar = TE_FIRE_MIKTAR.Text;
+                }
+            }
+            finally
+            {
+                _isFireCalculating = false;
+            }
+        }
+
+        private void TE_FIRE_MIKTAR_EditValueChanged(object sender, EventArgs e)
+        {
+            if (_isFireCalculating) return;
+            _isFireCalculating = true;
+            try
+            {
+                double miktar = 0;
+                double fireMiktar = 0;
+
+                if (double.TryParse(TE_MIKTAR.Text.Replace(".", "").Replace(",", "."), NumberStyles.Any, CultureInfo.InvariantCulture, out miktar) && miktar > 0 &&
+                    double.TryParse(TE_FIRE_MIKTAR.Text.Replace(".", "").Replace(",", "."), NumberStyles.Any, CultureInfo.InvariantCulture, out fireMiktar))
+                {
+                    // Validasyon: 0 ile ana miktar arasında olmalı
+                    if (fireMiktar < 0 || fireMiktar > miktar)
+                    {
+                        MessageBox.Show("Fire miktarı 0 ile toplam miktar (" + miktar.ToString("N0") + ") arasında olmalıdır!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        TE_FIRE_MIKTAR.Text = _previousFireMiktar;
+                        return;
+                    }
+
+                    // Yüzde hesapla
+                    double fireYuzde = (fireMiktar / miktar) * 100;
+                    TE_FIRE_YUZDE.Text = fireYuzde.ToString("N2");
+
+                    // Önceki değerleri güncelle
+                    _previousFireYuzde = TE_FIRE_YUZDE.Text;
+                    _previousFireMiktar = TE_FIRE_MIKTAR.Text;
+                }
+            }
+            finally
+            {
+                _isFireCalculating = false;
+            }
+        }
+
         private void SB_GIDECEGIYER_Click(object sender, EventArgs e)
         {
             using (FRM_KANTARGIDECEGIYER F = new FRM_KANTARGIDECEGIYER(_CFG))
@@ -405,6 +535,384 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
                 }
             }
         }
+
+        #region Fire Satınalma İade Faturası (TRCODE = 6)
+
+        private void CreateFireIadeFaturasi(BMS_KE_KANTAR kantar, double fireMiktar)
+        {
+            try
+            {
+                // Plaka kodunu al
+                string PLAKAKODU = "";
+                if (kantar.PLAKAID > 0)
+                {
+                    try
+                    {
+                        PLAKAKODU = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 LGMAIN.GCODE FROM L_TRADGRP LGMAIN WITH(NOLOCK) WHERE (LGMAIN.ACTIVE=0) AND LOGICALREF=" + kantar.PLAKAID.ToString(), new SqlConnection(LGCONSTR)).Rows[0][0].ToString();
+                    }
+                    catch { }
+                }
+
+                // Birim fiyatı al
+                double BIRIMFIYAT = 0;
+                try
+                {
+                    BIRIMFIYAT = double.Parse(BMS_DLL.SQL.SELECT2(@"
+                        SELECT TOP 1 ISNULL(P.PRICE, 0) FROM LG_" + _CFG.FIRMNR + @"_PRCLIST P
+                        WHERE P.CARDREF=" + kantar.URUNID + @" AND P.PTYPE=1 AND P.ACTIVE=0
+                        AND P.PAYPLANREF='" + kantar.ODEMEPLANID_SOZLESMETURUKOD + @"'
+                        ORDER BY LOGICALREF DESC", new SqlConnection(LGCONSTR)).Rows[0][0].ToString());
+                }
+                catch { }
+
+                double TOPLAM = Math.Round(BIRIMFIYAT * fireMiktar, 2);
+
+                // Fatura numarası oluştur (satınalma iade için TRCODE=6)
+                int CARD_CODE_NO = 0;
+                try
+                {
+                    CARD_CODE_NO = int.Parse(BMS_DLL.SQL.SELECT2(string.Format(@"SELECT RIGHT(FICHENO,5) F FROM (
+                        SELECT MAX(FICHENO) FICHENO FROM LG_" + _CFG.FIRMNR + @"_01_INVOICE where TRCODE=6 AND FICHENO LIKE 'FRE.%'
+                        ) AS T"), new SqlConnection(LGCONSTR)).Rows[0][0].ToString()) + 1;
+                }
+                catch { }
+                string FATURANO = "FRE." + CARD_CODE_NO.ToString().PadLeft(5, '0');
+
+                // UOMREF ve UOSREF al
+                string _UOMREF = "0";
+                string _UOSREF = "0";
+                try
+                {
+                    _UOMREF = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 BIRIM.LOGICALREF FROM LG_" + _CFG.FIRMNR + @"_ITEMS ITEMS2
+                        LEFT OUTER JOIN LG_" + _CFG.FIRMNR + @"_UNITSETL BIRIM WITH(NOLOCK)
+                        ON BIRIM.UNITSETREF = ITEMS2.UNITSETREF WHERE BIRIM.MAINUNIT = 1 AND ITEMS2.LOGICALREF='" + kantar.URUNID + "'", new SqlConnection(LGCONSTR)).Rows[0][0].ToString();
+                }
+                catch { }
+                try
+                {
+                    _UOSREF = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 BIRIM.UNITSETREF FROM LG_" + _CFG.FIRMNR + @"_ITEMS ITEMS2
+                        LEFT OUTER JOIN LG_" + _CFG.FIRMNR + @"_UNITSETL BIRIM WITH(NOLOCK)
+                        ON BIRIM.UNITSETREF = ITEMS2.UNITSETREF WHERE BIRIM.MAINUNIT = 1 AND ITEMS2.LOGICALREF='" + kantar.URUNID + "'", new SqlConnection(LGCONSTR)).Rows[0][0].ToString();
+                }
+                catch { }
+
+                // 1. INVOICE kaydet (TRCODE = 6)
+                int INVOICELOGICALREF = SaveFireInvoice(kantar, fireMiktar, TOPLAM, FATURANO, PLAKAKODU);
+
+                if (INVOICELOGICALREF > 0)
+                {
+                    // 2. STFICHE kaydet
+                    int STFICHELOGICALREF = SaveFireStfiche(kantar, fireMiktar, TOPLAM, FATURANO, PLAKAKODU, INVOICELOGICALREF);
+
+                    if (STFICHELOGICALREF > 0)
+                    {
+                        // 3. STLINE kaydet
+                        SaveFireStline(kantar, fireMiktar, BIRIMFIYAT, TOPLAM, INVOICELOGICALREF, STFICHELOGICALREF, _UOMREF, _UOSREF);
+
+                        // 4. PAYTRANS kaydet
+                        SaveFirePaytrans(kantar, TOPLAM, INVOICELOGICALREF);
+
+                        // 5. CLFLINE kaydet
+                        SaveFireClfline(kantar, TOPLAM, FATURANO, PLAKAKODU, INVOICELOGICALREF);
+
+                        MessageBox.Show("FİRE İÇİN SATINALMA İADE FATURASI OLUŞTURULDU!\nFatura No: " + FATURANO, "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                BMS_DLL.GLOBAL.LOGYAZ("HATA(CreateFireIadeFaturasi):", ex);
+                MessageBox.Show("Fire iade faturası oluşturulurken hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private int SaveFireInvoice(BMS_KE_KANTAR kantar, double fireMiktar, double toplam, string faturano, string plakakodu)
+        {
+            int INVOICELOGICALREF = 0;
+            BM_XXX_XX_INVOICE O = new BM_XXX_XX_INVOICE()
+            {
+                AFFECTRISK = 1,
+                CAPIBLOCK_CREADEDDATE = DateTime.Now,
+                CAPIBLOCK_CREATEDBY = 1,
+                CAPIBLOCK_CREATEDHOUR = DateTime.Now.Hour,
+                CAPIBLOCK_CREATEDMIN = DateTime.Now.Minute,
+                CLIENTREF = kantar.URETICIID,
+                DATE_ = kantar.TARIH.Date,
+                DEDUCTIONPART1 = 2,
+                DEDUCTIONPART2 = 3,
+                DOCDATE = kantar.TARIH,
+                ENTEGSET = 247,
+                ESTATUS = 12,
+                FICHENO = faturano,
+                GENEXCTYP = 1,
+                GENEXP2 = "SOZLESME NO:" + kantar.SOZLESME_NO,
+                DOCODE = kantar.TARTI_BELGE_NO,
+                GENEXP1 = "FIRE IADE - " + kantar.ACIKLAMA,
+                GROSSTOTAL = toplam,
+                GRPCODE = 1,
+                GUID = Guid.NewGuid().ToString(),
+                NETTOTAL = toplam,
+                RECSTATUS = 1,
+                RECVREF = kantar.KONTRAKTORID,
+                TIME_ = 254939409,
+                TOTALDISCOUNTED = toplam,
+                TRADINGGRP = plakakodu,
+                TRCODE = 6, // Satınalma İade Faturası
+                TRNET = toplam,
+                VAT = 18,
+                SOURCEINDEX = kantar.AMBARID_GIDECEGIYERKOD,
+                SOURCECOSTGRP = kantar.AMBARID_GIDECEGIYERKOD,
+                SPECODE = kantar.OZELKOD_BOLGEKOD,
+                CYPHCODE = kantar.YETKIKOD_BOLGEDETAYKOD,
+                PAYDEFREF = kantar.ODEMEPLANID_SOZLESMETURUKOD,
+                SALESMANREF = kantar.SALEMANID_SOKOD,
+                GENEXP3 = "FIRE MIKTARI:" + fireMiktar.ToString("N2")
+            };
+
+            using (SqlConnection con = new SqlConnection(LGCONSTR))
+            {
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+
+                SqlTransaction transaction = con.BeginTransaction();
+                try
+                {
+                    SqlCommand com = SIC.BM_XXX_XX_INVOICE_INSERT(O, false, false, _CFG.FIRMNR, "01");
+                    com.Connection = con;
+                    com.Transaction = transaction;
+                    INVOICELOGICALREF = int.Parse(com.ExecuteScalar().ToString());
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    BMS_DLL.GLOBAL.LOGYAZ("HATA(SaveFireInvoice):", ex);
+                }
+            }
+            return INVOICELOGICALREF;
+        }
+
+        private int SaveFireStfiche(BMS_KE_KANTAR kantar, double fireMiktar, double toplam, string faturano, string plakakodu, int invoiceRef)
+        {
+            int STFICHELOGICALREF = 0;
+            BM_XXX_XX_STFICHE O = new BM_XXX_XX_STFICHE()
+            {
+                AFFECTRISK = 1,
+                BILLED = 1,
+                CAPIBLOCK_CREADEDDATE = DateTime.Now,
+                CAPIBLOCK_CREATEDBY = 1,
+                CAPIBLOCK_CREATEDHOUR = DateTime.Now.Hour,
+                CAPIBLOCK_CREATEDMIN = DateTime.Now.Minute,
+                CAPIBLOCK_CREATEDSEC = DateTime.Now.Second,
+                CLIENTREF = kantar.URETICIID,
+                GENEXP2 = "SOZLESME NO:" + kantar.SOZLESME_NO,
+                DATE_ = kantar.TARIH.Date,
+                DEDUCTIONPART1 = 2,
+                DEDUCTIONPART2 = 3,
+                DISPSTATUS = 1,
+                DOCTIME = 254939409,
+                FICHECNT = 1,
+                FICHENO = faturano,
+                FTIME = 254939409,
+                GENEXCTYP = 1,
+                GROSSTOTAL = toplam,
+                GRPCODE = 1,
+                DOCODE = kantar.TARTI_BELGE_NO,
+                GENEXP1 = "FIRE IADE - " + kantar.ACIKLAMA,
+                GUID = Guid.NewGuid().ToString(),
+                INVNO = faturano,
+                INVOICEREF = invoiceRef,
+                IOCODE = 2, // Stoktan çıkış (iade)
+                NETTOTAL = toplam,
+                RECVREF = kantar.KONTRAKTORID,
+                SHIPDATE = kantar.TARIH,
+                SHIPTIME = 254939409,
+                TOTALDISCOUNTED = toplam,
+                TRADINGGRP = plakakodu,
+                TRCODE = 6, // Satınalma İade
+                SOURCEINDEX = kantar.AMBARID_GIDECEGIYERKOD,
+                SOURCECOSTGRP = kantar.AMBARID_GIDECEGIYERKOD,
+                SPECODE = kantar.OZELKOD_BOLGEKOD,
+                CYPHCODE = kantar.YETKIKOD_BOLGEDETAYKOD,
+                PAYDEFREF = kantar.ODEMEPLANID_SOZLESMETURUKOD,
+                SALESMANREF = kantar.SALEMANID_SOKOD,
+                GENEXP3 = "FIRE MIKTARI:" + fireMiktar.ToString("N2")
+            };
+
+            using (SqlConnection con = new SqlConnection(LGCONSTR))
+            {
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+
+                SqlTransaction transaction = con.BeginTransaction();
+                try
+                {
+                    SqlCommand com = SIC.BM_XXX_XX_STFICHE_INSERT(O, false, false, _CFG.FIRMNR, "01");
+                    com.Connection = con;
+                    com.Transaction = transaction;
+                    STFICHELOGICALREF = int.Parse(com.ExecuteScalar().ToString());
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    BMS_DLL.GLOBAL.LOGYAZ("HATA(SaveFireStfiche):", ex);
+                }
+            }
+            return STFICHELOGICALREF;
+        }
+
+        private void SaveFireStline(BMS_KE_KANTAR kantar, double fireMiktar, double birimfiyat, double toplam, int invoiceRef, int stficheRef, string uomref, string uosref)
+        {
+            BM_XXX_XX_STLINE O = new BM_XXX_XX_STLINE()
+            {
+                STOCKREF = kantar.URUNID,
+                TRCODE = 6, // Satınalma İade
+                DATE_ = kantar.TARIH.Date,
+                FTIME = 254939409,
+                IOCODE = 2, // Stoktan çıkış
+                STFICHEREF = stficheRef,
+                STFICHELNNO = 1,
+                INVOICEREF = invoiceRef,
+                INVOICELNNO = 1,
+                CLIENTREF = kantar.URETICIID,
+                AMOUNT = fireMiktar,
+                PRICE = birimfiyat,
+                TOTAL = toplam,
+                UOMREF = int.Parse(uomref),
+                USREF = int.Parse(uosref),
+                UINFO1 = 1,
+                UINFO2 = 1,
+                VATMATRAH = toplam,
+                BILLED = 1,
+                LINENET = toplam,
+                RECSTATUS = 2,
+                YEAR_ = kantar.TARIH.Year,
+                AFFECTRISK = 1,
+                GUID = Guid.NewGuid().ToString(),
+                FUTMONTHBEGDATE = 132385566,
+                SOURCEINDEX = kantar.AMBARID_GIDECEGIYERKOD,
+                SOURCECOSTGRP = kantar.AMBARID_GIDECEGIYERKOD,
+                SPECODE = kantar.OZELKOD_BOLGEKOD,
+                PAYDEFREF = kantar.ODEMEPLANID_SOZLESMETURUKOD,
+                SALESMANREF = kantar.SALEMANID_SOKOD,
+            };
+
+            using (SqlConnection con = new SqlConnection(LGCONSTR))
+            {
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+
+                SqlTransaction transaction = con.BeginTransaction();
+                try
+                {
+                    SqlCommand com = SIC.BM_XXX_XX_STLINE_INSERT(O, false, false, _CFG.FIRMNR, "01");
+                    com.Connection = con;
+                    com.Transaction = transaction;
+                    com.ExecuteScalar();
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    BMS_DLL.GLOBAL.LOGYAZ("HATA(SaveFireStline):", ex);
+                }
+            }
+        }
+
+        private void SaveFirePaytrans(BMS_KE_KANTAR kantar, double toplam, int invoiceRef)
+        {
+            BM_XXX_XX_PAYTRANS O = new BM_XXX_XX_PAYTRANS()
+            {
+                CARDREF = kantar.URETICIID,
+                DATE_ = kantar.TARIH,
+                MODULENR = 4,
+                SIGN = 0, // İade için ters işaret
+                FICHEREF = invoiceRef,
+                TRCODE = 6, // Satınalma İade
+                TOTAL = toplam,
+                PROCDATE = kantar.TARIH,
+                DISCDUEDATE = kantar.TARIH,
+                PAYNO = 1,
+                SPECODE = kantar.OZELKOD_BOLGEKOD,
+            };
+
+            using (SqlConnection con = new SqlConnection(LGCONSTR))
+            {
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+
+                SqlTransaction transaction = con.BeginTransaction();
+                try
+                {
+                    SqlCommand com = SIC.BM_XXX_XX_PAYTRANS_INSERT(O, false, false, _CFG.FIRMNR, "01");
+                    com.Connection = con;
+                    com.Transaction = transaction;
+                    com.ExecuteScalar();
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    BMS_DLL.GLOBAL.LOGYAZ("HATA(SaveFirePaytrans):", ex);
+                }
+            }
+        }
+
+        private void SaveFireClfline(BMS_KE_KANTAR kantar, double toplam, string faturano, string plakakodu, int invoiceRef)
+        {
+            BM_XXX_XX_CLFLINE O = new BM_XXX_XX_CLFLINE()
+            {
+                CLIENTREF = kantar.URETICIID,
+                SOURCEFREF = invoiceRef,
+                DATE_ = kantar.TARIH,
+                DOCODE = kantar.TARTI_BELGE_NO,
+                MODULENR = 4,
+                TRCODE = 32, // Satınalma İade için cari hareket kodu
+                TRANNO = faturano,
+                SIGN = 0, // İade için ters işaret
+                AMOUNT = toplam,
+                TRNET = toplam,
+                CAPIBLOCK_CREADEDDATE = DateTime.Now,
+                CAPIBLOCK_CREATEDBY = 1,
+                CAPIBLOCK_CREATEDHOUR = DateTime.Now.Hour,
+                CAPIBLOCK_CREATEDMIN = DateTime.Now.Minute,
+                CAPIBLOCK_CREATEDSEC = DateTime.Now.Second,
+                TRADINGGRP = plakakodu,
+                MONTH_ = kantar.TARIH.Month,
+                YEAR_ = kantar.TARIH.Year,
+                AFFECTRISK = 1,
+                DOCDATE = kantar.TARIH,
+                FTIME = 254939409,
+                GUID = Guid.NewGuid().ToString(),
+                SPECODE = kantar.OZELKOD_BOLGEKOD,
+                PAYDEFREF = kantar.ODEMEPLANID_SOZLESMETURUKOD,
+                SALESMANREF = kantar.SALEMANID_SOKOD
+            };
+
+            using (SqlConnection con = new SqlConnection(LGCONSTR))
+            {
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+
+                SqlTransaction transaction = con.BeginTransaction();
+                try
+                {
+                    SqlCommand com = SIC.BM_XXX_XX_CLFLINE_INSERT(O, false, false, _CFG.FIRMNR, "01");
+                    com.Connection = con;
+                    com.Transaction = transaction;
+                    com.ExecuteScalar();
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    BMS_DLL.GLOBAL.LOGYAZ("HATA(SaveFireClfline):", ex);
+                }
+            }
+        }
+
+        #endregion
 
     }
 }

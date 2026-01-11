@@ -39,5 +39,6 @@ namespace BMS_DLL.OBJECTS
         public string ODEMEPLANID_SOZLESMETURU { get; set; }
         public string SALEMANID_SO { get; set; }
         public double BINLIKSAYISI { get; set; }
+        public double FIRE_MIKTAR { get; set; }
     }
 }

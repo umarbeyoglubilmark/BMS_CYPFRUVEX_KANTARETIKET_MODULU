@@ -68,6 +68,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.TE_BINLIKSAYISI = new DevExpress.XtraEditors.TextEdit();
             this.SB_BINLIKSAYISI = new DevExpress.XtraEditors.SimpleButton();
+            this.SB_FIRE = new DevExpress.XtraEditors.SimpleButton();
+            this.TE_FIRE_YUZDE = new DevExpress.XtraEditors.TextEdit();
+            this.TE_FIRE_MIKTAR = new DevExpress.XtraEditors.TextEdit();
+            this.LBL_FIRE_YUZDE = new System.Windows.Forms.Label();
+            this.SB_TESLIMAT_KODU = new DevExpress.XtraEditors.SimpleButton();
+            this.TE_TESLIMAT_KODU = new DevExpress.XtraEditors.TextEdit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TE_SALEMANID_SO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_SALEMANID_SOKOD.Properties)).BeginInit();
@@ -95,6 +101,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.TE_URETICIKODU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_URUNKODU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_BINLIKSAYISI.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_FIRE_YUZDE.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_FIRE_MIKTAR.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_TESLIMAT_KODU.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -107,8 +116,14 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.TE_TESLIMAT_KODU);
+            this.panel2.Controls.Add(this.SB_TESLIMAT_KODU);
             this.panel2.Controls.Add(this.TE_BINLIKSAYISI);
             this.panel2.Controls.Add(this.SB_BINLIKSAYISI);
+            this.panel2.Controls.Add(this.LBL_FIRE_YUZDE);
+            this.panel2.Controls.Add(this.TE_FIRE_MIKTAR);
+            this.panel2.Controls.Add(this.TE_FIRE_YUZDE);
+            this.panel2.Controls.Add(this.SB_FIRE);
             this.panel2.Controls.Add(this.TE_SALEMANID_SO);
             this.panel2.Controls.Add(this.SB_SO);
             this.panel2.Controls.Add(this.TE_SALEMANID_SOKOD);
@@ -153,11 +168,11 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(920, 579);
             this.panel2.TabIndex = 0;
-            // 
+            //
             // TE_SALEMANID_SO
-            // 
+            //
             this.TE_SALEMANID_SO.EditValue = "";
-            this.TE_SALEMANID_SO.Location = new System.Drawing.Point(468, 380);
+            this.TE_SALEMANID_SO.Location = new System.Drawing.Point(468, 425);
             this.TE_SALEMANID_SO.Name = "TE_SALEMANID_SO";
             this.TE_SALEMANID_SO.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_SALEMANID_SO.Properties.Appearance.Options.UseFont = true;
@@ -167,24 +182,24 @@
             this.TE_SALEMANID_SO.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_SALEMANID_SO.Size = new System.Drawing.Size(439, 32);
             this.TE_SALEMANID_SO.TabIndex = 32;
-            // 
+            //
             // SB_SO
-            // 
+            //
             this.SB_SO.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_SO.Appearance.Options.UseFont = true;
             this.SB_SO.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_SO.Location = new System.Drawing.Point(8, 380);
+            this.SB_SO.Location = new System.Drawing.Point(8, 425);
             this.SB_SO.Name = "SB_SO";
             this.SB_SO.Size = new System.Drawing.Size(272, 32);
             this.SB_SO.TabIndex = 30;
             this.SB_SO.Text = "Ş.Ö.";
             this.SB_SO.Click += new System.EventHandler(this.SB_SO_Click);
-            // 
+            //
             // TE_SALEMANID_SOKOD
-            // 
+            //
             this.TE_SALEMANID_SOKOD.EditValue = "";
             this.TE_SALEMANID_SOKOD.Enabled = false;
-            this.TE_SALEMANID_SOKOD.Location = new System.Drawing.Point(286, 380);
+            this.TE_SALEMANID_SOKOD.Location = new System.Drawing.Point(286, 425);
             this.TE_SALEMANID_SOKOD.Name = "TE_SALEMANID_SOKOD";
             this.TE_SALEMANID_SOKOD.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.TE_SALEMANID_SOKOD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -193,11 +208,11 @@
             this.TE_SALEMANID_SOKOD.Properties.ReadOnly = true;
             this.TE_SALEMANID_SOKOD.Size = new System.Drawing.Size(176, 32);
             this.TE_SALEMANID_SOKOD.TabIndex = 31;
-            // 
+            //
             // TE_ODEMEPLANI_SOZLESMETURU
-            // 
+            //
             this.TE_ODEMEPLANI_SOZLESMETURU.EditValue = "";
-            this.TE_ODEMEPLANI_SOZLESMETURU.Location = new System.Drawing.Point(468, 342);
+            this.TE_ODEMEPLANI_SOZLESMETURU.Location = new System.Drawing.Point(468, 387);
             this.TE_ODEMEPLANI_SOZLESMETURU.Name = "TE_ODEMEPLANI_SOZLESMETURU";
             this.TE_ODEMEPLANI_SOZLESMETURU.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_ODEMEPLANI_SOZLESMETURU.Properties.Appearance.Options.UseFont = true;
@@ -207,24 +222,24 @@
             this.TE_ODEMEPLANI_SOZLESMETURU.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_ODEMEPLANI_SOZLESMETURU.Size = new System.Drawing.Size(439, 32);
             this.TE_ODEMEPLANI_SOZLESMETURU.TabIndex = 29;
-            // 
+            //
             // SB_SOZLESMETURU
-            // 
+            //
             this.SB_SOZLESMETURU.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_SOZLESMETURU.Appearance.Options.UseFont = true;
             this.SB_SOZLESMETURU.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_SOZLESMETURU.Location = new System.Drawing.Point(8, 342);
+            this.SB_SOZLESMETURU.Location = new System.Drawing.Point(8, 387);
             this.SB_SOZLESMETURU.Name = "SB_SOZLESMETURU";
             this.SB_SOZLESMETURU.Size = new System.Drawing.Size(272, 32);
             this.SB_SOZLESMETURU.TabIndex = 27;
             this.SB_SOZLESMETURU.Text = "SÖZLEŞME TÜRÜ";
             this.SB_SOZLESMETURU.Click += new System.EventHandler(this.SB_SOZLESMETURU_Click);
-            // 
+            //
             // TE_ODEMEPLANI_SOZLESMETURUKOD
-            // 
+            //
             this.TE_ODEMEPLANI_SOZLESMETURUKOD.EditValue = "";
             this.TE_ODEMEPLANI_SOZLESMETURUKOD.Enabled = false;
-            this.TE_ODEMEPLANI_SOZLESMETURUKOD.Location = new System.Drawing.Point(286, 342);
+            this.TE_ODEMEPLANI_SOZLESMETURUKOD.Location = new System.Drawing.Point(286, 387);
             this.TE_ODEMEPLANI_SOZLESMETURUKOD.Name = "TE_ODEMEPLANI_SOZLESMETURUKOD";
             this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -233,11 +248,11 @@
             this.TE_ODEMEPLANI_SOZLESMETURUKOD.Properties.ReadOnly = true;
             this.TE_ODEMEPLANI_SOZLESMETURUKOD.Size = new System.Drawing.Size(176, 32);
             this.TE_ODEMEPLANI_SOZLESMETURUKOD.TabIndex = 28;
-            // 
+            //
             // TE_YETKIKOD_BOLGEDETAY
-            // 
+            //
             this.TE_YETKIKOD_BOLGEDETAY.EditValue = "";
-            this.TE_YETKIKOD_BOLGEDETAY.Location = new System.Drawing.Point(468, 304);
+            this.TE_YETKIKOD_BOLGEDETAY.Location = new System.Drawing.Point(468, 349);
             this.TE_YETKIKOD_BOLGEDETAY.Name = "TE_YETKIKOD_BOLGEDETAY";
             this.TE_YETKIKOD_BOLGEDETAY.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_YETKIKOD_BOLGEDETAY.Properties.Appearance.Options.UseFont = true;
@@ -247,24 +262,24 @@
             this.TE_YETKIKOD_BOLGEDETAY.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_YETKIKOD_BOLGEDETAY.Size = new System.Drawing.Size(439, 32);
             this.TE_YETKIKOD_BOLGEDETAY.TabIndex = 26;
-            // 
+            //
             // SB_BOLGEDETAY
-            // 
+            //
             this.SB_BOLGEDETAY.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_BOLGEDETAY.Appearance.Options.UseFont = true;
             this.SB_BOLGEDETAY.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_BOLGEDETAY.Location = new System.Drawing.Point(8, 304);
+            this.SB_BOLGEDETAY.Location = new System.Drawing.Point(8, 349);
             this.SB_BOLGEDETAY.Name = "SB_BOLGEDETAY";
             this.SB_BOLGEDETAY.Size = new System.Drawing.Size(272, 32);
             this.SB_BOLGEDETAY.TabIndex = 24;
             this.SB_BOLGEDETAY.Text = "BÖLGE DETAY";
             this.SB_BOLGEDETAY.Click += new System.EventHandler(this.SB_BOLGEDETAY_Click);
-            // 
+            //
             // TE_YETKIKOD_BOLGEDETAYKOD
-            // 
+            //
             this.TE_YETKIKOD_BOLGEDETAYKOD.EditValue = "";
             this.TE_YETKIKOD_BOLGEDETAYKOD.Enabled = false;
-            this.TE_YETKIKOD_BOLGEDETAYKOD.Location = new System.Drawing.Point(286, 304);
+            this.TE_YETKIKOD_BOLGEDETAYKOD.Location = new System.Drawing.Point(286, 349);
             this.TE_YETKIKOD_BOLGEDETAYKOD.Name = "TE_YETKIKOD_BOLGEDETAYKOD";
             this.TE_YETKIKOD_BOLGEDETAYKOD.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.TE_YETKIKOD_BOLGEDETAYKOD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -273,11 +288,11 @@
             this.TE_YETKIKOD_BOLGEDETAYKOD.Properties.ReadOnly = true;
             this.TE_YETKIKOD_BOLGEDETAYKOD.Size = new System.Drawing.Size(176, 32);
             this.TE_YETKIKOD_BOLGEDETAYKOD.TabIndex = 25;
-            // 
+            //
             // TE_OZELKOD_BOLGE
-            // 
+            //
             this.TE_OZELKOD_BOLGE.EditValue = "";
-            this.TE_OZELKOD_BOLGE.Location = new System.Drawing.Point(468, 266);
+            this.TE_OZELKOD_BOLGE.Location = new System.Drawing.Point(468, 311);
             this.TE_OZELKOD_BOLGE.Name = "TE_OZELKOD_BOLGE";
             this.TE_OZELKOD_BOLGE.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_OZELKOD_BOLGE.Properties.Appearance.Options.UseFont = true;
@@ -287,24 +302,24 @@
             this.TE_OZELKOD_BOLGE.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_OZELKOD_BOLGE.Size = new System.Drawing.Size(439, 32);
             this.TE_OZELKOD_BOLGE.TabIndex = 23;
-            // 
+            //
             // SB_BOLGE
-            // 
+            //
             this.SB_BOLGE.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_BOLGE.Appearance.Options.UseFont = true;
             this.SB_BOLGE.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_BOLGE.Location = new System.Drawing.Point(8, 266);
+            this.SB_BOLGE.Location = new System.Drawing.Point(8, 311);
             this.SB_BOLGE.Name = "SB_BOLGE";
             this.SB_BOLGE.Size = new System.Drawing.Size(272, 32);
             this.SB_BOLGE.TabIndex = 21;
             this.SB_BOLGE.Text = "BÖLGE";
             this.SB_BOLGE.Click += new System.EventHandler(this.SB_BOLGE_Click);
-            // 
+            //
             // TE_OZELKOD_BOLGEKOD
-            // 
+            //
             this.TE_OZELKOD_BOLGEKOD.EditValue = "";
             this.TE_OZELKOD_BOLGEKOD.Enabled = false;
-            this.TE_OZELKOD_BOLGEKOD.Location = new System.Drawing.Point(286, 266);
+            this.TE_OZELKOD_BOLGEKOD.Location = new System.Drawing.Point(286, 311);
             this.TE_OZELKOD_BOLGEKOD.Name = "TE_OZELKOD_BOLGEKOD";
             this.TE_OZELKOD_BOLGEKOD.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.TE_OZELKOD_BOLGEKOD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -313,11 +328,11 @@
             this.TE_OZELKOD_BOLGEKOD.Properties.ReadOnly = true;
             this.TE_OZELKOD_BOLGEKOD.Size = new System.Drawing.Size(176, 32);
             this.TE_OZELKOD_BOLGEKOD.TabIndex = 22;
-            // 
+            //
             // TE_AMBAR_GIDECEGIYER
-            // 
+            //
             this.TE_AMBAR_GIDECEGIYER.EditValue = "";
-            this.TE_AMBAR_GIDECEGIYER.Location = new System.Drawing.Point(468, 228);
+            this.TE_AMBAR_GIDECEGIYER.Location = new System.Drawing.Point(468, 273);
             this.TE_AMBAR_GIDECEGIYER.Name = "TE_AMBAR_GIDECEGIYER";
             this.TE_AMBAR_GIDECEGIYER.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_AMBAR_GIDECEGIYER.Properties.Appearance.Options.UseFont = true;
@@ -327,24 +342,24 @@
             this.TE_AMBAR_GIDECEGIYER.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_AMBAR_GIDECEGIYER.Size = new System.Drawing.Size(439, 32);
             this.TE_AMBAR_GIDECEGIYER.TabIndex = 20;
-            // 
+            //
             // SB_GIDECEGIYER
-            // 
+            //
             this.SB_GIDECEGIYER.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_GIDECEGIYER.Appearance.Options.UseFont = true;
             this.SB_GIDECEGIYER.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SB_GIDECEGIYER.Location = new System.Drawing.Point(8, 228);
+            this.SB_GIDECEGIYER.Location = new System.Drawing.Point(8, 273);
             this.SB_GIDECEGIYER.Name = "SB_GIDECEGIYER";
             this.SB_GIDECEGIYER.Size = new System.Drawing.Size(272, 32);
             this.SB_GIDECEGIYER.TabIndex = 18;
             this.SB_GIDECEGIYER.Text = "GİDECEĞİ YER";
             this.SB_GIDECEGIYER.Click += new System.EventHandler(this.SB_GIDECEGIYER_Click);
-            // 
+            //
             // TE_AMBAR_GIDECEGIYERKOD
-            // 
+            //
             this.TE_AMBAR_GIDECEGIYERKOD.EditValue = "";
             this.TE_AMBAR_GIDECEGIYERKOD.Enabled = false;
-            this.TE_AMBAR_GIDECEGIYERKOD.Location = new System.Drawing.Point(286, 228);
+            this.TE_AMBAR_GIDECEGIYERKOD.Location = new System.Drawing.Point(286, 273);
             this.TE_AMBAR_GIDECEGIYERKOD.Name = "TE_AMBAR_GIDECEGIYERKOD";
             this.TE_AMBAR_GIDECEGIYERKOD.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.TE_AMBAR_GIDECEGIYERKOD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -426,11 +441,11 @@
             this.label1.Size = new System.Drawing.Size(121, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "TARTI BELGE NO:";
-            // 
+            //
             // TE_ACIKLAMA
-            // 
+            //
             this.TE_ACIKLAMA.EditValue = "";
-            this.TE_ACIKLAMA.Location = new System.Drawing.Point(286, 461);
+            this.TE_ACIKLAMA.Location = new System.Drawing.Point(286, 506);
             this.TE_ACIKLAMA.Name = "TE_ACIKLAMA";
             this.TE_ACIKLAMA.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TE_ACIKLAMA.Properties.Appearance.Options.UseFont = true;
@@ -439,14 +454,14 @@
             this.TE_ACIKLAMA.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TE_ACIKLAMA.Size = new System.Drawing.Size(621, 31);
             this.TE_ACIKLAMA.TabIndex = 36;
-            // 
+            //
             // simpleButton1
-            // 
+            //
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.simpleButton1.Enabled = false;
-            this.simpleButton1.Location = new System.Drawing.Point(2, 461);
+            this.simpleButton1.Location = new System.Drawing.Point(2, 506);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(278, 31);
             this.simpleButton1.TabIndex = 35;
@@ -497,6 +512,7 @@
             this.TE_MIKTAR.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.TE_MIKTAR.Size = new System.Drawing.Size(622, 38);
             this.TE_MIKTAR.TabIndex = 17;
+            this.TE_MIKTAR.EditValueChanged += new System.EventHandler(this.TE_MIKTAR_EditValueChanged);
             // 
             // simpleButton5
             // 
@@ -673,11 +689,11 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(920, 10);
             this.panel3.TabIndex = 2;
-            // 
+            //
             // TE_BINLIKSAYISI
-            // 
+            //
             this.TE_BINLIKSAYISI.EditValue = "0";
-            this.TE_BINLIKSAYISI.Location = new System.Drawing.Point(285, 418);
+            this.TE_BINLIKSAYISI.Location = new System.Drawing.Point(285, 463);
             this.TE_BINLIKSAYISI.Name = "TE_BINLIKSAYISI";
             this.TE_BINLIKSAYISI.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TE_BINLIKSAYISI.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -688,24 +704,102 @@
             this.TE_BINLIKSAYISI.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.TE_BINLIKSAYISI.Size = new System.Drawing.Size(622, 38);
             this.TE_BINLIKSAYISI.TabIndex = 34;
-            // 
+            //
+            // SB_FIRE
+            //
+            this.SB_FIRE.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.SB_FIRE.Appearance.Options.UseFont = true;
+            this.SB_FIRE.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SB_FIRE.Enabled = false;
+            this.SB_FIRE.Location = new System.Drawing.Point(3, 228);
+            this.SB_FIRE.Name = "SB_FIRE";
+            this.SB_FIRE.Size = new System.Drawing.Size(277, 38);
+            this.SB_FIRE.TabIndex = 38;
+            this.SB_FIRE.Text = "FİRE";
+            //
+            // TE_FIRE_YUZDE
+            //
+            this.TE_FIRE_YUZDE.EditValue = "0";
+            this.TE_FIRE_YUZDE.Location = new System.Drawing.Point(286, 228);
+            this.TE_FIRE_YUZDE.Name = "TE_FIRE_YUZDE";
+            this.TE_FIRE_YUZDE.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TE_FIRE_YUZDE.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TE_FIRE_YUZDE.Properties.Appearance.Options.UseBackColor = true;
+            this.TE_FIRE_YUZDE.Properties.Appearance.Options.UseFont = true;
+            this.TE_FIRE_YUZDE.Properties.Mask.EditMask = "n2";
+            this.TE_FIRE_YUZDE.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.TE_FIRE_YUZDE.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.TE_FIRE_YUZDE.Size = new System.Drawing.Size(150, 38);
+            this.TE_FIRE_YUZDE.TabIndex = 39;
+            this.TE_FIRE_YUZDE.EditValueChanged += new System.EventHandler(this.TE_FIRE_YUZDE_EditValueChanged);
+            //
+            // LBL_FIRE_YUZDE
+            //
+            this.LBL_FIRE_YUZDE.AutoSize = true;
+            this.LBL_FIRE_YUZDE.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LBL_FIRE_YUZDE.Location = new System.Drawing.Point(440, 235);
+            this.LBL_FIRE_YUZDE.Name = "LBL_FIRE_YUZDE";
+            this.LBL_FIRE_YUZDE.Size = new System.Drawing.Size(30, 29);
+            this.LBL_FIRE_YUZDE.TabIndex = 42;
+            this.LBL_FIRE_YUZDE.Text = "%";
+            //
+            // TE_FIRE_MIKTAR
+            //
+            this.TE_FIRE_MIKTAR.EditValue = "0";
+            this.TE_FIRE_MIKTAR.Location = new System.Drawing.Point(475, 228);
+            this.TE_FIRE_MIKTAR.Name = "TE_FIRE_MIKTAR";
+            this.TE_FIRE_MIKTAR.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TE_FIRE_MIKTAR.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TE_FIRE_MIKTAR.Properties.Appearance.Options.UseBackColor = true;
+            this.TE_FIRE_MIKTAR.Properties.Appearance.Options.UseFont = true;
+            this.TE_FIRE_MIKTAR.Properties.Mask.EditMask = "n2";
+            this.TE_FIRE_MIKTAR.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.TE_FIRE_MIKTAR.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.TE_FIRE_MIKTAR.Size = new System.Drawing.Size(432, 38);
+            this.TE_FIRE_MIKTAR.TabIndex = 40;
+            this.TE_FIRE_MIKTAR.EditValueChanged += new System.EventHandler(this.TE_FIRE_MIKTAR_EditValueChanged);
+            //
             // SB_BINLIKSAYISI
-            // 
+            //
             this.SB_BINLIKSAYISI.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_BINLIKSAYISI.Appearance.Options.UseFont = true;
             this.SB_BINLIKSAYISI.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SB_BINLIKSAYISI.Enabled = false;
-            this.SB_BINLIKSAYISI.Location = new System.Drawing.Point(2, 418);
+            this.SB_BINLIKSAYISI.Location = new System.Drawing.Point(2, 463);
             this.SB_BINLIKSAYISI.Name = "SB_BINLIKSAYISI";
             this.SB_BINLIKSAYISI.Size = new System.Drawing.Size(277, 38);
             this.SB_BINLIKSAYISI.TabIndex = 33;
             this.SB_BINLIKSAYISI.Text = "BİNLİK SAYISI";
-            // 
+            //
+            // SB_TESLIMAT_KODU
+            //
+            this.SB_TESLIMAT_KODU.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.SB_TESLIMAT_KODU.Appearance.Options.UseFont = true;
+            this.SB_TESLIMAT_KODU.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SB_TESLIMAT_KODU.Enabled = false;
+            this.SB_TESLIMAT_KODU.Location = new System.Drawing.Point(556, 187);
+            this.SB_TESLIMAT_KODU.Name = "SB_TESLIMAT_KODU";
+            this.SB_TESLIMAT_KODU.Size = new System.Drawing.Size(180, 38);
+            this.SB_TESLIMAT_KODU.TabIndex = 43;
+            this.SB_TESLIMAT_KODU.Text = "TESLİMAT KODU";
+            //
+            // TE_TESLIMAT_KODU
+            //
+            this.TE_TESLIMAT_KODU.EditValue = "";
+            this.TE_TESLIMAT_KODU.Location = new System.Drawing.Point(740, 187);
+            this.TE_TESLIMAT_KODU.Name = "TE_TESLIMAT_KODU";
+            this.TE_TESLIMAT_KODU.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TE_TESLIMAT_KODU.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TE_TESLIMAT_KODU.Properties.Appearance.Options.UseBackColor = true;
+            this.TE_TESLIMAT_KODU.Properties.Appearance.Options.UseFont = true;
+            this.TE_TESLIMAT_KODU.Size = new System.Drawing.Size(168, 38);
+            this.TE_TESLIMAT_KODU.TabIndex = 44;
+            //
             // FRM_KANTAR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 601);
+            this.ClientSize = new System.Drawing.Size(920, 646);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
@@ -742,6 +836,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.TE_URETICIKODU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_URUNKODU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TE_BINLIKSAYISI.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_FIRE_YUZDE.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_FIRE_MIKTAR.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TE_TESLIMAT_KODU.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -792,5 +889,11 @@
         private DevExpress.XtraEditors.TextEdit TE_AMBAR_GIDECEGIYERKOD;
         private DevExpress.XtraEditors.TextEdit TE_BINLIKSAYISI;
         private DevExpress.XtraEditors.SimpleButton SB_BINLIKSAYISI;
+        private DevExpress.XtraEditors.SimpleButton SB_FIRE;
+        private DevExpress.XtraEditors.TextEdit TE_FIRE_YUZDE;
+        private DevExpress.XtraEditors.TextEdit TE_FIRE_MIKTAR;
+        private System.Windows.Forms.Label LBL_FIRE_YUZDE;
+        private DevExpress.XtraEditors.SimpleButton SB_TESLIMAT_KODU;
+        private DevExpress.XtraEditors.TextEdit TE_TESLIMAT_KODU;
     }
 }

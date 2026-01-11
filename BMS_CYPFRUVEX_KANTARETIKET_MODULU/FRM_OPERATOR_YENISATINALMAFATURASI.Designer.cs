@@ -25,6 +25,10 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_OPERATOR_YENISATINALMAFATURASI));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.TE_ARAC_TONAJ = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.TE_EKSIK_YUKLEME = new DevExpress.XtraEditors.LabelControl();
             this.l_Barcode = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.TE_BINLIKSAYISI = new DevExpress.XtraEditors.TextEdit();
@@ -63,6 +67,7 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.sb_Print = new DevExpress.XtraEditors.SimpleButton();
             this.SB_VAZGEC = new DevExpress.XtraEditors.SimpleButton();
+            this.SB_IRSALIYE = new DevExpress.XtraEditors.SimpleButton();
             this.SB_KAYDET = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -83,6 +88,10 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.TE_EKSIK_YUKLEME);
+            this.panelControl1.Controls.Add(this.labelControl9);
+            this.panelControl1.Controls.Add(this.TE_ARAC_TONAJ);
+            this.panelControl1.Controls.Add(this.labelControl7);
             this.panelControl1.Controls.Add(this.l_Barcode);
             this.panelControl1.Controls.Add(this.labelControl6);
             this.panelControl1.Controls.Add(this.TE_BINLIKSAYISI);
@@ -131,9 +140,51 @@
             this.l_Barcode.Name = "l_Barcode";
             this.l_Barcode.Size = new System.Drawing.Size(0, 25);
             this.l_Barcode.TabIndex = 34;
-            // 
+            //
+            // labelControl7
+            //
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(700, 29);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(95, 19);
+            this.labelControl7.TabIndex = 35;
+            this.labelControl7.Text = "ARAÇ TONAJI:";
+            //
+            // TE_ARAC_TONAJ
+            //
+            this.TE_ARAC_TONAJ.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TE_ARAC_TONAJ.Appearance.Options.UseFont = true;
+            this.TE_ARAC_TONAJ.Location = new System.Drawing.Point(800, 29);
+            this.TE_ARAC_TONAJ.Name = "TE_ARAC_TONAJ";
+            this.TE_ARAC_TONAJ.Size = new System.Drawing.Size(150, 19);
+            this.TE_ARAC_TONAJ.TabIndex = 36;
+            this.TE_ARAC_TONAJ.Text = "-";
+            //
+            // labelControl9
+            //
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(700, 54);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(116, 19);
+            this.labelControl9.TabIndex = 37;
+            this.labelControl9.Text = "EKSİK YÜKLEME:";
+            //
+            // TE_EKSIK_YUKLEME
+            //
+            this.TE_EKSIK_YUKLEME.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TE_EKSIK_YUKLEME.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.TE_EKSIK_YUKLEME.Appearance.Options.UseFont = true;
+            this.TE_EKSIK_YUKLEME.Appearance.Options.UseForeColor = true;
+            this.TE_EKSIK_YUKLEME.Location = new System.Drawing.Point(820, 54);
+            this.TE_EKSIK_YUKLEME.Name = "TE_EKSIK_YUKLEME";
+            this.TE_EKSIK_YUKLEME.Size = new System.Drawing.Size(130, 19);
+            this.TE_EKSIK_YUKLEME.TabIndex = 38;
+            this.TE_EKSIK_YUKLEME.Text = "-";
+            //
             // labelControl6
-            // 
+            //
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(10, 5);
@@ -503,6 +554,7 @@
             // 
             this.panelControl3.Controls.Add(this.sb_Print);
             this.panelControl3.Controls.Add(this.SB_VAZGEC);
+            this.panelControl3.Controls.Add(this.SB_IRSALIYE);
             this.panelControl3.Controls.Add(this.SB_KAYDET);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl3.Location = new System.Drawing.Point(0, 539);
@@ -534,9 +586,22 @@
             this.SB_VAZGEC.TabIndex = 1;
             this.SB_VAZGEC.Text = "VAZGEÇ";
             this.SB_VAZGEC.Click += new System.EventHandler(this.SB_VAZGEC_Click);
-            // 
+            //
+            // SB_IRSALIYE
+            //
+            this.SB_IRSALIYE.Appearance.BackColor = System.Drawing.Color.Orange;
+            this.SB_IRSALIYE.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.SB_IRSALIYE.Appearance.Options.UseBackColor = true;
+            this.SB_IRSALIYE.Appearance.Options.UseFont = true;
+            this.SB_IRSALIYE.Location = new System.Drawing.Point(520, 5);
+            this.SB_IRSALIYE.Name = "SB_IRSALIYE";
+            this.SB_IRSALIYE.Size = new System.Drawing.Size(163, 37);
+            this.SB_IRSALIYE.TabIndex = 3;
+            this.SB_IRSALIYE.Text = "İRSALİYE OLUŞTUR";
+            this.SB_IRSALIYE.Click += new System.EventHandler(this.SB_IRSALIYE_Click);
+            //
             // SB_KAYDET
-            // 
+            //
             this.SB_KAYDET.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SB_KAYDET.Appearance.Options.UseFont = true;
             this.SB_KAYDET.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("SB_KAYDET.ImageOptions.SvgImage")));
@@ -622,5 +687,10 @@
         private DevExpress.XtraEditors.SimpleButton sb_Print;
         private DevExpress.XtraEditors.LabelControl l_Barcode;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl TE_ARAC_TONAJ;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.LabelControl TE_EKSIK_YUKLEME;
+        private DevExpress.XtraEditors.SimpleButton SB_IRSALIYE;
     }
 }

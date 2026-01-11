@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DC2F4201-B5BD-41C9-AEC1-0F3CC4A59742}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BMS_KANTARETIKET_MODULU</RootNamespace>
+    <AssemblyName>BMS_KANTARETIKET_MODULU</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bm_icon_256px.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Drawing.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Docs.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\..\_DLLS\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.113.1\lib\net451\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.113.0\lib\net451\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CONFIG.cs" />
+    <Compile Include="CONVERTER\CONVERTDATATOMODELS.cs" />
+    <Compile Include="FRM_KANTARBARKOD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTARBARKOD.Designer.cs">
+      <DependentUpon>FRM_KANTARBARKOD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_ETIKET_ETIKETBAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_ETIKET_ETIKETBAS.Designer.cs">
+      <DependentUpon>FRM_ETIKET_ETIKETBAS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_KANTARSO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTARSO.Designer.cs">
+      <DependentUpon>FRM_KANTARSO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_KANTARSOZLESMETURU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTARSOZLESMETURU.Designer.cs">
+      <DependentUpon>FRM_KANTARSOZLESMETURU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_KANTARBOLGEDETAY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTARBOLGEDETAY.Designer.cs">
+      <DependentUpon>FRM_KANTARBOLGEDETAY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_KANTARBOLGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTARBOLGE.Designer.cs">
+      <DependentUpon>FRM_KANTARBOLGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_KANTARGIDECEGIYER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTARGIDECEGIYER.Designer.cs">
+      <DependentUpon>FRM_KANTARGIDECEGIYER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.Designer.cs">
+      <DependentUpon>FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_TANIMLAMALAR_KULLANICILAR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_TANIMLAMALAR_KULLANICILAR.Designer.cs">
+      <DependentUpon>FRM_TANIMLAMALAR_KULLANICILAR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_OPERATOR_YENISATINALMAFATURASI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_OPERATOR_YENISATINALMAFATURASI.Designer.cs">
+      <DependentUpon>FRM_OPERATOR_YENISATINALMAFATURASI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_KANTARURUN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTARURUN.Designer.cs">
+      <DependentUpon>FRM_KANTARURUN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_KANTARURETICI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTARURETICI.Designer.cs">
+      <DependentUpon>FRM_KANTARURETICI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_KANTARKONTRAKTOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTARKONTRAKTOR.Designer.cs">
+      <DependentUpon>FRM_KANTARKONTRAKTOR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_KANTARPLAKA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTARPLAKA.Designer.cs">
+      <DependentUpon>FRM_KANTARPLAKA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_OPERATOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_OPERATOR.Designer.cs">
+      <DependentUpon>FRM_OPERATOR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GLOB.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Methods.cs" />
+    <Compile Include="MODELS\BM_XXX_XX_CLFLINE.cs" />
+    <Compile Include="MODELS\BM_XXX_XX_INVOICE.cs" />
+    <Compile Include="MODELS\BM_XXX_XX_PAYTRANS.cs" />
+    <Compile Include="MODELS\BM_XXX_XX_STFICHE.cs" />
+    <Compile Include="MODELS\BM_XXX_XX_STLINE.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="PROGRESSFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PROGRESSFORM.Designer.cs">
+      <DependentUpon>PROGRESSFORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLCOMMANDS\SQLINSERTCOMMANDS.cs" />
+    <Compile Include="SQLCOMMANDS\SQLUPDATECOMMANDS.cs" />
+    <Compile Include="SQLHelper.cs" />
+    <Compile Include="FRM_KANTAR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_KANTAR.Designer.cs">
+      <DependentUpon>FRM_KANTAR.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FRM_KANTARBARKOD.resx">
+      <DependentUpon>FRM_KANTARBARKOD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_ETIKET_ETIKETBAS.resx">
+      <DependentUpon>FRM_ETIKET_ETIKETBAS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_KANTARSO.resx">
+      <DependentUpon>FRM_KANTARSO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_KANTARSOZLESMETURU.resx">
+      <DependentUpon>FRM_KANTARSOZLESMETURU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_KANTARBOLGEDETAY.resx">
+      <DependentUpon>FRM_KANTARBOLGEDETAY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_KANTARBOLGE.resx">
+      <DependentUpon>FRM_KANTARBOLGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_KANTARGIDECEGIYER.resx">
+      <DependentUpon>FRM_KANTARGIDECEGIYER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.resx">
+      <DependentUpon>FRM_TANIMLAMALAR_ISCIETIKETMIKTAR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_TANIMLAMALAR_KULLANICILAR.resx">
+      <DependentUpon>FRM_TANIMLAMALAR_KULLANICILAR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_OPERATOR_YENISATINALMAFATURASI.resx">
+      <DependentUpon>FRM_OPERATOR_YENISATINALMAFATURASI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_KANTARURUN.resx">
+      <DependentUpon>FRM_KANTARURUN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_KANTARURETICI.resx">
+      <DependentUpon>FRM_KANTARURETICI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_KANTARKONTRAKTOR.resx">
+      <DependentUpon>FRM_KANTARKONTRAKTOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_KANTARPLAKA.resx">
+      <DependentUpon>FRM_KANTARPLAKA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_OPERATOR.resx">
+      <DependentUpon>FRM_OPERATOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PROGRESSFORM.resx">
+      <DependentUpon>PROGRESSFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="FRM_KANTAR.resx">
+      <DependentUpon>FRM_KANTAR.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bm_icon_256px.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="UnityObjects">
+      <Guid>{51F6657D-9972-45FD-8D5D-98849802A9C9}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BMS_DLL\BMS_DLL.csproj">
+      <Project>{ada5ee6f-5b5c-412f-af31-9e88f6d60c54}</Project>
+      <Name>BMS_DLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.113.1\build\net451\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.113.1\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net451\System.Data.SQLite.Core.targets')" />
+</Project>
