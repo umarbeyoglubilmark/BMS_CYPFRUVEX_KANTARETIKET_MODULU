@@ -15,6 +15,7 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU {
         public string LOGICALREF = "";
         public string KOD = "";
         public string AD = "";
+        public bool KENDI_PLAKASI_MI = false;
         CONFIG _CFG;
         string LGCONSTR = "";
         SqlConnection SQLCON = new SqlConnection();
@@ -43,9 +44,15 @@ LGMAIN.LOGICALREF, LGMAIN.GCODE  KOD , LGMAIN.GDEF  AD  FROM L_TRADGRP LGMAIN WI
             LOGICALREF = GRV_KANTAR_PLAKA.GetRowCellValue(GRV_KANTAR_PLAKA.FocusedRowHandle, "LOGICALREF").ToString();
             KOD = GRV_KANTAR_PLAKA.GetRowCellValue(GRV_KANTAR_PLAKA.FocusedRowHandle, "KOD").ToString();
             AD = GRV_KANTAR_PLAKA.GetRowCellValue(GRV_KANTAR_PLAKA.FocusedRowHandle, "AD").ToString();
+            KENDI_PLAKASI_MI = CHK_KENDI_PLAKASI.Checked;
+
+            // Kendi plakası değilse uyarı ver
+            if (!KENDI_PLAKASI_MI)
+            {
+                MessageBox.Show("DİKKAT: Bu plaka kendi plakası olarak işaretlenmedi!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
             this.Close();
-
-
         }
     }
 }

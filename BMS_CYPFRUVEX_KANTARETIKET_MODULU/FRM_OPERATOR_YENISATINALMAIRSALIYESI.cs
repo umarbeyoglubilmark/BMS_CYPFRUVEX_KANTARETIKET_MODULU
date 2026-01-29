@@ -68,8 +68,9 @@ TOP 1 LGMAIN.GDEF  AD  FROM L_TRADGRP LGMAIN WITH(NOLOCK)
             }
             catch { ARAC_TONAJ = 0; }
 
-            EKSIK_YUKLEME = ARAC_TONAJ - _KANTAR.MIKTAR;
-            if (EKSIK_YUKLEME < 0) EKSIK_YUKLEME = 0;
+            // Yükleme farkı hesapla (MIKTAR - ARAC_TONAJ)
+            // Pozitif: Fazla yükleme, Negatif: Eksik yükleme
+            EKSIK_YUKLEME = _KANTAR.MIKTAR - ARAC_TONAJ;
             UpdateEksikYuklemeDisplay();
 
             string KONTAKTORKODU = "0";
@@ -108,18 +109,28 @@ TOP 1 LGMAIN.GDEF  AD  FROM L_TRADGRP LGMAIN WITH(NOLOCK)
 
         private void UpdateEksikYuklemeDisplay()
         {
-            if (ARAC_TONAJ > 0 && _KANTAR.MIKTAR < ARAC_TONAJ)
+            if (ARAC_TONAJ > 0)
             {
-                EKSIK_YUKLEME = ARAC_TONAJ - _KANTAR.MIKTAR;
-                TE_EKSIK_YUKLEME.Text = EKSIK_YUKLEME.ToString("N2") + " KG EKSIK";
-                TE_EKSIK_YUKLEME.Appearance.ForeColor = System.Drawing.Color.Red;
                 TE_ARAC_TONAJ.Text = ARAC_TONAJ.ToString("N2") + " KG";
-            }
-            else if (ARAC_TONAJ > 0)
-            {
-                TE_EKSIK_YUKLEME.Text = "TAM YUKLEME";
-                TE_EKSIK_YUKLEME.Appearance.ForeColor = System.Drawing.Color.Green;
-                TE_ARAC_TONAJ.Text = ARAC_TONAJ.ToString("N2") + " KG";
+
+                if (EKSIK_YUKLEME > 0)
+                {
+                    // Pozitif: Fazla Yükleme (MIKTAR > ARAC_TONAJ)
+                    TE_EKSIK_YUKLEME.Text = EKSIK_YUKLEME.ToString("N2") + " KG FAZLA YÜKLEME";
+                    TE_EKSIK_YUKLEME.Appearance.ForeColor = System.Drawing.Color.Orange;
+                }
+                else if (EKSIK_YUKLEME < 0)
+                {
+                    // Negatif: Eksik Yükleme (MIKTAR < ARAC_TONAJ)
+                    TE_EKSIK_YUKLEME.Text = Math.Abs(EKSIK_YUKLEME).ToString("N2") + " KG EKSİK YÜKLEME";
+                    TE_EKSIK_YUKLEME.Appearance.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    // Sıfır: Tam Yükleme
+                    TE_EKSIK_YUKLEME.Text = "TAM YÜKLEME";
+                    TE_EKSIK_YUKLEME.Appearance.ForeColor = System.Drawing.Color.Green;
+                }
             }
             else
             {
@@ -200,6 +211,8 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
         {
             _KANTAR.TARIH = DT_TARIH.DateTime.Date;
             int STFICHELOGICALREF = 0;
+            // Kendi plakasi ise "00" olarak kaydet, degilse normal plaka kodu
+            string plakaKayit = _KANTAR.KENDI_PLAKASI_MI ? "00" : PLAKAKODU;
             BM_XXX_XX_STFICHE O = new BM_XXX_XX_STFICHE()
             {
                 AFFECTRISK = 1,
@@ -233,7 +246,7 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
                 SHIPDATE = _KANTAR.TARIH,
                 SHIPTIME = 254939409,
                 TOTALDISCOUNTED = TOPLAM,
-                TRADINGGRP = PLAKAKODU,
+                TRADINGGRP = plakaKayit,
                 TRCODE = 1,
                 SOURCEINDEX = _KANTAR.AMBARID_GIDECEGIYERKOD,
                 SOURCECOSTGRP = _KANTAR.AMBARID_GIDECEGIYERKOD,
@@ -241,7 +254,8 @@ SELECT LOGICALREF, (SELECT C.CODE FROM LG_" + _CFG.FIRMNR + @"_CLCARD C WHERE C.
                 CYPHCODE = _KANTAR.YETKIKOD_BOLGEDETAYKOD,
                 PAYDEFREF = _KANTAR.ODEMEPLANID_SOZLESMETURUKOD,
                 SALESMANREF = _KANTAR.SALEMANID_SOKOD,
-                GENEXP3 = "BINLIK SAYISI:" + _KANTAR.BINLIKSAYISI.ToString()
+                GENEXP3 = "BINLIK SAYISI:" + _KANTAR.BINLIKSAYISI.ToString(),
+                GENEXP4 = _KANTAR.TESLIMAT_KODU
             };
 
             SQLCON = new SqlConnection(LGCONSTR);

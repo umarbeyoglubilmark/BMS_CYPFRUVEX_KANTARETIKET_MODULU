@@ -26,6 +26,7 @@ namespace BMS_DLL.OBJECTS
         public int TSTATUS { get; set; }
         public string TARTI_BELGE_NO { get; set; } = string.Empty;
         public string SOZLESME_NO { get; set; } = string.Empty;
+        public string TESLIMAT_KODU { get; set; } = string.Empty;
 
         public int AMBARID_GIDECEGIYERKOD { get; set; }
         public string OZELKOD_BOLGEKOD { get; set; }
@@ -40,5 +41,6 @@ namespace BMS_DLL.OBJECTS
         public string SALEMANID_SO { get; set; }
         public double BINLIKSAYISI { get; set; }
         public double FIRE_MIKTAR { get; set; }
+        public bool KENDI_PLAKASI_MI { get; set; }
     }
 }

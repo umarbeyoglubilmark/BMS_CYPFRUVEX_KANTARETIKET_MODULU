@@ -29,12 +29,15 @@
             this.GRC_KANTAR_PLAKA = new DevExpress.XtraGrid.GridControl();
             this.GRV_KANTAR_PLAKA = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.CHK_KENDI_PLAKASI = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GRC_KANTAR_PLAKA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GRV_KANTAR_PLAKA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CHK_KENDI_PLAKASI.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -73,14 +76,25 @@
             this.GRV_KANTAR_PLAKA.OptionsView.ColumnAutoWidth = false;
             this.GRV_KANTAR_PLAKA.OptionsView.ShowGroupPanel = false;
             this.GRV_KANTAR_PLAKA.DoubleClick += new System.EventHandler(this.GRV_KANTAR_PLAKA_DoubleClick);
-            // 
+            //
             // panelControl3
-            // 
+            //
+            this.panelControl3.Controls.Add(this.CHK_KENDI_PLAKASI);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl3.Location = new System.Drawing.Point(0, 439);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(530, 41);
             this.panelControl3.TabIndex = 2;
+            //
+            // CHK_KENDI_PLAKASI
+            //
+            this.CHK_KENDI_PLAKASI.Location = new System.Drawing.Point(12, 8);
+            this.CHK_KENDI_PLAKASI.Name = "CHK_KENDI_PLAKASI";
+            this.CHK_KENDI_PLAKASI.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.CHK_KENDI_PLAKASI.Properties.Appearance.Options.UseFont = true;
+            this.CHK_KENDI_PLAKASI.Properties.Caption = "Kendi Plakası mı?";
+            this.CHK_KENDI_PLAKASI.Size = new System.Drawing.Size(200, 24);
+            this.CHK_KENDI_PLAKASI.TabIndex = 0;
             // 
             // FRM_KANTARPLAKA
             // 
@@ -101,6 +115,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.GRC_KANTAR_PLAKA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GRV_KANTAR_PLAKA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CHK_KENDI_PLAKASI.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -112,5 +128,6 @@
         private DevExpress.XtraGrid.GridControl GRC_KANTAR_PLAKA;
         private DevExpress.XtraGrid.Views.Grid.GridView GRV_KANTAR_PLAKA;
         private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.CheckEdit CHK_KENDI_PLAKASI;
     }
 }

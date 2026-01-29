@@ -34,6 +34,7 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU
         string AMBARID_GIDECEGIYER = "0";
         string ODEMEPLANID_SOZLESMETURU = "0";
         string SALEMANID_SO = "0";
+        bool KENDI_PLAKASI_MI = false;
         SQLINSERTCOMMANDS SIC = new SQLINSERTCOMMANDS();
         CONVERTDATATOMODELS CDM = new CONVERTDATATOMODELS();
 
@@ -164,6 +165,12 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
             O.ODEMEPLANID_SOZLESMETURU = TE_ODEMEPLANI_SOZLESMETURU.Text;
             O.SALEMANID_SO = TE_SALEMANID_SO.Text;
             O.BINLIKSAYISI = double.Parse(TE_BINLIKSAYISI.Text);
+            O.KENDI_PLAKASI_MI = KENDI_PLAKASI_MI;
+
+            // Fire miktarını ekle
+            double fireMiktar = 0;
+            double.TryParse(TE_FIRE_MIKTAR.Text.Replace(".", "").Replace(",", "."), NumberStyles.Any, CultureInfo.InvariantCulture, out fireMiktar);
+            O.FIRE_MIKTAR = fireMiktar;
 
             // 10 ton (10000 kg) altı yüklemeler için teslimat kodunu kaydet
             if (O.MIKTAR < 10000)
@@ -174,11 +181,6 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
             {
                 O.TESLIMAT_KODU = "";
             }
-
-            // Fire miktarını ekle
-            double fireMiktar = 0;
-            double.TryParse(TE_FIRE_MIKTAR.Text.Replace(".", "").Replace(",", "."), NumberStyles.Any, CultureInfo.InvariantCulture, out fireMiktar);
-            O.FIRE_MIKTAR = fireMiktar;
 
             SQLCON = new SqlConnection(LGCONSTR);
             using (SqlConnection con = SQLCON)
@@ -226,18 +228,10 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
                 clearComponents();
             }
 
-            FRM_KANTARBARKOD F = new FRM_KANTARBARKOD(logicalref.ToString(),LGCONSTR);
+            FRM_KANTARBARKOD F = new FRM_KANTARBARKOD(logicalref.ToString(), LGCONSTR);
             F.Show();
-
-            // Fire miktarı 0'ın üzerindeyse satınalma iade faturası oluştur (TRCODE = 6)
-            if (fireMiktar > 0)
-            {
-                SQLCON = new SqlConnection(LGCONSTR);
-                DataRow drFire = BMS_DLL.SQL.SELECT2("SELECT * FROM BMS_KE_KANTAR WHERE LOGICALREF=" + logicalref.ToString(), SQLCON).Rows[0];
-                BMS_KE_KANTAR KANTAR_FIRE = CDM.BMS_KE_KANTAR_CONVERT_FROM_DATAROW(drFire);
-                CreateFireIadeFaturasi(KANTAR_FIRE, fireMiktar);
-            }
         }
+
         void clearComponents()
         {
             TE_PLAKAKODU.Text = TE_PLAKA.Text = "";
@@ -270,6 +264,7 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
                     TE_PLAKAKODU.Text = F.KOD;
                     TE_PLAKA.Text = F.AD;
                     PLAKALOGICALREF = F.LOGICALREF;
+                    KENDI_PLAKASI_MI = F.KENDI_PLAKASI_MI;
                 }
             }
         }
@@ -908,6 +903,247 @@ _CFG.LGDBSERVER, _CFG.LGDBDATABASE, _CFG.LGDBUSERNAME, _CFG.LGDBPASSWORD);
                 {
                     transaction.Rollback();
                     BMS_DLL.GLOBAL.LOGYAZ("HATA(SaveFireClfline):", ex);
+                }
+            }
+        }
+
+        #endregion
+
+        #region Irsaliye Olusturma
+
+        private void CreateIrsaliye(BMS_KE_KANTAR kantar)
+        {
+            try
+            {
+                // Plaka kodunu al
+                string PLAKAKODU = "";
+                if (kantar.PLAKAID > 0)
+                {
+                    try
+                    {
+                        PLAKAKODU = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 LGMAIN.GCODE FROM L_TRADGRP LGMAIN WITH(NOLOCK) WHERE (LGMAIN.ACTIVE=0) AND LOGICALREF=" + kantar.PLAKAID.ToString(), new SqlConnection(LGCONSTR)).Rows[0][0].ToString();
+                    }
+                    catch { }
+                }
+
+                // Birim fiyatı al
+                double BIRIMFIYAT = 0;
+                try
+                {
+                    // Önce müşteri bazlı fiyat ara
+                    string clientCode = "";
+                    try
+                    {
+                        clientCode = BMS_DLL.SQL.SELECT2("SELECT TOP 1 CODE FROM LG_" + _CFG.FIRMNR + "_CLCARD WHERE LOGICALREF=" + kantar.URETICIID.ToString(), new SqlConnection(LGCONSTR)).Rows[0][0].ToString();
+                    }
+                    catch { }
+
+                    var priceResult = BMS_DLL.SQL.SELECT2(@"
+                        SELECT TOP 1 ISNULL(P.PRICE, 0) FROM LG_" + _CFG.FIRMNR + @"_PRCLIST P
+                        WHERE P.CARDREF=" + kantar.URUNID + @" AND P.PTYPE=1 AND P.ACTIVE=0
+                        AND P.PAYPLANREF='" + kantar.ODEMEPLANID_SOZLESMETURUKOD + @"'
+                        AND P.CLIENTCODE='" + clientCode + @"'
+                        ORDER BY LOGICALREF DESC", new SqlConnection(LGCONSTR));
+
+                    if (priceResult.Rows.Count > 0)
+                    {
+                        BIRIMFIYAT = double.Parse(priceResult.Rows[0][0].ToString());
+                    }
+
+                    // Müşteri bazlı fiyat yoksa genel fiyat al
+                    if (BIRIMFIYAT == 0)
+                    {
+                        var generalPriceResult = BMS_DLL.SQL.SELECT2(@"
+                            SELECT TOP 1 ISNULL(P.PRICE, 0) FROM LG_" + _CFG.FIRMNR + @"_PRCLIST P
+                            WHERE P.CARDREF=" + kantar.URUNID + @" AND P.PTYPE=1 AND P.ACTIVE=0
+                            AND P.PAYPLANREF='" + kantar.ODEMEPLANID_SOZLESMETURUKOD + @"'
+                            AND ISNULL(P.CLIENTCODE,'')=''
+                            ORDER BY LOGICALREF DESC", new SqlConnection(LGCONSTR));
+                        if (generalPriceResult.Rows.Count > 0)
+                        {
+                            BIRIMFIYAT = double.Parse(generalPriceResult.Rows[0][0].ToString());
+                        }
+                    }
+                }
+                catch { }
+
+                double TOPLAM = Math.Round(BIRIMFIYAT * kantar.MIKTAR, 2);
+
+                // UOMREF ve UOSREF al
+                string _UOMREF = "0";
+                string _UOSREF = "0";
+                try
+                {
+                    _UOMREF = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 BIRIM.LOGICALREF FROM LG_" + _CFG.FIRMNR + @"_ITEMS ITEMS2
+                        LEFT OUTER JOIN LG_" + _CFG.FIRMNR + @"_UNITSETL BIRIM WITH(NOLOCK)
+                        ON BIRIM.UNITSETREF = ITEMS2.UNITSETREF WHERE BIRIM.MAINUNIT = 1 AND ITEMS2.LOGICALREF='" + kantar.URUNID + "'", new SqlConnection(LGCONSTR)).Rows[0][0].ToString();
+                }
+                catch { }
+                try
+                {
+                    _UOSREF = BMS_DLL.SQL.SELECT2(@"SELECT TOP 1 BIRIM.UNITSETREF FROM LG_" + _CFG.FIRMNR + @"_ITEMS ITEMS2
+                        LEFT OUTER JOIN LG_" + _CFG.FIRMNR + @"_UNITSETL BIRIM WITH(NOLOCK)
+                        ON BIRIM.UNITSETREF = ITEMS2.UNITSETREF WHERE BIRIM.MAINUNIT = 1 AND ITEMS2.LOGICALREF='" + kantar.URUNID + "'", new SqlConnection(LGCONSTR)).Rows[0][0].ToString();
+                }
+                catch { }
+
+                // İrsaliye numarası oluştur
+                int CARD_CODE_NO = 0;
+                try
+                {
+                    CARD_CODE_NO = int.Parse(BMS_DLL.SQL.SELECT2(string.Format(@"SELECT RIGHT(FICHENO,5) F FROM (
+                        SELECT MAX(FICHENO) FICHENO FROM LG_" + _CFG.FIRMNR + @"_01_STFICHE where TRCODE=1 AND BILLED=0 AND FICHENO LIKE 'IRS.%'
+                        ) AS T"), new SqlConnection(LGCONSTR)).Rows[0][0].ToString()) + 1;
+                }
+                catch { }
+                string IRSALIYE_NO = "IRS." + CARD_CODE_NO.ToString().PadLeft(5, '0');
+
+                // 1. STFICHE kaydet (İrsaliye)
+                int STFICHELOGICALREF = SaveIrsaliyeStfiche(kantar, TOPLAM, IRSALIYE_NO, PLAKAKODU);
+
+                if (STFICHELOGICALREF > 0)
+                {
+                    // 2. STLINE kaydet
+                    SaveIrsaliyeStline(kantar, BIRIMFIYAT, TOPLAM, STFICHELOGICALREF, _UOMREF, _UOSREF);
+
+                    // 3. BMS_KE_KANTAR'ı güncelle (TSTATUS=2 irsaliye olduğunu belirtir)
+                    BMS_DLL.SQL.EXECUTE2(this, "UPDATE BMS_KE_KANTAR SET LOGOAKTARIMI=1, LOGOAKTARIMTARIHI=GETDATE(), LOGOFISID=" + STFICHELOGICALREF + ", TSTATUS=2 WHERE LOGICALREF=" + kantar.LOGICALREF.ToString(), new SqlConnection(LGCONSTR));
+
+                    MessageBox.Show("SATINALMA İRSALİYESİ OLUŞTURULDU!\nİrsaliye No: " + IRSALIYE_NO, "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                BMS_DLL.GLOBAL.LOGYAZ("HATA(CreateIrsaliye):", ex);
+                MessageBox.Show("İrsaliye oluşturulurken hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private int SaveIrsaliyeStfiche(BMS_KE_KANTAR kantar, double toplam, string irsaliyeNo, string plakakodu)
+        {
+            int STFICHELOGICALREF = 0;
+            BM_XXX_XX_STFICHE O = new BM_XXX_XX_STFICHE()
+            {
+                AFFECTRISK = 1,
+                BILLED = 0, // İrsaliye için BILLED=0
+                CAPIBLOCK_CREADEDDATE = DateTime.Now,
+                CAPIBLOCK_CREATEDBY = 1,
+                CAPIBLOCK_CREATEDHOUR = DateTime.Now.Hour,
+                CAPIBLOCK_CREATEDMIN = DateTime.Now.Minute,
+                CAPIBLOCK_CREATEDSEC = DateTime.Now.Second,
+                CLIENTREF = kantar.URETICIID,
+                GENEXP2 = "SOZLESME NO:" + kantar.SOZLESME_NO,
+                DATE_ = kantar.TARIH.Date,
+                DEDUCTIONPART1 = 2,
+                DEDUCTIONPART2 = 3,
+                DISPSTATUS = 1,
+                DOCTIME = 254939409,
+                FICHECNT = 1,
+                FICHENO = irsaliyeNo,
+                FTIME = 254939409,
+                GENEXCTYP = 1,
+                GROSSTOTAL = toplam,
+                GRPCODE = 1,
+                DOCODE = kantar.TARTI_BELGE_NO,
+                GENEXP1 = kantar.ACIKLAMA,
+                GUID = Guid.NewGuid().ToString(),
+                INVNO = "",
+                INVOICEREF = 0, // İrsaliye için INVOICEREF=0
+                IOCODE = 1,
+                NETTOTAL = toplam,
+                RECVREF = kantar.KONTRAKTORID,
+                SHIPDATE = kantar.TARIH,
+                SHIPTIME = 254939409,
+                TOTALDISCOUNTED = toplam,
+                TRADINGGRP = plakakodu,
+                TRCODE = 1, // Satınalma İrsaliyesi
+                SOURCEINDEX = kantar.AMBARID_GIDECEGIYERKOD,
+                SOURCECOSTGRP = kantar.AMBARID_GIDECEGIYERKOD,
+                SPECODE = kantar.OZELKOD_BOLGEKOD,
+                CYPHCODE = kantar.YETKIKOD_BOLGEDETAYKOD,
+                PAYDEFREF = kantar.ODEMEPLANID_SOZLESMETURUKOD,
+                SALESMANREF = kantar.SALEMANID_SOKOD,
+                GENEXP3 = "BINLIK SAYISI:" + kantar.BINLIKSAYISI.ToString()
+            };
+
+            using (SqlConnection con = new SqlConnection(LGCONSTR))
+            {
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+
+                SqlTransaction transaction = con.BeginTransaction();
+                try
+                {
+                    SqlCommand com = SIC.BM_XXX_XX_STFICHE_INSERT(O, false, false, _CFG.FIRMNR, "01");
+                    com.Connection = con;
+                    com.Transaction = transaction;
+                    STFICHELOGICALREF = int.Parse(com.ExecuteScalar().ToString());
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    BMS_DLL.GLOBAL.LOGYAZ("HATA(SaveIrsaliyeStfiche):", ex);
+                }
+            }
+
+            return STFICHELOGICALREF;
+        }
+
+        private void SaveIrsaliyeStline(BMS_KE_KANTAR kantar, double birimFiyat, double toplam, int stficheRef, string uomRef, string uosRef)
+        {
+            BM_XXX_XX_STLINE O = new BM_XXX_XX_STLINE()
+            {
+                STOCKREF = kantar.URUNID,
+                TRCODE = 1, // Satınalma İrsaliyesi
+                DATE_ = kantar.TARIH.Date,
+                FTIME = 254939409,
+                IOCODE = 1,
+                STFICHEREF = stficheRef,
+                STFICHELNNO = 1,
+                INVOICEREF = 0, // İrsaliye için INVOICEREF=0
+                INVOICELNNO = 0,
+                CLIENTREF = kantar.URETICIID,
+                AMOUNT = kantar.MIKTAR,
+                PRICE = birimFiyat,
+                TOTAL = toplam,
+                UOMREF = int.Parse(uomRef),
+                USREF = int.Parse(uosRef),
+                UINFO1 = 1,
+                UINFO2 = 1,
+                VATMATRAH = toplam,
+                BILLED = 0, // İrsaliye için BILLED=0
+                LINENET = toplam,
+                RECSTATUS = 2,
+                YEAR_ = kantar.TARIH.Year,
+                AFFECTRISK = 1,
+                GUID = Guid.NewGuid().ToString(),
+                FUTMONTHBEGDATE = 132385566,
+                SOURCEINDEX = kantar.AMBARID_GIDECEGIYERKOD,
+                SOURCECOSTGRP = kantar.AMBARID_GIDECEGIYERKOD,
+                SPECODE = kantar.OZELKOD_BOLGEKOD,
+                PAYDEFREF = kantar.ODEMEPLANID_SOZLESMETURUKOD,
+                SALESMANREF = kantar.SALEMANID_SOKOD,
+            };
+
+            using (SqlConnection con = new SqlConnection(LGCONSTR))
+            {
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+
+                SqlTransaction transaction = con.BeginTransaction();
+                try
+                {
+                    SqlCommand com = SIC.BM_XXX_XX_STLINE_INSERT(O, false, false, _CFG.FIRMNR, "01");
+                    com.Connection = con;
+                    com.Transaction = transaction;
+                    com.ExecuteScalar();
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    BMS_DLL.GLOBAL.LOGYAZ("HATA(SaveIrsaliyeStline):", ex);
                 }
             }
         }

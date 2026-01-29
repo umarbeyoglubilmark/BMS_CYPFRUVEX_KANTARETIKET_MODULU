@@ -47,6 +47,7 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.CONVERTER {
                 try { B.ODEMEPLANID_SOZLESMETURU = (string)r["ODEMEPLANID_SOZLESMETURU"]; } catch { }
                 try { B.SALEMANID_SO = (string)r["SALEMANID_SO"]; } catch { }
                 try { B.BINLIKSAYISI = (double)r["BINLIKSAYISI"]; } catch { }
+                try { B.KENDI_PLAKASI_MI = Convert.ToBoolean(r["KENDI_PLAKASI_MI"]); } catch { }
 
                 L.Add(B);
             }
@@ -86,6 +87,8 @@ namespace BMS_CYPFRUVEX_KANTARETIKET_MODULU.CONVERTER {
             try { B.ODEMEPLANID_SOZLESMETURU = (string)r["ODEMEPLANID_SOZLESMETURU"]; } catch { }
             try { B.SALEMANID_SO = (string)r["SALEMANID_SO"]; } catch { }
             try { B.BINLIKSAYISI = (double)r["BINLIKSAYISI"]; } catch { }
+            try { B.FIRE_MIKTAR = (double)r["FIRE_MIKTAR"]; } catch { }
+            try { B.KENDI_PLAKASI_MI = Convert.ToBoolean(r["KENDI_PLAKASI_MI"]); } catch { }
             return B;
         }
 
